@@ -62,7 +62,7 @@ $(document).ready(function () {
 
 
         $.ajax({
-            url: "http://localhost:48909/api/ListarUsuarios",
+            url: ObtenerUrl('ListarUsuarios'),
             type: "POST",
             data: ko.toJSON({ InstId: self.instId }),
             contentType: "application/json",
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 $('#infoUsuarios').text(result.length);
 
                 $.ajax({
-                    url: "http://localhost:48909/api/Institucion",
+                    url: ObtenerUrl('Institucion'),
                     type: "POST",
                     data: ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") }),
                     contentType: "application/json",
@@ -82,7 +82,7 @@ $(document).ready(function () {
                         $('#infoInstituciones').text(result2.proposals.length);
                         
                         $.ajax({
-                            url: "http://localhost:48909/api/Rendicion",
+                            url: ObtenerUrl('Rendicion'),
                             type: "POST",
                             data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
                             contentType: "application/json",
@@ -92,7 +92,7 @@ $(document).ready(function () {
                                 $('#infoIngresos').text(result2.proposals.length);
 
                                 $.ajax({
-                                    url: "http://localhost:48909/api/FileDocumento",
+                                    url: ObtenerUrl('FileDocumento'),
                                     type: "POST",
                                     data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
                                     contentType: "application/json",
@@ -168,7 +168,7 @@ $(document).ready(function () {
     });
 
     $.ajax({
-        url: "http://localhost:48909/api/Grafico",
+        url: ObtenerUrl('Grafico'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), NombreGrafico: "INGRESOS_EGRESOS" }),
         contentType: "application/json",
