@@ -449,7 +449,7 @@
     function Insertar(jsonEntidad)
     {
         $.ajax({
-            url: "http://localhost:48909/api/Calendario",
+            url: ObtenerUrl('Calendario'),
             type: "PUT",
             data: jsonEntidad,
             contentType: "application/json",
