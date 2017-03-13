@@ -61,7 +61,7 @@
 
 
     $.ajax({
-        url: "http://localhost:48909/api/FileDocumento",
+        url: ObtenerUrl('FileDocumento'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") }),
         contentType: "application/json",
@@ -128,7 +128,7 @@
         model.append("UploadedImage", files[0]);
 
         $.ajax({
-            url: 'http://localhost:48909/api/FileNuevo',
+            url: ObtenerUrl('FileNuevo'),
             type: 'POST',
             dataType: 'json',
             data: model,

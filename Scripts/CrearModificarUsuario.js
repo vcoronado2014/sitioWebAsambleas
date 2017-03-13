@@ -97,7 +97,7 @@
                         NuevaPassword: nuevaPass
                     };
                     $.ajax({
-                        url: "http://localhost:48909/api/ObtenerUsuario",
+                        url: ObtenerUrl('ObtenerUsuario'),
                         type: "PUT",
                         data: ko.toJSON(usuario),
                         contentType: "application/json",
@@ -153,7 +153,7 @@
 
 
         $.ajax({
-            url: "http://localhost:48909/api/ObtenerUsuario",
+            url: ObtenerUrl('ObtenerUsuario'),
             type: "POST",
             data: ko.toJSON({ IdUsuario: getParameterByName('idUsuario') }),
             contentType: "application/json",
@@ -184,7 +184,7 @@
                 //  $("txtNombreUsuario").prop('disabled', true);
 
                 $.ajax({
-                    url: "http://localhost:48909/api/ObtenerRegiones",
+                    url: ObtenerUrl('ObtenerRegiones'),
                     type: "POST",
                     data: ko.toJSON({ InstId: 90 }),
                     contentType: "application/json",
@@ -195,7 +195,7 @@
                         selectedRegion = frmIdRegion;
 
                         $.ajax({
-                            url: "http://localhost:48909/api/ObtenerComunas",
+                            url: ObtenerUrl('ObtenerComunas'),
                             type: "POST",
                             data: ko.toJSON({ RegId: frmIdRegion }),
                             contentType: "application/json",
@@ -206,7 +206,7 @@
                                 selectedComuna = frmIdComuna;
 
                                 $.ajax({
-                                    url: "http://localhost:48909/api/ObtenerRoles",
+                                    url: ObtenerUrl('ObtenerRoles'),
                                     type: "POST",
                                     data: ko.toJSON({ InstId: 90 }),
                                     contentType: "application/json",
@@ -230,7 +230,7 @@
 
                                 self.onChange = function () {
                                     $.ajax({
-                                        url: "http://localhost:48909/api/ObtenerComunas",
+                                        url: ObtenerUrl('ObtenerComunas'),
                                         type: "POST",
                                         data: ko.toJSON({ RegId: self.frmIdRegion }),
                                         contentType: "application/json",
@@ -261,7 +261,7 @@
                                     var nombreUsuario = $("#txtNombreUsuario").val();
 
                                     $.ajax({
-                                        url: "http://localhost:48909/api/ListarUsuarios",
+                                        url: ObtenerUrl('ListarUsuarios'),
                                         type: "POST",
                                         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                                         contentType: "application/json",
@@ -389,7 +389,7 @@
                             setTimeout(function () {
 
                                 $.ajax({
-                                    url: "http://localhost:48909/api/ObtenerUsuario",
+                                    url: ObtenerUrl('ObtenerUsuario'),
                                     type: "DELETE",
                                     data: ko.toJSON({ IdUsuario: idUsuario }),
                                     contentType: "application/json",
@@ -447,7 +447,7 @@
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
         $.ajax({
-            url: "http://localhost:48909/api/ObtenerRegiones",
+            url: ObtenerUrl('ObtenerRegiones'),
             type: "POST",
             data: ko.toJSON({ InstId: 90 }),
             contentType: "application/json",
@@ -458,7 +458,7 @@
                 selectedRegion = 0;
 
                 $.ajax({
-                    url: "http://localhost:48909/api/ObtenerComunas",
+                    url: ObtenerUrl('ObtenerComunas'),
                     type: "POST",
                     data: ko.toJSON({ RegId: 13 }),
                     contentType: "application/json",
@@ -469,7 +469,7 @@
                         selectedComuna = 0;
 
                         $.ajax({
-                            url: "http://localhost:48909/api/ObtenerRoles",
+                            url: ObtenerUrl('ObtenerRoles'),
                             type: "POST",
                             data: ko.toJSON({ InstId: 90 }),
                             contentType: "application/json",
@@ -495,7 +495,7 @@
                             var idRegion = $("#selectIdRegion").val();
                             //alert(frmIdRegion);
                             $.ajax({
-                                url: "http://localhost:48909/api/ObtenerComunas",
+                                url: ObtenerUrl('ObtenerComunas'),
                                 type: "POST",
                                 data: ko.toJSON({ RegId: idRegion }),
                                 contentType: "application/json",
@@ -526,7 +526,7 @@
                             var nombreUsuario = $("#txtNombreUsuario").val();
 
                             $.ajax({
-                                url: "http://localhost:48909/api/ListarUsuarios",
+                                url: ObtenerUrl('ListarUsuarios'),
                                 type: "POST",
                                 data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                                 contentType: "application/json",

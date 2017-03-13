@@ -91,7 +91,7 @@
 
                    $.ajax({
                        type: "POST",
-                       url: "http://localhost:48909/api/File",
+                       url: ObtenerUrl('File'),
                        contentType: false,
                        processData: false,
                        dataType: "json",
@@ -146,7 +146,7 @@
 
 
         $.ajax({
-            url: "http://localhost:48909/api/Rendicion",
+            url: ObtenerUrl('Rendicion'),
             type: "POST",
             data: ko.toJSON({ BuscarId: id, InstId: sessionStorage.getItem("InstId") }),
             contentType: "application/json",
@@ -217,7 +217,7 @@
                         setTimeout(function () {
 
                             $.ajax({
-                                url: "http://localhost:48909/api/Rendicion",
+                                url: ObtenerUrl('Rendicion'),
                                 type: "DELETE",
                                 data: ko.toJSON({ Id: id }),
                                 contentType: "application/json",
@@ -279,7 +279,7 @@
             var nombreUsuario = $("#txtNombreUsuario").val();
 
             $.ajax({
-                url: "http://localhost:48909/api/Rendicion",
+                url: ObtenerUrl('Rendicion'),
                 type: "POST",
                 data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                 contentType: "application/json",

@@ -54,7 +54,7 @@
 
     }
     $.ajax({
-        url: "http://localhost:48909/api/Votacion",
+        url: ObtenerUrl('Votacion'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
         contentType: "application/json",

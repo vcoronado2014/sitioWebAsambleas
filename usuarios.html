@@ -133,6 +133,8 @@
 <script src="Scripts/pnotify.custom.min.js"></script>
 <script src="Scripts/moment.js"></script>
 
+<script src="const.js"></script>
+
 <script>
     $(function () {
 
@@ -207,7 +209,7 @@
 
 
                         $.ajax({
-                            url: "http://localhost:48909/api/ObtenerUsuario",
+                            url: ObtenerUrl('ObtenerUsuario'),
                             type: "DELETE",
                             data: ko.toJSON({ IdUsuario: idEliminar }),
                             contentType: "application/json",
@@ -242,7 +244,7 @@
             }
         }
         // get data - sample data from Donors Choose API
-        $.getJSON("http://localhost:48909/api/ListarUsuarios?instId=" + sessionStorage.getItem("InstId"), function (data) {
+        $.getJSON(ObtenerUrl('ListarUsuarios') + '?instId=' + sessionStorage.getItem("InstId"), function (data) {
             // bind the data
             elem = document.getElementById('principal');
             //ko.cleanNode(elem);

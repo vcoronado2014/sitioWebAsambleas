@@ -54,7 +54,7 @@
 
     }
     $.ajax({
-        url: "http://localhost:48909/api/Rendicion",
+        url: ObtenerUrl('Rendicion'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
         contentType: "application/json",
@@ -156,7 +156,7 @@
     //]);
 
     $.ajax({
-        url: "http://localhost:48909/api/Grafico",
+        url: ObtenerUrl('Grafico'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), NombreGrafico: "INGRESOS_EGRESOS" }),
         contentType: "application/json",

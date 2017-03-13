@@ -1,1 +1,4 @@
-﻿const urlListarUsuarios = "http://localhost:48909/api/ListarUsuarios";
+﻿function ObtenerUrl(api)
+{
+    return 'http://localhost:48909/api/' + api;
+}

@@ -14,7 +14,7 @@
 
             setTimeout(function () {
                 $.ajax({
-                    url: "http://localhost:48909/api/FileNuevo?id=" + id,
+                    url: ObtenerUrl('FileNuevo') + "?id=" + id,
                     type: "GET",
                     contentType: "application/json",
                     dataType: "json",

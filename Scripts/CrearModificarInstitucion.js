@@ -68,7 +68,7 @@
                         IdComuna: idComuna
                     };
                     $.ajax({
-                        url: "http://localhost:48909/api/Institucion",
+                        url: ObtenerUrl('Institucion'),
                         type: "PUT",
                         data: ko.toJSON(institucion),
                         contentType: "application/json",
@@ -120,7 +120,7 @@
     var idInstitucionP = getParameterByName('id');
     if (idInstitucionP > 0) {
         $.ajax({
-            url: "http://localhost:48909/api/Institucion?id=" + idInstitucionP,
+            url: ObtenerUrl('Institucion') + '?id=' + idInstitucionP,
             type: "GET",
             contentType: "application/json",
             dataType: "json",
@@ -136,7 +136,7 @@
                 getNotify('success', 'Éxito', 'Recuperado con éxito!');
 
                 $.ajax({
-                    url: "http://localhost:48909/api/ObtenerRegiones",
+                    url: ObtenerUrl('ObtenerRegiones'),
                     type: "POST",
                     data: ko.toJSON({ InstId: 90 }),
                     contentType: "application/json",
@@ -147,7 +147,7 @@
                         selectedRegion = frmIdRegion;
 
                         $.ajax({
-                            url: "http://localhost:48909/api/ObtenerComunas",
+                            url: ObtenerUrl('ObtenerComunas'),
                             type: "POST",
                             data: ko.toJSON({ RegId: frmIdRegion }),
                             contentType: "application/json",
@@ -159,7 +159,7 @@
                                 selectedComuna = frmIdComuna;
 
                                 $.ajax({
-                                    url: "http://localhost:48909/api/ObtenerRoles",
+                                    url: ObtenerUrl('ObtenerRoles'),
                                     type: "POST",
                                     data: ko.toJSON({ InstId: 90 }),
                                     contentType: "application/json",
@@ -184,7 +184,7 @@
                                 self.onChange = function () {
                                     //alert(frmIdRegion);
                                     $.ajax({
-                                        url: "http://localhost:48909/api/ObtenerComunas",
+                                        url: ObtenerUrl('ObtenerComunas'),
                                         type: "POST",
                                         data: ko.toJSON({ RegId: self.frmIdRegion }),
                                         contentType: "application/json",
@@ -215,7 +215,7 @@
                                     var nombreUsuario = $("#txtNombreUsuario").val();
 
                                     $.ajax({
-                                        url: "http://localhost:48909/api/Institucion",
+                                        url: ObtenerUrl('Institucion'),
                                         type: "POST",
                                         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                                         contentType: "application/json",
@@ -336,7 +336,7 @@
                         {
                             setTimeout(function () {
                                 $.ajax({
-                                    url: "http://localhost:48909/api/Institucion",
+                                    url: ObtenerUrl('Institucion'),
                                     type: "DELETE",
                                     data: ko.toJSON({ Id: idInstitucionP }),
                                     contentType: "application/json",
@@ -390,7 +390,7 @@
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
         $.ajax({
-            url: "http://localhost:48909/api/ObtenerRegiones",
+            url: ObtenerUrl('ObtenerRegiones'),
             type: "POST",
             data: ko.toJSON({ InstId: 90 }),
             contentType: "application/json",
@@ -401,7 +401,7 @@
                 selectedRegion = 0;
 
                 $.ajax({
-                    url: "http://localhost:48909/api/ObtenerComunas",
+                    url: ObtenerUrl('ObtenerComunas'),
                     type: "POST",
                     data: ko.toJSON({ RegId: 13 }),
                     contentType: "application/json",
@@ -417,7 +417,7 @@
                             var idRegion = $("#selectIdRegion").val();
                             //alert(frmIdRegion);
                             $.ajax({
-                                url: "http://localhost:48909/api/ObtenerComunas",
+                                url: ObtenerUrl('ObtenerComunas'),
                                 type: "POST",
                                 data: ko.toJSON({ RegId: idRegion }),
                                 contentType: "application/json",
@@ -448,7 +448,7 @@
                             var nombreUsuario = $("#txtNombreUsuario").val();
 
                             $.ajax({
-                                url: "http://localhost:48909/api/Institucion",
+                                url: ObtenerUrl('Institucion'),
                                 type: "POST",
                                 data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                                 contentType: "application/json",
@@ -508,7 +508,7 @@
             var idRegion = $("#selectIdRegion").val();
             //alert(frmIdRegion);
             $.ajax({
-                url: "http://localhost:48909/api/ObtenerComunas",
+                url: ObtenerUrl('ObtenerComunas'),
                 type: "POST",
                 data: ko.toJSON({ RegId: idRegion }),
                 contentType: "application/json",
@@ -539,7 +539,7 @@
             var nombreUsuario = $("#txtNombreUsuario").val();
 
             $.ajax({
-                url: "http://localhost:48909/api/Institucion",
+                url: ObtenerUrl('Institucion'),
                 type: "POST",
                 data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
                 contentType: "application/json",

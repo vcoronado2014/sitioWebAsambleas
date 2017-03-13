@@ -51,7 +51,7 @@
 
     }
     $.ajax({
-        url: "http://localhost:48909/api/Calendario",
+        url: ObtenerUrl('Calendario'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
         contentType: "application/json",
@@ -506,7 +506,7 @@
                 setTimeout(function () {
 
                     $.ajax({
-                        url: "http://localhost:48909/api/Calendario",
+                        url: ObtenerUrl('Calendario'),
                         type: "PUT",
                         data: jsonEntidad,
                         contentType: "application/json",
@@ -577,7 +577,7 @@
                 setTimeout(function () {
 
                     $.ajax({
-                        url: "http://localhost:48909/api/Calendario",
+                        url: ObtenerUrl('Calendario'),
                         type: "DELETE",
                         data: jsonEntidad,
                         contentType: "application/json",
