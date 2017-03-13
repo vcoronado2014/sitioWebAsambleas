@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
+    <meta name="author" content="Victor Coronado" />
+    <title>Crear Modificar Ingreso Egreso</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- metis menu -->
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- sb admin -->
+    <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="Content/sweetalert.css" rel="stylesheet" />
+
+    <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery-1.11.3.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/knockout-3.4.1.js"></script>
+
+
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/sweetalert.js"></script>
+    <script src="Scripts/pnotify.custom.min.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/CrearModificarRendicion.js"></script>
+</head>
+<body class="bodyFixed">
+<div class="container" id="principal">
+    <!-- encabezado -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-right: 70px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Inicio.html" data-bind="text: nombreInstitucion"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li><a href="login.html" id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="usuarios.html">Usuarios</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="ListarInstitucion.html">Intituciones</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="ListarRendicion.html">Rendiciones</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="ListarDocumento.html">Documentos de Usuario</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span data-bind="text: nombreCompleto"></span></a>
+            <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
+        </div>
+    </nav>
+
+    <div class="col-xs-12 page-header">
+        <h3>Mantenedor <small>de Ingresos/Egresos</small></h3>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Detalle</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-user"></i>
+                </span>
+            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Detalle Movimiento" aria-describedby="basic-addon1" disabled="disabled" data-bind="event: { change: onChangeUsuario }, value: self.frmNombreUsuario" />
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Fecha</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon6">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            <input type="text" class="form-control" id="txtFecha" name="Fecha" placeholder="Fecha" aria-describedby="basic-addon6" data-bind="value: self.frmFecha" disabled="disabled" />
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Tipo Movimiento</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon8">
+                    <i class="fa fa-globe"></i>
+                </span>
+            <select id="selectIdTipoMovimiento" class="form-control">
+                <option value="1">Ingreso</option>
+                <option value="2">Egreso</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Número Comprobante</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon4">
+                    <i class="fa fa-file-archive-o"></i>
+                </span>
+            <input type="text" class="form-control" name="segundoApellido" id="txtNumeroComprobante" placeholder="Número Comprobante" aria-describedby="basic-addon4" data-bind="value: self.frmNumeroComprobante" />
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Monto</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon5">
+                    <i class="fa fa-dollar"></i>
+                </span>
+            <input type="text" class="form-control" name="monto" id="txtMonto" placeholder="Monto" aria-describedby="basic-addon5" data-bind="value: self.frmMonto" />
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Subir Archivo</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon9">
+                    <a  id="iconoDescargar" data-bind="attr: { href: self.frmUrlDocumento, title: details }" download="documento" data-toggle="tooltip" data-placement="left" title="Descargar Archivo">
+                        <i class="fa fa-download"></i>
+                    </a>
+                </span>
+            <input type="file"  class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9"/>
+
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-12" style="padding-bottom: 20px;">
+    </div>
+    <hr class="style17" style="width: 100%;" />
+
+    <div class="col-xs-6">
+        <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width: 100%;" data-bind="click: cancelar" />
+    </div>
+    <div class="col-xs-6">
+        <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar" />
+    </div>
+
+</div>
+</body>
+</html>

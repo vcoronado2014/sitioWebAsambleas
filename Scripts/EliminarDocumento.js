@@ -1,0 +1,119 @@
+﻿$(document).ready(function () {
+    var id = getParameterByName('id');
+
+    swal({
+        title: "Eliminar",
+        text: "¿Está seguro de eliminar a este Movimiento?",
+        type: "info",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        customClass: 'sweetalert-xs',
+        showLoaderOnConfirm: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+
+            setTimeout(function () {
+                $.ajax({
+                    url: "http://localhost:48909/api/FileNuevo?id=" + id,
+                    type: "GET",
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (data) {
+
+                        swal({
+                            title: "Eliminado",
+                            text: "El Registro ha sido eliminado con éxito.",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Ok",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: true,
+                            customClass: 'sweetalert-xs',
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                window.location.href = "ListarDocumento.html";
+
+
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
+
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                    }
+                });
+
+            }, 2000);
+
+            }
+            else {
+                window.location.href = "listarDocumento.html";
+            }
+    });
+
+
+   
+    function getNotify(type, title, message) {
+        if (type == 'error') {
+            new PNotify({
+                title: title,
+                text: message,
+                type: 'error'
+            });
+        }
+        if (type == 'success') {
+            new PNotify({
+                title: title,
+                text: message,
+                icon: 'glyphicon glyphicon-ok'
+            });
+        }
+    }
+    function getParameterByName(name, url) {
+
+        //// query string: ?foo=lorem&bar=&baz
+        //var foo = getParameterByName('foo'); // "lorem"
+        //var bar = getParameterByName('bar'); // "" (present with empty value)
+        //var baz = getParameterByName('baz'); // "" (present with no value)
+        //var qux = getParameterByName('qux'); // null (absent)
+
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function getParameterByName(name, url) {
+
+        //// query string: ?foo=lorem&bar=&baz
+        //var foo = getParameterByName('foo'); // "lorem"
+        //var bar = getParameterByName('bar'); // "" (present with empty value)
+        //var baz = getParameterByName('baz'); // "" (present with no value)
+        //var qux = getParameterByName('qux'); // null (absent)
+
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+});
