@@ -48,6 +48,12 @@
         self.frmCorreoElectronico = ko.observable();
         self.frmDireccion = ko.observable();
 
+
+        if (sessionStorage.getItem("RolId") == '1')
+            shouldShowMessage = ko.observable(true);
+        else
+            shouldShowMessage = ko.observable(false);
+
         guardar = function () {
             //acá hay que validar todo!!
             if (validar(frmNombreInstitucion, $("#selectIdComuna").val(), frmCorreoElectronico, frmTelefono, frmDireccion)) {

@@ -51,6 +51,11 @@
         self.frmUrlDocumento = ko.observable("");
         self.details = ko.observable("Pinche aquí para abrir");
 
+        if (sessionStorage.getItem("RolId") == '1')
+            shouldShowMessage = ko.observable(true);
+        else
+            shouldShowMessage = ko.observable(false);
+
         guardar = function () {
 
             //acá hay que validar todo!!

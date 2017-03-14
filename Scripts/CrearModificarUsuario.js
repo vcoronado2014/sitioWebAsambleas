@@ -59,6 +59,11 @@
         self.frmNuevaPassword = ko.observable("");
         //self.frmNuevaPassword = self.frmPassword;
 
+        if (sessionStorage.getItem("RolId") == '1')
+            shouldShowMessage = ko.observable(true);
+        else
+            shouldShowMessage = ko.observable(false);
+
 
         guardar = function () {
             //acá hay que validar todo!!

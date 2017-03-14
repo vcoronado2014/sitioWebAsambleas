@@ -137,48 +137,6 @@
         }
     }
 
-    //var chart = Morris.Donut({
-    //    element: 'graph',
-    //    data: [
-    //      { value: 0, label: 'Ingresos' },
-    //      { value: 0, label: 'Egresos' }
-    //    ],
-    //    backgroundColor: '#ccc',
-    //    labelColor: '#060',
-    //    colors: [
-    //      'rgb(11, 98, 164)',
-    //      'rgb(160, 0, 0)'
-    //    ],
-    //    formatter: function (x) { return "$" + x }
-    //});
-
-    //$.ajax({
-    //    url: "http://localhost:48909/api/Grafico",
-    //    type: "POST",
-    //    data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), NombreGrafico: "INGRESOS_EGRESOS" }),
-    //    contentType: "application/json",
-    //    dataType: "json",
-    //    success: function (dataGrafico) {
-    //        // ok
-
-    //        //getNotify('success', 'Éxito', 'Recuperado con éxito!');
-    //        elem = document.getElementById('principal');
-
-    //        //ko.applyBindings(new ViewModel(data), elem);
-    //        chart.setData(dataGrafico);
-
-
-    //    },
-    //    error: function (error) {
-    //        if (error.status.toString() == "500") {
-    //            getNotify('error', 'Error', 'Error de Servidor!');
-    //        }
-    //        else {
-    //            getNotify('error', 'Error', 'Error de Servidor!');
-    //        }
-    //    }
-    //});
-
 
 
 });

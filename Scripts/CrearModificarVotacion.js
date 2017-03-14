@@ -94,6 +94,72 @@
 
         self.details = ko.observable("Pinche aquí para abrir");
 
+        if (sessionStorage.getItem("RolId") == '1')
+            shouldShowMessage = ko.observable(true);
+        else
+            shouldShowMessage = ko.observable(false);
+
+        guardar = function () {
+            if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtFechaInicio").val(), $("#txtFechaTermino").val()))
+            {
+                var nombre = $("#txtNombreUsuario").val();
+                var objetivo = $("#txtObjetivo").val();
+                var fechaInicio = $("#txtFechaInicio").val();
+                var fechaTermino = $("#txtFechaTermino").val();
+                var tricel = {
+                    Nombre: nombre,
+                    Objetivo: objetivo,
+                    FechaInicio : fechaInicio,
+                    FechaTermino: fechaTermino,
+                    IdUsuario: sessionStorage.getItem("Id"),
+                    InstId: sessionStorage.getItem("InstId"),
+                    Id: document.getElementById('id')
+                };
+
+                $.ajax({
+                    url: ObtenerUrl('Votacion'),
+                    type: "PUT",
+                    data: ko.toJSON(tricel),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (result) {
+                        //TODO OK INFORMAR EL GUARDADO CORRECTO
+
+                        swal({
+                                title: "Guardado",
+                                text: "El Registro ha sido guardado con éxito.",
+                                type: "success",
+                                showCancelButton: false,
+                                confirmButtonClass: "btn-success",
+                                confirmButtonText: "Ok",
+                                cancelButtonText: "No, cancel plx!",
+                                closeOnConfirm: false,
+                                customClass: 'sweetalert-xs',
+                                closeOnCancel: false
+                            },
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    window.location.href = "ListarVotacion.html";
+                                } else {
+                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                }
+                            });
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error en el Servidor.');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error en el Servidor.');
+                            //alert("fail");
+                        }
+                    }
+                });
+            }
+
+        }
+
         //guardar = function () {
 
         //    //acá hay que validar todo!!
@@ -352,21 +418,43 @@
 
     }
 
-    function validar(NombreUsuario, NumeroComprobante, Monto) {
+    function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined) {
-            getNotify('error', 'Requerido', 'Detalle Requerido.');
+            getNotify('error', 'Requerido', 'Nombre Requerido.');
             retorno = false;
         }
-        if (NumeroComprobante === '' || NumeroComprobante === null) {
-            getNotify('error', 'Requerido', 'Número Comprobante Requerido.');
+        if (Objetivo === '' || Objetivo === null) {
+            getNotify('error', 'Requerido', 'Objetivo Requerido.');
             retorno = false;
         }
-        if (Monto === '' || Monto === null) {
-            getNotify('error', 'Requerido', 'Monto Requerido.');
+        if (FechaInicio === '' || FechaInicio === null) {
+            getNotify('error', 'Requerido', 'Fecha Inicio Requerida.');
             retorno = false;
         }
-
+        if (FechaTermino === '' || FechaTermino === null) {
+            getNotify('error', 'Requerido', 'Fecha Término Requerida.');
+            retorno = false;
+        }
+        //comparacion de fechas, basicamente la fecha de termino no puede ser menor
+        //a la fecha de inicio
+        //y la fecha de inicio y termino no pueden ser menor a la fecha actual
+        /*
+        var ahora = moment();
+        var inicio = moment(FechaInicio);
+        var termino = moment(FechaTermino);
+        //primero la diferencia entre el inicio y el termino
+        if (inicio.diff(termino) <= 0)
+        {
+            getNotify('error', 'Fechas', 'Fecha de término no puede ser mayor a la deinicio.');
+            retorno = false;
+        }
+        if (ahora.diff(inicio) <= 0 && ahora.diff(termino) <=0)
+        {
+            getNotify('error', 'Fechas', 'Fecha de inicio y término no pueden ser menor a la actual.');
+            retorno = false;
+        }
+        */
         return retorno;
     }
 

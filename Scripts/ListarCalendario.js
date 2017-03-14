@@ -71,7 +71,7 @@
                     for(var i in itemsProcesar)
                     {
 
-                        var rolId = sessionStorage.getItem("RolId");
+                    var rolId = sessionStorage.getItem("RolId");
                         var disabled = true;
                         //por mientras solo para el Administrador
                         if (rolId == 1)
@@ -107,7 +107,7 @@
                         //    alert('click:' + this.isNew() + ' --- ');
                         //},
                         //change: function (event) {
-                        //    alert('change:' + this.isNew() + ' --- ' + this.getContentNode().val());
+                //    alert('change:' + this.isNew() + ' --- ' + this.getContentNode().val());
                         //},
 
                         //save: function (event) {
