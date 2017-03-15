@@ -113,7 +113,7 @@
                     FechaTermino: fechaTermino,
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
-                    Id: document.getElementById('id')
+                    Id: getParameterByName('id')
                 };
 
                 $.ajax({
