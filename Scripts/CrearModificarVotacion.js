@@ -160,92 +160,9 @@
 
         }
 
-        //guardar = function () {
-
-        //    //acá hay que validar todo!!
-
-        //    if (validar($("#txtNombreUsuario").val(), $("#txtNumeroComprobante").val(), $("#txtMonto").val())) {
-        //        var idTipoMovimiento = $("#selectIdTipoMovimiento").val();
-        //        var id = getParameterByName('id');
-        //        var instId = sessionStorage.getItem("InstId");
-        //        var idUsuario = sessionStorage.getItem("Id");
-        //        var nombreArchivo = $("#txtArchivo").val();
-        //        var file_data = $("#txtArchivo").prop("files")[0];
-                
-
-        //    }
-        //    //ahora se podría guardar
-
-        //    var rendicion = {
-        //        Id: id,
-        //        Detalle: frmNombreUsuario,
-        //        NumeroComprobante: frmNumeroComprobante,
-        //        Monto: frmMonto,
-        //        IdTipoMovimiento: idTipoMovimiento,
-        //        IdUsuario: idUsuario,
-        //        NombreArchivo: nombreArchivo,
-        //        InstId: instId
-        //    };
-        //    var dataF = new FormData();
-
-        //    var files = $("#txtArchivo").get(0).files;
-
-        //    // Add the uploaded image content to the form data collection
-        //    if (files.length > 0) {
-        //        dataF.append("UploadedImage", files[0]);
-                
-        //    }
-        //    dataF.append("rendicion", JSON.stringify(rendicion));
-
-
-        //           $.ajax({
-        //               type: "POST",
-        //               url: "http://localhost:48909/api/File",
-        //               contentType: false,
-        //               processData: false,
-        //               dataType: "json",
-        //               data: dataF,
-        //                success: function (result) {
-        //                    //TODO OK INFORMAR EL GUARDADO CORRECTO
-
-        //                    swal({
-        //                        title: "Guardado",
-        //                        text: "El Registro ha sido guardado con éxito.",
-        //                        type: "success",
-        //                        showCancelButton: false,
-        //                        confirmButtonClass: "btn-success",
-        //                        confirmButtonText: "Ok",
-        //                        cancelButtonText: "No, cancel plx!",
-        //                        closeOnConfirm: false,
-        //                        customClass: 'sweetalert-xs',
-        //                        closeOnCancel: false
-        //                    },
-        //                    function (isConfirm) {
-        //                        if (isConfirm) {
-        //                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-        //                            window.location.href = "ListarRendicion.html";
-        //                        } else {
-        //                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-        //                        }
-        //                    });
-        //                },
-        //                error: function (error) {
-        //                    if (error.status.toString() == "500") {
-        //                        getNotify('error', 'Error', 'Error en el Servidor.');
-        //                    }
-        //                    else {
-        //                        getNotify('error', 'Error', 'Error en el Servidor.');
-        //                        //alert("fail");
-        //                    }
-        //                }
-        //            });
-
-
- 
-        //    }
 
         cancelar = function () {
-            window.location.href = "ListarRendicion.html";
+            window.location.href = "ListarVotacion.html";
 
         }
     }
@@ -272,10 +189,7 @@
                
                 self.details= "Pinche aqui para abrir";
                 //getNotify('success', 'Éxito', 'Recuperado con éxito!');
-                self.onChangeUsuario = function () {
-                    var nombreUsuario = $("#txtNombreUsuario").val();
 
-                };
                 ko.applyBindings(new VotacionViewModel(data), self.elem);
 
 
@@ -297,16 +211,15 @@
             //determinar si es el mismo usuario a eliminar
 
             //bloquear todos los controles y cambiar el nombre del botòn
-            $("#txtFecha").attr('disabled', 'disabled');
-            $("#selectIdTipoMovimiento").attr('disabled', 'disabled');
-            $("#txtNumeroComprobante").attr('disabled', 'disabled');
-            $("#txtMonto").attr('disabled', 'disabled');
-            $("#txtArchivo").attr('disabled', 'disabled');
+            $("#txtFechaTermino").attr('disabled', 'disabled');
+            $("#txtFechaInicio").attr('disabled', 'disabled');
+            $("#txtObjetivo").attr('disabled', 'disabled');
             $("#txtNombreUsuario").attr('disabled', 'disabled');
+
 
             swal({
                 title: "Eliminar",
-                text: "¿Está seguro de eliminar a este Movimiento?",
+                text: "¿Está seguro de eliminar a este Tricel?",
                 type: "info",
                 showCancelButton: true,
                 closeOnConfirm: false,
@@ -319,7 +232,7 @@
                         setTimeout(function () {
 
                             $.ajax({
-                                url: ObtenerUrl('Rendicion'),
+                                url: ObtenerUrl('Votacion'),
                                 type: "DELETE",
                                 data: ko.toJSON({ Id: id }),
                                 contentType: "application/json",
@@ -341,7 +254,7 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                            window.location.href = "ListarRendicion.html";
+                                            window.location.href = "ListarVotacion.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
                                         }
@@ -367,7 +280,7 @@
   
                 }
                 else {
-                    window.location.href = "listarRendicion.html";
+                    window.location.href = "ListarVotacion.html";
                 }
             });
 
@@ -376,42 +289,6 @@
     else {
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
-
-        self.onChangeUsuario = function () {
-            var nombreUsuario = $("#txtNombreUsuario").val();
-
-            $.ajax({
-                url: ObtenerUrl('Rendicion'),
-                type: "POST",
-                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
-                contentType: "application/json",
-                dataType: "json",
-                success: function (usuario) {
-                    //// ok
-                    if (usuario.proposals != undefined) {
-                        if (usuario.proposals.length == 1) {
-                            swal({
-                                title: "Existe",
-                                text: "Este detalle de rendición ya existe intente con otro",
-                                type: "warning",
-                                customClass: 'sweetalert-xs'
-                            });
-                            $("#txtNombreUsuario").val("");
-
-                        }
-                    }
-
-                },
-                error: function (error) {
-                    if (error.status.toString() == "500") {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                    else {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                }
-            });
-        };
 
         ko.applyBindings(new VotacionViewModel(data), self.elem);
 
