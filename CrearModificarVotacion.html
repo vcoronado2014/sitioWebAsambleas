@@ -9,7 +9,10 @@
     <meta name="author" content="Victor Coronado" />
     <title>Tricel</title>
     <!-- Bootstrap Core CSS -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="Content/datatables.boostrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylehseet" type="text/css" href="//cdn.datatables.net/responsive/1.0.1/css/dataTables.responsive.css" />
 
     <!-- Custom Fonts -->
     <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -49,6 +52,16 @@
     <script src="Scripts/sweetalert.js"></script>
     <script src="Scripts/pnotify.custom.min.js"></script>
     <script src="Scripts/moment.js"></script>
+
+    <!-- jQuery DataTables http://datatables.net -->
+    <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+
+    <!-- Bootstrap DataTables http://www.datatables.net/manual/styling/bootstrap -->
+    <script src="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <!-- Responsive DataTables http://www.datatables.net/extensions/responsive/ -->
+    <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
+
     <script src="const.js"></script>
     <script src="app_script/CrearModificarVotacion.js"></script>
 </head>
@@ -168,9 +181,37 @@
 
     </div>
 
+
+
     <div class="col-xs-12" style="padding-bottom:20px;">
     </div>
     <hr class="style17" style="width:100%;"/>
+
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Archivos del Tricel</div>
+            <div class="panel-body">
+                <!-- archivos del tricel -->
+                <table id="example" class="display" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><span data-bind="text: $json.RutaArchivo"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
 
     <div class="col-xs-6">
         <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width:100%;" data-bind="click: cancelar"/>

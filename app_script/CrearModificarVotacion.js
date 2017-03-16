@@ -166,6 +166,12 @@
 
         }
     }
+
+    function ListaViewModel(json)
+    {
+
+    }
+
     var id = getParameterByName('id');
     var elimina = getParameterByName('ELIMINAR');
     if (id > 0) {
@@ -188,11 +194,66 @@
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
                
                 self.details= "Pinche aqui para abrir";
-                //getNotify('success', 'Éxito', 'Recuperado con éxito!');
 
-                ko.applyBindings(new VotacionViewModel(data), self.elem);
+                //ko.applyBindings(new VotacionViewModel(data), self.elem);
 
+                var url = ObtenerUrl('ArchivoTricel') + "?TricelId=" + id;
 
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    success: function (json) {
+                        // ok
+
+                        elem = document.getElementById('example');
+
+                        //ko.applyBindings(new ListaViewModel(json), elem);
+
+                        if (json.length > 0)
+                        {
+
+                            $("#example").DataTable({
+                                responsive: true,
+                                language: {
+                                    "sProcessing": "Procesando...",
+                                    "sLengthMenu": "Mostrar _MENU_ registros",
+                                    "sZeroRecords": "No se encontraron resultados",
+                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                    "sInfo": "_START_ al _END_ total _TOTAL_ registros",
+                                    "sInfoEmpty": "0 al 0 total 0 registros",
+                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                    "sInfoPostFix": "",
+                                    "sSearch": "Buscar:",
+                                    "sUrl": "",
+                                    "bDestroy": true,
+                                    "sInfoThousands": ",",
+                                    "sLoadingRecords": "Cargando...",
+                                    "oPaginate": {
+                                        "sFirst": "Primero",
+                                        "sLast": "Último",
+                                        "sNext": "Siguiente",
+                                        "sPrevious": "Anterior"
+                                    },
+                                    "oAria": {
+                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                    }
+                                }
+                            });
+                        }
+                        ko.applyBindings(new ListaViewModel(json), elem);
+                        ko.applyBindings(new VotacionViewModel(data), self.elem);
+
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                    }
+                });
 
 
 
