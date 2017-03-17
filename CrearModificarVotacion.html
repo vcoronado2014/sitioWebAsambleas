@@ -28,6 +28,8 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet"/>
 
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
+    <link href="Content/morris.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
 
 
@@ -42,10 +44,14 @@
     <script src="Scripts/jquery-1.11.3.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="Scripts/bootstrap.min.js"></script>
+    <!-- Bootstrap http://getbootstrap.com -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <script src="Scripts/knockout-3.4.1.js"></script>
+    <!-- KnockoutJS http://knockoutjs.com/ -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+
+    <!-- KnockoutJS Mapping http://knockoutjs.com/documentation/plugins-mapping.html -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
 
 
     <script src="Scripts/jquery.validate.min.js"></script>
@@ -62,8 +68,15 @@
     <!-- Responsive DataTables http://www.datatables.net/extensions/responsive/ -->
     <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+
+    <script src="Scripts/morris.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+
     <script src="const.js"></script>
     <script src="app_script/CrearModificarVotacion.js"></script>
+    <!--<script src="app_script/ListarArchivosTricel.js"></script>-->
 </head>
 <body class="bodyFixed">
 <div class="container" id="principal">
@@ -191,23 +204,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">Archivos del Tricel</div>
             <div class="panel-body">
-                <!-- archivos del tricel -->
-                <table id="example" class="display" cellspacing="0" width="100%">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Nombre</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><span data-bind="text: $json.RutaArchivo"></span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- archivos del tricel-->
+                <select multiple="multiple" width="200px" data-bind="options: items.NombreCompleto"> </select>
             </div>
         </div>
 

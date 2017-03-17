@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_script/ListarArchivosTricel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarVotacion.html" afterPath="$PROJECT_DIR$/CrearModificarVotacion.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.js" afterPath="$PROJECT_DIR$/const.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,50 +24,64 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="7" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usuarios.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuarios.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="108" column="73" lean-forward="true" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListarVotacion.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_script/ListarVotacion.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="56" column="29" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="119" selection-end-column="7" />
-              <folding>
-                <element signature="e#1879#4182#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CrearModificarVotacion.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_script/CrearModificarVotacion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="243" column="73" lean-forward="false" selection-start-line="243" selection-start-column="73" selection-end-line="243" selection-end-column="73" />
+            <state relative-caret-position="255">
+              <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
               <folding>
-                <element signature="e#3713#6507#0" expanded="false" />
-                <element signature="e#14496#14650#0" expanded="false" />
-                <element signature="e#14725#16276#0" expanded="false" />
-                <element signature="e#16321#17020#0" expanded="false" />
-                <element signature="e#17066#17440#0" expanded="false" />
+                <element signature="e#64#395#0" expanded="false" />
+                <element signature="e#405#457#0" expanded="false" />
+                <element signature="e#506#914#0" expanded="false" />
+                <element signature="e#980#1724#0" expanded="false" />
+                <element signature="e#1764#2508#0" expanded="false" />
+                <element signature="e#4517#7311#0" expanded="false" />
+                <element signature="e#13316#13470#0" expanded="false" />
+                <element signature="e#13545#15096#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListarArchivosTricel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/ListarArchivosTricel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#52#0" expanded="false" />
+                <element signature="e#344#2746#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrearModificarUsuario.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarUsuario.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-306">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListarRendicion.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/ListarRendicion.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="50" column="19" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListarCalendario.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2244">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,60 +89,8 @@
       <file leaf-file-name="CrearModificarVotacion.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CrearModificarVotacion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="202" column="28" lean-forward="true" selection-start-line="202" selection-start-column="28" selection-end-line="202" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_script/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <element signature="e#30#2083#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuarios.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_script/Usuarios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="124" column="77" lean-forward="true" selection-start-line="124" selection-start-column="77" selection-end-line="124" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EliminarDocumento.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EliminarDocumento.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListarVotacion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarVotacion.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="15" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="120" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListarRendicion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarRendicion.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2822">
-              <caret line="166" column="27" lean-forward="false" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
+            <state relative-caret-position="467">
+              <caret line="203" column="41" lean-forward="true" selection-start-line="203" selection-start-column="41" selection-end-line="203" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -187,7 +151,6 @@
         <option value="$PROJECT_DIR$/Scripts/Inicio.js" />
         <option value="$PROJECT_DIR$/Scripts/ListarCalendario.js" />
         <option value="$PROJECT_DIR$/Scripts/CrearModificarVotacion.js" />
-        <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" />
         <option value="$PROJECT_DIR$/CrearModificarInstitucion.html" />
         <option value="$PROJECT_DIR$/CrearModificarUsuario.html" />
@@ -202,8 +165,10 @@
         <option value="$PROJECT_DIR$/app_script/Login.js" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/usuarios.html" />
-        <option value="$PROJECT_DIR$/CrearModificarVotacion.html" />
         <option value="$PROJECT_DIR$/app_script/ListarVotacion.js" />
+        <option value="$PROJECT_DIR$/const.js" />
+        <option value="$PROJECT_DIR$/app_script/ListarArchivosTricel.js" />
+        <option value="$PROJECT_DIR$/CrearModificarVotacion.html" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
       </list>
     </option>
@@ -215,10 +180,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
-    <option name="y" value="-88" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -376,6 +341,7 @@
       <workItem from="1489545031946" duration="1648000" />
       <workItem from="1489578763182" duration="2622000" />
       <workItem from="1489669320647" duration="6873000" />
+      <workItem from="1489711293920" duration="7443000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -395,15 +361,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29361000" />
+    <option name="totallyTimeSpent" value="36804000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-88" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -415,7 +382,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -431,29 +397,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/const.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uuarios.html" />
-    <entry file="file://$PROJECT_DIR$/login.aspx" />
-    <entry file="file://$PROJECT_DIR$/Inicio.aspx" />
     <entry file="file://$PROJECT_DIR$/CrearModificarIngresoEgreso.aspx" />
     <entry file="file://$PROJECT_DIR$/CrearModificarInstitucion.aspx" />
     <entry file="file://$PROJECT_DIR$/crearModificarUsuario.aspx" />
@@ -498,14 +446,6 @@
     <entry file="file://$PROJECT_DIR$/Scripts/ListarCalendario.js" />
     <entry file="file://$PROJECT_DIR$/Scripts/CrearModificarVotacion.js" />
     <entry file="file://$PROJECT_DIR$/Scripts/ListarVotacion.js" />
-    <entry file="file://$PROJECT_DIR$/const.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/Inicio.js" />
     <entry file="file://$PROJECT_DIR$/app_script/CrearModificarInstitucion.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -548,7 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="129" column="27" lean-forward="false" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -556,7 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3009">
           <caret line="177" column="27" lean-forward="false" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2465">
           <caret line="145" column="27" lean-forward="false" selection-start-line="145" selection-start-column="27" selection-end-line="145" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,58 +539,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListarVotacion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/Usuarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="124" column="77" lean-forward="true" selection-start-line="124" selection-start-column="77" selection-end-line="124" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuarios.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="108" column="73" lean-forward="true" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="73" />
+        <state relative-caret-position="1836">
+          <caret line="108" column="73" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="73" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
+            <element signature="n#!!block;n#getNotify#0" expanded="false" />
+            <element signature="n#!!block;n#revisarDigito#0" expanded="false" />
+            <element signature="n#!!block;n#revisarDigito2#0" expanded="false" />
+            <element signature="n#!!block;n#Rut#0" expanded="false" />
+            <element signature="n#!!block;n#validarEmail#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListarVotacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="133" selection-end-column="89" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_script/ListarVotacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="56" column="29" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="119" selection-end-column="7" />
+        <state relative-caret-position="273">
+          <caret line="57" column="21" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="119" selection-end-column="7" />
           <folding>
-            <element signature="e#1879#4182#0" expanded="false" />
+            <element signature="e#2115#4085#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/Usuarios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-236">
+          <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/Inicio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1666">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/ListarArchivosTricel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#52#0" expanded="false" />
+            <element signature="e#344#2746#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/ListarRendicion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="50" column="19" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CrearModificarVotacion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="202" column="28" lean-forward="true" selection-start-line="202" selection-start-column="28" selection-end-line="202" selection-end-column="28" />
+        <state relative-caret-position="467">
+          <caret line="203" column="41" lean-forward="true" selection-start-line="203" selection-start-column="41" selection-end-line="203" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarUsuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_script/CrearModificarVotacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="243" column="73" lean-forward="false" selection-start-line="243" selection-start-column="73" selection-end-line="243" selection-end-column="73" />
+        <state relative-caret-position="255">
+          <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
           <folding>
-            <element signature="e#3713#6507#0" expanded="false" />
-            <element signature="e#14496#14650#0" expanded="false" />
-            <element signature="e#14725#16276#0" expanded="false" />
-            <element signature="e#16321#17020#0" expanded="false" />
-            <element signature="e#17066#17440#0" expanded="false" />
+            <element signature="e#64#395#0" expanded="false" />
+            <element signature="e#405#457#0" expanded="false" />
+            <element signature="e#506#914#0" expanded="false" />
+            <element signature="e#980#1724#0" expanded="false" />
+            <element signature="e#1764#2508#0" expanded="false" />
+            <element signature="e#4517#7311#0" expanded="false" />
+            <element signature="e#13316#13470#0" expanded="false" />
+            <element signature="e#13545#15096#0" expanded="false" />
           </folding>
         </state>
       </provider>

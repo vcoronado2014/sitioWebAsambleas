@@ -73,7 +73,7 @@
     });
 
     $('[data-toggle="tooltip"]').tooltip()
-    function VotacionViewModel(data) {
+    function VotacionViewModel(data, dataR) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -98,6 +98,34 @@
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
+
+
+        var items = [];
+
+        var itemsProcesar = dataR;
+
+        if (itemsProcesar != null && itemsProcesar.proposals.length > 0) {
+            for (var i in itemsProcesar.proposals) {
+                var s = {
+                    NombreCompleto: itemsProcesar.proposals[i].NombreCompleto
+                }
+                items[i] = s;
+            }
+        }
+
+        self.items = ko.observableArray(items);
+        //self.items = ko.observableArray(ko.mapping.fromJS(items));
+
+
+        /*
+        if (dataR != null) {
+            //self.items = ko.observableArray(dataR); // <-------
+            self.items = ko.observableArray(ko.mapping.fromJS(dataR.proposals));
+        } else {
+            self.items = ko.observableArray();
+        }
+*/
+        //ko.mapping.fromJS(items, {}, self);
 
         guardar = function () {
             if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtFechaInicio").val(), $("#txtFechaTermino").val()))
@@ -167,11 +195,6 @@
         }
     }
 
-    function ListaViewModel(json)
-    {
-
-    }
-
     var id = getParameterByName('id');
     var elimina = getParameterByName('ELIMINAR');
     if (id > 0) {
@@ -202,47 +225,15 @@
                 $.ajax({
                     url: url,
                     type: "GET",
-                    success: function (json) {
+                    success: function (dataR) {
                         // ok
 
-                        elem = document.getElementById('example');
+                        elem = document.getElementById('principal');
 
-                        //ko.applyBindings(new ListaViewModel(json), elem);
+                        //var element = $('#principal')[0];
+                        //ko.cleanNode(element);
 
-                        if (json.length > 0)
-                        {
-
-                            $("#example").DataTable({
-                                responsive: true,
-                                language: {
-                                    "sProcessing": "Procesando...",
-                                    "sLengthMenu": "Mostrar _MENU_ registros",
-                                    "sZeroRecords": "No se encontraron resultados",
-                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                                    "sInfo": "_START_ al _END_ total _TOTAL_ registros",
-                                    "sInfoEmpty": "0 al 0 total 0 registros",
-                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                                    "sInfoPostFix": "",
-                                    "sSearch": "Buscar:",
-                                    "sUrl": "",
-                                    "bDestroy": true,
-                                    "sInfoThousands": ",",
-                                    "sLoadingRecords": "Cargando...",
-                                    "oPaginate": {
-                                        "sFirst": "Primero",
-                                        "sLast": "Último",
-                                        "sNext": "Siguiente",
-                                        "sPrevious": "Anterior"
-                                    },
-                                    "oAria": {
-                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                                    }
-                                }
-                            });
-                        }
-                        ko.applyBindings(new ListaViewModel(json), elem);
-                        ko.applyBindings(new VotacionViewModel(data), self.elem);
+                        ko.applyBindings(new VotacionViewModel(data, dataR), elem);
 
                     },
                     error: function (error) {
@@ -254,8 +245,6 @@
                         }
                     }
                 });
-
-
 
             },
             error: function (error) {
@@ -396,166 +385,7 @@
         return retorno;
     }
 
-    function getParameterByName(name, url) {
 
-        //// query string: ?foo=lorem&bar=&baz
-        //var foo = getParameterByName('foo'); // "lorem"
-        //var bar = getParameterByName('bar'); // "" (present with empty value)
-        //var baz = getParameterByName('baz'); // "" (present with no value)
-        //var qux = getParameterByName('qux'); // null (absent)
-
-        if (!url) {
-            url = window.location.href;
-        }
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-    function getNotify(type, title, message) {
-        if (type == 'error') {
-            new PNotify({
-                title: title,
-                text: message,
-                type: 'error'
-            });
-        }
-        if (type == 'success') {
-            new PNotify({
-                title: title,
-                text: message,
-                icon: 'glyphicon glyphicon-ok'
-            });
-        }
-    }
-
-    //
-    // Validador de Rut
-    // Descargado desde http://www.juque.cl/
-    //
-    function revisarDigito(dvr) {
-        dv = dvr + ""
-        if (dv != '0' && dv != '1' && dv != '2' && dv != '3' && dv != '4' && dv != '5' && dv != '6' && dv != '7' && dv != '8' && dv != '9' && dv != 'k' && dv != 'K') {
-            //alert("Debe ingresar un digito verificador valido");
-            getNotify('error', 'Dígito verificador', 'Debe ingresar un digito verificador valido.');
-            return false;
-        }
-        return true;
-    }
-
-    function revisarDigito2(crut) {
-        largo = crut.length;
-        if (largo < 2) {
-            //alert("Debe ingresar el rut completo")
-            getNotify('error', 'Incompleto', 'Debe ingresar el rut completo.');
-            return false;
-        }
-        if (largo > 2)
-            rut = crut.substring(0, largo - 1);
-        else
-            rut = crut.charAt(0);
-        dv = crut.charAt(largo - 1);
-        revisarDigito(dv);
-
-        if (rut == null || dv == null)
-            return 0
-
-        var dvr = '0'
-        suma = 0
-        mul = 2
-
-        for (i = rut.length - 1 ; i >= 0; i--) {
-            suma = suma + rut.charAt(i) * mul
-            if (mul == 7)
-                mul = 2
-            else
-                mul++
-        }
-        res = suma % 11
-        if (res == 1)
-            dvr = 'k'
-        else if (res == 0)
-            dvr = '0'
-        else {
-            dvi = 11 - res
-            dvr = dvi + ""
-        }
-        if (dvr != dv.toLowerCase()) {
-            //alert("EL rut es incorrecto")
-            getNotify('error', 'Incorrecto', 'El Rut es Incorrecto.');
-            return false
-        }
-
-        return true
-    }
-
-    function Rut(texto) {
-        var tmpstr = "";
-        for (i = 0; i < texto.length ; i++)
-            if (texto.charAt(i) != ' ' && texto.charAt(i) != '.' && texto.charAt(i) != '-')
-                tmpstr = tmpstr + texto.charAt(i);
-        texto = tmpstr;
-        largo = texto.length;
-
-        if (largo < 2) {
-            //alert("Debe ingresar el rut completo")
-            getNotify('error', 'Incompleto', 'Rut Incompleto.');
-            return false;
-        }
-
-        for (i = 0; i < largo ; i++) {
-            if (texto.charAt(i) != "0" && texto.charAt(i) != "1" && texto.charAt(i) != "2" && texto.charAt(i) != "3" && texto.charAt(i) != "4" && texto.charAt(i) != "5" && texto.charAt(i) != "6" && texto.charAt(i) != "7" && texto.charAt(i) != "8" && texto.charAt(i) != "9" && texto.charAt(i) != "k" && texto.charAt(i) != "K") {
-                //alert("El valor ingresado no corresponde a un R.U.T valido");
-                getNotify('error', 'Inválido', 'El Rut es Inválido.');
-                return false;
-            }
-        }
-
-        var invertido = "";
-        for (i = (largo - 1), j = 0; i >= 0; i--, j++)
-            invertido = invertido + texto.charAt(i);
-        var dtexto = "";
-        dtexto = dtexto + invertido.charAt(0);
-        dtexto = dtexto + '-';
-        cnt = 0;
-
-        for (i = 1, j = 2; i < largo; i++, j++) {
-            //alert("i=[" + i + "] j=[" + j +"]" );		
-            if (cnt == 3) {
-                dtexto = dtexto + '.';
-                j++;
-                dtexto = dtexto + invertido.charAt(i);
-                cnt = 1;
-            }
-            else {
-                dtexto = dtexto + invertido.charAt(i);
-                cnt++;
-            }
-        }
-
-        invertido = "";
-        for (i = (dtexto.length - 1), j = 0; i >= 0; i--, j++)
-            invertido = invertido + dtexto.charAt(i);
-
-        //window.document.form1.rut.value = invertido.toUpperCase()
-
-        if (revisarDigito2(texto))
-            return true;
-
-        return false;
-    }
-    function validarEmail(email) {
-        var retorno = true;
-        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (!expr.test(email)) {
-            getNotify('error', 'Email', "La dirección de correo " + email + " es incorrecta.")
-            //alert("Error: La dirección de correo " + email + " es incorrecta.");
-            retorno = false;
-        }
-        return retorno;
-    }
 
 
 });
