@@ -201,11 +201,91 @@
     <hr class="style17" style="width:100%;"/>
 
     <div class="col-xs-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">Archivos del Tricel</div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Archivos</div>
             <div class="panel-body">
-                <!-- archivos del tricel-->
-                <select multiple="multiple" width="200px" data-bind="options: items.NombreCompleto"> </select>
+                <!--
+                <ul class="list-group" data-bind="foreach: items">
+                    <li class="list-group-item list-group-item-success">
+                        <span class="badge"><i class="fa fa-download"></i> </span><span data-bind="text: NombreCompleto"></span>
+
+                    </li>
+                </ul>
+                -->
+                <!-- aca ahora ponemos el control para cargar archivos -->
+                <div class="col-xs-12 col-md-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Subir</div>
+                        <div class="panel-body">
+                    <div class="input-group">
+                        <div class="col-xs-12">
+                            <input type="file" class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9" />
+                        </div>
+                        <div class="col-xs-12">
+                            <input id="btnUploadFile" class="btn btn-success" type="button" value="Subir Archivo" />
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Archivos asociados</div>
+                        <div class="panel-body">
+                <table id="tablaArchivos" >
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: items">
+                    <tr>
+                        <td><a data-bind="attr: { href: $data.Url }" download="Descarga"><i class="fa fa-2x fa-download"></i></a>
+                            <!--
+                            <a data-bind="attr: { href: $data.Url }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fa fa-2x fa-edit"></i></a>
+                            <a data-bind="attr: { href: $data.UrlEliminar }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fa fa-2x fa-trash"></i></a>
+
+                             -->
+                        </td>
+                        <td data-bind="text: NombreCompleto"></td>
+                    </tr>
+                    <!-- /ko -->
+                    </tbody>
+                </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Listas</div>
+                        <div class="panel-body">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--
+                <table>
+                    <thead>
+                    <tr>
+                        <th>First name</th>
+
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: items">
+                    <tr>
+                        <td data-bind="text: NombreCompleto"></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                -->
+
             </div>
         </div>
 

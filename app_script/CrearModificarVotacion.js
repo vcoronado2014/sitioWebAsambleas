@@ -72,7 +72,10 @@
         }
     });
 
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
+
+    //$("#tablaArchivos").DataTable({});
+
     function VotacionViewModel(data, dataR) {
         var self = this;
         //self.people = ko.observableArray([]);
@@ -82,7 +85,7 @@
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         self.idUsuario = getParameterByName('idUsuario');
-
+        self.frmUrlDocumento = ko.observable("");
         self.elem = document.getElementById('principal');
 
         //del formulario
@@ -107,7 +110,8 @@
         if (itemsProcesar != null && itemsProcesar.proposals.length > 0) {
             for (var i in itemsProcesar.proposals) {
                 var s = {
-                    NombreCompleto: itemsProcesar.proposals[i].NombreCompleto
+                    NombreCompleto: itemsProcesar.proposals[i].NombreCompleto,
+                    Url: itemsProcesar.proposals[i].Url
                 }
                 items[i] = s;
             }
@@ -117,15 +121,6 @@
         //self.items = ko.observableArray(ko.mapping.fromJS(items));
 
 
-        /*
-        if (dataR != null) {
-            //self.items = ko.observableArray(dataR); // <-------
-            self.items = ko.observableArray(ko.mapping.fromJS(dataR.proposals));
-        } else {
-            self.items = ko.observableArray();
-        }
-*/
-        //ko.mapping.fromJS(items, {}, self);
 
         guardar = function () {
             if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtFechaInicio").val(), $("#txtFechaTermino").val()))
@@ -230,10 +225,47 @@
 
                         elem = document.getElementById('principal');
 
-                        //var element = $('#principal')[0];
-                        //ko.cleanNode(element);
-
                         ko.applyBindings(new VotacionViewModel(data, dataR), elem);
+
+                        //if (dataR != null && dataR.length > 0) {
+                            $("#tablaArchivos").DataTable({
+                                responsive: true,
+                                language: {
+                                    "sProcessing": "Procesando...",
+                                    "sLengthMenu": "Ver _MENU_",
+                                    "sZeroRecords": "No se encontraron resultados",
+                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                    "sInfo": "_START_ al _END_  total  _TOTAL_",
+                                    "sInfoEmpty": "0 al 0 total de 0",
+                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                    "sInfoPostFix": "",
+                                    "sSearch": "Buscar:",
+                                    "sUrl": "",
+                                    "bDestroy": true,
+                                    "sInfoThousands": ",",
+                                    "sLoadingRecords": "Cargando...",
+                                    "oPaginate": {
+                                        "sFirst": "<<",
+                                        "sLast": ">>",
+                                        "sNext": ">",
+                                        "sPrevious": "<"
+                                    },
+                                    "oAria": {
+                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                    }
+                                },
+                                "autowidth": false,
+                                "aoColumns": [
+                                    {sWidth: "30%", bSearchable: false, bSortable: false},
+                                    {sWidth: "70%", bSearchable: false, bSortable: false}
+                                ],
+                                "order": [
+                                    [1, "asc"]
+                                ]
+
+                            });
+                       // }
 
                     },
                     error: function (error) {
