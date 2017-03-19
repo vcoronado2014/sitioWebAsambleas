@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+
+    $('[data-toggle="tooltip"]').tooltip();
     if (sessionStorage != null) {
 
         if (sessionStorage.getItem("Id") != null) {
@@ -76,7 +78,7 @@
 
     //$("#tablaArchivos").DataTable({});
 
-    function VotacionViewModel(data, dataR) {
+    function VotacionViewModel(data, dataR, dataT) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -111,14 +113,32 @@
             for (var i in itemsProcesar.proposals) {
                 var s = {
                     NombreCompleto: itemsProcesar.proposals[i].NombreCompleto,
-                    Url: itemsProcesar.proposals[i].Url
+                    Url: itemsProcesar.proposals[i].Url,
+                    UrlEliminar: itemsProcesar.proposals[i].UrlEliminar
                 }
                 items[i] = s;
             }
         }
 
         self.items = ko.observableArray(items);
-        //self.items = ko.observableArray(ko.mapping.fromJS(items));
+
+        var itemsT = [];
+
+        var itemsProcesarT = dataT;
+
+        if (itemsProcesarT != null && itemsProcesarT.proposals.length > 0) {
+            for (var i in itemsProcesarT.proposals) {
+                var s = {
+                    NombreCompleto: itemsProcesarT.proposals[i].NombreUsuario,
+                    Url: itemsProcesarT.proposals[i].Url,
+                    UrlEliminar: itemsProcesarT.proposals[i].UrlEliminar,
+                    Objetivo:itemsProcesarT.proposals[i].NombreCompleto
+                }
+                itemsT[i] = s;
+            }
+        }
+
+        self.itemsT = ko.observableArray(itemsT);
 
 
 
@@ -147,6 +167,11 @@
                     dataType: "json",
                     success: function (result) {
                         //TODO OK INFORMAR EL GUARDADO CORRECTO
+                        var idRecuperado = 0;
+                        var eliminado = getParameterByName('ELIMINAR');
+                        if (result != null)
+                            idRecuperado = result.Id;
+
 
                         swal({
                                 title: "Guardado",
@@ -163,7 +188,8 @@
                             function (isConfirm) {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    window.location.href = "ListarVotacion.html";
+                                    //CrearModificarVotacion.html?id=3&ELIMINAR=0
+                                    window.location.href = "CrearModificarVotacion.html?id=" + idRecuperado + "&ELIMINAR=0";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
                                 }
@@ -188,6 +214,94 @@
             window.location.href = "ListarVotacion.html";
 
         }
+        guardarArchivo = function () {
+            var id = getParameterByName('id');
+            var eliminado = getParameterByName('ELIMINAR');
+
+            if (id != "0") {
+
+                var files = $("#txtArchivo").get(0).files;
+                var model = new FormData();
+                model.append("TriId", id);
+                model.append("UploadedImage", files[0]);
+
+
+                swal({
+                    title: "Subir",
+                    text: "¿Está seguro de subir este archivo?",
+                    type: "info",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    customClass: 'sweetalert-xs',
+                    showLoaderOnConfirm: true
+                }, function (isConfirm) {
+                    if (isConfirm) {
+
+
+                        setTimeout(function () {
+
+                            $.ajax({
+                                url: ObtenerUrl('ArchivoTricel'),
+                                type: 'POST',
+                                dataType: 'json',
+                                data: model,
+                                processData: false,
+                                contentType: false,// not json
+                                complete: function (data) {
+
+                                    swal({
+                                            title: "Guardado",
+                                            text: "El Registro ha sido guardado con éxito.",
+                                            type: "success",
+                                            showCancelButton: false,
+                                            confirmButtonClass: "btn-success",
+                                            confirmButtonText: "Ok",
+                                            cancelButtonText: "No, cancel plx!",
+                                            closeOnConfirm: true,
+                                            customClass: 'sweetalert-xs',
+                                            closeOnCancel: false
+                                        },
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                window.location.href = "CrearModificarVotacion.html?id=" + id + "&ELIMINAR=" + eliminado;
+
+
+                                            } else {
+                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                            }
+                                        });
+
+                                }
+                            });
+
+                        }, 2000);
+
+                    }
+                    else {
+                        window.location.href = "ListarVotacion.html";
+                    }
+                });
+            }
+            else
+            {
+                getNotify('error', 'Guardar', 'Debe Guardar antes de agregar un archivo.');
+            }
+
+
+
+        }
+
+        crearLista = function(){
+            var id = getParameterByName('id');
+            if (id != "0") {
+                window.location.href = "CrearModificarListaTricel.html?id=0&ELIMINAR=0&triId=" + id;
+            }
+            else
+            {
+                getNotify('error', 'Guardar', 'Debe Guardar antes de crear una Lista.');
+            }
+        }
+
     }
 
     var id = getParameterByName('id');
@@ -210,73 +324,12 @@
                 self.frmFechaInicio = data.proposals[0].OtroUno;
                 self.frmFechaTermino = data.proposals[0].OtroDos;
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
-               
+
                 self.details= "Pinche aqui para abrir";
 
                 //ko.applyBindings(new VotacionViewModel(data), self.elem);
 
-                var url = ObtenerUrl('ArchivoTricel') + "?TricelId=" + id;
-
-                $.ajax({
-                    url: url,
-                    type: "GET",
-                    success: function (dataR) {
-                        // ok
-
-                        elem = document.getElementById('principal');
-
-                        ko.applyBindings(new VotacionViewModel(data, dataR), elem);
-
-                        //if (dataR != null && dataR.length > 0) {
-                            $("#tablaArchivos").DataTable({
-                                responsive: true,
-                                language: {
-                                    "sProcessing": "Procesando...",
-                                    "sLengthMenu": "Ver _MENU_",
-                                    "sZeroRecords": "No se encontraron resultados",
-                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                                    "sInfo": "_START_ al _END_  total  _TOTAL_",
-                                    "sInfoEmpty": "0 al 0 total de 0",
-                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                                    "sInfoPostFix": "",
-                                    "sSearch": "Buscar:",
-                                    "sUrl": "",
-                                    "bDestroy": true,
-                                    "sInfoThousands": ",",
-                                    "sLoadingRecords": "Cargando...",
-                                    "oPaginate": {
-                                        "sFirst": "<<",
-                                        "sLast": ">>",
-                                        "sNext": ">",
-                                        "sPrevious": "<"
-                                    },
-                                    "oAria": {
-                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                                    }
-                                },
-                                "autowidth": false,
-                                "aoColumns": [
-                                    {sWidth: "30%", bSearchable: false, bSortable: false},
-                                    {sWidth: "70%", bSearchable: false, bSortable: false}
-                                ],
-                                "order": [
-                                    [1, "asc"]
-                                ]
-
-                            });
-                       // }
-
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
+               cargarGrilla(data);
 
             },
             error: function (error) {
@@ -301,7 +354,7 @@
 
             swal({
                 title: "Eliminar",
-                text: "¿Está seguro de eliminar a este Tricel?",
+                text: "¿Está seguro de eliminar a este Tricel?, se eliminarán las Listas y Archivos asociados.",
                 type: "info",
                 showCancelButton: true,
                 closeOnConfirm: false,
@@ -377,6 +430,59 @@
 
     }
 
+
+    function cargarGrilla(data)
+    {
+        //items([]);
+
+        var url = ObtenerUrl('ArchivoTricel') + "?TricelId=" + id;
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function (dataR) {
+                // ok
+                $.ajax({
+                    url: ObtenerUrl('ListaTricel'),
+                    type: "POST",
+                    data: ko.toJSON({ TriId: id }),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (dataT) {
+                        // ok
+
+                        elem = document.getElementById('principal');
+
+                        ko.cleanNode(elem);
+
+                        ko.applyBindings(new VotacionViewModel(data, dataR, dataT), elem);
+
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                    }
+                });
+
+
+
+            },
+            error: function (error) {
+                if (error.status.toString() == "500") {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+                else {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+            }
+        });
+
+    }
+
     function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined) {
@@ -416,7 +522,6 @@
         */
         return retorno;
     }
-
 
 
 

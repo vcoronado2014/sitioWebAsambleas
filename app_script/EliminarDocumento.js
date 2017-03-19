@@ -1,9 +1,11 @@
 ﻿$(document).ready(function () {
+    var tipo = getParameterByName('tipo');
     var id = getParameterByName('id');
+
 
     swal({
         title: "Eliminar",
-        text: "¿Está seguro de eliminar a este Movimiento?",
+        text: "¿Está seguro de eliminar?",
         type: "info",
         showCancelButton: true,
         closeOnConfirm: false,
@@ -13,45 +15,94 @@
         if (isConfirm) {
 
             setTimeout(function () {
-                $.ajax({
-                    url: ObtenerUrl('FileNuevo') + "?id=" + id,
-                    type: "GET",
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (data) {
 
-                        swal({
-                            title: "Eliminado",
-                            text: "El Registro ha sido eliminado con éxito.",
-                            type: "success",
-                            showCancelButton: false,
-                            confirmButtonClass: "btn-success",
-                            confirmButtonText: "Ok",
-                            cancelButtonText: "No, cancel plx!",
-                            closeOnConfirm: true,
-                            customClass: 'sweetalert-xs',
-                            closeOnCancel: false
+                if (tipo=='documentousuario') {
+
+                    $.ajax({
+                        url: ObtenerUrl('FileNuevo') + "?id=" + id,
+                        type: "GET",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+
+                            swal({
+                                    title: "Eliminado",
+                                    text: "El Registro ha sido eliminado con éxito.",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonClass: "btn-success",
+                                    confirmButtonText: "Ok",
+                                    cancelButtonText: "No, cancel plx!",
+                                    closeOnConfirm: true,
+                                    customClass: 'sweetalert-xs',
+                                    closeOnCancel: false
+                                },
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        window.location.href = "ListarDocumento.html";
+
+
+                                    } else {
+                                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                    }
+                                });
+
                         },
-                        function (isConfirm) {
-                            if (isConfirm) {
-                                window.location.href = "ListarDocumento.html";
-
-
-                            } else {
-                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
                             }
-                        });
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                }
+                if (tipo=='archivotricel') {
 
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
+                    var tricelId = getParameterByName('tricelId');
+
+                    $.ajax({
+                        url: ObtenerUrl('ArchivoTricel'),
+                        type: "DELETE",
+                        data: ko.toJSON({ Id: id }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+
+                            swal({
+                                    title: "Eliminado",
+                                    text: "El Registro ha sido eliminado con éxito.",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonClass: "btn-success",
+                                    confirmButtonText: "Ok",
+                                    cancelButtonText: "No, cancel plx!",
+                                    closeOnConfirm: true,
+                                    customClass: 'sweetalert-xs',
+                                    closeOnCancel: false
+                                },
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        window.location.href = "CrearModificarVotacion.html?id=" + tricelId + "&ELIMINAR=0";
+
+
+                                    } else {
+                                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                    }
+                                });
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
                         }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
+                    });
+                }
 
             }, 2000);
 
