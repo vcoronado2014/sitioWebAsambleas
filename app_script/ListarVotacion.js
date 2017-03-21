@@ -54,7 +54,7 @@
 
     }
     $.ajax({
-        url: ObtenerUrl('Votacion'),
+        url: ObtenerUrl('Tricel'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
         contentType: "application/json",

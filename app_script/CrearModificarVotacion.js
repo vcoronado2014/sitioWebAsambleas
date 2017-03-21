@@ -160,7 +160,7 @@
                 };
 
                 $.ajax({
-                    url: ObtenerUrl('Votacion'),
+                    url: ObtenerUrl('Tricel'),
                     type: "PUT",
                     data: ko.toJSON(tricel),
                     contentType: "application/json",
@@ -310,7 +310,7 @@
 
 
         $.ajax({
-            url: ObtenerUrl('Votacion'),
+            url: ObtenerUrl('Tricel'),
             type: "POST",
             data: ko.toJSON({ BuscarId: id, InstId: sessionStorage.getItem("InstId") }),
             contentType: "application/json",
@@ -367,7 +367,7 @@
                         setTimeout(function () {
 
                             $.ajax({
-                                url: ObtenerUrl('Votacion'),
+                                url: ObtenerUrl('Tricel'),
                                 type: "DELETE",
                                 data: ko.toJSON({ Id: id }),
                                 contentType: "application/json",
