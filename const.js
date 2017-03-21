@@ -1,13 +1,7 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    //return 'http://api.asambleas.cl/api/' + api;
-    return 'http://localhost:50929/api/' + api;
-    //http://172.16.116.138/apiasambleas/api/
-}
-﻿function ObtenerUrlDos(api)
-{
-    //return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
-    return 'http://localhost:58013/api/' + api;
+    return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://localhost:48909/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 function getParameterByName(name, url) {

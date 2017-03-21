@@ -201,7 +201,7 @@ $(document).ready(function () {
 
 
         $.ajax({
-            url: ObtenerUrlDos('Votacion'),
+            url: ObtenerUrl('Tricel'),
             type: "POST",
             data: ko.toJSON({ BuscarId: triId, InstId: sessionStorage.getItem("InstId") }),
             contentType: "application/json",
@@ -350,7 +350,7 @@ $(document).ready(function () {
         var data = [];
 
         $.ajax({
-            url: ObtenerUrlDos('Votacion'),
+            url: ObtenerUrl('Tricel'),
             type: "POST",
             data: ko.toJSON({ BuscarId: triId, InstId: sessionStorage.getItem("InstId") }),
             contentType: "application/json",
