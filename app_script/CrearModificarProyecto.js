@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+/**
+ * Created by VICTOR CORONADO on 21/03/2017.
+ */
+$(document).ready(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
     if (sessionStorage != null) {
@@ -96,6 +99,7 @@
         self.frmFechaInicio = ko.observable("");
         self.frmFechaTermino = ko.observable("");
         self.frmFechaCreacion = ko.observable("");
+        self.frmMonto = ko.observable("");
 
         self.details = ko.observable("Pinche aquí para abrir");
 
@@ -149,6 +153,7 @@
                 var objetivo = $("#txtObjetivo").val();
                 var fechaInicio = $("#txtFechaInicio").val();
                 var fechaTermino = $("#txtFechaTermino").val();
+                var monto = $("#txtMonto").val();
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -156,11 +161,12 @@
                     FechaTermino: fechaTermino,
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
+                    Monto: monto,
                     Id: getParameterByName('id')
                 };
 
                 $.ajax({
-                    url: ObtenerUrlDos('Votacion'),
+                    url: ObtenerUrlDos('Proyecto'),
                     type: "PUT",
                     data: ko.toJSON(tricel),
                     contentType: "application/json",
@@ -189,7 +195,7 @@
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     //CrearModificarVotacion.html?id=3&ELIMINAR=0
-                                    window.location.href = "CrearModificarVotacion.html?id=" + idRecuperado + "&ELIMINAR=0";
+                                    window.location.href = "CrearModificarProyecto.html?id=" + idRecuperado + "&ELIMINAR=0";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
                                 }
@@ -211,7 +217,7 @@
 
 
         cancelar = function () {
-            window.location.href = "ListarVotacion.html";
+            window.location.href = "ListarProyecto.html";
 
         }
         guardarArchivo = function () {
@@ -241,7 +247,7 @@
                         setTimeout(function () {
 
                             $.ajax({
-                                url: ObtenerUrl('ArchivoTricel'),
+                                url: ObtenerUrl('ArchivoProyecto'),
                                 type: 'POST',
                                 dataType: 'json',
                                 data: model,
@@ -263,7 +269,7 @@
                                         },
                                         function (isConfirm) {
                                             if (isConfirm) {
-                                                window.location.href = "CrearModificarVotacion.html?id=" + id + "&ELIMINAR=" + eliminado;
+                                                window.location.href = "CrearModificarProyecto.html?id=" + id + "&ELIMINAR=" + eliminado;
 
 
                                             } else {
@@ -278,7 +284,7 @@
 
                     }
                     else {
-                        window.location.href = "ListarVotacion.html";
+                        window.location.href = "ListarProyecto.html";
                     }
                 });
             }
@@ -291,17 +297,6 @@
 
         }
 
-        crearLista = function(){
-            var id = getParameterByName('id');
-            if (id != "0") {
-                window.location.href = "CrearModificarListaTricel.html?id=0&ELIMINAR=0&triId=" + id;
-            }
-            else
-            {
-                getNotify('error', 'Guardar', 'Debe Guardar antes de crear una Lista.');
-            }
-        }
-
     }
 
     var id = getParameterByName('id');
@@ -310,7 +305,7 @@
 
 
         $.ajax({
-            url: ObtenerUrlDos('Votacion'),
+            url: ObtenerUrlDos('Proyecto'),
             type: "POST",
             data: ko.toJSON({ BuscarId: id, InstId: sessionStorage.getItem("InstId") }),
             contentType: "application/json",
@@ -324,12 +319,13 @@
                 self.frmFechaInicio = data.proposals[0].OtroUno;
                 self.frmFechaTermino = data.proposals[0].OtroDos;
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
+                self.frmMonto = data.proposals[0].OtroCuatro;
 
                 self.details= "Pinche aqui para abrir";
 
                 //ko.applyBindings(new VotacionViewModel(data), self.elem);
 
-               cargarGrilla(data);
+                cargarGrilla(data);
 
             },
             error: function (error) {
@@ -350,11 +346,12 @@
             $("#txtFechaInicio").attr('disabled', 'disabled');
             $("#txtObjetivo").attr('disabled', 'disabled');
             $("#txtNombreUsuario").attr('disabled', 'disabled');
+            $("#txtMonto").attr('disabled', 'disabled');
 
 
             swal({
                 title: "Eliminar",
-                text: "¿Está seguro de eliminar a este Tricel?, se eliminarán las Listas y Archivos asociados.",
+                text: "¿Está seguro de eliminar a este Proyecto?, se eliminarán los Archivos asociados.",
                 type: "info",
                 showCancelButton: true,
                 closeOnConfirm: false,
@@ -362,19 +359,19 @@
                 showLoaderOnConfirm: true
             }, function (isConfirm) {
                 if (isConfirm) {
-                    
 
-                        setTimeout(function () {
 
-                            $.ajax({
-                                url: ObtenerUrlDos('Votacion'),
-                                type: "DELETE",
-                                data: ko.toJSON({ Id: id }),
-                                contentType: "application/json",
-                                dataType: "json",
-                                success: function (dataF) {
-                                    //ok
-                                    swal({
+                    setTimeout(function () {
+
+                        $.ajax({
+                            url: ObtenerUrlDos('Proyecto'),
+                            type: "DELETE",
+                            data: ko.toJSON({ Id: id }),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataF) {
+                                //ok
+                                swal({
                                         title: "Eliminado",
                                         text: "El Registro ha sido eliminado con éxito.",
                                         type: "success",
@@ -389,33 +386,33 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                            window.location.href = "ListarVotacion.html";
+                                            window.location.href = "ListarProyecto.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
                                         }
                                     });
 
-                                    //swal("Eliminado con éxito!");
-                                },
-                                error: function (error) {
-                                    if (error.status.toString() == "500") {
-                                        //getNotify('error', 'Error', 'Error de Servidor!');
-                                        swal("Error de Servidor");
-                                    }
-                                    else {
-                                        //getNotify('error', 'Error', 'Error de Servidor!');
-                                        swal("Error de Servidor");
-                                    }
+                                //swal("Eliminado con éxito!");
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
                                 }
-                            });
+                                else {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                            }
+                        });
 
-                            //swal("Ajax request finished!");
+                        //swal("Ajax request finished!");
 
-                        }, 2000);
-  
+                    }, 2000);
+
                 }
                 else {
-                    window.location.href = "ListarVotacion.html";
+                    window.location.href = "ListarProyecto.html";
                 }
             });
 
@@ -435,40 +432,18 @@
     {
         //items([]);
 
-        var url = ObtenerUrl('ArchivoTricel') + "?TricelId=" + id;
+        var url = ObtenerUrl('ArchivoProyecto') + "?TricelId=" + id;
 
         $.ajax({
             url: url,
             type: "GET",
             success: function (dataR) {
-                // ok
-                $.ajax({
-                    url: ObtenerUrl('ListaTricel'),
-                    type: "POST",
-                    data: ko.toJSON({ TriId: id }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (dataT) {
-                        // ok
 
-                        elem = document.getElementById('principal');
+                elem = document.getElementById('principal');
 
-                        ko.cleanNode(elem);
+                ko.cleanNode(elem);
 
-                        ko.applyBindings(new VotacionViewModel(data, dataR, dataT), elem);
-
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
-
-
+                ko.applyBindings(new VotacionViewModel(data, dataR, []), elem);
 
             },
             error: function (error) {
@@ -501,25 +476,7 @@
             getNotify('error', 'Requerido', 'Fecha Término Requerida.');
             retorno = false;
         }
-        //comparacion de fechas, basicamente la fecha de termino no puede ser menor
-        //a la fecha de inicio
-        //y la fecha de inicio y termino no pueden ser menor a la fecha actual
-        /*
-        var ahora = moment();
-        var inicio = moment(FechaInicio);
-        var termino = moment(FechaTermino);
-        //primero la diferencia entre el inicio y el termino
-        if (inicio.diff(termino) <= 0)
-        {
-            getNotify('error', 'Fechas', 'Fecha de término no puede ser mayor a la deinicio.');
-            retorno = false;
-        }
-        if (ahora.diff(inicio) <= 0 && ahora.diff(termino) <=0)
-        {
-            getNotify('error', 'Fechas', 'Fecha de inicio y término no pueden ser menor a la actual.');
-            retorno = false;
-        }
-        */
+
         return retorno;
     }
 

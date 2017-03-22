@@ -1,4 +1,7 @@
-﻿$(function () {
+/**
+ * Created by VICTOR CORONADO on 21/03/2017.
+ */
+$(function () {
 
     $('#principal').hide();
     $('#loading').show();
@@ -54,7 +57,7 @@
 
     }
     $.ajax({
-        url: ObtenerUrlDos('Votacion'),
+        url: ObtenerUrlDos('Proyecto'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
         contentType: "application/json",
@@ -93,14 +96,6 @@
                         "oAria": {
                             "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
                             "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
-                    },
-                    fnRowCallback: function (nRow, data, iDisplayIndex, iDisplayIndexFull) {
-                        if (data[5] == '<span class="label label-success" data-bind="text: $data.OtroCuatro">0</span>') {
-                            $('td', nRow).css('background-color', 'blanchedalmond');
-                        }
-                        else  {
-                            $('td', nRow).css('background-color', 'white');
                         }
                     }
                 });
