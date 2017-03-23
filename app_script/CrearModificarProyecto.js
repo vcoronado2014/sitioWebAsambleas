@@ -100,6 +100,8 @@ $(document).ready(function () {
         self.frmFechaTermino = ko.observable("");
         self.frmFechaCreacion = ko.observable("");
         self.frmMonto = ko.observable("");
+        self.frmBeneficios = ko.observable("");
+        self.frmDescripcion = ko.observable("");
 
         self.details = ko.observable("Pinche aquí para abrir");
 
@@ -130,7 +132,7 @@ $(document).ready(function () {
 
         var itemsProcesarT = dataT;
 
-        if (itemsProcesarT != null && itemsProcesarT.proposals.length > 0) {
+        if (itemsProcesarT != null && itemsProcesarT.length > 0) {
             for (var i in itemsProcesarT.proposals) {
                 var s = {
                     NombreCompleto: itemsProcesarT.proposals[i].NombreUsuario,
@@ -154,6 +156,8 @@ $(document).ready(function () {
                 var fechaInicio = $("#txtFechaInicio").val();
                 var fechaTermino = $("#txtFechaTermino").val();
                 var monto = $("#txtMonto").val();
+                var beneficios = $("#txtBeneficios").val();
+                var descripcion = $("#txtDescripcion").val();
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -161,7 +165,9 @@ $(document).ready(function () {
                     FechaTermino: fechaTermino,
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
-                    Monto: monto,
+                    Costo: monto,
+                    Beneficios: beneficios,
+                    Descripcion: descripcion,
                     Id: getParameterByName('id')
                 };
 
@@ -228,7 +234,7 @@ $(document).ready(function () {
 
                 var files = $("#txtArchivo").get(0).files;
                 var model = new FormData();
-                model.append("TriId", id);
+                model.append("ProId", id);
                 model.append("UploadedImage", files[0]);
 
 
@@ -247,7 +253,7 @@ $(document).ready(function () {
                         setTimeout(function () {
 
                             $.ajax({
-                                url: ObtenerUrl('ArchivoProyecto'),
+                                url: ObtenerUrlDos('ArchivoProyecto'),
                                 type: 'POST',
                                 dataType: 'json',
                                 data: model,
@@ -320,6 +326,8 @@ $(document).ready(function () {
                 self.frmFechaTermino = data.proposals[0].OtroDos;
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
                 self.frmMonto = data.proposals[0].OtroCuatro;
+                self.frmBeneficios = data.proposals[0].Rol;
+                self.frmDescripcion = data.proposals[0].OtroSeis;
 
                 self.details= "Pinche aqui para abrir";
 
@@ -347,7 +355,8 @@ $(document).ready(function () {
             $("#txtObjetivo").attr('disabled', 'disabled');
             $("#txtNombreUsuario").attr('disabled', 'disabled');
             $("#txtMonto").attr('disabled', 'disabled');
-
+            $("#txtBeneficios").attr('disabled', 'disabled');
+            $("#txtDescripcion").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",
@@ -432,7 +441,7 @@ $(document).ready(function () {
     {
         //items([]);
 
-        var url = ObtenerUrl('ArchivoProyecto') + "?TricelId=" + id;
+        var url = ObtenerUrlDos('ArchivoProyecto') + "?ProyectoId=" + id;
 
         $.ajax({
             url: url,
@@ -458,7 +467,7 @@ $(document).ready(function () {
 
     }
 
-    function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino) {
+    function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino, Beneficios) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined) {
             getNotify('error', 'Requerido', 'Nombre Requerido.');
@@ -476,7 +485,10 @@ $(document).ready(function () {
             getNotify('error', 'Requerido', 'Fecha Término Requerida.');
             retorno = false;
         }
-
+        if (Beneficios === '' || Beneficios === null) {
+            getNotify('error', 'Requerido', 'Beneficio Requerido.');
+            retorno = false;
+        }
         return retorno;
     }
 
