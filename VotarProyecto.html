@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
+    <meta name="author" content="Victor Coronado" />
+    <title>Votar Proyecto</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- metis menu -->
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- sb admin -->
+    <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
+    <link href="Content/morris.css" rel="stylesheet" />
+    <link href="Content/sweetalert.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/knockout-3.4.1.js"></script>
+
+
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/moment.js"></script>
+
+    <script src="Scripts/lib/raphael.min.js"></script>
+    <script src="Scripts/morris.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+    <script src="Scripts/sb-admin-2.js"></script>
+    <script src="Scripts/metisMenu.js"></script>
+    <script src="Scripts/sweetalert.js"></script>
+    <script src="const.js"></script>
+
+    <script src="app_script/VotarProyecto.js"></script>
+
+
+
+</head>
+<body class="bodyFixed">
+    <div class="container" id="loading">
+
+</div>
+
+    <div class="container" id="principal">
+        <!-- encabezado -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-right: 70px;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Inicio.html" data-bind="text: nombreInstitucion"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                        <li><a href="login.html" id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="usuarios.html">Usuarios</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a data-bind="visible: shouldShowMessage" href="ListarInstitucion.html">Intituciones</a></li>
+                                <li data-bind="visible: shouldShowMessage" role="separator" class="divider"></li>
+                                <li><a href="ListarRendicion.html">Rendiciones</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="ListarDocumento.html">Documentos de Usuario</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="ListarCalendario.html">Calendario</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" data-bind="visible: shouldShowMessage">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-bind="visible: shouldShowMessage" href="ListarVotacion.html">Listar Triceles</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" data-bind="visible: shouldShowMessage">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-bind="visible: shouldShowMessage" href="ListarProyecto.html">Listar Proyectos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </nav>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span  data-bind="text: nombreCompleto"></span></a>
+                <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
+            </div>
+        </nav>
+
+        <div class="col-xs-12 page-header">
+            <h3>Votar <small>Proyecto</small></h3>
+        </div>
+
+        <div class="alert alert-success col-xs-12" role="alert">
+            <div class="col-xs-12">
+                <strong><i>
+                    <h4>Info <small>del Proyecto</small></h4>
+
+                </i> </strong>
+            </div>
+            <div class="col-xs-12">
+                <ul data-bind="foreach: itemsP">
+                    <div class="pull-right">
+                        <i><strong><span data-bind="text: fechas"></span></i> </strong>
+                    </div>
+                    <li>
+                        <i> <span>Nombre Proyecto: </span></i>
+                        <span data-bind="text: nombre"></span>
+                    </li>
+                    <li>
+                        <i> <span>Objetivo: </span></i>
+                        <span data-bind="text: objetivo"></span>
+                    </li>
+                    <li>
+                        <i><span>Beneficios: </span></i>
+                        <span data-bind="text: beneficios"></span>
+                    </li>
+                    <li>
+                        <i><span>Descripción: </span></i>
+                        <span data-bind="text: descripcion"></span>
+                    </li>
+                    <li>
+                        <strong>
+                            <i><span>Monto: </span></i>
+                        <span data-bind="text: monto"></span>
+                        </strong>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert alert-info col-xs-12" role="alert">
+            <i class="fa fa-3x fa-info-circle pull-left"></i>
+            <p data-bind="text: textoVoto"></p>
+        </div>
+
+        <div class="jumbotron">
+            <div class="col-md-9 col-xs-12">
+                <h3 class="text-info">¡Vota por el Proyecto!</h3>
+                <h4 class="text-justify text-info">A continuación puedes realizar el voto por el Proyecto, tienes 2 opciones, debes hacer click en el botón <i class="fa fa-check"></i> si estas de acuerdo y en el botón <i class="fa fa-times danger"></i> si no lo estás. </h4>
+                <button type="button" data-bind="click: volver" class="btn btn-info btn-circle btn-xl" data-toggle="tooltip" data-placement="bottom" title="Volver"><i class="fa fa-reply"></i>
+                </button>
+                <p class="text-right">
+                    <button type="button" class="btn btn-info btn-circle btn-xl" data-bind="click: votarPositivo, visible: visibleBoton"><i class="fa fa-check"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-danger btn-circle btn-xl" data-bind="click: votarNegativo, visible: visibleBoton"><i class="fa fa-times"></i>
+                    </button>
+
+                </p>
+            </div>
+            <div class="col-md-3 col-xs-12 text-center">
+
+                <div id="graph"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

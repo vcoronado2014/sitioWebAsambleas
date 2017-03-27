@@ -78,7 +78,7 @@
 
     //$("#tablaArchivos").DataTable({});
 
-    function VotacionViewModel(data, dataR, dataT) {
+    function VotacionViewModel(data, dataR, dataT, dataU) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -97,6 +97,9 @@
         self.frmFechaTermino = ko.observable("");
         self.frmFechaCreacion = ko.observable("");
 
+        self.usuarios  = ko.observableArray(dataU);
+
+
         self.details = ko.observable("Pinche aquí para abrir");
 
         if (sessionStorage.getItem("RolId") == '1')
@@ -109,14 +112,18 @@
 
         var itemsProcesar = dataR;
 
-        if (itemsProcesar != null && itemsProcesar.proposals.length > 0) {
-            for (var i in itemsProcesar.proposals) {
-                var s = {
-                    NombreCompleto: itemsProcesar.proposals[i].NombreCompleto,
-                    Url: itemsProcesar.proposals[i].Url,
-                    UrlEliminar: itemsProcesar.proposals[i].UrlEliminar
+        if (itemsProcesar != null) {
+            if (itemsProcesar.proposals != null) {
+
+
+                for (var i in itemsProcesar.proposals) {
+                    var s = {
+                        NombreCompleto: itemsProcesar.proposals[i].NombreCompleto,
+                        Url: itemsProcesar.proposals[i].Url,
+                        UrlEliminar: itemsProcesar.proposals[i].UrlEliminar
+                    }
+                    items[i] = s;
                 }
-                items[i] = s;
             }
         }
 
@@ -126,15 +133,18 @@
 
         var itemsProcesarT = dataT;
 
-        if (itemsProcesarT != null && itemsProcesarT.proposals.length > 0) {
-            for (var i in itemsProcesarT.proposals) {
-                var s = {
-                    NombreCompleto: itemsProcesarT.proposals[i].NombreUsuario,
-                    Url: itemsProcesarT.proposals[i].Url,
-                    UrlEliminar: itemsProcesarT.proposals[i].UrlEliminar,
-                    Objetivo:itemsProcesarT.proposals[i].NombreCompleto
+        if (itemsProcesarT != null) {
+            if (itemsProcesarT.proposals != null) {
+
+                for (var i in itemsProcesarT.proposals) {
+                    var s = {
+                        NombreCompleto: itemsProcesarT.proposals[i].NombreUsuario,
+                        Url: itemsProcesarT.proposals[i].Url,
+                        UrlEliminar: itemsProcesarT.proposals[i].UrlEliminar,
+                        Objetivo: itemsProcesarT.proposals[i].NombreCompleto
+                    }
+                    itemsT[i] = s;
                 }
-                itemsT[i] = s;
             }
         }
 
@@ -143,12 +153,13 @@
 
 
         guardar = function () {
-            if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtFechaInicio").val(), $("#txtFechaTermino").val()))
+            if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtFechaInicio").val(), $("#txtFechaTermino").val(), $("#selectIdUsuario").val()))
             {
                 var nombre = $("#txtNombreUsuario").val();
                 var objetivo = $("#txtObjetivo").val();
                 var fechaInicio = $("#txtFechaInicio").val();
                 var fechaTermino = $("#txtFechaTermino").val();
+                var usuIdResponsable = $("#selectIdUsuario").val();
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -156,6 +167,7 @@
                     FechaTermino: fechaTermino,
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
+                    UsuIdResponsable: usuIdResponsable,
                     Id: getParameterByName('id')
                 };
 
@@ -325,7 +337,9 @@
                 self.frmFechaTermino = data.proposals[0].OtroDos;
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
 
+                frmIdResponsable = ko.observable(parseInt(data.proposals[0].OtroOcho));
                 self.details= "Pinche aqui para abrir";
+
 
                 //ko.applyBindings(new VotacionViewModel(data), self.elem);
 
@@ -350,7 +364,7 @@
             $("#txtFechaInicio").attr('disabled', 'disabled');
             $("#txtObjetivo").attr('disabled', 'disabled');
             $("#txtNombreUsuario").attr('disabled', 'disabled');
-
+            $("#selectIdUsuario").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",
@@ -424,9 +438,37 @@
     else {
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
+        var dataR = [];
+        var dataT = [];
 
-        ko.applyBindings(new VotacionViewModel(data), self.elem);
+        $.ajax({
+            url: ObtenerUrlDos('ResponsableTricel'),
+            type: "POST",
+            data: ko.toJSON({InstId: sessionStorage.getItem("InstId")}),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (dataU) {
+                // ok
+                self.usuarios = dataU;
+                //selectedUsuario = frmIdResponsable;
+                selectedUsuario = 0;
 
+                elem = document.getElementById('principal');
+
+                ko.cleanNode(elem);
+
+                ko.applyBindings(new VotacionViewModel(data, dataR, dataT, dataU), elem);
+
+            },
+            error: function (error) {
+                if (error.status.toString() == "500") {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+                else {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+            }
+        });
 
     }
 
@@ -445,17 +487,40 @@
                 $.ajax({
                     url: ObtenerUrl('ListaTricel'),
                     type: "POST",
-                    data: ko.toJSON({ TriId: id }),
+                    data: ko.toJSON({TriId: id}),
                     contentType: "application/json",
                     dataType: "json",
                     success: function (dataT) {
                         // ok
 
-                        elem = document.getElementById('principal');
+                        $.ajax({
+                            url: ObtenerUrlDos('ResponsableTricel'),
+                            type: "POST",
+                            data: ko.toJSON({InstId: sessionStorage.getItem("InstId")}),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataU) {
+                                // ok
+                                self.usuarios = dataU;
+                                selectedUsuario = frmIdResponsable;
 
-                        ko.cleanNode(elem);
+                                elem = document.getElementById('principal');
 
-                        ko.applyBindings(new VotacionViewModel(data, dataR, dataT), elem);
+                                ko.cleanNode(elem);
+
+                                ko.applyBindings(new VotacionViewModel(data, dataR, dataT), elem);
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                                else {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                            }
+                        });
+
 
                     },
                     error: function (error) {
@@ -467,9 +532,6 @@
                         }
                     }
                 });
-
-
-
             },
             error: function (error) {
                 if (error.status.toString() == "500") {
@@ -480,10 +542,9 @@
                 }
             }
         });
-
     }
 
-    function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino) {
+    function validar(NombreUsuario, Objetivo, FechaInicio, FechaTermino, IdUsuarioResponsable) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined) {
             getNotify('error', 'Requerido', 'Nombre Requerido.');
@@ -501,25 +562,10 @@
             getNotify('error', 'Requerido', 'Fecha Término Requerida.');
             retorno = false;
         }
-        //comparacion de fechas, basicamente la fecha de termino no puede ser menor
-        //a la fecha de inicio
-        //y la fecha de inicio y termino no pueden ser menor a la fecha actual
-        /*
-        var ahora = moment();
-        var inicio = moment(FechaInicio);
-        var termino = moment(FechaTermino);
-        //primero la diferencia entre el inicio y el termino
-        if (inicio.diff(termino) <= 0)
-        {
-            getNotify('error', 'Fechas', 'Fecha de término no puede ser mayor a la deinicio.');
+        if (IdUsuarioResponsable === '0' || IdUsuarioResponsable === null) {
+            getNotify('error', 'Requerido', 'Usuario Responsable Requerido.');
             retorno = false;
         }
-        if (ahora.diff(inicio) <= 0 && ahora.diff(termino) <=0)
-        {
-            getNotify('error', 'Fechas', 'Fecha de inicio y término no pueden ser menor a la actual.');
-            retorno = false;
-        }
-        */
         return retorno;
     }
 

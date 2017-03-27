@@ -81,7 +81,7 @@ $(document).ready(function () {
 
     //$("#tablaArchivos").DataTable({});
 
-    function VotacionViewModel(data, dataT) {
+    function VotacionViewModel(data, dataT, dataU, dataQ) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -102,6 +102,9 @@ $(document).ready(function () {
         self.frmBeneficios = ko.observable("");
 
         self.frmDetalleTricel = ko.observable("");
+        self.usuarios  = ko.observableArray(dataU);
+
+
 
         self.details = ko.observable("Pinche aquí para abrir");
 
@@ -121,6 +124,17 @@ $(document).ready(function () {
                 var descripcion = $("#txtDescripcion").val();
                 var beneficios = $("#txtBeneficios").val();
                 var triId = getParameterByName('triId');
+
+                var usuIdPresidente = $("#selectIdUsuario").val();
+                var usuIdVice = $("#selectIdVice").val();
+                var usuIdSecretario = $("#selectIdSecretario").val();
+                var usuIdTesorero = $("#selectIdTesorero").val();
+                var usuIdOtroUno = $("#selectIdOtroUno").val();
+                var usuIdOtroDos = $("#selectIdOtroDos").val();
+                var usuIdOtroTres = $("#selectIdOtroTres").val();
+                var usuIdOtroCuatro = $("#selectIdOtroCuatro").val();
+                var usuIdOtroCinco = $("#selectIdOtroCinco").val();
+
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -132,7 +146,16 @@ $(document).ready(function () {
                     Descripcion: descripcion,
                     TriId: triId,
                     RolId: sessionStorage.getItem("RolId"),
-                    Beneficios: beneficios
+                    Beneficios: beneficios,
+                    UsuIdPresidente: usuIdPresidente,
+                    UsuIdVice: usuIdVice,
+                    UsuIdSecretario: usuIdSecretario,
+                    UsuIdTesorero: usuIdTesorero,
+                    UsuIdOtroUno: usuIdOtroUno,
+                    UsuIdOtroDos: usuIdOtroDos,
+                    UsuIdOtroTres: usuIdOtroTres,
+                    UsuIdOtroCuatro: usuIdOtroCuatro,
+                    UsuIdOtroCinco: usuIdOtroCinco
                 };
 
                 $.ajax({
@@ -224,8 +247,6 @@ $(document).ready(function () {
 
                         self.frmNombre = data.proposals[0].NombreUsuario;
                         self.frmObjetivo = data.proposals[0].NombreCompleto;
-                        //self.frmFechaInicio = data.proposals[0].OtroUno;
-                        //self.frmFechaTermino = data.proposals[0].OtroDos;
                         self.frmDescripcion = data.proposals[0].OtroTres;
                         self.frmBeneficios = data.proposals[0].OtroCuatro;
                         self.frmDetalleTricel = data.proposals[0].OtroCinco;
@@ -233,7 +254,76 @@ $(document).ready(function () {
 
                         self.details= "Pinche aqui para abrir";
 
-                        ko.applyBindings(new VotacionViewModel(data, dataT), self.elem);
+                        $.ajax({
+                            url: ObtenerUrlDos('ResponsableTricel'),
+                            type: "POST",
+                            data: ko.toJSON({InstId: sessionStorage.getItem("InstId")}),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataU) {
+                                // ok
+                                self.usuarios = dataU;
+
+                                $.ajax({
+                                    url: ObtenerUrlDos('UsuarioLista'),
+                                    type: "POST",
+                                    data: ko.toJSON({LtrId: id}),
+                                    contentType: "application/json",
+                                    dataType: "json",
+                                    success: function (dataQ) {
+                                        // ok
+                                        frmUsuarioPresidente = ko.observable(parseInt(dataQ.UsuIdPresidente));
+                                        frmUsuarioSecretario = ko.observable(parseInt(dataQ.UsuIdSecretario));
+                                        frmUsuarioVicePresidente = ko.observable(parseInt(dataQ.UsuIdVicepresidente));
+                                        frmUsuarioTesorero = ko.observable(parseInt(dataQ.UsuIdTesorero));
+                                        frmUsuarioOtroUno = ko.observable(parseInt(dataQ.UsuIdOtroUno));
+                                        frmUsuarioOtroDos = ko.observable(parseInt(dataQ.UsuIdOtroDos));
+                                        frmUsuarioOtroTres = ko.observable(parseInt(dataQ.UsuIdOtroTres));
+                                        frmUsuarioOtroCuatro = ko.observable(parseInt(dataQ.UsuIdOtroCuatro));
+                                        frmUsuarioOtroCinco = ko.observable(parseInt(dataQ.UsuIdOtroCinco));
+
+                                        selectedUsuarioPresidente = frmUsuarioPresidente;
+                                        selectedUsuarioVicePresidente = frmUsuarioVicePresidente;
+                                        selectedUsuarioSecretario = frmUsuarioSecretario;
+                                        selectedUsuarioTesorero = frmUsuarioTesorero;
+                                        selectedUsuarioOtroUno = frmUsuarioOtroUno;
+                                        selectedUsuarioOtroDos = frmUsuarioOtroDos;
+                                        selectedUsuarioOtroTres = frmUsuarioOtroTres;
+                                        selectedUsuarioOtroCuatro = frmUsuarioOtroCuatro;
+                                        selectedUsuarioOtroCinco = frmUsuarioOtroCinco;
+
+                                        elem = document.getElementById('principal');
+
+                                        ko.cleanNode(elem);
+
+                                        ko.applyBindings(new VotacionViewModel(data, dataT, dataU, dataQ), elem);
+
+                                    },
+                                    error: function (error) {
+                                        if (error.status.toString() == "500") {
+                                            getNotify('error', 'Error', 'Error de Servidor!');
+                                        }
+                                        else {
+                                            getNotify('error', 'Error', 'Error de Servidor!');
+                                        }
+                                    }
+                                });
+
+
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                                else {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                            }
+                        });
+
+
+                        //ko.applyBindings(new VotacionViewModel(data, dataT), self.elem);
 
 
 
@@ -272,6 +362,15 @@ $(document).ready(function () {
             $("#txtDescripcion").attr('disabled', 'disabled');
             $("#txtBeneficios").attr('disabled', 'disabled');
 
+            $("#selectIdUsuario").attr('disabled', 'disabled');
+            $("#selectIdVice").attr('disabled', 'disabled');
+            $("#selectIdSecretario").attr('disabled', 'disabled');
+            $("#selectIdTesorero").attr('disabled', 'disabled');
+            $("#selectIdOtroUno").attr('disabled', 'disabled');
+            $("#selectIdOtroDos").attr('disabled', 'disabled');
+            $("#selectIdOtroTres").attr('disabled', 'disabled');
+            $("#selectIdOtroCuatro").attr('disabled', 'disabled');
+            $("#selectIdOtroCinco").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",
@@ -363,7 +462,64 @@ $(document).ready(function () {
                 self.frmFechaTermino = dataT.proposals[0].OtroDos;
                 self.details= "Pinche aqui para abrir";
 
-                ko.applyBindings(new VotacionViewModel(data, dataT), self.elem);
+
+                $.ajax({
+                    url: ObtenerUrlDos('ResponsableTricel'),
+                    type: "POST",
+                    data: ko.toJSON({InstId: sessionStorage.getItem("InstId")}),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (dataU) {
+                        // ok
+                        self.usuarios = dataU;
+
+                        $.ajax({
+                            url: ObtenerUrlDos('UsuarioLista'),
+                            type: "POST",
+                            data: ko.toJSON({LtrId: 0}),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataQ) {
+                                // ok
+
+                                selectedUsuarioPresidente = 0;
+                                selectedUsuarioVicePresidente = 0;
+                                selectedUsuarioSecretario = 0;
+                                selectedUsuarioTesorero = 0;
+                                selectedUsuarioOtroUno = 0;
+                                selectedUsuarioOtroDos = 0;
+                                selectedUsuarioOtroTres = 0;
+                                selectedUsuarioOtroCuatro = 0;
+                                selectedUsuarioOtroCinco = 0;
+
+                                elem = document.getElementById('principal');
+
+                                ko.cleanNode(elem);
+
+                                ko.applyBindings(new VotacionViewModel(data, dataT, dataU, dataQ), elem);
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                                else {
+                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                }
+                            }
+                        });
+
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                    }
+                });
+                //ko.applyBindings(new VotacionViewModel(data, dataT), self.elem);
 
             },
             error: function (error) {

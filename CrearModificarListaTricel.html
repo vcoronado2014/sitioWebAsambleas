@@ -100,7 +100,7 @@
                     <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
                     <li><a href="login.html" id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="usuarios.html">Usuarios</a></li>
                             <li role="separator" class="divider"></li>
@@ -111,13 +111,13 @@
                             <li><a href="ListarDocumento.html">Documentos de Usuario</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" data-bind="visible: shouldShowMessage">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a data-bind="visible: shouldShowMessage" href="ListarVotacion.html">Listar Triceles</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" data-bind="visible: shouldShowMessage">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a data-bind="visible: shouldShowMessage" href="ListarProyecto.html">Listar Proyectos</a></li>
@@ -217,7 +217,165 @@
 
     </div>
 
+    <!-- panel de usuarios de la lista -->
 
+    <div class="col-xs-12" style=" padding-top: 20px;">
+        <div class="panel panel-primary">
+        <div class="panel-heading">
+            Usuarios de la Lista
+        </div>
+        <div class="panel-body">
+            <!-- usuarios -->
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Presidente</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdUsuario" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioPresidente,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Vice Presidente</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdVice" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioVicePresidente,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Secretario</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdSecretario" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioSecretario,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Tesorero</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdTesorero" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioTesorero,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Otro</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdOtroUno" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioOtroUno,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Otro</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdOtroDos" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioOtroDos,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Otro</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdOtroTres" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioOtroTres,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Otro</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdOtroCuatro" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioOtroCuatro,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <label for="basic-url">Otro</label>
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon18">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                    <select id="selectIdOtroCinco" class="form-control" data-bind="options: self.usuarios,
+                       optionsText: 'Nombre',
+                       optionsValue: 'AusId',
+                       value: selectedUsuarioOtroCinco,
+                       valueAllowUnset: true">
+                    </select>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    </div>
 
     <div class="col-xs-12" style="padding-bottom:20px;">
     </div>

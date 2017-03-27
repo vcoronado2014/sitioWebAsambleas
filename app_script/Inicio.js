@@ -1,5 +1,8 @@
 ﻿
 $(document).ready(function () {
+
+    $('[data-toggle="tooltip"]').tooltip();
+
     $('#principal').hide();
     $('#loading').show();
 
@@ -37,7 +40,7 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel() {
+    function PersonViewModel(data, dataP) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -149,9 +152,75 @@ $(document).ready(function () {
             }
         });
 
+        var items = [];
+        var itemsProcesar = data;
+
+        if (itemsProcesar != null && itemsProcesar.length > 0)
+        {
+            for(var i in itemsProcesar)
+            {
+
+                var rolId = sessionStorage.getItem("RolId");
+                var disabled = true;
+                //por mientras solo para el Administrador
+                if (rolId == 1)
+                    disabled = false;
+
+
+                var s = {
+                    content: itemsProcesar[i].content,
+                    startDate: new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0),
+                    endDate: new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0),
+                    isNew: false,
+                    id: itemsProcesar[i].id,
+                    disabled: disabled,
+                    clientId : itemsProcesar[i].id,
+                    fechaInicio : moment(new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0)).format("DD-MM-YYYY"),
+                    fechaTermino : moment(new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0)).format("DD-MM-YYYY"),
+                    horaInicio: moment(new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0)).format("HH:mm"),
+                    horaTermino: moment(new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0)).format("HH:mm")
+                }
+                items[i] = s;
+            }
+        }
+
+        self.items = ko.observableArray(items);
+
+        var itemsP = [];
+        var itemsProcesarP = dataP.proposals;
+
+        if (itemsProcesarP != null && itemsProcesarP.length > 0)
+        {
+            for(var i in itemsProcesarP)
+            {
+                var puedeVotar = itemsProcesarP[i].OtroSiete;
+                var disabled = true;
+                //por mientras solo para el Administrador
+                if (puedeVotar == "1")
+                    disabled = false;
+
+
+                var s = {
+                    nombre: itemsProcesarP[i].NombreUsuario,
+                    objetivo: itemsProcesarP[i].NombreCompleto,
+                    beneficios: itemsProcesarP[i].Rol,
+                    fechaInicio : itemsProcesarP[i].OtroUno,
+                    fechaTermino : itemsProcesarP[i].OtroDos,
+                    fechaCreacion: itemsProcesarP[i].OtroTres,
+                    monto: '$ ' + itemsProcesarP[i].OtroCuatro,
+                    descripcion: itemsProcesarP[i].OtroSeis,
+                    urlVotar: 'VotarProyecto.html?id=' + itemsProcesarP[i].Id + '&puedeVotar=' + itemsProcesarP[i].OtroSiete,
+                    puedeVotar: disabled,
+                    content: 'Nombre: ' + itemsProcesarP[i].NombreUsuario + ', Objetivo: ' + itemsProcesarP[i].NombreCompleto + ', Descripción: ' + itemsProcesarP[i].OtroSeis
+                }
+                itemsP[i] = s;
+            }
+        }
+
+        self.itemsP = ko.observableArray(itemsP);
 
     }
-
+    /*
     var chart = Morris.Donut({
         element: 'graph',
         data: [
@@ -192,7 +261,60 @@ $(document).ready(function () {
             }
         }
     });
-    ko.applyBindings(new PersonViewModel);
+    */
+    var dataCalendario = [];
+    var dataProyecto =  [];
+
+    $.ajax({
+        url: ObtenerUrl('Calendario'),
+        type: "POST",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
+        contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            // ok
+            dataCalendario = data;
+            //ko.applyBindings(new PersonViewModel(dataCalendario));
+
+
+            $.ajax({
+                url: ObtenerUrlDos('Proyecto'),
+                type: "POST",
+                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (dataP) {
+                    // ok
+                    dataProyecto = dataP;
+                    elem = document.getElementById('principal');
+
+                    ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto));
+
+                },
+                error: function (error) {
+                    if (error.status.toString() == "500") {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                    else {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                }
+            });
+
+
+        },
+        error: function (error) {
+            if (error.status.toString() == "500") {
+                getNotify('error', 'Error', 'Error de Servidor!');
+            }
+            else {
+                getNotify('error', 'Error', 'Error de Servidor!');
+            }
+        }
+    });
+
+
+    //ko.applyBindings(new PersonViewModel(dataCalendario));
 
     $('#principal').show();
     $('#loading').hide();
@@ -213,4 +335,7 @@ function AbrirRendiciones() {
 }
 function AbrirDocumentos() {
     window.location.href = "ListarDocumento.html";
+}
+function AbrirCalendario() {
+    window.location.href = "ListarCalendario.html";
 }
