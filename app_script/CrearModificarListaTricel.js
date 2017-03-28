@@ -115,7 +115,8 @@ $(document).ready(function () {
 
 
         guardar = function () {
-            if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtDescripcion").val(), $("#txtBeneficios").val()))
+            if (validar($("#txtNombreUsuario").val(), $("#txtObjetivo").val(), $("#txtDescripcion").val(), $("#txtBeneficios").val(), $("#selectIdUsuario").val(), $("#selectIdVice").val(),
+                    $("#selectIdSecretario").val(), $("#selectIdTesorero").val()))
             {
                 var nombre = $("#txtNombreUsuario").val();
                 var objetivo = $("#txtObjetivo").val();
@@ -211,6 +212,112 @@ $(document).ready(function () {
             var id = getParameterByName('id');
             var triId = getParameterByName('triId');
             window.location.href = "CrearModificarVotacion.html?id=" + triId + "&ELIMINAR=0";
+
+        }
+
+        onChange = function (option, item){
+            var miValor = item.target.value;
+            var miId = item.target.id;
+            //revisar si ya esta seleccionado
+            if (miId === 'selectIdUsuario')
+            {
+                if (miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val() || miValor === $("#selectIdTesorero").val()
+                    || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdUsuario").val(0);
+
+                }
+            }
+            if (miId === 'selectIdVice')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdSecretario").val() || miValor === $("#selectIdTesorero").val()
+                    || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdVice").val(0);
+
+                }
+            }
+            if (miId === 'selectIdSecretario')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdTesorero").val()
+                    || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdSecretario").val(0);
+
+                }
+            }
+            if (miId === 'selectIdTesorero')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdSecretario").val(0);
+
+                }
+            }
+            if (miId === 'selectIdOtroUno')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdTesorero").val() || miValor === $("#selectIdOtroDos").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdOtroUno").val(0);
+
+                }
+            }
+            if (miId === 'selectIdOtroDos')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdTesorero").val() || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroTres").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdOtroDos").val(0);
+
+                }
+            }
+            if (miId === 'selectIdOtroTres')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdTesorero").val() || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val()
+                    || miValor === $("#selectIdOtroCuatro").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdOtroTres").val(0);
+
+                }
+            }
+            if (miId === 'selectIdOtroCuatro')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdTesorero").val() || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val()
+                    || miValor === $("#selectIdOtroTres").val() || miValor === $("#selectIdOtroCinco").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdOtroCuatro").val(0);
+
+                }
+            }
+            if (miId === 'selectIdOtroCinco')
+            {
+                if (miValor === $("#selectIdUsuario").val() || miValor === $("#selectIdVice").val() || miValor === $("#selectIdSecretario").val()
+                    || miValor === $("#selectIdTesorero").val() || miValor === $("#selectIdOtroUno").val() || miValor === $("#selectIdOtroDos").val()
+                    || miValor === $("#selectIdOtroTres").val() || miValor === $("#selectIdOtroCuatro").val()
+                ){
+                    getNotify('error', 'Error', 'Usted ya seleccionó este usuario en otro Rol.');
+                    $("#selectIdOtroCinco").val(0);
+
+                }
+            }
 
         }
 
@@ -536,7 +643,7 @@ $(document).ready(function () {
     }
 
 
-    function validar(NombreUsuario, Objetivo, Descripcion, Beneficios) {
+    function validar(NombreUsuario, Objetivo, Descripcion, Beneficios, IdPresidente, IdVice, IdSecretario, IdTesorero) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined) {
             getNotify('error', 'Requerido', 'Nombre Requerido.');
@@ -552,6 +659,22 @@ $(document).ready(function () {
         }
         if (Beneficios === '' || Beneficios === null) {
             getNotify('error', 'Requerido', 'Descripción Requerido.');
+            retorno = false;
+        }
+        if (IdPresidente === '0' || IdPresidente === null) {
+            getNotify('error', 'Requerido', 'Usuario Presidente Requerido.');
+            retorno = false;
+        }
+        if (IdVice === '0' || IdVice === null) {
+            getNotify('error', 'Requerido', 'Usuario VicePresidente Requerido.');
+            retorno = false;
+        }
+        if (IdSecretario === '0' || IdSecretario === null) {
+            getNotify('error', 'Requerido', 'Usuario Secretario Requerido.');
+            retorno = false;
+        }
+        if (IdTesorero === '0' || IdTesorero === null) {
+            getNotify('error', 'Requerido', 'Usuario Tesorero Requerido.');
             retorno = false;
         }
         return retorno;
