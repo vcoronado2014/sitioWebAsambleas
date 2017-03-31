@@ -50,28 +50,28 @@
         ko.mapping.fromJS(data, {}, self);
 
     }
-    $.ajax({
-        url: ObtenerUrl('Calendario'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'0'  }),
+
+    var obtenerCalendario = jQuery.ajax({
+        url : ObtenerUrl('Calendario'),
+        type: 'POST',
+        dataType : "json",
         contentType: "application/json",
-        dataType: "json",
-        autoLoad: false,
-        success: function (data) {
-            // ok
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'0'  })
+    });
 
-
+    $.when(obtenerCalendario).then(
+        function(data){
 
             YUI({ filter: 'raw', lang: 'es' }).use("aui-scheduler", "io", "dump", "json-parse", "event-custom-base", "aui-button", function (Y) {
                 var items = [];
                 var itemsProcesar = data;
-                
+
                 if (itemsProcesar != null && itemsProcesar.length > 0)
                 {
                     for(var i in itemsProcesar)
                     {
 
-                    var rolId = sessionStorage.getItem("RolId");
+                        var rolId = sessionStorage.getItem("RolId");
                         var disabled = true;
                         //por mientras solo para el Administrador
                         if (rolId == 1)
@@ -93,29 +93,6 @@
 
                 var eventRecorder = new Y.SchedulerEventRecorder({
                     on: {
-                        //init: function (event) {
-                        //    alert('init:' + this.isNew() + ' --- ');
-                        //    var toolbarBtnGroup = Y.one('#bb .toolbar .btn-group');
-                        //    if (toolbarBtnGroup != null)
-                        //        toolbarBtnGroup.appendChild('<button id="edit" type="button">Edit</button>');
-
-                        //},
-                        //load: function (event) {
-                        //    alert('load:' + this.isNew() + ' --- ');
-                        //},
-                        //click: function (event) {
-                        //    alert('click:' + this.isNew() + ' --- ');
-                        //},
-                        //change: function (event) {
-                //    alert('change:' + this.isNew() + ' --- ' + this.getContentNode().val());
-                        //},
-
-                        //save: function (event) {
-                        //    alert('Save Event:' + this.isNew() + ' --- ' + this.getContentNode().val());
-                        //},
-                        //edit: function (event) {
-                        //    alert('Edit Event:' + this.isNew() + ' --- ' + this.getContentNode().val());
-                        //},
                         delete: function (event) {
                             var popup = Y.one("#bb")._node.childNodes[1];
                             var cantidadNodos = popup.childNodes[0].length;
@@ -184,7 +161,7 @@
                             var terminoStr = diaTer + '-' + mesTer + '-' + annoTer + ' ' + horaTer + ':' + minutoTer;
 
 
-      
+
                             var eventoCal = {
                                 InstId: instId,
                                 IdUsuario: idUsuario,
@@ -193,7 +170,7 @@
                                 FechaTermino: terminoStr,
                                 EsNuevo: esNuevo}
 
-                                var json = ko.toJSON(eventoCal);
+                            var json = ko.toJSON(eventoCal);
 
                             Eliminar(json);
 
@@ -204,7 +181,6 @@
                         }
                     }
                 });
-                //var eventRecorder = new Y.SchedulerEventRecorder();
 
                 var schedulerViews = [
                     new Y.SchedulerWeekView(),
@@ -223,7 +199,6 @@
 
                 }).render();
 
-                //var editButton;
                 var saveButton;
 
                 Y.Do.after(function () {
@@ -243,8 +218,8 @@
                         {
                             titulo = popup.childNodes[0][0];
                             titulo.defaultValue = "Ingrese su evento";
-                        }                
-                        
+                        }
+
                         var toolbarBtnGroup = Y.one("#bb .btn-toolbar-content .btn-group");
 
                         //toolbarBtnGroup.appendChild('<button id="edit" type="button">Edit</button>');
@@ -252,16 +227,6 @@
 
                         var btnGuardar = toolbarBtnGroup._node.childNodes[0];
                         btnGuardar.className = "hidden";
-                        //btnGuardar.textContent = "Guardar";
-                        //btnGuardar.replace('<button id="edit" type="button">Edit</button>');
-
-
-                        //if (editButton)
-                        //    editButton.destroy();
-                        //editButton = new Y.Button({
-                        //    label: 'Edit',
-                        //    srcNode: '#edit',
-                        //}).render();
 
                         if (saveButton)
                             saveButton.destroy();
@@ -270,10 +235,6 @@
                             srcNode: '#guardar',
                         }).render();
 
-                        //editButton.on('click', function (event) {
-                        //    alert('Edit clicked!');
-                        //    eventRecorder.hidePopover();
-                        //});
 
                         saveButton.on('click', function (event) {
                             //alert('Edit guardar!');
@@ -292,12 +253,12 @@
                             }
                             else
                             {
-                                 titulo = popup.childNodes[0][0];
-                                 startDate = popup.childNodes[0][1];
-                                 endDate = popup.childNodes[0][2];
+                                titulo = popup.childNodes[0][0];
+                                startDate = popup.childNodes[0][1];
+                                endDate = popup.childNodes[0][2];
                             }
 
-                            
+
                             var fechaIni = moment(parseFloat(startDate.value));
                             var fechaTer = moment(parseFloat(endDate.value));
                             var idUsuario = sessionStorage.getItem("Id");
@@ -376,7 +337,7 @@
                                 getNotify('error', 'Error', 'Debe ingresar evento!');
                             }
 
-                            
+
                             eventRecorder.hidePopover();
                         });
                     }
@@ -390,39 +351,26 @@
                 }, eventRecorder, 'showPopover');
 
                 Y.Do.after(function () {
-
-                    // Make sure that the editButton is destroyed to avoid a memory leak
-
-                    //if (editButton) {
-                    //    editButton.destroy();
-                    //}
-
                     if (saveButton) {
                         saveButton.destroy();
                     }
                 }, eventRecorder, 'hidePopover');
             });
 
-           
-            $('#principal').show();
-            $('#loading').hide();
-
             elem = document.getElementById('principal');
 
             ko.applyBindings(new ViewModel(data), elem);
 
         },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
+        function (){
+            //alguna ha fallado
+            alert('error');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            alert('quitar cargando');
         }
-    });
-
-
+    )
 
     //mover dentro de la llamada ajax
     $('#principal').show();

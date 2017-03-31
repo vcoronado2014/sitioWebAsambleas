@@ -1,4 +1,7 @@
 ﻿
+/**
+ * Created by vcoronado on 31-03-2017.
+ */
 $(document).ready(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
@@ -49,7 +52,7 @@ $(document).ready(function () {
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         var cuadroInstitucion = $('#cuadroInstitucion');
-        
+
         //self.totalInstituciones = ko.observable();
         if (sessionStorage.getItem("RolId") != 1) {
             cuadroInstitucion.addClass('hidden');
@@ -64,93 +67,60 @@ $(document).ready(function () {
             shouldShowMessage = ko.observable(false);
 
 
-        $.ajax({
-            url: ObtenerUrl('ListarUsuarios'),
-            type: "POST",
-            data: ko.toJSON({ InstId: self.instId }),
+        var dataConsulta = ko.toJSON({ InstId: self.instId });
+        var dataConsultaDos = ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") });
+
+        var obtenerUsuarios = jQuery.ajax({
+            url : ObtenerUrl('ListarUsuarios'),
+            type: 'POST',
+            dataType : "json",
             contentType: "application/json",
-            dataType: "json",
-            success: function (result) {
-                // ok
-                $('#infoUsuarios').text(result.length);
+            data: dataConsulta
+        });
 
-                $.ajax({
-                    url: ObtenerUrl('Institucion'),
-                    type: "POST",
-                    data: ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (result2) {
-                        // ok
-                        $('#infoInstituciones').text(result2.proposals.length);
-                        
-                        $.ajax({
-                            url: ObtenerUrl('Rendicion'),
-                            type: "POST",
-                            data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (result2) {
-                                // ok
-                                $('#infoIngresos').text(result2.proposals.length);
+        var obtenerInstituciones =  jQuery.ajax({
+            url : ObtenerUrl('Institucion'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: dataConsultaDos
+        });
 
-                                $.ajax({
-                                    url: ObtenerUrl('FileDocumento'),
-                                    type: "POST",
-                                    data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
-                                    contentType: "application/json",
-                                    dataType: "json",
-                                    success: function (result2) {
-                                        // ok
-                                        $('#infoDocumentos').text(result2.proposals.length);
-                                        //$('#principal').show();
-                                        //$('#loading').hide();
-                                    },
-                                    error: function (error) {
-                                        if (error.status.toString() == "500") {
-                                            $('#mensaje').text("Error al Obtener Instituciones!");
-                                        }
-                                        else {
-                                            $('#mensaje').text(error.statusText);
-                                            alert("fail");
-                                        }
-                                    }
-                                });
-                            },
-                            error: function (error) {
-                                if (error.status.toString() == "500") {
-                                    $('#mensaje').text("Error al Obtener Instituciones!");
-                                }
-                                else {
-                                    $('#mensaje').text(error.statusText);
-                                    alert("fail");
-                                }
-                            }
-                        });
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            $('#mensaje').text("Error al Obtener Instituciones!");
-                        }
-                        else {
-                            $('#mensaje').text(error.statusText);
-                            alert("fail");
-                        }
-                    }
-                });
+        var obtenerRendiciones =  jQuery.ajax({
+            url : ObtenerUrl('Rendicion'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: dataConsulta
+        });
 
+        var obtenerDocumentos =  jQuery.ajax({
+            url : ObtenerUrl('FileDocumento'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: dataConsulta
+        });
+
+        $.when(obtenerUsuarios, obtenerInstituciones, obtenerRendiciones, obtenerDocumentos).then(
+            function(resultUsuarios, resultInstituciones, resultRendiciones, resultDocumentos){
+                //ambas habran tenido exito
+                //alert('exito');
+                $('#infoUsuarios').text(resultUsuarios[0].length);
+                $('#infoInstituciones').text(resultInstituciones[0].proposals.length);
+                $('#infoIngresos').text(resultRendiciones[0].proposals.length);
+                $('#infoDocumentos').text(resultDocumentos[0].proposals.length);
 
             },
-            error: function (error) {
-                if (error.status.toString() == "500") {
-                    $('#mensaje').text("Nombre de usuario o contraseña inválida!");
-                }
-                else {
-                    $('#mensaje').text(error.statusText);
-                    alert("fail");
-                }
+            function (){
+                //alguna ha fallado
+                alert('error');
+            },
+            function(){
+                //acá podemos quitar el elemento cargando
+                alert('quitar cargando');
             }
-        });
+        )
 
         var items = [];
         var itemsProcesar = data;
@@ -220,101 +190,46 @@ $(document).ready(function () {
         self.itemsP = ko.observableArray(itemsP);
 
     }
-    /*
-    var chart = Morris.Donut({
-        element: 'graph',
-        data: [
-          { value: 0, label: 'Ingresos' },
-          { value: 0, label: 'Egresos' }
-        ],
-        backgroundColor: '#ccc',
-        labelColor: '#060',
-        colors: [
-          'rgb(11, 98, 164)',
-          'rgb(160, 0, 0)'
-        ],
-        formatter: function (x) { return "$" + x }
-    });
 
-    $.ajax({
-        url: ObtenerUrl('Grafico'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), NombreGrafico: "INGRESOS_EGRESOS" }),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (dataGrafico) {
-            // ok
 
-            //getNotify('success', 'Éxito', 'Recuperado con éxito!');
-            elem = document.getElementById('principal');
-
-            //ko.applyBindings(new ViewModel(data), elem);
-            chart.setData(dataGrafico);
-
-        },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-        }
-    });
-    */
     var dataCalendario = [];
     var dataProyecto =  [];
 
-    $.ajax({
-        url: ObtenerUrl('Calendario'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'1' }),
+    var obtenerCalendario = jQuery.ajax({
+        url : ObtenerUrl('Calendario'),
+        type: 'POST',
+        dataType : "json",
         contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            // ok
-            dataCalendario = data;
-            //ko.applyBindings(new PersonViewModel(dataCalendario));
-
-
-            $.ajax({
-                url: ObtenerUrlDos('Proyecto'),
-                type: "POST",
-                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
-                contentType: "application/json",
-                dataType: "json",
-                success: function (dataP) {
-                    // ok
-                    dataProyecto = dataP;
-                    elem = document.getElementById('principal');
-
-                    ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto));
-
-                },
-                error: function (error) {
-                    if (error.status.toString() == "500") {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                    else {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                }
-            });
-
-
-        },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-        }
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'1' })
     });
 
+    var obtenerProyecto = jQuery.ajax({
+        url : ObtenerUrlDos('Proyecto'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'1' })
+    });
 
-    //ko.applyBindings(new PersonViewModel(dataCalendario));
+    $.when(obtenerCalendario, obtenerProyecto).then(
+        function(data, dataP){
+            dataCalendario = data[0];
+            dataProyecto = dataP[0];
+            elem = document.getElementById('principal');
+
+            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto));
+
+        },
+        function (){
+            //alguna ha fallado
+            alert('error');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            alert('quitar cargando');
+        }
+    )
+
 
     $('#principal').show();
     $('#loading').hide();

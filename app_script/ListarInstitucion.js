@@ -52,20 +52,21 @@
         
         
     }
-    $.ajax({
-        url: ObtenerUrl('Institucion'),
-        type: "POST",
-        data: ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") }),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            // ok
 
-            //getNotify('success', 'Éxito', 'Recuperado con éxito!');
+    var obtenerInstituciones = jQuery.ajax({
+        url : ObtenerUrl('Institucion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") })
+    });
+
+    $.when(obtenerInstituciones).then(
+        function(data){
             elem = document.getElementById('principal');
 
             ko.applyBindings(new ViewModel(data), elem);
-
+            // apply DataTables magic
             $("#proposals").DataTable({
                 responsive: true,
                 language: {
@@ -73,8 +74,8 @@
                     "sLengthMenu": "Mostrar _MENU_ registros",
                     "sZeroRecords": "No se encontraron resultados",
                     "sEmptyTable": "Ningún dato disponible en esta tabla",
-                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
+                    "sInfoEmpty": "del 0 al 0 de 0 registros",
                     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
                     "sInfoPostFix": "",
                     "sSearch": "Buscar:",
@@ -83,10 +84,10 @@
                     "sInfoThousands": ",",
                     "sLoadingRecords": "Cargando...",
                     "oPaginate": {
-                        "sFirst": "Primero",
-                        "sLast": "Último",
-                        "sNext": "Siguiente",
-                        "sPrevious": "Anterior"
+                        "sFirst": "<<",
+                        "sLast": ">>",
+                        "sNext": ">",
+                        "sPrevious": "<"
                     },
                     "oAria": {
                         "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
@@ -98,18 +99,17 @@
             $('#loading').hide();
 
         },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
+        function (){
+            //alguna ha fallado
+            swal("Error de Servidor");
             $('#principal').show();
             $('#loading').hide();
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //alert('quitar cargando');
         }
-    });
-
+    )
 
     function getNotify(type, title, message) {
         if (type == 'error') {

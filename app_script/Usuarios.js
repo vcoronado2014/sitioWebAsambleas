@@ -106,44 +106,55 @@ $(function () {
         }
     }
     // get data - sample data from Donors Choose API
-    $.getJSON(ObtenerUrl('ListarUsuarios') + '?instId=' + sessionStorage.getItem("InstId"), function (data) {
-        // bind the data
-        elem = document.getElementById('principal');
-        //ko.cleanNode(elem);
-        //ko.applyBindings(new PersonViewModel(data, dataR, dataCC, self.roles), elem);
-        ko.applyBindings(new ViewModel(data), elem);
-        // apply DataTables magic
-        $("#proposals").DataTable({
-            responsive: true,
-            language: {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "bDestroy": true,
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
-                },
-                "oAria": {
-                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    var obtenerUsuarios = $.getJSON(ObtenerUrl('ListarUsuarios') + '?instId=' + sessionStorage.getItem("InstId"));
+
+    $.when(obtenerUsuarios).then(
+        function(data){
+            elem = document.getElementById('principal');
+
+            ko.applyBindings(new ViewModel(data), elem);
+            // apply DataTables magic
+            $("#proposals").DataTable({
+                responsive: true,
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
+                    "sInfoEmpty": "del 0 al 0 de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "bDestroy": true,
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "<<",
+                        "sLast": ">>",
+                        "sNext": ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
                 }
-            }
-        });
-        $('#principal').show();
-        $('#loading').hide();
-    });
+            });
+            $('#principal').show();
+            $('#loading').hide();
+
+        },
+        function (){
+            //alguna ha fallado
+            swal("Error de Servidor");
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //alert('quitar cargando');
+        }
+    )
 
     function getNotify(type, title, message) {
         if (type == 'error') {
@@ -165,9 +176,3 @@ $(function () {
 
 
 });
-
-//$(window).load(function () {
-//    // Una vez se cargue al completo la página desaparecerá el div "cargando"
-//    $('#principal').show();
-//    $('#loading').hide();
-//});

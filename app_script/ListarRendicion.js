@@ -53,36 +53,31 @@
 
 
     }
-    $.ajax({
-        url: ObtenerUrl('Rendicion'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            // ok
 
-            //getNotify('success', 'Éxito', 'Recuperado con éxito!');
+    var obtenerRendiciones = jQuery.ajax({
+        url : ObtenerUrl('Rendicion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+    });
+
+   $.when(obtenerRendiciones).then(
+        function(data){
             elem = document.getElementById('principal');
-            //if (data.proposals[0].UrlDocumento == "#") {
-            //    self.frmUrlDocumento = data.proposals[0].UrlDocumento;
-            //}
-            //else
-            //    self.frmUrlDocumento = "http://127.0.0.1:8080/Repositorio/" + data.proposals[0].UrlDocumento;
+
 
             ko.applyBindings(new ViewModel(data), elem);
-
-            if (data.proposals.length > 0)
-            {
-                $("#proposals").DataTable({
+            // apply DataTables magic
+            $("#proposals").DataTable({
                 responsive: true,
                 language: {
                     "sProcessing": "Procesando...",
                     "sLengthMenu": "Mostrar _MENU_ registros",
                     "sZeroRecords": "No se encontraron resultados",
                     "sEmptyTable": "Ningún dato disponible en esta tabla",
-                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
+                    "sInfoEmpty": "del 0 al 0 de 0 registros",
                     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
                     "sInfoPostFix": "",
                     "sSearch": "Buscar:",
@@ -91,10 +86,10 @@
                     "sInfoThousands": ",",
                     "sLoadingRecords": "Cargando...",
                     "oPaginate": {
-                        "sFirst": "Primero",
-                        "sLast": "Último",
-                        "sNext": "Siguiente",
-                        "sPrevious": "Anterior"
+                        "sFirst": "<<",
+                        "sLast": ">>",
+                        "sNext": ">",
+                        "sPrevious": "<"
                     },
                     "oAria": {
                         "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
@@ -102,20 +97,22 @@
                     }
                 }
             });
-            }
+
             $('#principal').show();
             $('#loading').hide();
 
         },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
+        function (){
+            //alguna ha fallado
+            swal("Error de Servidor");
+            $('#principal').show();
+            $('#loading').hide();
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //alert('quitar cargando');
         }
-    });
+    )
 
 
     function getNotify(type, title, message) {
@@ -154,6 +151,7 @@
     //      { value: 0, label: 'Ingresos' },
     //      { value: 0, label: 'Egresos' }
     //]);
+
 
     $.ajax({
         url: ObtenerUrl('Grafico'),
