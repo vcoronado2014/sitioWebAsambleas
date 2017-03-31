@@ -53,7 +53,7 @@
     $.ajax({
         url: ObtenerUrl('Calendario'),
         type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'0'  }),
         contentType: "application/json",
         dataType: "json",
         autoLoad: false,

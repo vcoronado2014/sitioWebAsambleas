@@ -268,7 +268,7 @@ $(document).ready(function () {
     $.ajax({
         url: ObtenerUrl('Calendario'),
         type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'1' }),
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
