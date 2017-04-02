@@ -66,6 +66,15 @@ $(document).ready(function () {
         else
             shouldShowMessage = ko.observable(false);
 
+        //manejaremos un poco la vista para que no se vea mal
+        claseMostrarIngresos = ko.observable("col-lg-3 col-md-6");
+        claseMostrarDocumentos = ko.observable("col-lg-3 col-md-6");
+        if (sessionStorage.getItem("RolId") != '1')
+        {
+            //solo puede ver dos elementos
+            claseMostrarIngresos = ko.observable("col-xs-12 col-md-6");
+            claseMostrarDocumentos = ko.observable("col-xs-12 col-md-6");
+        }
 
         var dataConsulta = ko.toJSON({ InstId: self.instId });
         var dataConsultaDos = ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") });

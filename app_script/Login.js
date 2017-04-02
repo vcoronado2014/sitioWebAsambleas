@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    $('#principal').show();
+    $('#loading').hide();
     //un poco de nockout
     var PersonaViewModel = {
         usuario: ko.observable(),
@@ -7,17 +8,22 @@ $(document).ready(function () {
 
         autentificar: function () {
 
+            $('#principal').hide();
+            $('#loading').show();
 
             $('#mensaje').text('');
-            $.ajax({
-                url: ObtenerUrl('Login'),
-                //url: "http://localhost:48909/api/login",
-                type: "POST",
-                data: ko.toJSON({ usuario: this.usuario, password: this.password }),
+
+            var obtenerLogin = jQuery.ajax({
+                url : ObtenerUrl('Login'),
+                type: 'POST',
+                dataType : "json",
                 contentType: "application/json",
-                dataType: "json",
-                success: function (result) {
-                    //guardamos en session storage
+                data: ko.toJSON({ usuario: this.usuario, password: this.password })
+            });
+
+            $.when(obtenerLogin).then(
+                function(result){
+
                     sessionStorage.setItem("NombreUsuario", result.AutentificacionUsuario.NombreUsuario);
                     sessionStorage.setItem("CorreoElectronico", result.AutentificacionUsuario.CorreoElectronico);
                     sessionStorage.setItem("RolId", result.AutentificacionUsuario.RolId);
@@ -31,18 +37,25 @@ $(document).ready(function () {
                     var url = 'inicio.html';
                     window.location.href = url;
 
+
+
                 },
-                error: function (error) {
+                function (error){
+
                     if (error.status.toString() == "500") {
                         $('#mensaje').text("Nombre de usuario o contraseña inválida!");
                     }
                     else {
                         $('#mensaje').text(error.statusText);
-                        //alert("fail");
                     }
-
+                    $('#principal').show();
+                    $('#loading').hide();
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    //alert('quitar cargando');
                 }
-            });
+            )
         }
 
     };

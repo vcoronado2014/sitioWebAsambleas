@@ -49,28 +49,31 @@ $(function () {
         else
             shouldShowMessage = ko.observable(false);
 
-
+        $('#principal').show();
+        $('#loading').hide();
         // knockout mapping JSON data to view model
         ko.mapping.fromJS(data, {}, self);
 
 
 
     }
-    $.ajax({
-        url: ObtenerUrlDos('Proyecto'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") }),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            // ok
 
+    var obtenerProyecto = jQuery.ajax({
+        url : ObtenerUrlDos('Proyecto'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+    });
+
+    $.when(obtenerProyecto).then(
+        function(data){
             elem = document.getElementById('principal');
 
-            ko.applyBindings(new ViewModel(data), elem);
-            if (data.proposals.length > 0)
-            {
 
+            ko.applyBindings(new ViewModel(data), elem);
+            // apply DataTables magic
+            if (data.proposals.length > 0) {
                 $("#proposals").DataTable({
                     responsive: true,
                     language: {
@@ -78,8 +81,8 @@ $(function () {
                         "sLengthMenu": "Mostrar _MENU_ registros",
                         "sZeroRecords": "No se encontraron resultados",
                         "sEmptyTable": "Ningún dato disponible en esta tabla",
-                        "sInfo": "del _START_ al _END_ de _TOTAL_",
-                        "sInfoEmpty": "del 0 al 0 total de 0",
+                        "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
+                        "sInfoEmpty": "del 0 al 0 de 0 registros",
                         "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
                         "sInfoPostFix": "",
                         "sSearch": "Buscar:",
@@ -104,15 +107,17 @@ $(function () {
             $('#loading').hide();
 
         },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
+        function (){
+            //alguna ha fallado
+            swal("Error de Servidor");
+            $('#principal').show();
+            $('#loading').hide();
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //alert('quitar cargando');
         }
-    });
+    )
 
 
     function getNotify(type, title, message) {
