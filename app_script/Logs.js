@@ -1,5 +1,5 @@
 /**
- * Created by VICTOR CORONADO on 21/03/2017.
+ * Created by vcoronado on 03-04-2017.
  */
 $(function () {
 
@@ -42,67 +42,62 @@ $(function () {
         nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
         nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
-        self.frmUrlDocumento = ko.observable("");
+        // knockout mapping JSON data to view model
 
-        if (sessionStorage.getItem("RolId") == '1' || sessionStorage.getItem("RolId") =='2' || sessionStorage.getItem("RolId") =='3' || sessionStorage.getItem("RolId") =='5' || sessionStorage.getItem("RolId") == '6')
+        if (sessionStorage.getItem("RolId") == '1')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
 
-        $('#principal').show();
-        $('#loading').hide();
-        // knockout mapping JSON data to view model
+
         ko.mapping.fromJS(data, {}, self);
 
 
 
     }
 
-    var obtenerProyecto = jQuery.ajax({
-        url : ObtenerUrlDos('Proyecto'),
+    var obtenerLogs = jQuery.ajax({
+        url : ObtenerUrlDos('Logs'),
         type: 'POST',
         dataType : "json",
         contentType: "application/json",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+        data: ko.toJSON({ IdUsuario: 1 })
     });
 
-    $.when(obtenerProyecto).then(
+    $.when(obtenerLogs).then(
         function(data){
             elem = document.getElementById('principal');
 
-
             ko.applyBindings(new ViewModel(data), elem);
             // apply DataTables magic
-            if (data.proposals.length > 0) {
-                $("#proposals").DataTable({
-                    responsive: true,
-                    language: {
-                        "sProcessing": "Procesando...",
-                        "sLengthMenu": "Mostrar _MENU_ registros",
-                        "sZeroRecords": "No se encontraron resultados",
-                        "sEmptyTable": "Ningún dato disponible en esta tabla",
-                        "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
-                        "sInfoEmpty": "del 0 al 0 de 0 registros",
-                        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                        "sInfoPostFix": "",
-                        "sSearch": "Buscar:",
-                        "sUrl": "",
-                        "bDestroy": true,
-                        "sInfoThousands": ",",
-                        "sLoadingRecords": "Cargando...",
-                        "oPaginate": {
-                            "sFirst": "<<",
-                            "sLast": ">>",
-                            "sNext": ">",
-                            "sPrevious": "<"
-                        },
-                        "oAria": {
-                            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
+            $("#proposals").DataTable({
+                responsive: true,
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
+                    "sInfoEmpty": "del 0 al 0 de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "bDestroy": true,
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "<<",
+                        "sLast": ">>",
+                        "sNext": ">",
+                        "sPrevious": "<"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                     }
-                });
-            }
+                }
+            });
             $('#principal').show();
             $('#loading').hide();
 
@@ -118,7 +113,6 @@ $(function () {
             //alert('quitar cargando');
         }
     )
-
 
     function getNotify(type, title, message) {
         if (type == 'error') {

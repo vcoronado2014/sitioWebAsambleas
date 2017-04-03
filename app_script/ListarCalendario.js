@@ -10,24 +10,24 @@
         }
         else {
             $('#ancoreSesion').html('<i class="fa fa-sign-in"></i> Iniciar Sesión');
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
     }
     else {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     $('#ancoreSesion').on('click', function () {
         if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión') {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
             sessionStorage.clear();
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
         else {
             //directo al login
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }
 
 
@@ -41,7 +41,7 @@
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         // knockout mapping JSON data to view model
 
-        if (sessionStorage.getItem("RolId") == '1')
+        if (sessionStorage.getItem("RolId") != '9')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
@@ -74,7 +74,7 @@
                         var rolId = sessionStorage.getItem("RolId");
                         var disabled = true;
                         //por mientras solo para el Administrador
-                        if (rolId == 1)
+                        if (rolId != 9)
                             disabled = false;
 
 
@@ -204,7 +204,7 @@
                 Y.Do.after(function () {
                     var rolId = sessionStorage.getItem("RolId");
                     //solo para administradores por mientras
-                    if (rolId == '1') {
+                    if (rolId != '9') {
                         var popup = Y.one("#bb")._node.childNodes[1];
                         var cantidadNodos = popup.childNodes[0].length;
                         var titulo;

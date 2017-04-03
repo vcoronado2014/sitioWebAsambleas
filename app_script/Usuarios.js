@@ -11,24 +11,24 @@ $(function () {
         }
         else {
             $('#ancoreSesion').html('<i class="fa fa-sign-in"></i> Iniciar Sesión');
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
     }
     else {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     $('#ancoreSesion').on('click', function () {
         if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión') {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
             sessionStorage.clear();
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
         else {
             //directo al login
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }
 
 
@@ -42,8 +42,10 @@ $(function () {
         nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         // knockout mapping JSON data to view model
-
-        if (sessionStorage.getItem("RolId") == '1')
+        //cambios en los roles //1,2,3,5,6
+        if (sessionStorage.getItem("RolId") == '1' || sessionStorage.getItem("RolId") == '2'
+            || sessionStorage.getItem("RolId") == '3' || sessionStorage.getItem("RolId") == '5'
+            || sessionStorage.getItem("RolId") == '6')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);

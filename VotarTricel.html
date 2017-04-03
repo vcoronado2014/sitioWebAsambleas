@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head runat="server">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
     <meta name="description" content="." />
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
     <meta name="author" content="Victor Coronado" />
-    <title>Crear Modificar Ingreso Egreso</title>
+    <title>Votar Tricel</title>
     <!-- Bootstrap Core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -21,9 +21,9 @@
     <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
 
     <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
+    <link href="Content/morris.css" rel="stylesheet" />
     <link href="Content/sweetalert.css" rel="stylesheet" />
-
-    <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
 
 
@@ -35,7 +35,7 @@
     <![endif]-->
 
     <!-- jQuery -->
-    <script src="Scripts/jquery-1.11.3.js"></script>
+    <script src="Scripts/jquery-1.11.3.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="Scripts/bootstrap.min.js"></script>
@@ -44,13 +44,27 @@
 
 
     <script src="Scripts/jquery.validate.min.js"></script>
-    <script src="Scripts/sweetalert.js"></script>
-    <script src="Scripts/pnotify.custom.min.js"></script>
     <script src="Scripts/moment.js"></script>
+
+    <script src="Scripts/lib/raphael.min.js"></script>
+    <script src="Scripts/morris.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+    <script src="Scripts/sb-admin-2.js"></script>
+    <script src="Scripts/metisMenu.js"></script>
+    <script src="Scripts/sweetalert.js"></script>
     <script src="const.js"></script>
-    <script src="app_script/CrearModificarRendicion.js"></script>
+
+    <script src="app_script/VotarProyecto.js"></script>
+
+
+
 </head>
 <body class="bodyFixed">
+<div class="container" id="loading">
+
+</div>
+
 <div class="container" id="principal">
     <!-- encabezado -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -74,8 +88,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="usuarios.html">Usuarios</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="ListarInstitucion.html">Intituciones</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li><a data-bind="visible: shouldShowMessage" href="ListarInstitucion.html">Intituciones</a></li>
+                            <li data-bind="visible: shouldShowMessage" role="separator" class="divider"></li>
                             <li><a href="ListarRendicion.html">Rendiciones</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="ListarDocumento.html">Documentos de Usuario</a></li>
@@ -86,7 +100,7 @@
                     <li class="dropdown" data-bind="visible: shouldShowMessage">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a  href="ListarVotacion.html">Listar Triceles</a></li>
+                            <li><a data-bind="visible: shouldShowMessage" href="ListarVotacion.html">Listar Triceles</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: shouldShowMessage">
@@ -105,99 +119,83 @@
     </nav>
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
-            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span data-bind="text: nombreCompleto"></span></a>
+            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span  data-bind="text: nombreCompleto"></span></a>
             <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
         </div>
     </nav>
 
     <div class="col-xs-12 page-header">
-        <h3>Mantenedor <small>de Ingresos/Egresos</small></h3>
+        <h3>Votar <small>Tricel</small></h3>
     </div>
 
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Detalle</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">
-                    <i class="fa fa-user"></i>
-                </span>
-            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Detalle Movimiento" aria-describedby="basic-addon1" disabled="disabled" data-bind="event: { change: onChangeUsuario }, value: self.frmNombreUsuario" />
+    <div class="alert alert-success col-xs-12" role="alert">
+        <div class="col-xs-12">
+            <strong><i>
+                <h4>Info <small>del Tricel</small></h4>
+
+            </i> </strong>
+        </div>
+        <div class="col-xs-12">
+            <ul data-bind="foreach: itemsP">
+                <div class="pull-right">
+                    <i><strong><span data-bind="text: fechas"></span></i> </strong>
+                </div>
+                <li>
+                    <i> <span>Nombre Proyecto: </span></i>
+                    <span data-bind="text: nombre"></span>
+                </li>
+                <li>
+                    <i> <span>Objetivo: </span></i>
+                    <span data-bind="text: objetivo"></span>
+                </li>
+                <li>
+                    <i><span>Beneficios: </span></i>
+                    <span data-bind="text: beneficios"></span>
+                </li>
+                <li>
+                    <i><span>Descripción: </span></i>
+                    <span data-bind="text: descripcion"></span>
+                </li>
+                <li>
+                    <strong>
+                        <i><span>Monto: </span></i>
+                        <span data-bind="text: monto"></span>
+                    </strong>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="alert alert-info col-xs-12" role="alert">
+        <i class="fa fa-3x fa-info-circle pull-left"></i>
+        <p data-bind="text: textoVoto"></p>
+    </div>
+
+    <div class="jumbotron">
+        <div class="col-md-9 col-xs-12">
+            <h3 class="text-info">¡Vota por tu Lista Preferida!</h3>
+            <h4 class="text-justify text-info">A continuación puedes realizar el voto por tu lista preferida, tienes 2 opciones, debes hacer click en el botón <i class="fa fa-check"></i> si estas de acuerdo y en el botón <i class="fa fa-times danger"></i> si no lo estás. </h4>
+            <button type="button" data-bind="click: volver" class="btn btn-info btn-circle btn-xl" data-toggle="tooltip" data-placement="bottom" title="Volver"><i class="fa fa-reply"></i>
+            </button>
+            <p class="text-right">
+                <button type="button" class="btn btn-info btn-circle btn-xl" data-bind="click: votarPositivo, visible: visibleBoton"><i class="fa fa-check"></i>
+                </button>
+
+                <button type="button" class="btn btn-danger btn-circle btn-xl" data-bind="click: votarNegativo, visible: visibleBoton"><i class="fa fa-times"></i>
+                </button>
+
+            </p>
+        </div>
+        <div class="col-md-3 col-xs-12 text-center">
+
+            <div id="graph"></div>
         </div>
 
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Fecha</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon6">
-                    <i class="fa fa-calendar"></i>
-                </span>
-            <input type="text" class="form-control" id="txtFecha" name="Fecha" placeholder="Fecha" aria-describedby="basic-addon6" data-bind="value: self.frmFecha" disabled="disabled" />
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Tipo Movimiento</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon8">
-                    <i class="fa fa-globe"></i>
-                </span>
-            <select id="selectIdTipoMovimiento" class="form-control">
-                <option value="1">Ingreso</option>
-                <option value="2">Egreso</option>
-            </select>
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Número Comprobante</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon4">
-                    <i class="fa fa-file-archive-o"></i>
-                </span>
-            <input type="text" class="form-control" name="segundoApellido" id="txtNumeroComprobante" placeholder="Número Comprobante" aria-describedby="basic-addon4" data-bind="value: self.frmNumeroComprobante" />
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Monto</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon5">
-                    <i class="fa fa-dollar"></i>
-                </span>
-            <input type="text" class="form-control" name="monto" id="txtMonto" placeholder="Monto" aria-describedby="basic-addon5" data-bind="value: self.frmMonto" />
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Subir Archivo</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon9">
-                    <a  id="iconoDescargar" data-bind="attr: { href: self.frmUrlDocumento, title: details }" download="documento" data-toggle="tooltip" data-placement="left" title="Descargar Archivo">
-                        <i class="fa fa-download"></i>
-                    </a>
-                </span>
-            <input type="file"  class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9"/>
-
-
-        </div>
-
-    </div>
-
-    <div class="col-xs-12" style="padding-bottom: 20px;">
-    </div>
-    <hr class="style17" style="width: 100%;" />
-
-    <div class="col-xs-6">
-        <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width: 100%;" data-bind="click: cancelar" />
-    </div>
-    <div class="col-xs-6">
-        <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar" />
     </div>
 
 </div>
+
+
 </body>
 </html>

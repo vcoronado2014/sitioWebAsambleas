@@ -16,13 +16,13 @@ $(document).ready(function () {
         }
         else {
             $('#ancoreSesion').html('<i class="fa fa-sign-in"></i> Iniciar Sesión');
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
     }
     else
     {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 
     $('#ancoreSesion').on('click', function () {
@@ -30,20 +30,20 @@ $(document).ready(function () {
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
             sessionStorage.clear();
-            window.location.href = "login.html";
+            window.location.href = "index.html";
             return;
         }
         else
         {
             //directo al login
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }
 
 
     });
 
 
-    function PersonViewModel(data, dataP) {
+    function PersonViewModel(data, dataP, dataT) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -198,11 +198,42 @@ $(document).ready(function () {
 
         self.itemsP = ko.observableArray(itemsP);
 
+        var itemsT = [];
+        var itemsProcesarT = dataT.proposals;
+
+        if (itemsProcesarT != null && itemsProcesarT.length > 0)
+        {
+            for(var i in itemsProcesarT)
+            {
+                var puedeVotar = itemsProcesarT[i].OtroSiete;
+                var disabled = true;
+                //por mientras solo para el Administrador
+                if (puedeVotar == "1")
+                    disabled = false;
+
+
+                var s = {
+                    nombre: itemsProcesarT[i].NombreUsuario,
+                    objetivo: itemsProcesarT[i].NombreCompleto,
+                    fechaInicio : itemsProcesarT[i].OtroUno,
+                    fechaTermino : itemsProcesarT[i].OtroDos,
+                    fechaCreacion: itemsProcesarT[i].OtroTres,
+                    urlVotar: 'VotarProyecto.html?id=' + itemsProcesarT[i].Id + '&puedeVotar=' + itemsProcesarT[i].OtroSiete,
+                    puedeVotar: disabled,
+                    content: 'Nombre: ' + itemsProcesarT[i].NombreUsuario + ', Objetivo: ' + itemsProcesarT[i].NombreCompleto
+                }
+                itemsT[i] = s;
+            }
+        }
+
+        self.itemsT = ko.observableArray(itemsT);
+
     }
 
 
     var dataCalendario = [];
     var dataProyecto =  [];
+    var dataTricel =  [];
 
     var obtenerCalendario = jQuery.ajax({
         url : ObtenerUrl('Calendario'),
@@ -220,13 +251,22 @@ $(document).ready(function () {
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), Tipo:'1' })
     });
 
-    $.when(obtenerCalendario, obtenerProyecto).then(
-        function(data, dataP){
+    var obtenerTricel = jQuery.ajax({
+        url : ObtenerUrlDos('Votacion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id")})
+    });
+
+    $.when(obtenerCalendario, obtenerProyecto, obtenerTricel).then(
+        function(data, dataP, dataT){
             dataCalendario = data[0];
             dataProyecto = dataP[0];
+            dataTricel = dataT[0];
             elem = document.getElementById('principal');
 
-            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto));
+            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel));
 
         },
         function (){
