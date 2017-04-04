@@ -218,7 +218,7 @@ $(document).ready(function () {
                     fechaInicio : itemsProcesarT[i].OtroUno,
                     fechaTermino : itemsProcesarT[i].OtroDos,
                     fechaCreacion: itemsProcesarT[i].OtroTres,
-                    urlVotar: 'VotarProyecto.html?id=' + itemsProcesarT[i].Id + '&puedeVotar=' + itemsProcesarT[i].OtroSiete,
+                    urlVotar: 'VotarTricel.html?id=' + itemsProcesarT[i].Id + '&puedeVotar=' + itemsProcesarT[i].OtroSiete,
                     puedeVotar: disabled,
                     content: 'Nombre: ' + itemsProcesarT[i].NombreUsuario + ', Objetivo: ' + itemsProcesarT[i].NombreCompleto
                 }

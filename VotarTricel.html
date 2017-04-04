@@ -22,7 +22,7 @@
 
     <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
-    <link href="Content/morris.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link href="Content/sweetalert.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
 
@@ -46,8 +46,13 @@
     <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/moment.js"></script>
 
+    <!--
     <script src="Scripts/lib/raphael.min.js"></script>
     <script src="Scripts/morris.js"></script>
+-->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
     <script src="Scripts/sb-admin-2.js"></script>
@@ -55,7 +60,7 @@
     <script src="Scripts/sweetalert.js"></script>
     <script src="const.js"></script>
 
-    <script src="app_script/VotarProyecto.js"></script>
+    <script src="app_script/VotarTricel.js"></script>
 
 
 
@@ -148,20 +153,6 @@
                     <i> <span>Objetivo: </span></i>
                     <span data-bind="text: objetivo"></span>
                 </li>
-                <li>
-                    <i><span>Beneficios: </span></i>
-                    <span data-bind="text: beneficios"></span>
-                </li>
-                <li>
-                    <i><span>Descripción: </span></i>
-                    <span data-bind="text: descripcion"></span>
-                </li>
-                <li>
-                    <strong>
-                        <i><span>Monto: </span></i>
-                        <span data-bind="text: monto"></span>
-                    </strong>
-                </li>
 
             </ul>
         </div>
@@ -178,6 +169,10 @@
             <h4 class="text-justify text-info">A continuación puedes realizar el voto por tu lista preferida, tienes 2 opciones, debes hacer click en el botón <i class="fa fa-check"></i> si estas de acuerdo y en el botón <i class="fa fa-times danger"></i> si no lo estás. </h4>
             <button type="button" data-bind="click: volver" class="btn btn-info btn-circle btn-xl" data-toggle="tooltip" data-placement="bottom" title="Volver"><i class="fa fa-reply"></i>
             </button>
+            <!-- aca va un ul -->
+
+
+            <!--
             <p class="text-right">
                 <button type="button" class="btn btn-info btn-circle btn-xl" data-bind="click: votarPositivo, visible: visibleBoton"><i class="fa fa-check"></i>
                 </button>
@@ -186,6 +181,7 @@
                 </button>
 
             </p>
+            -->
         </div>
         <div class="col-md-3 col-xs-12 text-center">
 
