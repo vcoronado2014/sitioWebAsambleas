@@ -42,7 +42,7 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel(dataP) {
+    function PersonViewModel(dataP, dataL) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -62,12 +62,15 @@ $(document).ready(function () {
         var itemsP = [];
         var itemsProcesarP = dataP.proposals;
 
+        var puedeVotar = "0";
+        var disabled = true;
+
         if (itemsProcesarP != null && itemsProcesarP.length > 0)
         {
             for(var i in itemsProcesarP)
             {
-                var puedeVotar = itemsProcesarP[i].OtroSiete;
-                var disabled = true;
+                puedeVotar = itemsProcesarP[i].OtroSiete;
+                disabled = true;
                 self.visibleBoton = false;
                 //por mientras solo para el Administrador
                 if (puedeVotar == "1") {
@@ -86,7 +89,7 @@ $(document).ready(function () {
 
 
                     urlVotar: 'VotarTricel.html?id=' + itemsProcesarP[i].Id + '&puedeVotar=' + itemsProcesarP[i].OtroSiete,
-                    puedeVotar: disabled,
+                    puedeVotarT: disabled,
                     fechas: itemsProcesarP[i].OtroCinco,
                     textoVoto: itemsProcesarP[i].OtroNueve,
                     content: 'Nombre: ' + itemsProcesarP[i].NombreUsuario + ', Objetivo: ' + itemsProcesarP[i].NombreCompleto
@@ -97,10 +100,116 @@ $(document).ready(function () {
 
         self.itemsP = ko.observableArray(itemsP);
 
+
+        var itemsL = [];
+        var itemsProcesarL = dataL.proposals;
+
+        if (itemsProcesarL != null && itemsProcesarL.length > 0)
+        {
+            for(var i in itemsProcesarL)
+            {
+
+                var s = {
+                    nombre: itemsProcesarL[i].NombreUsuario,
+                    objetivo: itemsProcesarL[i].NombreCompleto,
+                    descripcion : itemsProcesarL[i].OtroTres,
+                    fechaInicio : itemsProcesarL[i].OtroUno,
+                    fechaTermino : itemsProcesarL[i].OtroDos,
+                    //urlVotar: 'VotarTricel.html?id=' + itemsProcesarL[i].Id + '&puedeVotar=' + itemsProcesarL[i].OtroSiete,
+                    puedeVotarT: disabled,
+                    id: itemsProcesarL[i].Id
+                }
+                itemsL[i] = s;
+            }
+        }
+
+        self.itemsL = ko.observableArray(itemsL);
+
+
         volver = function (){
             window.location.href = "inicio.html";
         }
-        votarPositivo = function(){
+        votarPositivo = function(item){
+            var ltrId = item.id;
+            var nombre = item.nombre;
+            var id = getParameterByName('id');
+
+            /*
+            var voto = {
+                InstId: instId,
+                ProId: id,
+                Valor: valor,
+                UsuId: usuId
+            }
+*/
+
+            swal({
+                title: "Votar",
+                text: "¿Está seguro de votar la lista" + nombre,
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                customClass: 'sweetalert-xs',
+                showLoaderOnConfirm: true
+            }, function (isConfirm) {
+                if (isConfirm) {
+
+
+                    setTimeout(function () {
+/*
+                        $.ajax({
+                            url: ObtenerUrlDos('VotarProyecto'),
+                            type: "POST",
+                            data: ko.toJSON(voto),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataF) {
+                                //ok
+                                swal({
+                                        title: "Éxito",
+                                        text: "Su voto se ha registrado con éxito.",
+                                        type: "success",
+                                        showCancelButton: false,
+                                        confirmButtonClass: "btn-success",
+                                        confirmButtonText: "Ok",
+                                        cancelButtonText: "No, cancel plx!",
+                                        closeOnConfirm: false,
+                                        customClass: 'sweetalert-xs',
+                                        closeOnCancel: false
+                                    },
+                                    function (isConfirm) {
+                                        if (isConfirm) {
+                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            window.location.href = "VotarProyecto.html?id=" + id + '&puedeVotar=' + puedeVotar;
+                                        } else {
+                                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                        }
+                                    });
+
+                                //swal("Eliminado con éxito!");
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                                else {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                            }
+                        });
+*/
+
+                    }, 2000);
+
+                }
+                else {
+                    window.location.href ="VotarTricel.html?id=" + id + '&puedeVotar=1';
+                }
+            });
+
+            /*
             var id = getParameterByName('id');
             var instId = sessionStorage.getItem("InstId");
             var usuId = sessionStorage.getItem("Id");
@@ -171,7 +280,6 @@ $(document).ready(function () {
                             }
                         });
 
-                        //swal("Ajax request finished!");
 
                     }, 2000);
 
@@ -180,7 +288,7 @@ $(document).ready(function () {
                     window.location.href ="VotarProyecto.html?id=" + id + '&puedeVotar=1';
                 }
             });
-
+            */
         }
 
         votarNegativo = function(){
@@ -268,6 +376,7 @@ $(document).ready(function () {
     }
 
     var dataProyecto =  [];
+
     var dataGraficoArr = [{"value":"","label":""}];
 
     var obtenerVotaciones= jQuery.ajax({
@@ -285,29 +394,51 @@ $(document).ready(function () {
         contentType: "application/json",
         data: ko.toJSON({ InstId: getParameterByName('id'), NombreGrafico: "TRICEL" })
     });
-    $.when(obtenerVotaciones, obtenerGrafico).then(
-        function(dataP, dataGrafico){
+
+    var obtenerListaTricel= jQuery.ajax({
+        url :  ObtenerUrl('ListaTricel'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ TriId: getParameterByName('id') })
+    });
+
+    $.when(obtenerVotaciones, obtenerGrafico, obtenerListaTricel).then(
+        function(dataP, dataGrafico, dataListaTricel){
             //aca contenido de la operacion
             dataProyecto = dataP[0];
             dataGraficoArr = dataGrafico[0];
 
-            if (dataGrafico[0].length > 0) {
+            //verificamos si se muestra o no
+            var suma = 0;
+            for(var i in dataGraficoArr)
+            {
+                suma = suma + parseInt(dataGraficoArr[i].value);
+            }
+
+            if (suma > 0) {
                 var chart = Morris.Donut({
                     element: 'graph',
                     data: dataGraficoArr,
+
                     backgroundColor: '#ccc',
                     labelColor: '#060',
                     colors: [
                         'rgb(11, 98, 164)',
                         'rgb(160, 0, 0)'
                     ],
+
                     formatter: function (x) {
                         return x
                     }
                 });
                 //chart.setData(ko.toJSON(dataGraficoArr));
             }
-            ko.applyBindings(new PersonViewModel(dataProyecto));
+
+            //ahora seteamos los elementos de la lista
+
+
+            ko.applyBindings(new PersonViewModel(dataProyecto, dataListaTricel[0]));
 
         },
         function (){
@@ -320,8 +451,8 @@ $(document).ready(function () {
         }
     )
 
-    /*
 
+/*
     $.ajax({
         url: ObtenerUrlDos('Votacion'),
         type: "POST",
