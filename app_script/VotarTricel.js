@@ -51,7 +51,7 @@ $(document).ready(function () {
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         self.textoVoto = ko.observable("");
-        self.visibleBoton = ko.observable(false);
+        visibleBoton = ko.observable(false);
 
 
         if (sessionStorage.getItem("RolId") == '1')
@@ -71,11 +71,11 @@ $(document).ready(function () {
             {
                 puedeVotar = itemsProcesarP[i].OtroSiete;
                 disabled = true;
-                self.visibleBoton = false;
+                visibleBoton = false;
                 //por mientras solo para el Administrador
                 if (puedeVotar == "1") {
                     disabled = false;
-                    self.visibleBoton = true;
+                    visibleBoton = true;
                 }
                 self.textoVoto = itemsProcesarP[i].OtroNueve;
 
@@ -129,19 +129,20 @@ $(document).ready(function () {
         volver = function (){
             window.location.href = "inicio.html";
         }
-        votarPositivo = function(item){
+        votar = function(item){
             var ltrId = item.id;
             var nombre = item.nombre;
             var id = getParameterByName('id');
+            var instId = sessionStorage.getItem("InstId");
+            var usuId = sessionStorage.getItem("Id");
 
-            /*
             var voto = {
                 InstId: instId,
-                ProId: id,
-                Valor: valor,
-                UsuId: usuId
+                LtrId: ltrId,
+                UsuId: usuId,
+                TriId: id
             }
-*/
+
 
             swal({
                 title: "Votar",
@@ -156,9 +157,9 @@ $(document).ready(function () {
 
 
                     setTimeout(function () {
-/*
+
                         $.ajax({
-                            url: ObtenerUrlDos('VotarProyecto'),
+                            url: ObtenerUrlDos('VotarTricel'),
                             type: "POST",
                             data: ko.toJSON(voto),
                             contentType: "application/json",
@@ -180,7 +181,7 @@ $(document).ready(function () {
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                            window.location.href = "VotarProyecto.html?id=" + id + '&puedeVotar=' + puedeVotar;
+                                            window.location.href = "VotarTricel.html?id=" + id + '&puedeVotar=0';
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
                                         }
@@ -199,7 +200,7 @@ $(document).ready(function () {
                                 }
                             }
                         });
-*/
+
 
                     }, 2000);
 
@@ -291,88 +292,6 @@ $(document).ready(function () {
             */
         }
 
-        votarNegativo = function(){
-            var id = getParameterByName('id');
-            var instId = sessionStorage.getItem("InstId");
-            var usuId = sessionStorage.getItem("Id");
-            var valor = "0";
-            var puedeVotar = "0";
-
-            var voto = {
-                InstId: instId,
-                ProId: id,
-                Valor: valor,
-                UsuId: usuId
-            }
-
-            swal({
-                title: "Votar",
-                text: "¿Está seguro de votar NO a este Proyecto?.",
-                type: "info",
-                showCancelButton: true,
-                closeOnConfirm: false,
-                customClass: 'sweetalert-xs',
-                showLoaderOnConfirm: true
-            }, function (isConfirm) {
-                if (isConfirm) {
-
-
-                    setTimeout(function () {
-
-                        $.ajax({
-                            url: ObtenerUrlDos('VotarProyecto'),
-                            type: "POST",
-                            data: ko.toJSON(voto),
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (dataF) {
-                                //ok
-                                swal({
-                                        title: "Éxito",
-                                        text: "Su voto se ha registrado con éxito.",
-                                        type: "success",
-                                        showCancelButton: false,
-                                        confirmButtonClass: "btn-success",
-                                        confirmButtonText: "Ok",
-                                        cancelButtonText: "No, cancel plx!",
-                                        closeOnConfirm: false,
-                                        customClass: 'sweetalert-xs',
-                                        closeOnCancel: false
-                                    },
-                                    function (isConfirm) {
-                                        if (isConfirm) {
-                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                            window.location.href = "VotarProyecto.html?id=" + id + '&puedeVotar=' + puedeVotar;
-                                        } else {
-                                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                        }
-                                    });
-
-                                //swal("Eliminado con éxito!");
-                            },
-                            error: function (error) {
-                                if (error.status.toString() == "500") {
-                                    //getNotify('error', 'Error', 'Error de Servidor!');
-                                    swal("Error de Servidor");
-                                }
-                                else {
-                                    //getNotify('error', 'Error', 'Error de Servidor!');
-                                    swal("Error de Servidor");
-                                }
-                            }
-                        });
-
-                        //swal("Ajax request finished!");
-
-                    }, 2000);
-
-                }
-                else {
-                    window.location.href ="VotarProyecto.html?id=" + id + '&puedeVotar=1';
-                }
-            });
-
-        }
     }
 
     var dataProyecto =  [];

@@ -166,7 +166,7 @@
     <div class="jumbotron">
         <div class="col-md-9 col-xs-12">
             <h3 class="text-info">¡Vota por tu Lista Preferida!</h3>
-            <h4 class="text-justify text-info">A continuación puedes realizar el voto por tu lista preferida, tienes 2 opciones, debes hacer click en el botón <i class="fa fa-check"></i> si estas de acuerdo y en el botón <i class="fa fa-times danger"></i> si no lo estás. </h4>
+            <h4 class="text-justify text-info">A continuación puedes realizar el voto por tu lista preferida, solo debes hacer click en el botón <i class="fa fa-check"></i>  que se encuentra al lado derecho de tu lista seleccionada.</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead style="background: aqua;">
@@ -186,10 +186,9 @@
                             <i> <span data-bind="text: descripcion"></span></i>
                         </td>
                         <td class="pull-right">
-                            <button type="button" class="btn btn-info btn-circle" data-bind="click: votarPositivo"><i class="fa fa-check"></i>
+                            <button type="button" class="btn btn-info btn-circle" data-bind="click: votar, visible: visibleBoton"><i class="fa fa-check"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
-                            </button>
+
                         </td>
                     </tr>
                     </tbody>
