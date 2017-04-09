@@ -30,15 +30,18 @@ $(document).ready(function () {
         }
         siguiente = function(item){
             //alert(frmCorreoElectronico);
-            sessionStorage.setItem("correoInstitucionPrueba", frmCorreoElectronico);
-            sessionStorage.setItem("telefonoInstitucionPrueba", frmTelefono);
-            sessionStorage.setItem("nombreInstitucionPrueba" + "_prueba", frmNombreInstitucion);
-            sessionStorage.setItem("direccionInstitucionPrueba", frmDireccion);
-            var idRegion = $("#selectIdRegion").val();
-            sessionStorage.setItem("idRegionInstitucionPrueba", idRegion);
-            var idComuna = $("#selectIdComuna").val();
-            sessionStorage.setItem("idComunaInstitucionPrueba", idComuna);
-            window.location.href = "PruebaUsuario.html";
+            //antes hay que validar
+            if (validar($("#txtNombreUsuario").val(), $("#selectIdComuna").val(), $("#txtCorreo").val(), $("#txtTelefono").val(), $("#txtDireccion").val())) {
+                sessionStorage.setItem("correoInstitucionPrueba", frmCorreoElectronico);
+                sessionStorage.setItem("telefonoInstitucionPrueba", frmTelefono);
+                sessionStorage.setItem("nombreInstitucionPrueba", frmNombreInstitucion + "_prueba");
+                sessionStorage.setItem("direccionInstitucionPrueba", frmDireccion);
+                var idRegion = $("#selectIdRegion").val();
+                sessionStorage.setItem("idRegionInstitucionPrueba", idRegion);
+                var idComuna = $("#selectIdComuna").val();
+                sessionStorage.setItem("idComunaInstitucionPrueba", idComuna);
+                window.location.href = "PruebaUsuario.html";
+            }
 
         }
         salir = function(){
@@ -46,6 +49,92 @@ $(document).ready(function () {
             window.location.href = "index.html";
 
         }
+        onChangeInstitucion = function () {
+            var nombreInstitucion = $("#txtNombreUsuario").val();
+            var consulta = { NombreInstitucion: nombreInstitucion};
+            var consultar = jQuery.ajax({
+                url: ObtenerUrlDos('Asistente'),
+                type: 'POST',
+                dataType: "json",
+                contentType: "application/json",
+                data: ko.toJSON(consulta)
+            });
+
+            //var llamada y promesa, luego de ser correcto borrar las variables de sesion y redireccionarlo al index
+
+            $.when(consultar).then(
+                function (data) {
+                    //aca despues de guardar
+                    if (data.Id > 0) {
+                        swal({
+                                title: "Ya Existe",
+                                text: "Esta institución ya existe, intente con otra",
+                                type: "success",
+                                showCancelButton: false,
+                                confirmButtonClass: "btn-success",
+                                confirmButtonText: "Ok",
+                                cancelButtonText: "No, cancel plx!",
+                                closeOnConfirm: true,
+                                customClass: 'sweetalert-xs',
+                                closeOnCancel: false
+                            },
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    $("#txtNombreUsuario").val('');
+
+                                } else {
+                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                }
+                            });
+                    }
+
+                },
+                function () {
+                    //alguna ha fallado
+                    swal("Error de Servidor");
+                },
+                function () {
+                    //acá podemos quitar el elemento cargando
+                    //alert('quitar cargando');
+                }
+            )
+
+
+            /*
+            $.ajax({
+                url: ObtenerUrl('ListarUsuarios'),
+                type: "POST",
+                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (usuario) {
+                    //// ok
+                    if (usuario != undefined) {
+                        if (usuario.length == 1) {
+                            swal({
+                                title: "Existe",
+                                text: "Este usuario ya existe intente con otro",
+                                type: "warning",
+                                customClass: 'sweetalert-xs'
+                            });
+                            $("#txtNombreUsuario").val("");
+
+                        }
+                    }
+
+                },
+                error: function (error) {
+                    if (error.status.toString() == "500") {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                    else {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                }
+            });
+            */
+
+        };
     }
 
 
@@ -172,6 +261,11 @@ $(document).ready(function () {
         }
         if (CorreoElectronico === '' || CorreoElectronico === null) {
             getNotify('error', 'Requerido', 'Correo Electrónico Requerido.');
+            retorno = false;
+        }
+        if (validarEmail(CorreoElectronico) == false)
+        {
+            getNotify('error', 'Inválido', 'Correo Electrónico Inválido.');
             retorno = false;
         }
         if (Telefono === '' || Telefono === null) {

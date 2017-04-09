@@ -41,12 +41,12 @@
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         // knockout mapping JSON data to view model
 
-        if (sessionStorage.getItem("RolId") == '1' || sessionStorage.getItem("RolId") =='2' || sessionStorage.getItem("RolId") == '6')
+        if (sessionStorage.getItem("RolId") == '1')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
 
-        if (sessionStorage.getItem("RolId") == '1' || sessionStorage.getItem("RolId") =='2' || sessionStorage.getItem("RolId") == '6') {
+        if (sessionStorage.getItem("RolId") == '1') {
             permitirCrear = ko.observable(true);
             permitirEliminar = ko.observable(true);
         }

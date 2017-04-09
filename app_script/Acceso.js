@@ -2,7 +2,6 @@
  * Created by vcoronado on 03-04-2017.
  */
 $(document).ready(function () {
-    $('#principal').show();
 
     //un poco de nockout
     var PersonaViewModel = {
@@ -11,8 +10,10 @@ $(document).ready(function () {
 
         autentificar: function () {
 
-            $('#principal').hide();
-            $('#loading').show();
+
+            $( "#progressbar" ).progressbar({
+                value: false
+            });
 
             $('#mensaje').text('');
 
