@@ -28,7 +28,7 @@
 
 
     });
-    function PersonViewModel(data, dataR, dataC, dataF) {
+    function PersonViewModel(data, dataR, dataC, dataF, dataI) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -40,6 +40,10 @@
         self.comunas = ko.observableArray(dataC);
         self.regiones = ko.observableArray(dataR);
         self.roles = ko.observableArray(dataF);
+
+        //agregadas las instituciones ***********************
+        self.instituciones = ko.observableArray(dataI.proposals);
+        //***************************************************
         self.elem = document.getElementById('principal');
         //self.nombreUsuario = ko.observable(sessionStorage.getItem("NombreUsuario"));
 
@@ -67,7 +71,7 @@
 
         guardar = function () {
             //acá hay que validar todo!!
-            if (validar($("#txtNombreUsuario").val(), $("#txtNombres").val(), $("#txtPrimerApellido").val(), $("#txtRut").val(), $("#txtCorreo").val(), $("#txtTelefono").val(), $("#selectIdComuna").val(), $("#txtPassword").val(), $("#txtNuevaPassword").val()))
+            if (validar($("#txtNombreUsuario").val(), $("#txtNombres").val(), $("#txtPrimerApellido").val(), $("#txtRut").val(), $("#txtCorreo").val(), $("#txtTelefono").val(), $("#selectIdComuna").val(), $("#txtPassword").val(), $("#txtNuevaPassword").val(), $("#selectInstitucion").val()))
             {
                 if (Rut(frmRut) && validarEmail(frmCorreoElectronico))
                 {
@@ -75,7 +79,9 @@
                     var idUsuario = getParameterByName('idUsuario');
                     var idComuna = $("#selectIdComuna").val();
                     var idRol = $("#selectIdRol").val();
-                    var instId = sessionStorage.getItem("InstId");
+                    //var instId = sessionStorage.getItem("InstId");
+                    var instId = $("#selectInstitucion").val();
+                    //**********************************************
                     var pass = $("#txtPassword").val();
                     var nuevaPass = $("#txtNuevaPassword").val()
                     if (pass != nuevaPass)
@@ -181,6 +187,10 @@
                 frmIdComuna = ko.observable(data.Comuna.Id);
                 self.frmDireccion = data.Persona.DireccionCompleta;
                 self.frmIdRol = data.Rol.Id;
+                //************* agregado para la institucion *******
+
+                self.frmIdInstitucion = data.Institucion.Id;
+                //************************************
                 //self.frmPassword = data.AutentificacionUsuario.Password;
                 //self.frmNuevaPassword = frmPassword;
 
@@ -220,7 +230,35 @@
                                         //ok
                                         self.roles = dataF;
                                         selectedRol = self.frmIdRol;
-                                        ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
+                                        //aca la ultima llamada para obtener las instituciones
+
+                                        //ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
+
+                                        $.ajax({
+                                            url: ObtenerUrl('Institucion'),
+                                            type: "POST",
+                                            data: ko.toJSON({ IdUsuario: 9 }),
+                                            contentType: "application/json",
+                                            dataType: "json",
+                                            success: function (dataI) {
+                                                //ok
+                                                self.instituciones = dataI.proposals;
+                                                selectedInstitucion = self.frmIdInstitucion;
+                                                //aca la ultima llamada para obtener las instituciones
+
+                                                ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF, dataI), self.elem);
+                                            },
+                                            error: function (error) {
+                                                if (error.status.toString() == "500") {
+                                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                                }
+                                                else {
+                                                    getNotify('error', 'Error', 'Error de Servidor!');
+                                                }
+                                            }
+                                        });
+
+
                                     },
                                     error: function (error) {
                                         if (error.status.toString() == "500") {
@@ -339,6 +377,7 @@
             //determinar si es el mismo usuario a eliminar
 
                 //bloquear todos los controles y cambiar el nombre del botòn
+                $("#selectInstitucion").attr('disabled', 'disabled');
                 $("#txtNombres").attr('disabled', 'disabled');
                 $("#txtPrimerApellido").attr('disabled', 'disabled');
                 $("#txtSegundoApellido").attr('disabled', 'disabled');
@@ -449,6 +488,14 @@
         }
     }
     else{
+        if (sessionStorage.getItem("RolId") == '1') {
+            $("#selectInstitucion").removeAttr('disabled');
+        }
+        else
+        {
+            $("#selectInstitucion").val(sessionStorage.getItem("InstId"));
+        }
+
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
         $.ajax({
@@ -483,7 +530,33 @@
                                 //ok
                                 self.roles = dataF;
                                 selectedRol = 0;
-                                ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
+                                //comentado, se agrega nueva llamada
+
+                                //ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
+
+                                $.ajax({
+                                    url: ObtenerUrl('Institucion'),
+                                    type: "POST",
+                                    data: ko.toJSON({ IdUsuario: 9 }),
+                                    contentType: "application/json",
+                                    dataType: "json",
+                                    success: function (dataI) {
+                                        //ok
+                                        self.instituciones = dataI.proposals;
+                                        selectedInstitucion = 0;
+                                        //comentado, se agrega nueva llamada
+
+                                        ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF, dataI), self.elem);
+                                    },
+                                    error: function (error) {
+                                        if (error.status.toString() == "500") {
+                                            getNotify('error', 'Error', 'Error de Servidor!');
+                                        }
+                                        else {
+                                            getNotify('error', 'Error', 'Error de Servidor!');
+                                        }
+                                    }
+                                });
                             },
                             error: function (error) {
                                 if (error.status.toString() == "500") {
@@ -588,7 +661,7 @@
         });
     }
 
-    function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword) {
+    function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword, InstId) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined){
                 getNotify('error', 'Requerido', 'Nombre de Usuario Requerido.');
@@ -616,6 +689,10 @@
             }
             if (IdComuna === '0' || IdComuna === null) {
                 getNotify('error', 'Requerido', 'Comuna Requerida.');
+                retorno = false;
+            }
+            if (InstId === '0' || InstId === null) {
+                getNotify('error', 'Requerido', 'Institución Requerida.');
                 retorno = false;
             }
             if (Password != '') {

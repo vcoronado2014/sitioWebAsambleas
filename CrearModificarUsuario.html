@@ -117,6 +117,23 @@
         <h3>Mantenedor <small>de Usuarios</small></h3>
     </div>
 
+    <div class="col-xs-12">
+        <label for="basic-url">Institución </label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon59">
+                    <i class="fa fa-globe"></i>
+                </span>
+            <select id="selectInstitucion" class="form-control" data-bind="options: self.instituciones,
+                    optionsText: 'NombreCompleto',
+                    optionsValue: 'Id',
+                    value: selectedInstitucion,
+                    valueAllowUnset: true
+    " disabled="disabled">
+            </select>
+        </div>
+
+    </div>
+
 
     <div class="col-xs-12 col-md-6">
         <label for="basic-url">Nombre de Usuario</label>
