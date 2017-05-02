@@ -28,6 +28,7 @@
 
 
     });
+
     function PersonViewModel(data, dataR, dataC, dataF, dataI) {
         var self = this;
         //self.people = ko.observableArray([]);
@@ -40,6 +41,7 @@
         self.comunas = ko.observableArray(dataC);
         self.regiones = ko.observableArray(dataR);
         self.roles = ko.observableArray(dataF);
+
 
         //agregadas las instituciones ***********************
         self.instituciones = ko.observableArray(dataI.proposals);
@@ -162,6 +164,192 @@
     var elimina = getParameterByName('ELIMINADO');
     if (idUsuario > 0) {
 
+
+
+        var obtenerUsuario = jQuery.ajax({
+            url : ObtenerUrl('ObtenerUsuario'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ IdUsuario: getParameterByName('idUsuario') })
+        });
+
+
+        var obtenerRegiones = jQuery.ajax({
+            url : ObtenerUrl('ObtenerRegiones'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ InstId: 90 })
+        });
+
+
+        var obtenerRoles = jQuery.ajax({
+            url : ObtenerUrl('ObtenerRoles'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ InstId: 90 })
+        });
+
+        var obtenerInstitucion = jQuery.ajax({
+            url : ObtenerUrl('Institucion'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ IdUsuario: 9 })
+        });
+
+        $.when(obtenerUsuario, obtenerRegiones, obtenerRoles, obtenerInstitucion).then(
+            function(data, dataR, dataF, dataI){
+
+                elem = document.getElementById('principal');
+
+                frmIdRegion = ko.observable(data[0].Region.Id);
+
+                self.frmNombreUsuario = data[0].AutentificacionUsuario.NombreUsuario;
+                self.frmNombres = data[0].Persona.Nombres;
+                self.frmApellidoPaterno = data[0].Persona.ApellidoPaterno;
+                self.frmApellidoMaterno = data[0].Persona.ApellidoMaterno;
+                self.frmRut = data[0].Persona.Rut;
+                self.frmTelefono = data[0].Persona.Telefonos;
+                self.frmCorreoElectronico = data[0].AutentificacionUsuario.CorreoElectronico;
+                //self.frmIdRegion = data.Region.Id;
+                frmIdComuna = ko.observable(data[0].Comuna.Id);
+                self.frmDireccion = data[0].Persona.DireccionCompleta;
+                self.frmIdRol = data[0].Rol.Id;
+                //************* agregado para la institucion *******
+
+                self.frmIdInstitucion = data[0].Institucion.Id;
+
+
+                var obtenerComunas = jQuery.ajax({
+                    url : ObtenerUrl('ObtenerComunas'),
+                    type: 'POST',
+                    dataType : "json",
+                    contentType: "application/json",
+                    data: ko.toJSON({ RegId: data[0].Region.Id })
+                });
+
+                $.when(obtenerComunas).then(function (dataC)
+                    {
+                        //regiones
+                        if (dataR != null)
+                        {
+                            self.regiones = dataR[0];
+                            selectedRegion = frmIdRegion;
+                        }
+                        if (dataC != null)
+                        {
+                            self.comunas = dataC;
+                            selectedComuna = frmIdComuna;
+                        }
+                        if (dataF != null)
+                        {
+                            self.roles = dataF[0];
+                            selectedRol = self.frmIdRol;
+                        }
+                        if (dataI != null)
+                        {
+                            self.instituciones = dataI[0].proposals;
+                            selectedInstitucion = self.frmIdInstitucion;
+                        }
+
+                        ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataC, dataF[0], dataI[0]), self.elem);
+
+                    },
+                    function (){
+                        //alguna ha fallado
+                        alert('error');
+                    },
+                    function(){
+                        //acá podemos quitar el elemento cargando
+                        alert('quitar cargando');
+                    }
+
+
+                );
+                self.onChange = function () {
+                    $.ajax({
+                        url: ObtenerUrl('ObtenerComunas'),
+                        type: "POST",
+                        data: ko.toJSON({ RegId: self.frmIdRegion }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (dataCC) {
+                            // ok
+                            //self.Reset();
+                            self.comunas = dataCC;
+                            selectedComuna = 0;
+
+                            elem = document.getElementById('principal');
+                            ko.cleanNode(elem);
+                            ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataCC, self.roles, dataI[0]), elem);
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
+                self.onChangeUsuario = function () {
+                    var nombreUsuario = $("#txtNombreUsuario").val();
+
+                    $.ajax({
+                        url: ObtenerUrl('ListarUsuarios'),
+                        type: "POST",
+                        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (usuario) {
+                            //// ok
+                            if (usuario != undefined) {
+                                if (usuario.length == 1) {
+                                    swal({
+                                        title: "Existe",
+                                        text: "Este usuario ya existe intente con otro",
+                                        type: "warning",
+                                        customClass: 'sweetalert-xs'
+                                    });
+                                    $("#txtNombreUsuario").val("");
+
+                                }
+                            }
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
+
+            },
+            function (){
+                //alguna ha fallado
+                alert('error');
+            },
+            function(){
+                //acá podemos quitar el elemento cargando
+                alert('quitar cargando');
+            }
+        );
+
+
+
+
+        /******************
 
         $.ajax({
             url: ObtenerUrl('ObtenerUsuario'),
@@ -373,6 +561,8 @@
             }
         });
 
+    *******************/
+
         if (elimina == 1) {
             //determinar si es el mismo usuario a eliminar
 
@@ -498,6 +688,164 @@
 
         $("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
+
+        var obtenerRegiones = jQuery.ajax({
+            url : ObtenerUrl('ObtenerRegiones'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ InstId: 90 })
+        });
+
+
+        var obtenerRoles = jQuery.ajax({
+            url : ObtenerUrl('ObtenerRoles'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ InstId: 90 })
+        });
+
+        var obtenerInstitucion = jQuery.ajax({
+            url : ObtenerUrl('Institucion'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ IdUsuario: 9 })
+        });
+
+        $.when(obtenerRegiones, obtenerRoles, obtenerInstitucion).then(
+            function(dataR, dataF, dataI){
+
+                elem = document.getElementById('principal');
+
+                var obtenerComunas = jQuery.ajax({
+                    url : ObtenerUrl('ObtenerComunas'),
+                    type: 'POST',
+                    dataType : "json",
+                    contentType: "application/json",
+                    data: ko.toJSON({ RegId: 13 })
+                });
+
+                $.when(obtenerComunas).then(function (dataC)
+                    {
+                        //regiones
+                        if (dataR != null)
+                        {
+                            self.regiones = dataR[0];
+                            selectedRegion = 0;
+                        }
+                        if (dataC != null)
+                        {
+                            self.comunas = dataC;
+                            selectedComuna = 0;
+                        }
+                        if (dataF != null)
+                        {
+                            self.roles = dataF[0];
+                            selectedRol = 0;
+                        }
+                        if (dataI != null)
+                        {
+                            self.instituciones = dataI[0].proposals;
+                            //seteamos la institucion
+                            selectedInstitucion = sessionStorage.getItem("InstId");
+                        }
+
+                        ko.applyBindings(new PersonViewModel(data, dataR[0], dataC, dataF[0], dataI[0]), self.elem);
+
+                    },
+                    function (){
+                        //alguna ha fallado
+                        alert('error');
+                    },
+                    function(){
+                        //acá podemos quitar el elemento cargando
+                        alert('quitar cargando');
+                    }
+
+
+                );
+                self.onChange = function () {
+                    var idRegion = $("#selectIdRegion").val();
+                    $.ajax({
+                        url: ObtenerUrl('ObtenerComunas'),
+                        type: "POST",
+                        data: ko.toJSON({ RegId: idRegion }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (dataCC) {
+                            // ok
+                            //self.Reset();
+                            self.comunas = dataCC;
+                            selectedComuna = 0;
+
+                            elem = document.getElementById('principal');
+                            ko.cleanNode(elem);
+                            ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataCC, self.roles, dataI[0]), elem);
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
+                self.onChangeUsuario = function () {
+                    var nombreUsuario = $("#txtNombreUsuario").val();
+
+                    $.ajax({
+                        url: ObtenerUrl('ListarUsuarios'),
+                        type: "POST",
+                        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (usuario) {
+                            //// ok
+                            if (usuario != undefined) {
+                                if (usuario.length == 1) {
+                                    swal({
+                                        title: "Existe",
+                                        text: "Este usuario ya existe intente con otro",
+                                        type: "warning",
+                                        customClass: 'sweetalert-xs'
+                                    });
+                                    $("#txtNombreUsuario").val("");
+
+                                }
+                            }
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
+
+            },
+            function (){
+                //alguna ha fallado
+                alert('error');
+            },
+            function(){
+                //acá podemos quitar el elemento cargando
+                alert('quitar cargando');
+            }
+        );
+
+
+        /*
         $.ajax({
             url: ObtenerUrl('ObtenerRegiones'),
             type: "POST",
@@ -659,6 +1007,8 @@
                 }
             }
         });
+
+        */
     }
 
     function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword, InstId) {

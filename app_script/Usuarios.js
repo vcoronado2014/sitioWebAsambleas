@@ -108,7 +108,7 @@ $(function () {
         }
     }
     // get data - sample data from Donors Choose API
-    var obtenerUsuarios = $.getJSON(ObtenerUrl('ListarUsuarios') + '?instId=' + sessionStorage.getItem("InstId"));
+    var obtenerUsuarios = $.getJSON(ObtenerUrl('ListarUsuarios') + '?instId=' + sessionStorage.getItem("InstId") +  '&rolId=' + sessionStorage.getItem("RolId"));
 
     $.when(obtenerUsuarios).then(
         function(data){

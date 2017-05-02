@@ -97,6 +97,7 @@
         <thead>
         <tr>
             <th data-bind="visible: shouldShowMessage"></th>
+            <th data-bind="visible: shouldShowMessage" class="hidden-xs">Institución</th>
             <th>Nombre</th>
             <th class="hidden-xs">Usuario</th>
             <th class="hidden-xs">Rol</th>
@@ -105,9 +106,10 @@
         <tbody>
         <!-- ko foreach: proposals() -->
         <tr>
-            <td data-bind="visible: shouldShowMessage"><a data-bind="    attr: { href: $data.Url }, visible: shouldShowMessage"><i class="fa fa-2x fa-edit"></i></a>
+            <td data-bind="visible: shouldShowMessage"><a data-bind="attr: { href: $data.Url }, visible: shouldShowMessage"><i class="fa fa-2x fa-edit"></i></a>
                 <a data-bind="attr: { href: $data.UrlEliminar }, visible: shouldShowMessage"><i class="fa fa-2x fa-trash"></i></a>
             </td>
+            <td class="hidden-xs"><span data-bind="visible: shouldShowMessage, text: $data.OtroUno"></span></td>
             <td><span data-bind="text: $data.NombreCompleto"></span></td>
             <td class="hidden-xs"><span data-bind="text: $data.NombreUsuario"></span></td>
             <td class="hidden-xs"><span data-bind="text: $data.Rol"></span></td>
