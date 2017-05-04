@@ -47,6 +47,7 @@ $(document).ready(function () {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
+        self.nombreRol = ko.observable(sessionStorage.getItem("NombreRol"));
         self.id = ko.observable(sessionStorage.getItem("Id"));
         self.instId = ko.observable(sessionStorage.getItem("InstId"));
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
@@ -61,10 +62,16 @@ $(document).ready(function () {
         {
             cuadroInstitucion.removeClass('hidden');
         }
+
+        //se sustituye por Menu
+        /*
         if (sessionStorage.getItem("RolId") == '1')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
+        */
+        //aplicar Menu
+        Menu();
 
         //manejaremos un poco la vista para que no se vea mal
         claseMostrarIngresos = ko.observable("col-lg-3 col-md-6");

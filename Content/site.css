@@ -216,7 +216,17 @@ div.dataTables_filter input {
         background: antiquewhite;
 }
 
-
+.bg-default-enc {
+    background-image: -webkit-linear-gradient(top, #1d79b2 0%, #28bfae 100%);
+    background-image: -o-linear-gradient(top, #1d79b2 0%, #28bfae 100%);
+    background-image: linear-gradient(to bottom, #1d79b2 0%, #28bfae 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF1D79B2', endColorstr='#FF28BFAE', GradientType=0);
+    background-color: #28bfae;
+}
+.fg-white{
+    color: white;
+}
 
 
 @media only screen and (min-width: 40.0625em) {

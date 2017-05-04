@@ -40,14 +40,19 @@ $(function () {
     function ViewModel(data) {
         var self = this;
         nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
+        self.nombreRol = ko.observable(sessionStorage.getItem("NombreRol"));
         nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         self.frmUrlDocumento = ko.observable("");
 
+        /*
         if (sessionStorage.getItem("RolId") == '1' || sessionStorage.getItem("RolId") =='2' || sessionStorage.getItem("RolId") =='3' || sessionStorage.getItem("RolId") =='5' || sessionStorage.getItem("RolId") == '6')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
+    */
+
+        Menu();
 
         $('#principal').show();
         $('#loading').hide();

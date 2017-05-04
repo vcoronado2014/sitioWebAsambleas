@@ -35,6 +35,7 @@
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
+        self.nombreRol = ko.observable(sessionStorage.getItem("NombreRol"));
         self.id = ko.observable(sessionStorage.getItem("Id"));
         self.instId = ko.observable(sessionStorage.getItem("InstId"));
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
@@ -51,10 +52,14 @@
         self.frmUrlDocumento = ko.observable("");
         self.details = ko.observable("Pinche aquí para abrir");
 
+        /*
         if (sessionStorage.getItem("RolId") == '1')
             shouldShowMessage = ko.observable(true);
         else
             shouldShowMessage = ko.observable(false);
+        */
+
+        Menu();
 
         guardar = function () {
 

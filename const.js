@@ -170,3 +170,94 @@ function validarEmail(email) {
     }
     return retorno;
 }
+
+function Menu()
+{
+    //ahora procesamos a variable de session
+    //rescatamos el rol desde la variable de session
+    //antes evaluamos si esta variable existe
+    if (sessionStorage != null)
+    {
+        var rolId = sessionStorage.getItem("RolId");
+        if (rolId != null)
+        {
+            shouldShowMessage = ko.observable(false);
+            //ahora procesamos el menu
+            menuMenu = ko.observable(false);
+            //hijos
+            menuMenuUsuarios = ko.observable(false);
+            menuMenuInstituciones = ko.observable(false);
+            menuMenuRendiciones = ko.observable(false);
+            menuMenuDocumentos = ko.observable(false);
+            menuMenuCalendarrio = ko.observable(false);
+            //tricel
+            menuTricel = ko.observable(false);
+            //hijo
+            menuTricelListar = ko.observable(false);
+            //proyecto
+            menuProyecto = ko.observable(false);
+            //hijo
+            menuProyectoListar = ko.observable(false);
+
+            switch(rolId)
+            {
+                //super
+                case '1':
+                    shouldShowMessage = ko.observable(true);
+
+                    menuMenu = ko.observable(true);
+                    menuMenuUsuarios = ko.observable(true);
+                    menuMenuInstituciones = ko.observable(true);
+                    menuMenuRendiciones = ko.observable(true);
+                    menuMenuDocumentos = ko.observable(true);
+                    menuMenuCalendarrio = ko.observable(true);
+                    menuTricel = ko.observable(true);
+                    menuTricelListar = ko.observable(true);
+                    menuProyecto = ko.observable(true);
+                    menuProyectoListar = ko.observable(true);
+                    break;
+                //administrador centro educacional
+                case '2':
+                    shouldShowMessage = ko.observable(true);
+
+                    menuMenu = ko.observable(true);
+                    menuMenuUsuarios = ko.observable(true);
+                    //menuMenuInstituciones = ko.observable(true);
+                    menuMenuRendiciones = ko.observable(true);
+                    menuMenuDocumentos = ko.observable(true);
+                    menuMenuCalendarrio = ko.observable(true);
+                    menuTricel = ko.observable(true);
+                    menuTricelListar = ko.observable(true);
+                    menuProyecto = ko.observable(true);
+                    menuProyectoListar = ko.observable(true);
+                    break;
+                //presidente
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                    menuMenu = ko.observable(true);
+                    menuMenuUsuarios = ko.observable(true);
+                    //menuMenuInstituciones = ko.observable(true);
+                    menuMenuRendiciones = ko.observable(true);
+                    menuMenuDocumentos = ko.observable(true);
+                    menuMenuCalendarrio = ko.observable(true);
+                    //menuTricel = ko.observable(true);
+                    //menuTricelListar = ko.observable(true);
+                    menuProyecto = ko.observable(true);
+                    menuProyectoListar = ko.observable(true);
+                    break;
+                default:
+                    menuMenu = ko.observable(true);
+                    menuMenuRendiciones = ko.observable(true);
+                    menuMenuDocumentos = ko.observable(true);
+                    menuMenuCalendarrio = ko.observable(true);
+                    break;
+            }
+
+
+        }
+    }
+
+
+}
