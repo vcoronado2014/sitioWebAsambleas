@@ -21,6 +21,8 @@ $(document).ready(function () {
                 data: ko.toJSON({ usuario: this.usuario, password: this.password })
             });
 
+
+
             $.when(obtenerLogin).then(
                 function(result){
 
@@ -33,10 +35,52 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
 
+                    sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
+
+                    var obtenerVinculos = jQuery.ajax({
+                        url : ObtenerUrlDos('Vinculo'),
+                        type: 'POST',
+                        dataType : "json",
+                        contentType: "application/json",
+                        data: ko.toJSON({ InstId: result.AutentificacionUsuario.InstId })
+                    });
+
+                    var obtenerArticulos = jQuery.ajax({
+                        url : ObtenerUrlDos('Articulo'),
+                        type: 'POST',
+                        dataType : "json",
+                        contentType: "application/json",
+                        data: ko.toJSON({ InstId: result.AutentificacionUsuario.InstId })
+                    });
+
+
+                    $.when(obtenerVinculos, obtenerArticulos).then(
+                        function(resVinculos, resArticulos){
+                            //asignamos los valores a la variable de session
+                            sessionStorage.setItem("vinculos", JSON.stringify(resVinculos[0]));
+                            sessionStorage.setItem("articulos", JSON.stringify(resArticulos[0]));
+
+                            var url = 'inicio.html';
+                            window.location.href = url;
+
+                        },
+                        function (error){
+                            //alerta de error
+                            var url = 'inicio.html';
+                            window.location.href = url;
+
+                        },
+                        function(){
+                            //acá podemos quitar el elemento cargando
+                            //alert('quitar cargando');
+                        }
+                    );
+
                     //ahora redireccionamos
+                    /*
                     var url = 'inicio.html';
                     window.location.href = url;
-
+                    */
 
 
                 },

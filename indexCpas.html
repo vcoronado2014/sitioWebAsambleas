@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BASICA! A Free Bootstrap3 HTML5 CSS3 Template by Vactual Art</title>
+    <title>CPAS.CL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Basica"></a>
+                <a class="navbar-brand" href="indexCpas.html"><img src="img/logo.png" alt="CPAS"></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -271,6 +271,8 @@
 <hr>
 
 		<!-- Our Clients -->
+
+		<!--
 	    <div class="section">
 	    	<div class="container">
 			
@@ -292,9 +294,12 @@
 					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-11.jpg" alt="Client Name"></a></div>
 					<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="img/logos/logo-12.jpg" alt="Client Name"></a></div>
 				</div>
+
+
 			</div>
 	    </div>
 	    <!-- End Our Clients -->
+		-->
 
 	    <!-- Footer -->
 	    <div class="footer">
@@ -302,23 +307,26 @@
 			
 		    	<div class="row">
 				
-		    		<div class="col-footer col-md-4 col-xs-6">
+		    		<div class="col-footer col-md-4 col-xs-6" data-bind="foreach: vinculosArr">
 		    			<h3>Contact Us</h3>
 		    			<p class="contact-us-details">
 	        				<b>Address:</b> 123 Downtown Avenue, Manhattan, New York, United States of America<br/>
 	        				<b>Phone:</b> +1 123 45678910<br/>
 	        				<b>Fax:</b> +1 123 45678910<br/>
-	        				<b>Email:</b> <a href="mailto:info@yourcompanydomain.com">info@yourcompanydomain.com</a>
+	        				<b>Email:</b> <a data-bind="attr: { href: UrlVinculo3 }" ><span data-bind="text: TextoVinculo3"></span></a>
 	        			</p>
 		    		</div>				
 		    		<div class="col-footer col-md-4 col-xs-6">
-		    			<h3>Our Social Networks</h3>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
-		    			<div>
-		    				<img src="img/icons/facebook.png" width="32" alt="Facebook">
+		    			<h3>Redes Sociales</h3>
+						<p>Encuentranos en:</p>
+		    			<div data-bind="foreach: vinculosArr">
+		    				<img data-bind="attr: { src: ImagenVinculo1 }" width="32" alt="Facebook">
+							<img data-bind="attr: { src: ImagenVinculo2 }" width="32" alt="Twitter">
+							<!--
 		    				<img src="img/icons/twitter.png" width="32" alt="Twitter">
 		    				<img src="img/icons/linkedin.png" width="32" alt="LinkedIn">
 							<img src="img/icons/rss.png" width="32" alt="RSS Feed">
+							-->
 						</div>
 		    		</div>
 		    		<div class="col-footer col-md-4 col-xs-6">
@@ -339,10 +347,16 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
-		
+		<!-- KnockoutJS http://knockoutjs.com/ -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+
+		<!-- KnockoutJS Mapping http://knockoutjs.com/documentation/plugins-mapping.html -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
 		<!-- Scrolling Nav JavaScript -->
 		<script src="js/jquery.easing.min.js"></script>
-		<script src="js/scrolling-nav.js"></script>		
+		<script src="js/scrolling-nav.js"></script>
+		<script src="const.js"></script>
+		<script src="app_script/indexCpas.js"></script>
 
     </body>
 </html>
