@@ -3,7 +3,40 @@
  */
 $(function () {
 
-    function ViewModel(vinculos, articulos, instituciones) {
+    //shouldShowMessage = ko.observable(false);
+    //shouldShowMessageP = ko.observable(true);
+
+    if (sessionStorage != null) {
+
+        if (sessionStorage.getItem("Id") != null) {
+            $('#ancoreSesion').html('<i class="fa fa-close"></i> Cerrar Sesión');
+        }
+        else {
+            $('#ancoreSesion').html('<i class="fa fa-sign-in"></i> Iniciar Sesión');
+            //window.location.href = "index.html";
+            //return;
+        }
+    }
+
+
+    $('#ancoreSesion').on('click', function () {
+        if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión')
+        {
+            //acá debe direccionarlo directamente al login y vaciar la variable de session
+            sessionStorage.clear();
+            window.location.href = "index.html";
+            return;
+        }
+        else
+        {
+            //directo al login
+            window.location.href = "index.html";
+        }
+
+
+    });
+
+    function ViewModel(vinculos, articulos, instituciones, idUsuario) {
         var self = this;
 
         //nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -11,15 +44,105 @@ $(function () {
         //nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         //self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
 
+        //si es un usuario logueado mostramos uno o el otro
+        if (idUsuario > 0)
+        {
+            shouldShowMessage = ko.observable(true);
+            shouldShowMessageP = ko.observable(false);
+        }
+        else
+        {
+            shouldShowMessage = ko.observable(false);
+            shouldShowMessageP = ko.observable(true);
+        }
+        //ahora procesamos los arreglos
+        if (vinculos.length == 0)
+        {
+            self.vinculosArr = [{
+                ImagenVinculo1: '../img/icons/facebook.png',
+                UrlVinculo1: 'https://www.facebook.com/cpas.cl/',
+                TextoVinculo1: 'http://facebook.com/',
+                ImagenVinculo2: '../img/icons/twitter.png',
+                UrlVinculo2: 'https://twitter.com/CPAScl',
+                TextoVinculo2: 'http://twitter.com',
+                ImagenVinculo3: '../img/icons/email.png',
+                UrlVinculo3: 'mailto:contacto@cpas.cl',
+                TextoVinculo3: 'contacto@cpas.cl'
 
-        //Menu();
-        self.vinculosArr = JSON.parse(vinculos);
-        self.articulosArr = JSON.parse(articulos);
-        self.institucionesArr = JSON.parse(instituciones);
+            }]
+        }
+        else
+        {
+            self.vinculosArr = JSON.parse(vinculos);
+        }
+        if (articulos.length == 0)
+        {
+            self.articulosArr = [
+                {
+                UrlImagen: '../img/icons/imgArticulo_1.png',
+                Fecha: '14-12-2015',
+                Titulo: '¿QUIENES SOMOS?',
+                Contenido: 'Una plataforma de gestión para los centros de padres y apoderados de cualquier tipo de instituciones o establecimiento. El foco fundamental esta centrado en la gestión de las actividades del centro de padres y la trasnparencia de los estados de cuentas y flujos economicos producto de la gestion del centro de padres y apoderados.'
+
+                },
+                {
+                    UrlImagen: '../img/icons/imgArticulo_2.png',
+                    Fecha: '14-12-2015',
+                    Titulo: 'NUESTRA VISIÓN',
+                    Contenido: 'Ser la mejor mejor herramienta de gestión y transparencia para los centros de padres y apoderados asi también un mecanismo moderno de interacción educativa entre los establecimientos y la comunidad estudiantil.'
+
+                },
+                {
+                    UrlImagen: '../img/icons/imgArticulo_2.png',
+                    Fecha: '14-12-2015',
+                    Titulo: 'NUESTROS SERVICIOS',
+                    Contenido: 'Nuestro servico consta de perfiles y roles de acuerdo a la orgánica de administración de los centros de padres y apoderados así como también un canal directo de transparencia e información al apoderado y el establecimiento.'
+
+                }
+
+            ]
+        }
+        else
+        {
+            self.articulosArr = JSON.parse(articulos);
+        }
+
+        if (instituciones == null)
+        {
+            self.institucionesArr = {
+                Direccion: 'Prueba',
+                Telefono: '+56 9 85006988'
+            };
+        }
+        else
+        {
+            self.institucionesArr = JSON.parse(instituciones);
+        }
+        //self.vinculosArr = JSON.parse(vinculos);
+        //self.articulosArr = JSON.parse(articulos);
+        //self.institucionesArr = JSON.parse(instituciones);
+        shouldShowMessage = ko.observable(true);
+        shouldShowMessageP = ko.observable(false);
+        Menu();
 
         ko.mapping.fromJS(self.vinculosArr, self.articulosArr, self.instituciones, {}, self);
 
     }
+    var vinculos = [];
+    var articulos = [];
+    var instituciones = null;
+    var idUsuario = 0;
+    if (sessionStorage.getItem("vinculos") != null)
+        vinculos = sessionStorage.getItem("vinculos");
+    if (sessionStorage.getItem("articulos") != null)
+        articulos = sessionStorage.getItem("articulos");
+    if (sessionStorage.getItem("instituciones") != null)
+        instituciones = sessionStorage.getItem("instituciones");
+    if (sessionStorage.getItem("Id") != null)
+        idUsuario = sessionStorage.getItem("Id");
+
+
+
     //verificamos
     if (sessionStorage.getItem("vinculos") != null && sessionStorage.getItem("articulos") != null && sessionStorage.getItem("instituciones") != null)
     {
@@ -27,8 +150,121 @@ $(function () {
         var articulos = sessionStorage.getItem("articulos");
         var instituciones = sessionStorage.getItem("instituciones");
 
-        ko.applyBindings(new ViewModel(vinculos, articulos, instituciones));
+        //ko.applyBindings(new ViewModel(vinculos, articulos, instituciones));
     }
+    ko.applyBindings(new ViewModel(vinculos, articulos, instituciones));
 
+
+    function Menu()
+    {
+        //ahora procesamos a variable de session
+        //rescatamos el rol desde la variable de session
+        //antes evaluamos si esta variable existe
+        if (sessionStorage.length > 0)
+        {
+            var rolId = sessionStorage.getItem("RolId");
+            if (rolId != null)
+            {
+                shouldShowMessage = ko.observable(false);
+                //ahora procesamos el menu
+                menuMenu = ko.observable(false);
+                //hijos
+                menuMenuUsuarios = ko.observable(false);
+                menuMenuInstituciones = ko.observable(false);
+                menuMenuRendiciones = ko.observable(false);
+                menuMenuDocumentos = ko.observable(false);
+                menuMenuCalendarrio = ko.observable(false);
+                //tricel
+                menuTricel = ko.observable(false);
+                //hijo
+                menuTricelListar = ko.observable(false);
+                //proyecto
+                menuProyecto = ko.observable(false);
+                //hijo
+                menuProyectoListar = ko.observable(false);
+
+                switch(rolId)
+                {
+                    //super
+                    case '1':
+                        shouldShowMessage = ko.observable(true);
+
+                        menuMenu = ko.observable(true);
+                        menuMenuUsuarios = ko.observable(true);
+                        menuMenuInstituciones = ko.observable(true);
+                        menuMenuRendiciones = ko.observable(true);
+                        menuMenuDocumentos = ko.observable(true);
+                        menuMenuCalendarrio = ko.observable(true);
+                        menuTricel = ko.observable(true);
+                        menuTricelListar = ko.observable(true);
+                        menuProyecto = ko.observable(true);
+                        menuProyectoListar = ko.observable(true);
+                        break;
+                    //administrador centro educacional
+                    case '2':
+                        shouldShowMessage = ko.observable(true);
+
+                        menuMenu = ko.observable(true);
+                        menuMenuUsuarios = ko.observable(true);
+                        //menuMenuInstituciones = ko.observable(true);
+                        menuMenuRendiciones = ko.observable(true);
+                        menuMenuDocumentos = ko.observable(true);
+                        menuMenuCalendarrio = ko.observable(true);
+                        menuTricel = ko.observable(true);
+                        menuTricelListar = ko.observable(true);
+                        menuProyecto = ko.observable(true);
+                        menuProyectoListar = ko.observable(true);
+                        break;
+                    //presidente
+                    case '3':
+                    case '4':
+                    case '5':
+                    case '6':
+                        menuMenu = ko.observable(true);
+                        menuMenuUsuarios = ko.observable(true);
+                        //menuMenuInstituciones = ko.observable(true);
+                        menuMenuRendiciones = ko.observable(true);
+                        menuMenuDocumentos = ko.observable(true);
+                        menuMenuCalendarrio = ko.observable(true);
+                        //menuTricel = ko.observable(true);
+                        //menuTricelListar = ko.observable(true);
+                        menuProyecto = ko.observable(true);
+                        menuProyectoListar = ko.observable(true);
+                        break;
+                    default:
+                        menuMenu = ko.observable(true);
+                        menuMenuRendiciones = ko.observable(true);
+                        menuMenuDocumentos = ko.observable(true);
+                        menuMenuCalendarrio = ko.observable(true);
+                        break;
+                }
+
+
+            }
+        }
+        else
+        {
+            shouldShowMessage = ko.observable(false);
+            shouldShowMessageP = ko.observable(true);
+            //ahora procesamos el menu
+            menuMenu = ko.observable(true);
+            //hijos
+            menuMenuUsuarios = ko.observable(false);
+            menuMenuInstituciones = ko.observable(false);
+            menuMenuRendiciones = ko.observable(true);
+            menuMenuDocumentos = ko.observable(true);
+            menuMenuCalendarrio = ko.observable(true);
+            //tricel
+            menuTricel = ko.observable(false);
+            //hijo
+            menuTricelListar = ko.observable(false);
+            //proyecto
+            menuProyecto = ko.observable(false);
+            //hijo
+            menuProyectoListar = ko.observable(false);
+        }
+
+
+    }
 
 });
