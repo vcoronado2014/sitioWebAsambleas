@@ -1,3 +1,6 @@
+/**
+ * Created by vcoronado on 11-05-2017.
+ */
 $(document).ready(function () {
     $('#principal').show();
     $('#loading').hide();
@@ -37,8 +40,9 @@ $(document).ready(function () {
 
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
 
-                    //importante para determinar de donde se esta ingresando, en este caso es asambleas.
-                    sessionStorage.setItem("ES_CPAS", "false");
+                    //importante para determinar de donde se esta ingresando, en este caso es cpas.
+                    sessionStorage.setItem("ES_CPAS", "true");
+
 
                     var obtenerVinculos = jQuery.ajax({
                         url : ObtenerUrlDos('Vinculo'),
@@ -81,9 +85,9 @@ $(document).ready(function () {
 
                     //ahora redireccionamos
                     /*
-                    var url = 'inicio.html';
-                    window.location.href = url;
-                    */
+                     var url = 'inicio.html';
+                     window.location.href = url;
+                     */
 
 
                 },
@@ -110,4 +114,5 @@ $(document).ready(function () {
     ko.applyBindings(PersonaViewModel);
 
 });
+
 

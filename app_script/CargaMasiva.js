@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+/**
+ * Created by vcoronado on 11-05-2017.
+ */
+$(document).ready(function () {
 
 
     $('#principal').hide();
@@ -66,12 +69,18 @@
 
         self.elem = document.getElementById('principal');
 
-    /*
-        if (sessionStorage.getItem("RolId") != '9')
-            shouldShowMessage = ko.observable(true);
-        else
-            shouldShowMessage = ko.observable(false);
-*/
+        /*
+         if (sessionStorage.getItem("RolId") != '9')
+         shouldShowMessage = ko.observable(true);
+         else
+         shouldShowMessage = ko.observable(false);
+         */
+
+        //solo los super Administradores
+        if (sessionStorage.getItem("RolId") == '1') {
+            $("#selectInstitucion").removeAttr('disabled');
+        }
+
 
         Menu();
 
@@ -80,8 +89,100 @@
     }
 
 
+    var obtenerInstitucion = jQuery.ajax({
+        url : ObtenerUrl('Institucion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ IdUsuario: 9 })
+    });
+
+
+    $.when(obtenerInstitucion).then(
+        function(dataI){
+
+            elem = document.getElementById('principal');
+
+            var obtenerCargaMasiva = jQuery.ajax({
+                url : ObtenerUrlDos('CargaMasiva'),
+                type: 'POST',
+                dataType : "json",
+                contentType: "application/json",
+                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") })
+            });
+
+            $.when(obtenerCargaMasiva).then(function (data)
+                {
+                    if (dataI != null)
+                    {
+                        self.instituciones = dataI.proposals;
+                        selectedInstitucion = sessionStorage.getItem("InstId");
+                    }
+
+                    ko.applyBindings(new DocumentoViewModel(data), self.elem);
+
+                    if (data.proposals.length > 0)
+                    {
+                        $("#proposals").DataTable({
+                            responsive: true,
+                            language: {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar _MENU_ registros",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "bDestroy": true,
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                }
+                            }
+                        });
+                    }
+                    $('#principal').show();
+                    $('#loading').hide();
+
+                },
+                function (){
+                    //alguna ha fallado
+                    alert('error');
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    alert('quitar cargando');
+                }
+
+
+            );
+
+
+        },
+        function (){
+            //alguna ha fallado
+            alert('error');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            alert('quitar cargando');
+        }
+    );
+
+    /*
     $.ajax({
-        url: ObtenerUrl('FileDocumento'),
+        url: ObtenerUrlDos('CargaMasiva'),
         type: "POST",
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") }),
         contentType: "application/json",
@@ -138,45 +239,74 @@
             }
         }
     });
+    */
+
 
     $('#btnUploadFile').on('click', function () {
 
         var files = $("#txtArchivo").get(0).files;
+        var instIdFrm = $("#selectInstitucion").val();
+
         var model = new FormData();
         model.append("UsuId", sessionStorage.getItem("Id"));
-        model.append("InstId", sessionStorage.getItem("InstId"));
-        model.append("UploadedImage", files[0]);
+        model.append("InstId", instIdFrm);
+        model.append("UploadedExcel", files[0]);
 
         $.ajax({
-            url: ObtenerUrl('FileNuevo'),
+            url: ObtenerUrlDos('FileExcel'),
             type: 'POST',
             dataType: 'json',
             data: model,
             processData: false,
             contentType: false,// not json
             complete: function (data) {
+                var inicio = "<div class='col-xs-12' style='height: 80px;overflow-y: scroll; font-size: x-small;'>";
+                var termino = "</div>";
+                var contenido = inicio + data.responseJSON.Mensaje + termino;
 
                 swal({
                     title: "Guardado",
-                    text: "El Registro ha sido guardado con éxito.",
+                    //text: "El Registro ha sido guardado con éxito.",
+                    html: contenido,
                     type: "success",
                     showCancelButton: false,
                     confirmButtonClass: "btn-success",
                     confirmButtonText: "Ok",
                     cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: true,
-                    customClass: 'sweetalert-xs',
-                    closeOnCancel: false
-                },
-   function (isConfirm) {
-       if (isConfirm) {
-           window.location.href = "ListarDocumento.html";
+                    //closeOnConfirm: true,
+                    customClass: 'sweetalert-xs'
+                    //closeOnCancel: false
+                }).then(function (text) {
+                    if (text) {
+                        //swal(text)
+                        window.location.href = "cargamasiva.html";
+                    }
+                });
+
+                /*
+                swal({
+                        title: "Guardado",
+                        //text: "El Registro ha sido guardado con éxito.",
+                        html: contenido,
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonClass: "btn-success",
+                        confirmButtonText: "Ok",
+                        cancelButtonText: "No, cancel plx!",
+                        //closeOnConfirm: true,
+                        customClass: 'sweetalert-xs'
+                        //closeOnCancel: false
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            window.location.href = "cargamasiva.html";
 
 
-       } else {
-           swal("Cancelled", "Your imaginary file is safe :)", "error");
-       }
-   });
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+                */
 
             }
         });
@@ -221,8 +351,3 @@
 
 });
 
-//$(window).load(function () {
-//    // Una vez se cargue al completo la página desaparecerá el div "cargando"
-//    $('#principal').show();
-//    $('#loading').hide();
-//});

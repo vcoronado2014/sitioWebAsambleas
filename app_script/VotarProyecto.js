@@ -28,14 +28,29 @@ $(document).ready(function () {
         if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión')
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
+
+            if (sessionStorage.getItem("ES_CPAS") == "true")
+            {
+                window.location.href = 'indexCpas.html';
+            }
+            else
+            {
+                window.location.href = 'index.html';
+            }
             sessionStorage.clear();
-            window.location.href = "index.html";
             return;
         }
         else
         {
             //directo al login
-            window.location.href = "index.html";
+            if (sessionStorage.getItem("ES_CPAS") == "true")
+            {
+                window.location.href = 'indexcpas.html';
+            }
+            else
+            {
+                window.location.href = 'index.html';
+            }
         }
 
 

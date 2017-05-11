@@ -23,14 +23,29 @@ $(function () {
         if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión')
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
+
+            if (sessionStorage.getItem("ES_CPAS") == "true")
+            {
+                window.location.href = 'indexCpas.html';
+            }
+            else
+            {
+                window.location.href = 'index.html';
+            }
             sessionStorage.clear();
-            window.location.href = "index.html";
             return;
         }
         else
         {
             //directo al login
-            window.location.href = "index.html";
+            if (sessionStorage.getItem("ES_CPAS") == "true")
+            {
+                window.location.href = 'indexcpas.html';
+            }
+            else
+            {
+                window.location.href = 'index.html';
+            }
         }
 
 
@@ -79,21 +94,21 @@ $(function () {
         {
             self.articulosArr = [
                 {
-                UrlImagen: '../img/icons/imgArticulo_1.png',
+                UrlImagen: '../img/imgArticulo_1.png',
                 Fecha: '14-12-2015',
                 Titulo: '¿QUIENES SOMOS?',
                 Contenido: 'Una plataforma de gestión para los centros de padres y apoderados de cualquier tipo de instituciones o establecimiento. El foco fundamental esta centrado en la gestión de las actividades del centro de padres y la trasnparencia de los estados de cuentas y flujos economicos producto de la gestion del centro de padres y apoderados.'
 
                 },
                 {
-                    UrlImagen: '../img/icons/imgArticulo_2.png',
+                    UrlImagen: '../img/imgArticulo_2.png',
                     Fecha: '14-12-2015',
                     Titulo: 'NUESTRA VISIÓN',
                     Contenido: 'Ser la mejor mejor herramienta de gestión y transparencia para los centros de padres y apoderados asi también un mecanismo moderno de interacción educativa entre los establecimientos y la comunidad estudiantil.'
 
                 },
                 {
-                    UrlImagen: '../img/icons/imgArticulo_2.png',
+                    UrlImagen: '../img/imgArticulo_3.png',
                     Fecha: '14-12-2015',
                     Titulo: 'NUESTROS SERVICIOS',
                     Contenido: 'Nuestro servico consta de perfiles y roles de acuerdo a la orgánica de administración de los centros de padres y apoderados así como también un canal directo de transparencia e información al apoderado y el establecimiento.'

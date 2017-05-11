@@ -261,3 +261,15 @@ function Menu()
 
 
 }
+
+function IrInicio()
+{
+    if (sessionStorage.getItem("ES_CPAS") == "true")
+    {
+        window.location.href = 'indexCpas.html';
+    }
+    else
+    {
+        window.location.href = 'index.html';
+    }
+}
