@@ -189,6 +189,7 @@ $(function () {
                 menuMenuRendiciones = ko.observable(false);
                 menuMenuDocumentos = ko.observable(false);
                 menuMenuCalendarrio = ko.observable(false);
+                menuMenuCargaMasiva = ko.observable(false);
                 //tricel
                 menuTricel = ko.observable(false);
                 //hijo
@@ -214,6 +215,7 @@ $(function () {
                         menuTricelListar = ko.observable(true);
                         menuProyecto = ko.observable(true);
                         menuProyectoListar = ko.observable(true);
+                        menuMenuCargaMasiva = ko.observable(true);
                         break;
                     //administrador centro educacional
                     case '2':
@@ -229,6 +231,7 @@ $(function () {
                         menuTricelListar = ko.observable(true);
                         menuProyecto = ko.observable(true);
                         menuProyectoListar = ko.observable(true);
+                        menuMenuCargaMasiva = ko.observable(true);
                         break;
                     //presidente
                     case '3':
@@ -245,6 +248,7 @@ $(function () {
                         //menuTricelListar = ko.observable(true);
                         menuProyecto = ko.observable(true);
                         menuProyectoListar = ko.observable(true);
+                        menuMenuCargaMasiva = ko.observable(true);
                         break;
                     default:
                         menuMenu = ko.observable(true);
@@ -269,6 +273,7 @@ $(function () {
             menuMenuRendiciones = ko.observable(true);
             menuMenuDocumentos = ko.observable(true);
             menuMenuCalendarrio = ko.observable(true);
+            menuMenuCargaMasiva = ko.observable(true);
             //tricel
             menuTricel = ko.observable(false);
             //hijo
