@@ -199,6 +199,7 @@ function Menu()
             menuProyecto = ko.observable(false);
             //hijo
             menuProyectoListar = ko.observable(false);
+            menuLogs = ko.observable(false);
 
             switch(rolId)
             {
@@ -217,6 +218,7 @@ function Menu()
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
+                    menuLogs = ko.observable(true);
                     break;
                 //administrador centro educacional
                 case '2':
@@ -239,6 +241,8 @@ function Menu()
                 case '4':
                 case '5':
                 case '6':
+                    shouldShowMessage = ko.observable(true);
+
                     menuMenu = ko.observable(true);
                     menuMenuUsuarios = ko.observable(true);
                     //menuMenuInstituciones = ko.observable(true);

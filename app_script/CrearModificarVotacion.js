@@ -524,7 +524,9 @@
                             success: function (dataU) {
                                 // ok
                                 self.usuarios = dataU;
-                                selectedUsuario = frmIdResponsable;
+
+                                frmIdResponsable = ko.observable(parseInt(data.proposals[0].OtroOcho));
+                                selectedUsuario = parseInt(data.proposals[0].OtroOcho);
 
                                 elem = document.getElementById('principal');
 

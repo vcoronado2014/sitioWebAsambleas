@@ -51,7 +51,7 @@ $(function () {
 
     });
 
-    function ViewModel(vinculos, articulos, instituciones, idUsuario) {
+    function ViewModel(vinculos, articulos, instituciones, configuracion, idUsuario) {
         var self = this;
 
         //nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -71,7 +71,7 @@ $(function () {
             shouldShowMessageP = ko.observable(true);
         }
         //ahora procesamos los arreglos
-        if (vinculos.length == 0)
+        if (vinculos.length < 30)
         {
             self.vinculosArr = [{
                 ImagenVinculo1: '../img/icons/facebook.png',
@@ -90,7 +90,7 @@ $(function () {
         {
             self.vinculosArr = JSON.parse(vinculos);
         }
-        if (articulos.length == 0)
+        if (articulos.length < 30)
         {
             self.articulosArr = [
                 {
@@ -120,6 +120,7 @@ $(function () {
         else
         {
             self.articulosArr = JSON.parse(articulos);
+
         }
 
         if (instituciones == null)
@@ -133,19 +134,39 @@ $(function () {
         {
             self.institucionesArr = JSON.parse(instituciones);
         }
-        //self.vinculosArr = JSON.parse(vinculos);
-        //self.articulosArr = JSON.parse(articulos);
-        //self.institucionesArr = JSON.parse(instituciones);
+
+        if (configuracion == null)
+        {
+            self.configuracionArr = {
+                MuestraSlide: 1
+            };
+        }
+        else
+        {
+            self.configuracionArr = JSON.parse(configuracion);
+
+        }
+
+        if (self.configuracionArr.MuestraSlide == 1) {
+            muestraSlide = ko.observable(true);
+            $('#main-articulos').removeClass('slideSuperior');
+        }
+        else {
+            muestraSlide = ko.observable(false);
+            $('#main-articulos').addClass('slideSuperior');
+        }
         shouldShowMessage = ko.observable(true);
         shouldShowMessageP = ko.observable(false);
         Menu();
 
-        ko.mapping.fromJS(self.vinculosArr, self.articulosArr, self.instituciones, {}, self);
+        ko.mapping.fromJS(self.vinculosArr, self.articulosArr, self.institucionesArr, self.configuracionArr, {}, self);
 
     }
     var vinculos = [];
     var articulos = [];
     var instituciones = null;
+    var configuracion = null;
+
     var idUsuario = 0;
     if (sessionStorage.getItem("vinculos") != null)
         vinculos = sessionStorage.getItem("vinculos");
@@ -153,21 +174,14 @@ $(function () {
         articulos = sessionStorage.getItem("articulos");
     if (sessionStorage.getItem("instituciones") != null)
         instituciones = sessionStorage.getItem("instituciones");
+    if (sessionStorage.getItem("configuracion") != null)
+        configuracion = sessionStorage.getItem("configuracion");
     if (sessionStorage.getItem("Id") != null)
         idUsuario = sessionStorage.getItem("Id");
 
 
 
-    //verificamos
-    if (sessionStorage.getItem("vinculos") != null && sessionStorage.getItem("articulos") != null && sessionStorage.getItem("instituciones") != null)
-    {
-        var vinculos = sessionStorage.getItem("vinculos");
-        var articulos = sessionStorage.getItem("articulos");
-        var instituciones = sessionStorage.getItem("instituciones");
-
-        //ko.applyBindings(new ViewModel(vinculos, articulos, instituciones));
-    }
-    ko.applyBindings(new ViewModel(vinculos, articulos, instituciones));
+    ko.applyBindings(new ViewModel(vinculos, articulos, instituciones, configuracion, idUsuario));
 
 
     function Menu()
@@ -198,7 +212,7 @@ $(function () {
                 menuProyecto = ko.observable(false);
                 //hijo
                 menuProyectoListar = ko.observable(false);
-
+                menuLogs = ko.observable(false);
                 switch(rolId)
                 {
                     //super
@@ -216,6 +230,7 @@ $(function () {
                         menuProyecto = ko.observable(true);
                         menuProyectoListar = ko.observable(true);
                         menuMenuCargaMasiva = ko.observable(true);
+                        menuLogs = ko.observable(true);
                         break;
                     //administrador centro educacional
                     case '2':
@@ -238,6 +253,8 @@ $(function () {
                     case '4':
                     case '5':
                     case '6':
+                        shouldShowMessage = ko.observable(true);
+
                         menuMenu = ko.observable(true);
                         menuMenuUsuarios = ko.observable(true);
                         //menuMenuInstituciones = ko.observable(true);
@@ -282,6 +299,7 @@ $(function () {
             menuProyecto = ko.observable(false);
             //hijo
             menuProyectoListar = ko.observable(false);
+            menuLogs = ko.observable(false);
         }
 
 

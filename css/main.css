@@ -73,6 +73,9 @@ div[class*="span"] {
   -ms-transition: all .4s linear;
   transition: all .4s linear;
 }
+.slideSuperior{
+  margin-top: 90px;
+}
 /*--------------------------------------------------------------------------
 	Typography Style
 --------------------------------------------------------------------------*/

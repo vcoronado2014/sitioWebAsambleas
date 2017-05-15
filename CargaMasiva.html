@@ -82,7 +82,7 @@
                         </ul>
                     </li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
-                    <li data-bind="visible: shouldShowMessage"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li data-bind="visible: menuLogs"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
                 </ul>
             </div>
         </div>
@@ -126,7 +126,7 @@
         <label for="basic-url">Subir Archivo</label>
         <div class="input-group">
             <div class="col-xs-12 col-md-10">
-                <input type="file" class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9" />
+                <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9" />
             </div>
             <div class="col-xs-12 col-md-2">
                 <input id="btnUploadFile" class="btn btn-success" type="button" value="Subir Archivo" />

@@ -289,7 +289,7 @@ $(document).ready(function () {
     $.ajax({
         url: ObtenerUrlDos('Proyecto'),
         type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") }),
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: getParameterByName('id'), UsuId: sessionStorage.getItem("Id") }),
         contentType: "application/json",
         dataType: "json",
         success: function (dataP) {

@@ -60,12 +60,21 @@ $(document).ready(function () {
                         data: ko.toJSON({ InstId: result.AutentificacionUsuario.InstId })
                     });
 
+                    var obtenerConfiguracion = jQuery.ajax({
+                        url : ObtenerUrlDos('ConfiguracionNodo'),
+                        type: 'POST',
+                        dataType : "json",
+                        contentType: "application/json",
+                        data: ko.toJSON({ InstId: result.AutentificacionUsuario.InstId })
+                    });
 
-                    $.when(obtenerVinculos, obtenerArticulos).then(
-                        function(resVinculos, resArticulos){
+
+                    $.when(obtenerVinculos, obtenerArticulos, obtenerConfiguracion).then(
+                        function(resVinculos, resArticulos, resConfiguracion){
                             //asignamos los valores a la variable de session
                             sessionStorage.setItem("vinculos", JSON.stringify(resVinculos[0]));
                             sessionStorage.setItem("articulos", JSON.stringify(resArticulos[0]));
+                            sessionStorage.setItem("configuracion", JSON.stringify(resConfiguracion[0]));
 
                             var url = 'inicio.html';
                             window.location.href = url;

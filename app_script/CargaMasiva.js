@@ -247,6 +247,28 @@ $(document).ready(function () {
         var files = $("#txtArchivo").get(0).files;
         var instIdFrm = $("#selectInstitucion").val();
 
+        var validExts = new Array(".xlsx", ".xls");
+        var fileExt = files[0];
+        if (fileExt == null) {
+            getNotify('error', 'Error', 'Archivo no seleccionado');
+            return;
+        }
+        if (fileExt == undefined) {
+            getNotify('error', 'Error', 'Archivo no seleccionado');
+            return;
+        }
+        if (fileExt == '') {
+            getNotify('error', 'Error', 'Archivo no seleccionado');
+            return;
+        }
+
+        fileExt = fileExt.name.substring(fileExt.name.lastIndexOf('.'));
+        if (fileExt != 'xlsx')
+        {
+            getNotify('error', 'Error', 'Archivo inválido.');
+            return;
+        }
+
         var model = new FormData();
         model.append("UsuId", sessionStorage.getItem("Id"));
         model.append("InstId", instIdFrm);

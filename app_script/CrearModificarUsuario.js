@@ -118,7 +118,7 @@
                         NombreUsuario: frmNombreUsuario,
                         Nombres: frmNombres,
                         PrimerApellido: frmApellidoPaterno,
-                        SegundoApellido: frmApellidoMaterno,
+                        SegundoApellido: $("#txtSegundoApellido").val(),
                         Rut: frmRut,
                         Correo: frmCorreoElectronico,
                         Telefono: frmTelefono,
@@ -325,7 +325,7 @@
                     $.ajax({
                         url: ObtenerUrl('ListarUsuarios'),
                         type: "POST",
-                        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
+                        data: ko.toJSON({ InstId: $("#selectInstitucion").val(), BuscarId: nombreUsuario }),
                         contentType: "application/json",
                         dataType: "json",
                         success: function (usuario) {
@@ -823,7 +823,7 @@
                     $.ajax({
                         url: ObtenerUrl('ListarUsuarios'),
                         type: "POST",
-                        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
+                        data: ko.toJSON({ InstId: $("#selectInstitucion").val(), BuscarId: nombreUsuario }),
                         contentType: "application/json",
                         dataType: "json",
                         success: function (usuario) {

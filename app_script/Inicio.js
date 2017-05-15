@@ -89,13 +89,26 @@ $(document).ready(function () {
         Menu();
 
         //manejaremos un poco la vista para que no se vea mal
-        claseMostrarIngresos = ko.observable("col-lg-3 col-md-6");
-        claseMostrarDocumentos = ko.observable("col-lg-3 col-md-6");
-        if (sessionStorage.getItem("RolId") != '1')
+        //claseMostrarInstituciones = ko.observable("col-lg-4 col-md-4");
+        var rolEvaluar = sessionStorage.getItem("RolId");
+        claseMostrarIngresos = ko.observable("col-lg-3 col-md-4");
+        claseMostrarDocumentos = ko.observable("col-lg-3 col-md-4");
+        if (rolEvaluar == '9')
         {
-            //solo puede ver dos elementos
             claseMostrarIngresos = ko.observable("col-xs-12 col-md-6");
             claseMostrarDocumentos = ko.observable("col-xs-12 col-md-6");
+        }
+        else if (rolEvaluar == '1')
+        {
+            claseMostrarIngresos = ko.observable("col-lg-3 col-md-4");
+            claseMostrarDocumentos = ko.observable("col-lg-3 col-md-4");
+        }
+        else
+        {
+            //solo puede ver dos elementos
+            claseMostrarIngresos = ko.observable("col-xs-12 col-md-4");
+            claseMostrarDocumentos = ko.observable("col-xs-12 col-md-4");
+            //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
 
         var dataConsulta = ko.toJSON({ InstId: self.instId });
