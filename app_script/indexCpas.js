@@ -60,6 +60,7 @@ $(function () {
         //self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
 
         //si es un usuario logueado mostramos uno o el otro
+        muestraArticulos = ko.observable(true);
         if (idUsuario > 0)
         {
             shouldShowMessage = ko.observable(true);
@@ -115,11 +116,14 @@ $(function () {
 
                 }
 
-            ]
+            ];
+            muestraArticulos = ko.observable(true);
         }
         else
         {
             self.articulosArr = JSON.parse(articulos);
+            //acá debe mostrar los articulos
+            muestraArticulos = ko.observable(true);
 
         }
 
@@ -155,6 +159,7 @@ $(function () {
             muestraSlide = ko.observable(false);
             $('#main-articulos').addClass('slideSuperior');
         }
+
         shouldShowMessage = ko.observable(true);
         shouldShowMessageP = ko.observable(false);
         Menu();
@@ -268,6 +273,8 @@ $(function () {
                         menuMenuCargaMasiva = ko.observable(true);
                         break;
                     default:
+                        shouldShowMessage = ko.observable(true);
+
                         menuMenu = ko.observable(true);
                         menuMenuRendiciones = ko.observable(true);
                         menuMenuDocumentos = ko.observable(true);
