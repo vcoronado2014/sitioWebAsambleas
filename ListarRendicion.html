@@ -114,7 +114,7 @@
                 <td>
                     <a data-bind="attr: { href: $data.Url }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fa fa-2x fa-edit"></i></a>
                     <a data-bind="attr: { href: $data.UrlEliminar }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fa fa-2x fa-trash"></i></a>
-                    <a data-bind="attr: { href: $data.Rol }" download="Descarga"><i class="fa fa-2x fa-download"></i></a>
+                    <a data-bind="attr: { href: $data.Rol }, visible: $data.MostrarItem1" download="Descarga"><i class="fa fa-2x fa-download"></i></a>
 
                 </td>
                 <td><span data-bind="text: $data.NombreCompleto"></span></td>

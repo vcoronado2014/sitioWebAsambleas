@@ -26,6 +26,7 @@ $(function () {
 
             if (sessionStorage.getItem("ES_CPAS") == "true")
             {
+                //muestraArticulos = ko.observable(true);
                 window.location.href = 'indexCpas.html';
             }
             else
