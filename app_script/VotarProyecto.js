@@ -57,7 +57,7 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel(dataP) {
+    function PersonViewModel(dataP, dataGrafico, dataArchivos) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     fechaInicio : itemsProcesarP[i].OtroUno,
                     fechaTermino : itemsProcesarP[i].OtroDos,
                     fechaCreacion: itemsProcesarP[i].OtroTres,
-                    monto: '$ ' + itemsProcesarP[i].OtroCuatro,
+                    monto: itemsProcesarP[i].OtroDiez,
                     descripcion: itemsProcesarP[i].OtroSeis,
                     urlVotar: 'VotarProyecto.html?id=' + itemsProcesarP[i].Id + '&puedeVotar=' + itemsProcesarP[i].OtroSiete,
                     puedeVotar: disabled,
@@ -114,6 +114,47 @@ $(document).ready(function () {
         }
 
         self.itemsP = ko.observableArray(itemsP);
+
+        var itemsArchivos = [];
+        var itemsProcesarArchivos = dataArchivos.proposals;
+
+        if (itemsProcesarArchivos != null && itemsProcesarArchivos.length > 0){
+            for(var i in itemsProcesarArchivos)
+            {
+
+                var s = {
+                    id: itemsProcesarArchivos[i].Id,
+                    nombre: itemsProcesarArchivos[i].NombreCompleto,
+                    url: itemsProcesarArchivos[i].Url,
+                    OtroDos: itemsProcesarArchivos[i].OtroDos,
+                    OtroTres: itemsProcesarArchivos[i].OtroTres
+                }
+                itemsArchivos[i] = s;
+            }
+        }
+
+        self.itemsArchivos = ko.observableArray(itemsArchivos);
+
+        //armamos el grafico
+        //vamos a cargar el grafico solo si hay datos
+        if (dataGrafico.length == 2)
+        {
+            if (dataGrafico[0].value > 0 || dataGrafico[1].value > 0)
+            {
+                var chart = Morris.Donut({
+                    element: 'graph',
+                    data: dataGrafico,
+                    backgroundColor: '#ccc',
+                    labelColor: '#060',
+                    colors: [
+                        'rgb(11, 98, 164)',
+                        'rgb(160, 0, 0)'
+                    ],
+                    formatter: function (x) { return x }
+                });
+            }
+        }
+
 
         volver = function (){
             window.location.href = "inicio.html";
@@ -283,9 +324,99 @@ $(document).ready(function () {
             });
 
         }
+
+        Mostrar = function (item) {
+            var rulImagen = item.url;
+            var urlMostrar = item.OtroDos;
+            var extension = item.OtroTres;
+
+            if (extension == '.png' || extension == '.jpg' || extension == '.jpeg' || extension == '.gif') {
+                $.magnificPopup.open({
+                    items: {
+                        src: item.url
+                    },
+                    type: 'image'
+                });
+            }
+            else if (extension == '.pdf' || extension == '.doc' || extension == '.docx' || extension == '.xls' || extension == '.xlsx' || extension == '.ppt' || extension == '.pptx')
+            {
+                var URL = item.OtroDos;
+                var win = window.open(URL, "_blank");
+
+            }
+            else
+            {
+                getNotify('error', 'Formato', 'El formato del Archivo no se permite visualizar');
+            }
+
+        }
     }
 
     var dataProyecto =  [];
+    var dataGraficoArr = [];
+    var dataArchivosArr = [];
+
+    var obtenerProyectos = jQuery.ajax({
+        url: ObtenerUrlDos('Proyecto'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: getParameterByName('id'), UsuId: sessionStorage.getItem("Id") })
+    });
+
+    var obtenerGrafico = jQuery.ajax({
+        url: ObtenerUrl('Grafico'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: getParameterByName('id'), NombreGrafico: "PROYECTOS" })
+    });
+
+    var obtenerArchivos = jQuery.ajax({
+        url: ObtenerUrlDos('ArchivoProyecto') + "?ProyectoId=" + getParameterByName('id'),
+        type: 'GET',
+        dataType : "json",
+        contentType: "application/json"
+    });
+
+
+    $.when(obtenerProyectos, obtenerGrafico, obtenerArchivos).then(
+        function(dataP, dataGrafico, dataArchivos){
+            dataProyecto = dataP[0];
+            dataGraficoArr = dataGrafico[0];
+            dataArchivosArr = dataArchivos[0];
+
+            elem = document.getElementById('principal');
+
+            /*
+            var chart = Morris.Donut({
+                element: 'graph',
+                data: dataGrafico,
+                backgroundColor: '#ccc',
+                labelColor: '#060',
+                colors: [
+                    'rgb(11, 98, 164)',
+                    'rgb(160, 0, 0)'
+                ],
+                formatter: function (x) { return x }
+            });
+            */
+
+
+            ko.applyBindings(new PersonViewModel(dataProyecto, dataGraficoArr, dataArchivosArr));
+
+        },
+        function (){
+            //alguna ha fallado
+            getNotify('error', 'Error', 'Error de Servidor!');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //alert('quitar cargando');
+        }
+    );
+    /*
+
     $.ajax({
         url: ObtenerUrlDos('Proyecto'),
         type: "POST",
@@ -344,7 +475,7 @@ $(document).ready(function () {
             }
         }
     });
-
+    */
     $('#principal').show();
     $('#loading').hide();
 });

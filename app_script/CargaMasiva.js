@@ -247,66 +247,28 @@ $(document).ready(function () {
         var files = $("#txtArchivo").get(0).files;
         var instIdFrm = $("#selectInstitucion").val();
 
-        var validExts = new Array(".xlsx", ".xls");
-        var fileExt = files[0];
-        if (fileExt == null) {
-            getNotify('error', 'Error', 'Archivo no seleccionado');
-            return;
-        }
-        if (fileExt == undefined) {
-            getNotify('error', 'Error', 'Archivo no seleccionado');
-            return;
-        }
-        if (fileExt == '') {
-            getNotify('error', 'Error', 'Archivo no seleccionado');
-            return;
-        }
+        extensiones_permitidas = new Array(".xlsx", ".xls");
 
-        fileExt = fileExt.name.substring(fileExt.name.lastIndexOf('.'));
-        if (fileExt != 'xlsx')
-        {
-            getNotify('error', 'Error', 'Archivo inválido.');
-            return;
-        }
+        if (ValidaExtension(files[0], extensiones_permitidas) == true) {
 
-        var model = new FormData();
-        model.append("UsuId", sessionStorage.getItem("Id"));
-        model.append("InstId", instIdFrm);
-        model.append("UploadedExcel", files[0]);
+            var model = new FormData();
+            model.append("UsuId", sessionStorage.getItem("Id"));
+            model.append("InstId", instIdFrm);
+            model.append("UploadedExcel", files[0]);
 
-        $.ajax({
-            url: ObtenerUrlDos('FileExcel'),
-            type: 'POST',
-            dataType: 'json',
-            data: model,
-            processData: false,
-            contentType: false,// not json
-            complete: function (data) {
-                var inicio = "<div class='col-xs-12' style='height: 80px;overflow-y: scroll; font-size: x-small;'>";
-                var termino = "</div>";
-                var contenido = inicio + data.responseJSON.Mensaje + termino;
+            $.ajax({
+                url: ObtenerUrlDos('FileExcel'),
+                type: 'POST',
+                dataType: 'json',
+                data: model,
+                processData: false,
+                contentType: false,// not json
+                complete: function (data) {
+                    var inicio = "<div class='col-xs-12' style='height: 80px;overflow-y: scroll; font-size: x-small;'>";
+                    var termino = "</div>";
+                    var contenido = inicio + data.responseJSON.Mensaje + termino;
 
-                swal({
-                    title: "Guardado",
-                    //text: "El Registro ha sido guardado con éxito.",
-                    html: contenido,
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonClass: "btn-success",
-                    confirmButtonText: "Ok",
-                    cancelButtonText: "No, cancel plx!",
-                    //closeOnConfirm: true,
-                    customClass: 'sweetalert-xs'
-                    //closeOnCancel: false
-                }).then(function (text) {
-                    if (text) {
-                        //swal(text)
-                        window.location.href = "cargamasiva.html";
-                    }
-                });
-
-                /*
-                swal({
+                    swal({
                         title: "Guardado",
                         //text: "El Registro ha sido guardado con éxito.",
                         html: contenido,
@@ -318,20 +280,42 @@ $(document).ready(function () {
                         //closeOnConfirm: true,
                         customClass: 'sweetalert-xs'
                         //closeOnCancel: false
-                    },
-                    function (isConfirm) {
-                        if (isConfirm) {
+                    }).then(function (text) {
+                        if (text) {
+                            //swal(text)
                             window.location.href = "cargamasiva.html";
-
-
-                        } else {
-                            swal("Cancelled", "Your imaginary file is safe :)", "error");
                         }
                     });
-                */
 
-            }
-        });
+                    /*
+                    swal({
+                            title: "Guardado",
+                            //text: "El Registro ha sido guardado con éxito.",
+                            html: contenido,
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Ok",
+                            cancelButtonText: "No, cancel plx!",
+                            //closeOnConfirm: true,
+                            customClass: 'sweetalert-xs'
+                            //closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                window.location.href = "cargamasiva.html";
+
+
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
+                    */
+
+                }
+            });
+
+        }
 
     });
 

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link href="Content/sweetalert.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -58,6 +59,7 @@
     <script src="Scripts/sb-admin-2.js"></script>
     <script src="Scripts/metisMenu.js"></script>
     <script src="Scripts/sweetalert.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
     <script src="const.js"></script>
 
     <script src="app_script/VotarTricel.js"></script>
@@ -142,7 +144,7 @@
 
             </i> </strong>
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-9">
             <ul data-bind="foreach: itemsP">
                 <div class="pull-right">
                     <i><strong><span data-bind="text: fechas"></span></i> </strong>
@@ -157,6 +159,20 @@
                 </li>
 
             </ul>
+        </div>
+        <div class="col-xs-3">
+            <strong><i>
+                <h5>Archivos <small>del Tricel</small></h5>
+
+            </i> </strong>
+            <div class="col-xs-12" data-bind="foreach: itemsArchivos">
+
+
+                <a data-bind="attr: { href: url }" download="Descarga"><i class="fa fa-2x fa-download"></i> <span data-bind="text: nombre"></span></a>
+                <i class="fa fa-2x fa-search" data-bind="click: Mostrar" style="cursor: pointer;"></i>
+                </br>
+            </div>
+
         </div>
     </div>
 

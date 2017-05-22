@@ -82,6 +82,8 @@
 
     $.when(obtenerCalendario).then(
         function(data){
+            $('#principal').hide();
+            $('#loading').show();
 
             YUI({ filter: 'raw', lang: 'es' }).use("aui-scheduler", "io", "dump", "json-parse", "event-custom-base", "aui-button", function (Y) {
                 var items = [];
@@ -378,6 +380,9 @@
                 }, eventRecorder, 'hidePopover');
             });
 
+            $('#principal').show();
+            $('#loading').hide();
+
             elem = document.getElementById('principal');
 
             ko.applyBindings(new ViewModel(data), elem);
@@ -386,6 +391,8 @@
         function (){
             //alguna ha fallado
             alert('error');
+            $('#principal').show();
+            $('#loading').hide();
         },
         function(){
             //acá podemos quitar el elemento cargando

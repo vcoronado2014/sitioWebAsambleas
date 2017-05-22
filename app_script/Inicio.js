@@ -58,7 +58,7 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel(data, dataP, dataT) {
+    function PersonViewModel(data, dataP, dataT, dataU, dataI, dataR, dataD) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -78,13 +78,6 @@ $(document).ready(function () {
             cuadroInstitucion.removeClass('hidden');
         }
 
-        //se sustituye por Menu
-        /*
-        if (sessionStorage.getItem("RolId") == '1')
-            shouldShowMessage = ko.observable(true);
-        else
-            shouldShowMessage = ko.observable(false);
-        */
         //aplicar Menu
         Menu();
 
@@ -111,60 +104,10 @@ $(document).ready(function () {
             //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
 
-        var dataConsulta = ko.toJSON({ InstId: self.instId });
-        var dataConsultaDos = ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") });
-
-        var obtenerUsuarios = jQuery.ajax({
-            url : ObtenerUrl('ListarUsuarios'),
-            type: 'POST',
-            dataType : "json",
-            contentType: "application/json",
-            data: dataConsulta
-        });
-
-        var obtenerInstituciones =  jQuery.ajax({
-            url : ObtenerUrl('Institucion'),
-            type: 'POST',
-            dataType : "json",
-            contentType: "application/json",
-            data: dataConsultaDos
-        });
-
-        var obtenerRendiciones =  jQuery.ajax({
-            url : ObtenerUrl('Rendicion'),
-            type: 'POST',
-            dataType : "json",
-            contentType: "application/json",
-            data: dataConsulta
-        });
-
-        var obtenerDocumentos =  jQuery.ajax({
-            url : ObtenerUrl('FileDocumento'),
-            type: 'POST',
-            dataType : "json",
-            contentType: "application/json",
-            data: dataConsulta
-        });
-
-        $.when(obtenerUsuarios, obtenerInstituciones, obtenerRendiciones, obtenerDocumentos).then(
-            function(resultUsuarios, resultInstituciones, resultRendiciones, resultDocumentos){
-                //ambas habran tenido exito
-                //alert('exito');
-                $('#infoUsuarios').text(resultUsuarios[0].length);
-                $('#infoInstituciones').text(resultInstituciones[0].proposals.length);
-                $('#infoIngresos').text(resultRendiciones[0].proposals.length);
-                $('#infoDocumentos').text(resultDocumentos[0].proposals.length);
-
-            },
-            function (){
-                //alguna ha fallado
-                alert('error');
-            },
-            function(){
-                //acá podemos quitar el elemento cargando
-                alert('quitar cargando');
-            }
-        )
+        $('#infoUsuarios').text(dataU.length);
+        $('#infoInstituciones').text(dataI.proposals.length);
+        $('#infoIngresos').text(dataR.proposals.length);
+        $('#infoDocumentos').text(dataD.proposals.length);
 
         var items = [];
         var itemsProcesar = data;
@@ -189,8 +132,8 @@ $(document).ready(function () {
                     id: itemsProcesar[i].id,
                     disabled: disabled,
                     clientId : itemsProcesar[i].id,
-                    fechaInicio : moment(new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0)).format("DD-MM-YYYY"),
-                    fechaTermino : moment(new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0)).format("DD-MM-YYYY"),
+                    fechaInicio : moment(new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni - 1, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0)).format("DD-MM-YYYY"),
+                    fechaTermino : moment(new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer - 1, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0)).format("DD-MM-YYYY"),
                     horaInicio: moment(new Date(itemsProcesar[i].annoIni,itemsProcesar[i].mesIni, parseInt(itemsProcesar[i].diaIni),  itemsProcesar[i].horaIni, itemsProcesar[i].minutosIni,0, 0)).format("HH:mm"),
                     horaTermino: moment(new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), itemsProcesar[i].horaTer, itemsProcesar[i].minutosTer, 0, 0)).format("HH:mm")
                 }
@@ -263,12 +206,19 @@ $(document).ready(function () {
 
         self.itemsT = ko.observableArray(itemsT);
 
+        $('#principal').show();
+        $('#loading').hide();
+
     }
 
 
     var dataCalendario = [];
     var dataProyecto =  [];
     var dataTricel =  [];
+    var dataUsuarios = [];
+    var dataInstituciones = [];
+    var dataRendiciones = [];
+    var dataDocumentos = [];
 
     var obtenerCalendario = jQuery.ajax({
         url : ObtenerUrl('Calendario'),
@@ -294,35 +244,71 @@ $(document).ready(function () {
         data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id")})
     });
 
-    $.when(obtenerCalendario, obtenerProyecto, obtenerTricel).then(
-        function(data, dataP, dataT){
+    var obtenerUsuarios = jQuery.ajax({
+        url : ObtenerUrl('ListarUsuarios'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+    });
+
+    var obtenerInstituciones =  jQuery.ajax({
+        url : ObtenerUrl('Institucion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ IdUsuario: sessionStorage.getItem("Id") })
+    });
+
+    var obtenerRendiciones =  jQuery.ajax({
+        url : ObtenerUrl('Rendicion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+    });
+
+    var obtenerDocumentos =  jQuery.ajax({
+        url : ObtenerUrl('FileDocumento'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
+    });
+
+    $.when(obtenerCalendario, obtenerProyecto, obtenerTricel, obtenerUsuarios, obtenerInstituciones, obtenerRendiciones, obtenerDocumentos).then(
+        function(data, dataP, dataT, dataU, dataI, dataR, dataD){
             dataCalendario = data[0];
             dataProyecto = dataP[0];
             dataTricel = dataT[0];
+            dataUsuarios = dataU[0];
+            dataInstituciones = dataI[0];
+            dataRendiciones = dataR[0];
+            dataDocumentos = dataD[0];
+
+
             elem = document.getElementById('principal');
 
-            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel));
+            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel, dataUsuarios, dataInstituciones, dataRendiciones, dataDocumentos));
 
         },
         function (){
             //alguna ha fallado
-            alert('error');
+            //alert('error');
+            $('#principal').show();
+            $('#loading').hide();
         },
         function(){
             //acá podemos quitar el elemento cargando
             alert('quitar cargando');
         }
-    )
+    );
 
 
-    $('#principal').show();
-    $('#loading').hide();
+
 
 });
-$(window).load(function () {
-    // Una vez se cargue al completo la página desaparecerá el div "cargando"
-    //$('#principal').hide();
-});
+
 function AbrirUsuarios() {
     window.location.href = "usuarios.html";
 }

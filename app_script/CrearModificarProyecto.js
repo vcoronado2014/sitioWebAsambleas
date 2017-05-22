@@ -255,66 +255,72 @@ $(document).ready(function () {
             if (id != "0") {
 
                 var files = $("#txtArchivo").get(0).files;
-                var model = new FormData();
-                model.append("ProId", id);
-                model.append("UploadedImage", files[0]);
+                extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
+
+                if (ValidaExtension(files[0], extensiones_permitidas) == true) {
+
+                    var model = new FormData();
+                    model.append("ProId", id);
+                    model.append("UploadedImage", files[0]);
 
 
-                swal({
-                    title: "Subir",
-                    text: "¿Está seguro de subir este archivo?",
-                    type: "info",
-                    showCancelButton: true,
-                    closeOnConfirm: false,
-                    customClass: 'sweetalert-xs',
-                    showLoaderOnConfirm: true
-                }, function (isConfirm) {
-                    if (isConfirm) {
+                    swal({
+                        title: "Subir",
+                        text: "¿Está seguro de subir este archivo?",
+                        type: "info",
+                        showCancelButton: true,
+                        closeOnConfirm: false,
+                        customClass: 'sweetalert-xs',
+                        showLoaderOnConfirm: true
+                    }, function (isConfirm) {
+                        if (isConfirm) {
 
 
-                        setTimeout(function () {
+                            setTimeout(function () {
 
-                            $.ajax({
-                                url: ObtenerUrlDos('ArchivoProyecto'),
-                                type: 'POST',
-                                dataType: 'json',
-                                data: model,
-                                processData: false,
-                                contentType: false,// not json
-                                complete: function (data) {
+                                $.ajax({
+                                    url: ObtenerUrlDos('ArchivoProyecto'),
+                                    type: 'POST',
+                                    dataType: 'json',
+                                    data: model,
+                                    processData: false,
+                                    contentType: false,// not json
+                                    complete: function (data) {
 
-                                    swal({
-                                            title: "Guardado",
-                                            text: "El Registro ha sido guardado con éxito.",
-                                            type: "success",
-                                            showCancelButton: false,
-                                            confirmButtonClass: "btn-success",
-                                            confirmButtonText: "Ok",
-                                            cancelButtonText: "No, cancel plx!",
-                                            closeOnConfirm: true,
-                                            customClass: 'sweetalert-xs',
-                                            closeOnCancel: false
-                                        },
-                                        function (isConfirm) {
-                                            if (isConfirm) {
-                                                window.location.href = "CrearModificarProyecto.html?id=" + id + "&ELIMINAR=" + eliminado;
+                                        swal({
+                                                title: "Guardado",
+                                                text: "El Registro ha sido guardado con éxito.",
+                                                type: "success",
+                                                showCancelButton: false,
+                                                confirmButtonClass: "btn-success",
+                                                confirmButtonText: "Ok",
+                                                cancelButtonText: "No, cancel plx!",
+                                                closeOnConfirm: true,
+                                                customClass: 'sweetalert-xs',
+                                                closeOnCancel: false
+                                            },
+                                            function (isConfirm) {
+                                                if (isConfirm) {
+                                                    window.location.href = "CrearModificarProyecto.html?id=" + id + "&ELIMINAR=" + eliminado;
 
 
-                                            } else {
-                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                            }
-                                        });
+                                                } else {
+                                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                                }
+                                            });
 
-                                }
-                            });
+                                    }
+                                });
 
-                        }, 2000);
+                            }, 2000);
 
-                    }
-                    else {
-                        window.location.href = "ListarProyecto.html";
-                    }
-                });
+                        }
+                        else {
+                            window.location.href = "ListarProyecto.html";
+                        }
+                    });
+
+                }
             }
             else
             {

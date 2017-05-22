@@ -25,6 +25,8 @@
     <link href="Content/sweetalert.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
     <link href="Content/morris.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+
 </head>
 <body class="bodyFixed">
 
@@ -97,7 +99,7 @@
     </div>
 
     <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Subir Archivo</label>
+        <label for="basic-url">Subir Archivo (máximo 3,5 Mb)</label>
         <div class="input-group">
             <div class="col-xs-12 col-md-10">
                 <input type="file" class="form-control" name="monto" id="txtArchivo" aria-describedby="basic-addon9" />
@@ -128,12 +130,26 @@
             <tr>
                 <td>
                     <a data-bind="attr: { href: $data.Url }" download="Descarga"><i class="fa fa-2x fa-download"></i></a>
+                    <!-- <a data-bind="attr: { href: $data.OtroDos }" target="_blank"><i class="fa fa-2x fa-search"></i></a>-->
                     <a data-bind="attr: { href: $data.UrlEliminar }, visible: shouldShowMessage" ><i class="fa fa-2x fa-trash"></i></a>
-
+                    <i class="fa fa-2x fa-search" data-bind="click: Mostrar" style="cursor: pointer;"></i>
+                    <!--
+                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="//placehold.it/1000x600" class="img-responsive">
+                                    data-bind="attr: { href: $data.OtroDos }"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
                 </td>
                 <td><span data-bind="text: $data.NombreCompleto"></span></td>
                 <td class="hidden-xs"><span data-bind="text: $data.OtroUno"></span></td>
                 <td><span data-bind="text: $data.NombreUsuario"></span></td>
+
             </tr>
             <!-- /ko -->
             </tbody>
@@ -176,6 +192,8 @@
     <script src="Scripts/morris.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+
+    <script src="js/jquery.magnific-popup.js"></script>
 
     <script src="const.js"></script>
 

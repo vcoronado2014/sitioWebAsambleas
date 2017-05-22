@@ -255,66 +255,73 @@
             if (id != "0") {
 
                 var files = $("#txtArchivo").get(0).files;
-                var model = new FormData();
-                model.append("TriId", id);
-                model.append("UploadedImage", files[0]);
+
+                extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
+
+                if (ValidaExtension(files[0], extensiones_permitidas) == true) {
 
 
-                swal({
-                    title: "Subir",
-                    text: "¿Está seguro de subir este archivo?",
-                    type: "info",
-                    showCancelButton: true,
-                    closeOnConfirm: false,
-                    customClass: 'sweetalert-xs',
-                    showLoaderOnConfirm: true
-                }, function (isConfirm) {
-                    if (isConfirm) {
+                    var model = new FormData();
+                    model.append("TriId", id);
+                    model.append("UploadedImage", files[0]);
 
 
-                        setTimeout(function () {
-
-                            $.ajax({
-                                url: ObtenerUrl('ArchivoTricel'),
-                                type: 'POST',
-                                dataType: 'json',
-                                data: model,
-                                processData: false,
-                                contentType: false,// not json
-                                complete: function (data) {
-
-                                    swal({
-                                            title: "Guardado",
-                                            text: "El Registro ha sido guardado con éxito.",
-                                            type: "success",
-                                            showCancelButton: false,
-                                            confirmButtonClass: "btn-success",
-                                            confirmButtonText: "Ok",
-                                            cancelButtonText: "No, cancel plx!",
-                                            closeOnConfirm: true,
-                                            customClass: 'sweetalert-xs',
-                                            closeOnCancel: false
-                                        },
-                                        function (isConfirm) {
-                                            if (isConfirm) {
-                                                window.location.href = "CrearModificarVotacion.html?id=" + id + "&ELIMINAR=" + eliminado;
+                    swal({
+                        title: "Subir",
+                        text: "¿Está seguro de subir este archivo?",
+                        type: "info",
+                        showCancelButton: true,
+                        closeOnConfirm: false,
+                        customClass: 'sweetalert-xs',
+                        showLoaderOnConfirm: true
+                    }, function (isConfirm) {
+                        if (isConfirm) {
 
 
-                                            } else {
-                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                            }
-                                        });
+                            setTimeout(function () {
 
-                                }
-                            });
+                                $.ajax({
+                                    url: ObtenerUrl('ArchivoTricel'),
+                                    type: 'POST',
+                                    dataType: 'json',
+                                    data: model,
+                                    processData: false,
+                                    contentType: false,// not json
+                                    complete: function (data) {
 
-                        }, 2000);
+                                        swal({
+                                                title: "Guardado",
+                                                text: "El Registro ha sido guardado con éxito.",
+                                                type: "success",
+                                                showCancelButton: false,
+                                                confirmButtonClass: "btn-success",
+                                                confirmButtonText: "Ok",
+                                                cancelButtonText: "No, cancel plx!",
+                                                closeOnConfirm: true,
+                                                customClass: 'sweetalert-xs',
+                                                closeOnCancel: false
+                                            },
+                                            function (isConfirm) {
+                                                if (isConfirm) {
+                                                    window.location.href = "CrearModificarVotacion.html?id=" + id + "&ELIMINAR=" + eliminado;
 
-                    }
-                    else {
-                        window.location.href = "ListarVotacion.html";
-                    }
-                });
+
+                                                } else {
+                                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                                }
+                                            });
+
+                                    }
+                                });
+
+                            }, 2000);
+
+                        }
+                        else {
+                            window.location.href = "ListarVotacion.html";
+                        }
+                    });
+                }
             }
             else
             {

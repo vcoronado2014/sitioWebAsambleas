@@ -75,6 +75,32 @@
 
         Menu();
 
+        Mostrar = function (item) {
+            var rulImagen = item.Url;
+            var urlMostrar = item.OtroDos;
+            var extension = item.OtroTres();
+
+            if (extension == '.png' || extension == '.jpg' || extension == '.jpeg' || extension == '.gif') {
+                $.magnificPopup.open({
+                    items: {
+                        src: item.Url()
+                    },
+                    type: 'image'
+                });
+            }
+            else if (extension == '.pdf' || extension == '.doc' || extension == '.docx' || extension == '.xls' || extension == '.xlsx' || extension == '.ppt' || extension == '.pptx')
+            {
+                var URL = item.OtroDos();
+                var win = window.open(URL, "_blank");
+
+            }
+            else
+            {
+                getNotify('warning', 'Formato', 'El formato del Archivo no se permite visualizar');
+            }
+
+        }
+
         ko.mapping.fromJS(data, {}, self);
 
     }
@@ -142,44 +168,105 @@
     $('#btnUploadFile').on('click', function () {
 
         var files = $("#txtArchivo").get(0).files;
-        var model = new FormData();
-        model.append("UsuId", sessionStorage.getItem("Id"));
-        model.append("InstId", sessionStorage.getItem("InstId"));
-        model.append("UploadedImage", files[0]);
+        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
 
-        $.ajax({
-            url: ObtenerUrl('FileNuevo'),
-            type: 'POST',
-            dataType: 'json',
-            data: model,
-            processData: false,
-            contentType: false,// not json
-            complete: function (data) {
+        if (ValidaExtension(files[0], extensiones_permitidas) == true) {
 
-                swal({
-                    title: "Guardado",
-                    text: "El Registro ha sido guardado con éxito.",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonClass: "btn-success",
-                    confirmButtonText: "Ok",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: true,
-                    customClass: 'sweetalert-xs',
-                    closeOnCancel: false
+            $('#principal').hide();
+            $('#loading').show();
+
+            var model = new FormData();
+            model.append("UsuId", sessionStorage.getItem("Id"));
+            model.append("InstId", sessionStorage.getItem("InstId"));
+            model.append("UploadedImage", files[0]);
+
+            var guardarArchivo = jQuery.ajax({
+                url : ObtenerUrl('FileNuevo'),
+                type: 'POST',
+                dataType : "json",
+                contentType: false,
+                processData: false,
+                data: model
+            });
+
+            $.when(guardarArchivo).then(
+                function(data){
+
+                    $('#principal').show();
+                    $('#loading').hide();
+
+                    swal({
+                            title: "Guardado",
+                            text: "El Registro ha sido guardado con éxito.",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Ok",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: true,
+                            customClass: 'sweetalert-xs',
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                window.location.href = "ListarDocumento.html";
+
+
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
+
                 },
-   function (isConfirm) {
-       if (isConfirm) {
-           window.location.href = "ListarDocumento.html";
+                function (){
+                    //alguna ha fallado
+                    //alert('error');
+                    getNotify('error', 'Archivo', 'Error al subir el archivo.');
+                    $('#principal').show();
+                    $('#loading').hide();
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    alert('quitar cargando');
+                }
+            );
+
+            /*
+            $.ajax({
+                url: ObtenerUrl('FileNuevo'),
+                type: 'POST',
+                dataType: 'json',
+                data: model,
+                processData: false,
+                contentType: false,// not json
+                complete: function (data) {
+
+                    swal({
+                            title: "Guardado",
+                            text: "El Registro ha sido guardado con éxito.",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Ok",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: true,
+                            customClass: 'sweetalert-xs',
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                window.location.href = "ListarDocumento.html";
 
 
-       } else {
-           swal("Cancelled", "Your imaginary file is safe :)", "error");
-       }
-   });
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
 
-            }
-        });
+                }
+            });
+            */
+        }
 
     });
 

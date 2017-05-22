@@ -238,8 +238,6 @@ function Menu()
                     break;
                 //presidente
                 case '3':
-                case '4':
-                case '5':
                 case '6':
                     shouldShowMessage = ko.observable(true);
 
@@ -254,6 +252,19 @@ function Menu()
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
+                    break;
+                //tesorero, secretario
+                case '4':
+                case '5':
+                    //shouldShowMessage = ko.observable(true);
+
+                    menuMenu = ko.observable(true);
+                    menuMenuDocumentos = ko.observable(true);
+                    menuMenuCalendarrio = ko.observable(true);
+                    //menuTricel = ko.observable(true);
+                    //menuTricelListar = ko.observable(true);
+                    menuProyecto = ko.observable(true);
+                    menuProyectoListar = ko.observable(true);
                     break;
                 default:
                     menuMenu = ko.observable(true);
@@ -280,4 +291,66 @@ function IrInicio()
     {
         window.location.href = 'index.html';
     }
+}
+
+function ValidaExtension(archivo, extensiones)
+{
+    extensiones_permitidas = extensiones;
+
+    if (!archivo) {
+        getNotify('error', 'Seleccione', 'Debe seleccionar un archivo válido.');
+        return false;
+    }
+    else
+    {
+        var tamano = archivo.size;
+        //màximo 3,5 mb
+        if (tamano < 3670016) {
+
+            extension = (archivo.name.substring(archivo.name.lastIndexOf("."))).toLowerCase();
+            permitida = false;
+            for (var i = 0; i < extensiones_permitidas.length; i++) {
+                if (extensiones_permitidas[i] == extension) {
+                    permitida = true;
+                    break;
+                }
+            }
+            if (!permitida) {
+                //mierror = "Comprueba la extensión de los archivos a subir. \nSólo se pueden subir archivos con extensiones: " + extensiones_permitidas.join();
+                getNotify('error', 'Extensión', 'La extensiòn del archivo no está permitida ' + extensiones_permitidas.join());
+                return false;
+            }else{
+                //submito!
+                return true;
+            }
+
+        }
+        else
+        {
+            getNotify('error', 'Tamaño', 'El tamaño del archivo no puede superar el màximo permitido.');
+            return false;
+
+        }
+
+    }
+
+}
+
+function FormatMiles(input)
+{
+    var retorno;
+    var num = input.toString().replace(/\./g,'');
+    if(!isNaN(num)){
+        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+        num = num.split('').reverse().join('').replace(/^[\.]/,'');
+        //input.value = num;
+        retorno = num;
+    }
+
+    else{
+        //alert('Solo se permiten numeros');
+        //input.value = input.value.replace(/[^\d\.]*/g,'');
+        retorno = input.toString().replace(/[^\d\.]*/g,'');
+    }
+    return retorno;
 }

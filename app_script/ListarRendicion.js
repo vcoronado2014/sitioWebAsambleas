@@ -199,7 +199,9 @@
                         'rgb(160, 0, 0)'
                     ],
                     formatter: function (x) {
-                        return "$" + x
+                        //return "$" + x
+                        var param = "$" + FormatMiles(x);
+                        return param;
                     }
                 });
                 //chart.setData(dataGrafico);

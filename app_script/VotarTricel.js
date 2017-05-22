@@ -57,7 +57,7 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel(dataP, dataL) {
+    function PersonViewModel(dataP, dataL, dataGrafico, dataArchivos) {
         var self = this;
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
@@ -143,6 +143,54 @@ $(document).ready(function () {
         }
 
         self.itemsL = ko.observableArray(itemsL);
+
+        var itemsArchivos = [];
+        var itemsProcesarArchivos = dataArchivos.proposals;
+
+        if (itemsProcesarArchivos != null && itemsProcesarArchivos.length > 0){
+            for(var i in itemsProcesarArchivos)
+            {
+
+                var s = {
+                    id: itemsProcesarArchivos[i].Id,
+                    nombre: itemsProcesarArchivos[i].NombreCompleto,
+                    url: itemsProcesarArchivos[i].Url,
+                    OtroDos: itemsProcesarArchivos[i].OtroDos,
+                    OtroTres: itemsProcesarArchivos[i].OtroTres
+                }
+                itemsArchivos[i] = s;
+            }
+        }
+
+        self.itemsArchivos = ko.observableArray(itemsArchivos);
+
+
+        //verificamos si se muestra o no
+        var suma = 0;
+        for(var i in dataGrafico)
+        {
+            suma = suma + parseInt(dataGrafico[i].value);
+        }
+
+        if (suma > 0) {
+            var chart = Morris.Donut({
+                element: 'graph',
+                data: dataGrafico,
+
+                backgroundColor: '#ccc',
+                labelColor: '#060',
+                colors: [
+                    'rgb(11, 98, 164)',
+                    'rgb(160, 0, 0)'
+                ],
+
+                formatter: function (x) {
+                    return x
+                }
+            });
+            //chart.setData(ko.toJSON(dataGraficoArr));
+        }
+
 
 
         volver = function (){
@@ -311,11 +359,39 @@ $(document).ready(function () {
             */
         }
 
+        Mostrar = function (item) {
+            var rulImagen = item.url;
+            var urlMostrar = item.OtroDos;
+            var extension = item.OtroTres;
+
+            if (extension == '.png' || extension == '.jpg' || extension == '.jpeg' || extension == '.gif') {
+                $.magnificPopup.open({
+                    items: {
+                        src: item.url
+                    },
+                    type: 'image'
+                });
+            }
+            else if (extension == '.pdf' || extension == '.doc' || extension == '.docx' || extension == '.xls' || extension == '.xlsx' || extension == '.ppt' || extension == '.pptx')
+            {
+                var URL = item.OtroDos;
+                var win = window.open(URL, "_blank");
+
+            }
+            else
+            {
+                getNotify('warning', 'Formato', 'El formato del Archivo no se permite visualizar');
+            }
+
+        }
+
     }
 
     var dataProyecto =  [];
 
     var dataGraficoArr = [{"value":"","label":""}];
+
+    var dataArchivosArr = [];
 
     var obtenerVotaciones= jQuery.ajax({
         url : ObtenerUrlDos('Votacion'),
@@ -341,42 +417,26 @@ $(document).ready(function () {
         data: ko.toJSON({ TriId: getParameterByName('id') })
     });
 
-    $.when(obtenerVotaciones, obtenerGrafico, obtenerListaTricel).then(
-        function(dataP, dataGrafico, dataListaTricel){
+    var obtenerArchivos = jQuery.ajax({
+        url: ObtenerUrl('ArchivoTricel') + "?TricelId=" + getParameterByName('id'),
+        type: 'GET',
+        dataType : "json",
+        contentType: "application/json"
+    });
+
+    $.when(obtenerVotaciones, obtenerGrafico, obtenerListaTricel, obtenerArchivos).then(
+        function(dataP, dataGrafico, dataListaTricel, dataArchivos){
             //aca contenido de la operacion
             dataProyecto = dataP[0];
             dataGraficoArr = dataGrafico[0];
+            dataArchivosArr = dataArchivos[0];
 
-            //verificamos si se muestra o no
-            var suma = 0;
-            for(var i in dataGraficoArr)
-            {
-                suma = suma + parseInt(dataGraficoArr[i].value);
-            }
 
-            if (suma > 0) {
-                var chart = Morris.Donut({
-                    element: 'graph',
-                    data: dataGraficoArr,
-
-                    backgroundColor: '#ccc',
-                    labelColor: '#060',
-                    colors: [
-                        'rgb(11, 98, 164)',
-                        'rgb(160, 0, 0)'
-                    ],
-
-                    formatter: function (x) {
-                        return x
-                    }
-                });
-                //chart.setData(ko.toJSON(dataGraficoArr));
-            }
 
             //ahora seteamos los elementos de la lista
 
 
-            ko.applyBindings(new PersonViewModel(dataProyecto, dataListaTricel[0]));
+            ko.applyBindings(new PersonViewModel(dataProyecto, dataListaTricel[0], dataGraficoArr, dataArchivosArr));
 
         },
         function (){

@@ -256,8 +256,6 @@ $(function () {
                         break;
                     //presidente
                     case '3':
-                    case '4':
-                    case '5':
                     case '6':
                         shouldShowMessage = ko.observable(true);
 
@@ -272,6 +270,19 @@ $(function () {
                         menuProyecto = ko.observable(true);
                         menuProyectoListar = ko.observable(true);
                         menuMenuCargaMasiva = ko.observable(true);
+                        break;
+                    //tesorero, secretario
+                    case '4':
+                    case '5':
+                        //shouldShowMessage = ko.observable(true);
+
+                        menuMenu = ko.observable(true);
+                        menuMenuDocumentos = ko.observable(true);
+                        menuMenuCalendarrio = ko.observable(true);
+                        //menuTricel = ko.observable(true);
+                        //menuTricelListar = ko.observable(true);
+                        menuProyecto = ko.observable(true);
+                        menuProyectoListar = ko.observable(true);
                         break;
                     default:
                         shouldShowMessage = ko.observable(true);
