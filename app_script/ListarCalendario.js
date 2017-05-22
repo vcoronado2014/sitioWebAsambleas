@@ -225,10 +225,14 @@
                 var saveButton;
 
                 Y.Do.after(function () {
+
                     var rolId = sessionStorage.getItem("RolId");
                     //solo para administradores por mientras
                     if (rolId != '9') {
                         var popup = Y.one("#bb")._node.childNodes[1];
+                        //popup.hidden = true;
+
+
                         var cantidadNodos = popup.childNodes[0].length;
                         var titulo;
                         //estamos editando si hay 5 nodos
@@ -242,10 +246,11 @@
                             titulo = popup.childNodes[0][0];
                             titulo.defaultValue = "Ingrese su evento";
                         }
-
+                        var elemento = Y.one("#bb .yui3-widget-bd");
                         var toolbarBtnGroup = Y.one("#bb .btn-toolbar-content .btn-group");
 
                         //toolbarBtnGroup.appendChild('<button id="edit" type="button">Edit</button>');
+                        //toolbarBtnGroup.afterch
                         toolbarBtnGroup.appendChild('<button id="guardar" type="button">Guardar</button>');
 
                         var btnGuardar = toolbarBtnGroup._node.childNodes[0];
@@ -260,6 +265,27 @@
 
 
                         saveButton.on('click', function (event) {
+                            var titulo = popup.childNodes[0][0];
+
+                            swal.withFormAsync({
+                                title: 'Guardar Evento',
+                                text: titulo.value,
+                                showCancelButton: true,
+                                confirmButtonColor: '#DD6B55',
+                                confirmButtonText: 'Guardar',
+                                closeOnConfirm: true,
+                                formFields: [
+                                    { id: 'inicio', type: 'time', class: 'col-xs-6' },
+                                    { id: 'termino', type: 'time', class: 'col-xs-6' }
+                                ]
+                            }).then(function (context) {
+                                console.log(context._isConfirm)
+                                // do whatever you want with the form data
+                                console.log(context.swalForm) // { name: 'user name', nickname: 'what the user sends' }
+                            })
+
+
+                            /*
                             //alert('Edit guardar!');
                             var cantidadNodos = popup.childNodes[0].length;
                             var titulo;
@@ -362,6 +388,7 @@
 
 
                             eventRecorder.hidePopover();
+                            */
                         });
                     }
                     else
@@ -370,6 +397,25 @@
                         popup.className = "hidden";
                         getNotify('error', 'Error', 'Su rol no le permite crear o editar eventos!');
                     }
+
+
+                    /*
+                    swal({
+                        title: "An input!",
+                        text: "Write something interesting:",
+                        type: "input",
+                        showCancelButton: true,
+                        closeOnConfirm: false,
+                        inputPlaceholder: "Write something"
+                    }, function (inputValue) {
+                        if (inputValue === false) return false;
+                        if (inputValue === "") {
+                            swal.showInputError("You need to write something!");
+                            return false
+                        }
+                        swal("Nice!", "You wrote: " + inputValue, "success");
+                    });
+                    */
 
                 }, eventRecorder, 'showPopover');
 
