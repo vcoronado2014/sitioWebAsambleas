@@ -3,11 +3,13 @@
   overflow: auto;
   height: auto;
 }
-
+.sa-button-container{
+  padding-top: 15px;
+}
 .swal-form input.nice-input  {
-  display: block;
+  /* display: block; */
   margin: 0;
-  width: 96%;
+  /* width: 96%; */
   font-family: sans-serif;
   font-size: 18px;
   box-shadow: none;
@@ -15,6 +17,8 @@
   border: solid 1px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
   height: initial;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 .swal-form input.nice-input:focus,
 .swal-form input.nice-input.focus {

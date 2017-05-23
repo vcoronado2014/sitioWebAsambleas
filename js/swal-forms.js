@@ -75,7 +75,7 @@
         var attr = {}
         attr[tag.id || tag.name] = tag.value
         if (isConfirm && tag.dataset.swalFormsRequired && !tag.value) {
-          var warnMsg = 'Missing required attribute: ' + (tag.name || tag.id)
+          var warnMsg = 'Requerido: ' + (tag.name || tag.id)
           warnTextNode && warnTextNode.remove && warnTextNode.remove()
           warnTextNode = document.createTextNode(warnMsg)
           document.querySelector('.swal-form').appendChild(warnTextNode)
@@ -192,6 +192,7 @@
   function Input (field) {
     var input = {
       id: field.id || '',
+      classInput: field.classInput || '',
       name: field.name || '',
       placeholder: field.placeholder || camelCaseToHuman(field.id),
       value: field.value || '',
@@ -204,7 +205,7 @@
       toHtml: function () {
         var inputTag
         if (input.type !== 'select') {
-          inputTag = t("<input id='{id}' class='{clazz} swal-form-field' type='{type}' name='{name}'" +
+          inputTag = t("<input id='{id}' class='{clazz} swal-form-field {classInput}' type='{type}' name='{name}'" +
             " value='{value}' title='{placeholder}' placeholder='{placeholder}'" +
             ' data-swal-forms-required={required}>', input)
         } else {
@@ -225,6 +226,7 @@
       }
     }
     input.label = input.isRadioOrCheckbox() ? (typeof field.label !== 'undefined' ? field.label : input.value) : ''
+      //input.label = true ? (typeof field.label !== 'undefined' ? field.label : input.value) : ''
     input.clazz = !input.isRadioOrCheckbox() ? 'nice-input' : 'patch-swal-styles-for-inputs'
 
     return input

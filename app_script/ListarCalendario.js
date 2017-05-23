@@ -201,6 +201,14 @@
                             //      },
                             //      cancel: function(event) {
                             //        alert('Cancel Event:' + this.isNew() + ' --- ' + this.getContentNode().val());
+                        },
+                        save: function (guardar) {
+                            var popup = Y.one("#bb")._node.childNodes[1];
+                            var titulo = popup.childNodes[0][0];
+                        },
+                        edit: function (otro) {
+                            var popup = Y.one("#bb")._node.childNodes[1];
+                            var titulo = popup.childNodes[0][0];
                         }
                     }
                 });
@@ -224,6 +232,7 @@
 
                 var saveButton;
 
+
                 Y.Do.after(function () {
 
                     var rolId = sessionStorage.getItem("RolId");
@@ -246,6 +255,9 @@
                             titulo = popup.childNodes[0][0];
                             titulo.defaultValue = "Ingrese su evento";
                         }
+
+                        titulo.className = "hidden";
+
                         var elemento = Y.one("#bb .yui3-widget-bd");
                         var toolbarBtnGroup = Y.one("#bb .btn-toolbar-content .btn-group");
 
@@ -265,27 +277,51 @@
 
 
                         saveButton.on('click', function (event) {
+                            /*
+                            eventRecorder.hidePopover();
+                            var esNuevo = false;
                             var titulo = popup.childNodes[0][0];
+                            var fechaUno = parseInt(popup.childNodes[0][1].value);
+                            var fechaDos = parseInt(popup.childNodes[0][2].value);
+                            var fechaInicio = new Date(fechaUno);
+                            var fechaTermino = new Date(fechaDos);
+                            //si el titulo es vacio o undefined es nuevo evento
+
+                            if (titulo.value == "e.g., Dinner at Brian's")
+                                esNuevo = true;
+
+                            //si es nuevo cambia el titulo
+                            var tituloMostrar = '';
+                            if (esNuevo)
+                            {
+                                tituloMostrar = 'Ingrese los datos del evento.';
+                            }
+                            else
+                            {
+                                tituloMostrar = 'Modifique los datos del evento.';
+                            }
+
 
                             swal.withFormAsync({
-                                title: 'Guardar Evento',
-                                text: titulo.value,
+                                title: 'Evento',
+                                text: tituloMostrar,
                                 showCancelButton: true,
                                 confirmButtonColor: '#DD6B55',
                                 confirmButtonText: 'Guardar',
                                 closeOnConfirm: true,
                                 formFields: [
-                                    { id: 'inicio', type: 'time', class: 'col-xs-6' },
-                                    { id: 'termino', type: 'time', class: 'col-xs-6' }
+                                    { id: 'titulo', type: 'input', placeholder: 'Evento', required: true, classInput: 'col-xs-10'  },
+                                    { id: 'inicio', type: 'time', classInput: 'col-xs-5', required: true },
+                                    { id: 'termino', type: 'time', classInput: 'col-xs-5', required: true }
                                 ]
                             }).then(function (context) {
                                 console.log(context._isConfirm)
                                 // do whatever you want with the form data
                                 console.log(context.swalForm) // { name: 'user name', nickname: 'what the user sends' }
                             })
+                            */
 
 
-                            /*
                             //alert('Edit guardar!');
                             var cantidadNodos = popup.childNodes[0].length;
                             var titulo;
@@ -371,11 +407,11 @@
 
                                 if (esNuevo)
                                 {
-                                    Insertar(json);
+                                    //Insertar(json);
                                 }
                                 else
                                 {
-                                    Modificar(json);
+                                    //Modificar(json);
                                 }
 
 
@@ -388,7 +424,7 @@
 
 
                             eventRecorder.hidePopover();
-                            */
+
                         });
                     }
                     else
@@ -399,23 +435,6 @@
                     }
 
 
-                    /*
-                    swal({
-                        title: "An input!",
-                        text: "Write something interesting:",
-                        type: "input",
-                        showCancelButton: true,
-                        closeOnConfirm: false,
-                        inputPlaceholder: "Write something"
-                    }, function (inputValue) {
-                        if (inputValue === false) return false;
-                        if (inputValue === "") {
-                            swal.showInputError("You need to write something!");
-                            return false
-                        }
-                        swal("Nice!", "You wrote: " + inputValue, "success");
-                    });
-                    */
 
                 }, eventRecorder, 'showPopover');
 
@@ -424,6 +443,9 @@
                         saveButton.destroy();
                     }
                 }, eventRecorder, 'hidePopover');
+
+
+
             });
 
             $('#principal').show();
