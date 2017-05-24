@@ -1,5 +1,6 @@
 ﻿$(function () {
 
+
     $('#principal').hide();
     $('#loading').show();
 
@@ -213,6 +214,174 @@
                     }
                 });
 
+                Y.Do.after(function () {
+                    var rolId = sessionStorage.getItem("RolId");
+                    var popup = Y.one("#bb")._node.childNodes[1];
+                    //veamos si podemos modificar esta vista
+                    //principal
+
+                    var cantidadNodos = popup.childNodes[0].length;
+                    var esNuevo = false;
+
+                    if (cantidadNodos <= 5)
+                        esNuevo = true;
+
+                    //obtenemos los valores que trae los elementos
+                    var evento;
+                    var fechaInicio= new Date(parseInt(popup.childNodes[0][1].defaultValue));
+                    var fechaTermino = new Date(parseInt(popup.childNodes[0][2].defaultValue));
+
+                    var fechaInicioStr = FechaString(fechaInicio);
+                    var fechaTerminoStr = FechaString(fechaTermino);
+
+
+                    var otroPrincipal = Y.one("#bb .popover-title");
+                    var content = Y.one("#bb .popover-content");
+
+                    //del content hay que sacar el nodo[2]
+                    content._node.childNodes[2].className = "hidden";
+
+                    //var principal = Y.one(popup.childNodes[0]);
+                    /*
+                     <div class="input-group date" id="datetimepicker5"><input type="text" class="form-control" /><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+                     <input type="text" value="2012-05-15 21:05" id="datetimepicker">
+                    */
+                    //var newNodeInicio = Y.Node.create('<input id="fechaInicio" type="datetime" class="col-xs-6"></input>');
+
+                    var newNodeInicio = Y.Node.create('<span class="col-xs-4" style="margin-top: 10px;">Inicio: </span><input type="text" style="margin-top: 10px;" value="' + fechaInicioStr + '" id="datetimepickerInicio" class="col-xs-8">');
+                    newNodeInicio.setStyle('margin-top', '5px');
+
+                    var newNodeTermino = Y.Node.create('<span class="col-xs-4" style="margin-top: 10px;">Término: </span><input type="text" style="margin-top: 10px;" value="' + fechaTerminoStr + '" id="datetimepickerTermino" class="col-xs-8">');
+                    newNodeTermino.setStyle('margin-top', '5px');
+
+
+                    otroPrincipal.appendChild(newNodeInicio);
+                    otroPrincipal.appendChild(newNodeTermino);
+
+                    $('#datetimepickerInicio').datetimepicker({
+                        format: 'dd-mm-yyyy hh:ii'
+                    });
+                    $('#datetimepickerTermino').datetimepicker({
+                        format: 'dd-mm-yyyy hh:ii'
+                    });
+
+                    //botonera
+                    var toolbarBtnGroup = Y.one("#bb .btn-toolbar-content .btn-group");
+
+                    //ahora debemos trabajar con los botones, dependiendo si es nuevo o no es la cantidad de botones que trae
+                    //vamos a crear igual los tres y vemos cual o cual mostramos
+
+                    var newNodeObjectCancelar = Y.Node.create('<button id="cancelar" type="button" class="btn btn-default" style="margin-top: 10px;">Cancelar</button>');
+                    //evento click
+                    newNodeObjectCancelar.on('click', function(event){
+                        //alert('Cancelar, cerrar el popup');
+                        //var otroPrincipal = Y.one("#bb .popover-title");
+                        //recogemos los datos
+                        eventRecorder.hidePopover();
+
+                    });
+
+
+                    var newNodeObjectInsertar = Y.Node.create('<button id="insertar" type="button" class="btn btn-success" style="margin-top: 10px;">Guardar</button>');
+                    //evento click
+                    newNodeObjectInsertar.on('click', function(event){
+                        alert('insertar');
+                        var otroPrincipal = Y.one("#bb .popover-title");
+                        //recogemos los datos
+
+                    });
+
+                    var newNodeObjectModificar = Y.Node.create('<button id="modificar" type="button" class="btn btn-success" style="margin-top: 10px;">Modificar</button>');
+                    //evento click
+                    newNodeObjectModificar.on('click', function(event){
+                        alert('modificar');
+                        var otroPrincipal = Y.one("#bb .popover-title");
+                        //recogemos los datos
+
+                    });
+
+                    var newNodeObjectEliminar = Y.Node.create('<button id="eliminar" type="button" class="btn btn-danger" style="margin-top: 10px;">Eliminar</button>');
+                    //evento click
+                    newNodeObjectEliminar.on('click', function(event){
+                        alert('eliminar');
+                        var otroPrincipal = Y.one("#bb .popover-title");
+                        //recogemos los datos
+
+                    });
+                    //para todos va el cancelar
+                    toolbarBtnGroup.appendChild(newNodeObjectCancelar);
+
+                    if (esNuevo) {
+                        //trae solo dos botones
+                        popup.childNodes[0][0].defaultValue = "Ingrese nuevo Evento";
+                        toolbarBtnGroup._node.childNodes[0].className = "hidden";
+                        toolbarBtnGroup._node.childNodes[1].className = "hidden";
+
+                        toolbarBtnGroup.appendChild(newNodeObjectInsertar);
+
+                    }
+                    else
+                    {
+                        //trae 3 botones
+                        toolbarBtnGroup._node.childNodes[0].className = "hidden";
+                        toolbarBtnGroup._node.childNodes[1].className = "hidden";
+                        toolbarBtnGroup._node.childNodes[2].className = "hidden";
+
+                        toolbarBtnGroup.appendChild(newNodeObjectEliminar);
+                        toolbarBtnGroup.appendChild(newNodeObjectModificar);
+                    }
+
+
+
+
+                    //toolbarBtnGroup.removeAll();
+                    //toolbarBtnGroup.appendChild('<button id="guardar" type="button" class="btn btn-success">Guardar</button>');
+
+                }, eventRecorder, 'showPopover');
+
+                Y.Do.before(function () {
+                    var rolId = sessionStorage.getItem("RolId");
+                    var popup = Y.one("#bb")._node.childNodes[1];
+                    if (rolId == 9)
+                    {
+                        getNotify('error', 'Permisos', 'No tiene acceso a modificar o crear eventos.');
+                        eventRecorder.hidePopover();
+                    }
+                    else
+                    {
+                        //recogemos algunos valores para verificar el usuario que realizó el evento
+                        var instId = sessionStorage.getItem("InstId");
+                        var usuId = sessionStorage.getItem("Id");
+                        var fechaInicioEntera = '20170324';
+                        var fechaTerminoEntera = '20170324';
+                        var nombre = 'AAAAAAAAA';
+
+                        var validarCalendario = jQuery.ajax({
+                            url : ObtenerUrl('Calendario') + '?instId=' + instId + '&usuIdCreador=' + usuId + '&fechaInicioEntera=' + fechaInicioEntera + '&fechaTerminoEntera=' + fechaTerminoEntera + '&nombre=' + nombre,
+                            type: 'GET',
+                            dataType : "json",
+                            contentType: "application/json"
+                        });
+
+                        //si el retorno = 1 si puede modificar
+
+                        $.when(validarCalendario).then(
+                            function(data){
+                                alert(data);
+                            },
+                            function (error)
+                            {
+
+                            }
+                        );
+
+                    }
+
+
+
+
+                }, eventRecorder, 'showPopover');
+
                 var schedulerViews = [
                     new Y.SchedulerWeekView(),
                     new Y.SchedulerDayView(),
@@ -230,219 +399,7 @@
 
                 }).render();
 
-                var saveButton;
 
-
-                Y.Do.after(function () {
-
-                    var rolId = sessionStorage.getItem("RolId");
-                    //solo para administradores por mientras
-                    if (rolId != '9') {
-                        var popup = Y.one("#bb")._node.childNodes[1];
-                        //popup.hidden = true;
-
-
-                        var cantidadNodos = popup.childNodes[0].length;
-                        var titulo;
-                        //estamos editando si hay 5 nodos
-                        if (cantidadNodos >= 6)
-                        {
-                            titulo = popup.childNodes[0][0];
-                            titulo.defaultValue = titulo.value;
-                        }
-                        else
-                        {
-                            titulo = popup.childNodes[0][0];
-                            titulo.defaultValue = "Ingrese su evento";
-                        }
-
-                        titulo.className = "hidden";
-
-                        var elemento = Y.one("#bb .yui3-widget-bd");
-                        var toolbarBtnGroup = Y.one("#bb .btn-toolbar-content .btn-group");
-
-                        //toolbarBtnGroup.appendChild('<button id="edit" type="button">Edit</button>');
-                        //toolbarBtnGroup.afterch
-                        toolbarBtnGroup.appendChild('<button id="guardar" type="button">Guardar</button>');
-
-                        var btnGuardar = toolbarBtnGroup._node.childNodes[0];
-                        btnGuardar.className = "hidden";
-
-                        if (saveButton)
-                            saveButton.destroy();
-                        saveButton = new Y.Button({
-                            label: 'Guardar',
-                            srcNode: '#guardar',
-                        }).render();
-
-
-                        saveButton.on('click', function (event) {
-                            /*
-                            eventRecorder.hidePopover();
-                            var esNuevo = false;
-                            var titulo = popup.childNodes[0][0];
-                            var fechaUno = parseInt(popup.childNodes[0][1].value);
-                            var fechaDos = parseInt(popup.childNodes[0][2].value);
-                            var fechaInicio = new Date(fechaUno);
-                            var fechaTermino = new Date(fechaDos);
-                            //si el titulo es vacio o undefined es nuevo evento
-
-                            if (titulo.value == "e.g., Dinner at Brian's")
-                                esNuevo = true;
-
-                            //si es nuevo cambia el titulo
-                            var tituloMostrar = '';
-                            if (esNuevo)
-                            {
-                                tituloMostrar = 'Ingrese los datos del evento.';
-                            }
-                            else
-                            {
-                                tituloMostrar = 'Modifique los datos del evento.';
-                            }
-
-
-                            swal.withFormAsync({
-                                title: 'Evento',
-                                text: tituloMostrar,
-                                showCancelButton: true,
-                                confirmButtonColor: '#DD6B55',
-                                confirmButtonText: 'Guardar',
-                                closeOnConfirm: true,
-                                formFields: [
-                                    { id: 'titulo', type: 'input', placeholder: 'Evento', required: true, classInput: 'col-xs-10'  },
-                                    { id: 'inicio', type: 'time', classInput: 'col-xs-5', required: true },
-                                    { id: 'termino', type: 'time', classInput: 'col-xs-5', required: true }
-                                ]
-                            }).then(function (context) {
-                                console.log(context._isConfirm)
-                                // do whatever you want with the form data
-                                console.log(context.swalForm) // { name: 'user name', nickname: 'what the user sends' }
-                            })
-                            */
-
-
-                            //alert('Edit guardar!');
-                            var cantidadNodos = popup.childNodes[0].length;
-                            var titulo;
-                            var startDate;
-                            var endDate;
-                            var esNuevo = true;
-
-                            if (cantidadNodos > 6)
-                            {
-                                titulo = popup.childNodes[0][0];
-                                startDate = popup.childNodes[0][1];
-                                endDate = popup.childNodes[0][2];
-                                esNuevo = false;
-                            }
-                            else
-                            {
-                                titulo = popup.childNodes[0][0];
-                                startDate = popup.childNodes[0][1];
-                                endDate = popup.childNodes[0][2];
-                            }
-
-
-                            var fechaIni = moment(parseFloat(startDate.value));
-                            var fechaTer = moment(parseFloat(endDate.value));
-                            var idUsuario = sessionStorage.getItem("Id");
-                            var instId = sessionStorage.getItem("InstId");
-
-                            var annoInicio = fechaIni.get('year');
-                            var mesInicio = fechaIni.get('month') + 1;
-                            var diaInicio = fechaIni.get('date');
-                            var horaInicio = fechaIni.get('hour');
-                            var minutoInicio = fechaIni.get('minute');
-
-                            if (diaInicio < 10)
-                                diaInicio = "0" + diaInicio;
-
-                            if (mesInicio < 10)
-                                mesInicio = "0" + mesInicio;
-
-                            if (horaInicio < 10)
-                                horaInicio = "0" + horaInicio;
-
-                            if (minutoInicio < 10)
-                                minutoInicio = "0" + minutoInicio;
-
-                            var inicioStr = diaInicio + '-' + mesInicio + '-' + annoInicio + ' ' + horaInicio + ':' + minutoInicio;
-
-
-                            var annoTer = fechaTer.get('year');
-                            var mesTer = fechaTer.get('month') + 1;
-                            var diaTer = fechaTer.get('date');
-                            var horaTer = fechaTer.get('hour');
-                            var minutoTer = fechaTer.get('minute');
-
-                            if (diaTer < 10)
-                                diaTer = "0" + diaTer;
-
-                            if (mesTer < 10)
-                                mesTer = "0" + mesTer;
-
-                            if (horaTer < 10)
-                                horaTer = "0" + horaTer;
-
-                            if (minutoTer < 10)
-                                minutoTer = "0" + minutoTer;
-
-                            var terminoStr = diaTer + '-' + mesTer + '-' + annoTer + ' ' + horaTer + ':' + minutoTer;
-
-
-                            if (titulo.value != '')
-                            {
-                                var eventoCal = {
-                                    InstId : instId,
-                                    IdUsuario : idUsuario,
-                                    Titulo: titulo.value,
-                                    FechaInicio: inicioStr,
-                                    FechaTermino: terminoStr,
-                                    EsNuevo: esNuevo
-
-                                }
-
-                                var json = ko.toJSON(eventoCal);
-
-                                if (esNuevo)
-                                {
-                                    //Insertar(json);
-                                }
-                                else
-                                {
-                                    //Modificar(json);
-                                }
-
-
-                                //alert('Save Event:' + ' --- ' + titulo.value + ' ' + fechaIni);
-                            }
-                            else
-                            {
-                                getNotify('error', 'Error', 'Debe ingresar evento!');
-                            }
-
-
-                            eventRecorder.hidePopover();
-
-                        });
-                    }
-                    else
-                    {
-                        var popup = Y.one("#bb")._node.childNodes[1];
-                        popup.className = "hidden";
-                        getNotify('error', 'Error', 'Su rol no le permite crear o editar eventos!');
-                    }
-
-
-
-                }, eventRecorder, 'showPopover');
-
-                Y.Do.after(function () {
-                    if (saveButton) {
-                        saveButton.destroy();
-                    }
-                }, eventRecorder, 'hidePopover');
 
 
 
