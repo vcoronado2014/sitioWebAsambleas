@@ -381,3 +381,36 @@ function FechaString(fechaC)
     return terminoStr;
 
 }
+function FechaEntera(fechaC)
+{
+    var fecha = moment(fechaC);
+
+    var annoTer = fecha.get('year');
+    var mesTer = fecha.get('month') + 1;
+    var diaTer = fecha.get('date');
+    var horaTer = fecha.get('hour');
+    var minutoTer = fecha.get('minute');
+
+    if (diaTer < 10)
+        diaTer = "0" + diaTer;
+
+    if (mesTer < 10)
+        mesTer = "0" + mesTer;
+
+    if (horaTer < 10)
+        horaTer = "0" + horaTer;
+
+    if (minutoTer < 10)
+        minutoTer = "0" + minutoTer;
+
+    var terminoStr = annoTer + mesTer + diaTer;
+    return parseInt(terminoStr);
+}
+function FechaEnteraStr(fechaStr)
+{
+    var parteUno = fechaStr.split('-');
+    var parteDos = parteUno[2].split(' ');
+
+    return parseInt(parteDos[0] + parteUno[1] + parteUno[0]);
+
+}

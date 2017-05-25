@@ -216,6 +216,8 @@
 
                 Y.Do.after(function () {
                     var rolId = sessionStorage.getItem("RolId");
+                    var instId = sessionStorage.getItem("InstId");
+                    var usuId = sessionStorage.getItem("Id");
                     var popup = Y.one("#bb")._node.childNodes[1];
                     //veamos si podemos modificar esta vista
                     //principal
@@ -234,6 +236,41 @@
                     var fechaInicioStr = FechaString(fechaInicio);
                     var fechaTerminoStr = FechaString(fechaTermino);
 
+                    var fechaInicioEntera = FechaEntera(fechaInicio);
+                    var fechaTerminoEntera = FechaEntera(fechaTermino);
+
+
+                    //antes de todo verificamos si el usuario puede o no modificar o crear
+                    if (esNuevo == false) {
+                        //recogemos algunos valores para verificar el usuario que realizó el evento
+                        var nombre = popup.childNodes[0][0].value;
+
+                        var validarCalendario = jQuery.ajax({
+                            url: ObtenerUrl('Calendario') + '?instId=' + instId + '&usuIdCreador=' + usuId + '&fechaInicioEntera=' + fechaInicioEntera + '&fechaTerminoEntera=' + fechaTerminoEntera + '&nombre=' + nombre,
+                            type: 'GET',
+                            dataType: "json",
+                            contentType: "application/json"
+                        });
+
+                        //si el retorno = 1 si puede modificar
+
+                        $.when(validarCalendario).then(
+                            function (data) {
+                                if (data == '0')
+                                {
+                                    getNotify('error', 'Error', 'Este evento fue creado por otra persona, no lo puede modificar.');
+                                    eventRecorder.hidePopover();
+                                }
+
+                            },
+                            function (error) {
+                                getNotify('error', 'Error', 'Hubo un error al validar, contacte al Administrador');
+                                eventRecorder.hidePopover();
+                            }
+                        );
+                    }
+
+
 
                     var otroPrincipal = Y.one("#bb .popover-title");
                     var content = Y.one("#bb .popover-content");
@@ -241,18 +278,26 @@
                     //del content hay que sacar el nodo[2]
                     content._node.childNodes[2].className = "hidden";
 
-                    //var principal = Y.one(popup.childNodes[0]);
-                    /*
-                     <div class="input-group date" id="datetimepicker5"><input type="text" class="form-control" /><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
-                     <input type="text" value="2012-05-15 21:05" id="datetimepicker">
-                    */
-                    //var newNodeInicio = Y.Node.create('<input id="fechaInicio" type="datetime" class="col-xs-6"></input>');
-
                     var newNodeInicio = Y.Node.create('<span class="col-xs-4" style="margin-top: 10px;">Inicio: </span><input type="text" style="margin-top: 10px;" value="' + fechaInicioStr + '" id="datetimepickerInicio" class="col-xs-8">');
-                    newNodeInicio.setStyle('margin-top', '5px');
+
 
                     var newNodeTermino = Y.Node.create('<span class="col-xs-4" style="margin-top: 10px;">Término: </span><input type="text" style="margin-top: 10px;" value="' + fechaTerminoStr + '" id="datetimepickerTermino" class="col-xs-8">');
-                    newNodeTermino.setStyle('margin-top', '5px');
+
+
+                    if (esNuevo == false)
+                    {
+                        //desactivamos las fechas ya que para modificar no se puede.
+                        newNodeInicio._node.childNodes[1].disabled = true;
+                        newNodeTermino._node.childNodes[1].disabled = true;
+                        newNodeInicio.setStyle('margin-top', '5px');
+                        newNodeTermino.setStyle('margin-top', '5px');
+
+                    }
+                    else
+                    {
+                        newNodeInicio.setStyle('margin-top', '5px');
+                        newNodeTermino.setStyle('margin-top', '5px');
+                    }
 
 
                     otroPrincipal.appendChild(newNodeInicio);
@@ -272,40 +317,152 @@
                     //vamos a crear igual los tres y vemos cual o cual mostramos
 
                     var newNodeObjectCancelar = Y.Node.create('<button id="cancelar" type="button" class="btn btn-default" style="margin-top: 10px;">Cancelar</button>');
-                    //evento click
+                    //evento Cancelar
                     newNodeObjectCancelar.on('click', function(event){
-                        //alert('Cancelar, cerrar el popup');
-                        //var otroPrincipal = Y.one("#bb .popover-title");
-                        //recogemos los datos
                         eventRecorder.hidePopover();
-
                     });
 
 
                     var newNodeObjectInsertar = Y.Node.create('<button id="insertar" type="button" class="btn btn-success" style="margin-top: 10px;">Guardar</button>');
                     //evento click
                     newNodeObjectInsertar.on('click', function(event){
-                        alert('insertar');
+                        var popupInsertar = Y.one("#bb")._node.childNodes[1];
+                        var nombre = popupInsertar.childNodes[0][0].value;
                         var otroPrincipal = Y.one("#bb .popover-title");
-                        //recogemos los datos
+
+                        //variables
+                        var fechaHoraInicio = otroPrincipal._node.childNodes[2].value;
+                        var fechaHoraTermino = otroPrincipal._node.childNodes[4].value;
+                        var fechaEnteraInicio = FechaEnteraStr(fechaHoraInicio);
+                        var fechaEnteraTermino = FechaEnteraStr(fechaHoraTermino);
+                        var fechaEnteraHoy = FechaEntera(new Date());
+
+                        var eventoCal = {
+                            InstId : instId,
+                            IdUsuario : usuId,
+                            UsuIdCreador : usuId,
+                            Titulo: nombre,
+                            FechaInicio: fechaHoraInicio,
+                            FechaTermino: fechaHoraTermino,
+                            EsNuevo: esNuevo
+
+                        }
+
+                        if (nombre == 'Ingrese nuevo Evento' || nombre == '')
+                        {
+                            getNotify('error', 'Inválido', 'Nombre inválido, ingrese otro');
+                            popup.childNodes[0][0].defaultValue = "";
+                            return;
+                        }
+                        //primero que la fecha de inicio no sea mayor a la de termino
+                        if (fechaEnteraInicio > fechaEnteraTermino)
+                        {
+                            getNotify('error', 'Fecha', 'La fecha de inicio no puede ser mayor a la de término.');
+                            return;
+                        }
+                        //que ambas fechas no sean menores a la fecha actual
+                        if (fechaEnteraInicio < fechaEnteraHoy && fechaEnteraTermino < fechaEnteraHoy)
+                        {
+                            getNotify('error', 'Fecha', 'No puede generar un evento con fechas pasadas.');
+                            return;
+                        }
+
+
+                        var json = ko.toJSON(eventoCal);
+                        //acá se debe validar que la fecha de inicio no sea menor a la fecha actual
+                        Insertar(json, eventRecorder);
+
 
                     });
 
                     var newNodeObjectModificar = Y.Node.create('<button id="modificar" type="button" class="btn btn-success" style="margin-top: 10px;">Modificar</button>');
                     //evento click
                     newNodeObjectModificar.on('click', function(event){
-                        alert('modificar');
+                        //alert('modificar');
+                        var popupInsertar = Y.one("#bb")._node.childNodes[1];
+                        var nombre = popupInsertar.childNodes[0][0].value;
                         var otroPrincipal = Y.one("#bb .popover-title");
-                        //recogemos los datos
+
+                        //variables
+                        var fechaHoraInicio = otroPrincipal._node.childNodes[2].value;
+                        var fechaHoraTermino = otroPrincipal._node.childNodes[4].value;
+
+                        //deshabilitamos los controles
+                        otroPrincipal._node.childNodes[2].disabled = true;
+
+                        var fechaEnteraInicio = FechaEnteraStr(fechaHoraInicio);
+                        var fechaEnteraTermino = FechaEnteraStr(fechaHoraTermino);
+                        var fechaEnteraHoy = FechaEntera(new Date());
+
+                        var eventoCal = {
+                            InstId : instId,
+                            IdUsuario : usuId,
+                            UsuIdCreador : usuId,
+                            Titulo: nombre,
+                            FechaInicio: fechaHoraInicio,
+                            FechaTermino: fechaHoraTermino,
+                            EsNuevo: false
+
+                        }
+
+                        if (nombre == 'Ingrese nuevo Evento' || nombre == '')
+                        {
+                            getNotify('error', 'Inválido', 'Nombre inválido, ingrese otro');
+                            popup.childNodes[0][0].defaultValue = "";
+                            return;
+                        }
+                        //primero que la fecha de inicio no sea mayor a la de termino
+                        if (fechaEnteraInicio > fechaEnteraTermino)
+                        {
+                            getNotify('error', 'Fecha', 'La fecha de inicio no puede ser mayor a la de término.');
+                            return;
+                        }
+                        //que ambas fechas no sean menores a la fecha actual
+                        if (fechaEnteraInicio < fechaEnteraHoy && fechaEnteraTermino < fechaEnteraHoy)
+                        {
+                            getNotify('error', 'Fecha', 'No puede modificar un evento con fechas pasadas.');
+                            return;
+                        }
+
+
+                        var json = ko.toJSON(eventoCal);
+                        //acá se debe validar que la fecha de inicio no sea menor a la fecha actual
+                        Modificar(json);
 
                     });
 
                     var newNodeObjectEliminar = Y.Node.create('<button id="eliminar" type="button" class="btn btn-danger" style="margin-top: 10px;">Eliminar</button>');
                     //evento click
                     newNodeObjectEliminar.on('click', function(event){
-                        alert('eliminar');
+                        var popupInsertar = Y.one("#bb")._node.childNodes[1];
+                        var nombre = popupInsertar.childNodes[0][0].value;
                         var otroPrincipal = Y.one("#bb .popover-title");
-                        //recogemos los datos
+
+                        //variables
+                        var fechaHoraInicio = otroPrincipal._node.childNodes[2].value;
+                        var fechaHoraTermino = otroPrincipal._node.childNodes[4].value;
+
+                        //deshabilitamos los controles
+                        otroPrincipal._node.childNodes[2].disabled = true;
+
+                        var fechaEnteraInicio = FechaEnteraStr(fechaHoraInicio);
+                        var fechaEnteraTermino = FechaEnteraStr(fechaHoraTermino);
+                        var fechaEnteraHoy = FechaEntera(new Date());
+
+                        var eventoCal = {
+                            InstId : instId,
+                            IdUsuario : usuId,
+                            UsuIdCreador : usuId,
+                            Titulo: nombre,
+                            FechaInicio: fechaHoraInicio,
+                            FechaTermino: fechaHoraTermino,
+                            EsNuevo: false
+
+                        }
+
+                        var json = ko.toJSON(eventoCal);
+                        //acá se debe validar que la fecha de inicio no sea menor a la fecha actual
+                        Eliminar(json);
 
                     });
                     //para todos va el cancelar
@@ -341,42 +498,11 @@
 
                 Y.Do.before(function () {
                     var rolId = sessionStorage.getItem("RolId");
-                    var popup = Y.one("#bb")._node.childNodes[1];
                     if (rolId == 9)
                     {
                         getNotify('error', 'Permisos', 'No tiene acceso a modificar o crear eventos.');
                         eventRecorder.hidePopover();
                     }
-                    else
-                    {
-                        //recogemos algunos valores para verificar el usuario que realizó el evento
-                        var instId = sessionStorage.getItem("InstId");
-                        var usuId = sessionStorage.getItem("Id");
-                        var fechaInicioEntera = '20170324';
-                        var fechaTerminoEntera = '20170324';
-                        var nombre = 'AAAAAAAAA';
-
-                        var validarCalendario = jQuery.ajax({
-                            url : ObtenerUrl('Calendario') + '?instId=' + instId + '&usuIdCreador=' + usuId + '&fechaInicioEntera=' + fechaInicioEntera + '&fechaTerminoEntera=' + fechaTerminoEntera + '&nombre=' + nombre,
-                            type: 'GET',
-                            dataType : "json",
-                            contentType: "application/json"
-                        });
-
-                        //si el retorno = 1 si puede modificar
-
-                        $.when(validarCalendario).then(
-                            function(data){
-                                alert(data);
-                            },
-                            function (error)
-                            {
-
-                            }
-                        );
-
-                    }
-
 
 
 
@@ -447,7 +573,7 @@
         }
     }
 
-    function Insertar(jsonEntidad)
+    function Insertar(jsonEntidad, eventRecorder)
     {
         $.ajax({
             url: ObtenerUrl('Calendario'),
@@ -553,7 +679,7 @@
 
             }
             else {
-                window.location.href = "listarRendicion.html";
+                window.location.href = "ListarCalendario.html";
             }
         });
 
@@ -585,27 +711,51 @@
                         dataType: "json",
                         success: function (result) {
                             //TODO OK INFORMAR EL GUARDADO CORRECTO
-
-                            swal({
-                                title: "Eliminado",
-                                text: "El Registro ha sido eliminado con éxito.",
-                                type: "success",
-                                showCancelButton: false,
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "Ok",
-                                cancelButtonText: "No, cancel plx!",
-                                closeOnConfirm: false,
-                                customClass: 'sweetalert-xs',
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    window.location.href = "ListarCalendario.html";
-                                } else {
-                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
-                            });
+                            if (result == null)
+                            {
+                                swal({
+                                        title: "Eliminado",
+                                        text: "El Registro NO se eliminó, no existe, revise si el nombre del evento fué cambiado.",
+                                        type: "error",
+                                        showCancelButton: false,
+                                        confirmButtonClass: "btn-success",
+                                        confirmButtonText: "Ok",
+                                        cancelButtonText: "No, cancel plx!",
+                                        closeOnConfirm: false,
+                                        customClass: 'sweetalert-xs',
+                                        closeOnCancel: false
+                                    },
+                                    function (isConfirm) {
+                                        if (isConfirm) {
+                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            window.location.href = "ListarCalendario.html";
+                                        } else {
+                                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                        }
+                                    });
+                            }
+                            else {
+                                swal({
+                                        title: "Eliminado",
+                                        text: "El Registro ha sido eliminado con éxito.",
+                                        type: "success",
+                                        showCancelButton: false,
+                                        confirmButtonClass: "btn-success",
+                                        confirmButtonText: "Ok",
+                                        cancelButtonText: "No, cancel plx!",
+                                        closeOnConfirm: false,
+                                        customClass: 'sweetalert-xs',
+                                        closeOnCancel: false
+                                    },
+                                    function (isConfirm) {
+                                        if (isConfirm) {
+                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            window.location.href = "ListarCalendario.html";
+                                        } else {
+                                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                        }
+                                    });
+                            }
                         },
                         error: function (error) {
                             if (error.status.toString() == "500") {
@@ -624,7 +774,7 @@
 
             }
             else {
-                window.location.href = "listarRendicion.html";
+                window.location.href = "ListarCalendario.html";
             }
         });
 
