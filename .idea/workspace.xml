@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarProyecto.html" afterPath="$PROJECT_DIR$/CrearModificarProyecto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/ListarCalendario.js" afterPath="$PROJECT_DIR$/app_script/ListarCalendario.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.js" afterPath="$PROJECT_DIR$/const.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,43 +23,48 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ListarCalendario.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListarCalendario.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="713" column="47" lean-forward="true" selection-start-line="713" selection-start-column="47" selection-end-line="713" selection-end-column="47" />
+            <state relative-caret-position="1204">
+              <caret line="320" column="23" lean-forward="true" selection-start-line="320" selection-start-column="23" selection-end-line="320" selection-end-column="23" />
               <folding>
                 <element signature="e#105#436#0" expanded="false" />
                 <element signature="e#547#1362#0" expanded="false" />
                 <element signature="e#1438#2106#0" expanded="false" />
-                <element signature="e#2148#2366#0" expanded="false" />
                 <element signature="e#2809#3941#0" expanded="false" />
-                <element signature="e#9721#11163#0" expanded="false" />
-                <element signature="e#13961#16353#0" expanded="false" />
-                <element signature="e#22254#22578#0" expanded="false" />
-                <element signature="e#22649#22857#0" expanded="false" />
-                <element signature="e#22892#23286#0" expanded="false" />
-                <element signature="e#24378#25977#0" expanded="false" />
-                <element signature="e#26015#28698#0" expanded="false" />
-                <element signature="e#31070#31792#0" expanded="false" />
-                <marker date="1495746601866" expanded="true" signature="11517:11534" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="11577:11594" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="11762:11779" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="11823:11840" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="13460:13477" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="13818:13835" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="16489:16506" ph="..." />
-                <marker date="1495746601866" expanded="true" signature="19323:19340" ph="..." />
+                <element signature="e#8855#8895#0" expanded="false" />
+                <element signature="e#14631#17023#0" expanded="false" />
+                <element signature="e#17305#19860#0" expanded="false" />
+                <element signature="e#20137#21580#0" expanded="false" />
+                <element signature="e#22924#23248#0" expanded="false" />
+                <element signature="e#23047#23227#0" expanded="false" />
+                <element signature="e#23319#23527#0" expanded="false" />
+                <element signature="e#23562#23956#0" expanded="false" />
+                <element signature="e#25048#26647#0" expanded="false" />
+                <element signature="e#26685#29368#0" expanded="false" />
+                <element signature="e#29405#33781#0" expanded="false" />
+                <element signature="e#31740#32462#0" expanded="false" />
+                <marker date="1495809852375" expanded="false" signature="4104:7971" ph="{...}" />
+                <marker date="1495809852375" expanded="false" signature="8022:8188" ph="{...}" />
+                <marker date="1495809852375" expanded="true" signature="12187:12204" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="12247:12264" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="12432:12449" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="12493:12510" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="14130:14147" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="14488:14505" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="17159:17176" ph="..." />
+                <marker date="1495809852375" expanded="true" signature="19993:20010" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="const.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="const.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/const.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="413" column="61" lean-forward="false" selection-start-line="413" selection-start-column="61" selection-end-line="413" selection-end-column="61" />
+            <state relative-caret-position="102">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
                 <element signature="n#!!block;n#getNotify#0" expanded="false" />
@@ -101,8 +107,8 @@
       <file leaf-file-name="ListarCalendario.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListarCalendario.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
-              <caret line="130" column="61" lean-forward="false" selection-start-line="130" selection-start-column="61" selection-end-line="130" selection-end-column="61" />
+            <state relative-caret-position="272">
+              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -111,9 +117,22 @@
       <file leaf-file-name="CrearModificarProyecto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CrearModificarProyecto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="55" />
+            <state relative-caret-position="306">
+              <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrearModificarProyecto.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+              <folding>
+                <element signature="e#9994#10363#0" expanded="false" />
+                <element signature="e#10427#12481#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,7 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data-bind=&quot;text: nombreCompleto&quot;</find>
       <find>nombreRol</find>
       <find>&lt;nav class=&quot;navbar navbar-default navbar-fixed-bottom&quot;&gt;</find>
       <find>&lt;nav class=&quot;navbar navbar-default navbar-fixed-top&quot;&gt;</find>
@@ -160,6 +178,7 @@
       <find>clazz</find>
       <find>hidd</find>
       <find>delete</find>
+      <find>tipo</find>
     </findStrings>
     <replaceStrings>
       <replace>http://127.0.0.1:8080/</replace>
@@ -213,7 +232,6 @@
         <option value="$PROJECT_DIR$/Contacto.html" />
         <option value="$PROJECT_DIR$/CrearModificarInstitucion.html" />
         <option value="$PROJECT_DIR$/CrearModificarListaTricel.html" />
-        <option value="$PROJECT_DIR$/CrearModificarProyecto.html" />
         <option value="$PROJECT_DIR$/CrearModificarUsuario.html" />
         <option value="$PROJECT_DIR$/CrearModificarVotacion.html" />
         <option value="$PROJECT_DIR$/ListarInstitucion.html" />
@@ -223,7 +241,6 @@
         <option value="$PROJECT_DIR$/indexCpas.html" />
         <option value="$PROJECT_DIR$/app_script/CargaMasiva.js" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
-        <option value="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
         <option value="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" />
         <option value="$PROJECT_DIR$/CargaMasiva.html" />
         <option value="$PROJECT_DIR$/app_script/Inicio.js" />
@@ -244,6 +261,8 @@
         <option value="$PROJECT_DIR$/ListarCalendario.html" />
         <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/app_script/ListarCalendario.js" />
+        <option value="$PROJECT_DIR$/CrearModificarProyecto.html" />
+        <option value="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
       </list>
     </option>
   </component>
@@ -255,7 +274,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1358" />
-    <option name="y" value="-8" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
@@ -274,8 +292,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,7 +316,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,7 +330,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="app_script" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,7 +346,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/DESARROLLO/FRONT_URGENCIA_WEB/FrontEnd" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -467,7 +485,8 @@
       <workItem from="1495242631849" duration="31938000" />
       <workItem from="1495460146996" duration="8649000" />
       <workItem from="1495554042441" duration="29228000" />
-      <workItem from="1495716064155" duration="9947000" />
+      <workItem from="1495716064155" duration="10544000" />
+      <workItem from="1495803776941" duration="6761000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -487,10 +506,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390210000" />
+    <option name="totallyTimeSpent" value="397568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="1358" y="0" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1539924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -739,17 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="474" column="21" lean-forward="true" selection-start-line="470" selection-start-column="0" selection-end-line="493" selection-end-column="11" />
-          <folding>
-            <element signature="e#9903#10272#0" expanded="false" />
-            <element signature="e#10336#12390#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_script/ListarArchivosProyecto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -820,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrearModificarProyecto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap-datetimepicker.es.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -923,18 +922,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrearModificarProyecto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1204">
+          <caret line="320" column="23" lean-forward="true" selection-start-line="320" selection-start-column="23" selection-end-line="320" selection-end-column="23" />
+          <folding>
+            <element signature="e#105#436#0" expanded="false" />
+            <element signature="e#547#1362#0" expanded="false" />
+            <element signature="e#1438#2106#0" expanded="false" />
+            <element signature="e#2809#3941#0" expanded="false" />
+            <element signature="e#8855#8895#0" expanded="false" />
+            <element signature="e#14631#17023#0" expanded="false" />
+            <element signature="e#17305#19860#0" expanded="false" />
+            <element signature="e#20137#21580#0" expanded="false" />
+            <element signature="e#22924#23248#0" expanded="false" />
+            <element signature="e#23047#23227#0" expanded="false" />
+            <element signature="e#23319#23527#0" expanded="false" />
+            <element signature="e#23562#23956#0" expanded="false" />
+            <element signature="e#25048#26647#0" expanded="false" />
+            <element signature="e#26685#29368#0" expanded="false" />
+            <element signature="e#29405#33781#0" expanded="false" />
+            <element signature="e#31740#32462#0" expanded="false" />
+            <marker date="1495809852375" expanded="false" signature="4104:7971" ph="{...}" />
+            <marker date="1495809852375" expanded="false" signature="8022:8188" ph="{...}" />
+            <marker date="1495809852375" expanded="true" signature="12187:12204" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="12247:12264" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="12432:12449" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="12493:12510" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="14130:14147" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="14488:14505" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="17159:17176" ph="..." />
+            <marker date="1495809852375" expanded="true" signature="19993:20010" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding>
+            <element signature="e#9994#10363#0" expanded="false" />
+            <element signature="e#10427#12481#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ListarCalendario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="61" lean-forward="false" selection-start-line="130" selection-start-column="61" selection-end-line="130" selection-end-column="61" />
+        <state relative-caret-position="272">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/const.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="413" column="61" lean-forward="false" selection-start-line="413" selection-start-column="61" selection-end-line="413" selection-end-column="61" />
+        <state relative-caret-position="102">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
             <element signature="n#!!block;n#getNotify#0" expanded="false" />
@@ -946,36 +999,6 @@
             <element signature="n#!!block;n#IrInicio#0" expanded="false" />
             <element signature="n#!!block;n#ValidaExtension#0" expanded="false" />
             <element signature="n#!!block;n#FormatMiles#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="713" column="47" lean-forward="true" selection-start-line="713" selection-start-column="47" selection-end-line="713" selection-end-column="47" />
-          <folding>
-            <element signature="e#105#436#0" expanded="false" />
-            <element signature="e#547#1362#0" expanded="false" />
-            <element signature="e#1438#2106#0" expanded="false" />
-            <element signature="e#2148#2366#0" expanded="false" />
-            <element signature="e#2809#3941#0" expanded="false" />
-            <element signature="e#9721#11163#0" expanded="false" />
-            <element signature="e#13961#16353#0" expanded="false" />
-            <element signature="e#22254#22578#0" expanded="false" />
-            <element signature="e#22649#22857#0" expanded="false" />
-            <element signature="e#22892#23286#0" expanded="false" />
-            <element signature="e#24378#25977#0" expanded="false" />
-            <element signature="e#26015#28698#0" expanded="false" />
-            <element signature="e#31070#31792#0" expanded="false" />
-            <marker date="1495746601866" expanded="true" signature="11517:11534" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="11577:11594" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="11762:11779" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="11823:11840" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="13460:13477" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="13818:13835" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="16489:16506" ph="..." />
-            <marker date="1495746601866" expanded="true" signature="19323:19340" ph="..." />
           </folding>
         </state>
       </provider>

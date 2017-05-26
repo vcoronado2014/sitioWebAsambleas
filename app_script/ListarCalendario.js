@@ -115,6 +115,7 @@
                     }
                 }
 
+                /*
                 var eventRecorder = new Y.SchedulerEventRecorder({
                     on: {
                         delete: function (event) {
@@ -213,6 +214,9 @@
                         }
                     }
                 });
+                */
+
+                var eventRecorder = new Y.SchedulerEventRecorder();
 
                 Y.Do.after(function () {
                     var rolId = sessionStorage.getItem("RolId");
@@ -256,7 +260,16 @@
 
                         $.when(validarCalendario).then(
                             function (data) {
-                                if (data == '0')
+                                if (data.Valor != null)
+                                {
+                                    //ahora solo se puede modificar o eliminar siempre y cuando el tipo sea 1
+                                    if (data.Tipo != 1)
+                                    {
+                                        getNotify('error', 'Error', 'No puede modificar o eliminar este evento (Es un Proyecto o Tricel)');
+                                        eventRecorder.hidePopover();
+                                    }
+                                }
+                                else
                                 {
                                     getNotify('error', 'Error', 'Este evento fue creado por otra persona, no lo puede modificar.');
                                     eventRecorder.hidePopover();

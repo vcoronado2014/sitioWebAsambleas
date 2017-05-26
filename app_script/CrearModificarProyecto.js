@@ -52,6 +52,7 @@ $(document).ready(function () {
     });
 
     //manejo de las fechas
+
     $("#txtFechaInicio").datepicker({
         dateFormat: "dd-mm-yy",
         maxDate: 30,
@@ -73,6 +74,11 @@ $(document).ready(function () {
             //console.log(dateFormatted);
         }
     });
+     /*
+    $("#txtFechaInicio").datepicker({
+        format: 'dd-mm-yyyy'
+    });
+    */
     $("#txtFechaTermino").datepicker({
         dateFormat: "dd-mm-yy",
         maxDate: 90,
