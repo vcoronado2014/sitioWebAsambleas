@@ -308,10 +308,12 @@ $(document).ready(function () {
 
 
 });
-
+/*
 function AbrirUsuarios() {
+    chat.server.send('usuarios');
     window.location.href = "usuarios.html";
 }
+*/
 function AbrirInstituciones() {
     window.location.href = "ListarInstitucion.html";
 }

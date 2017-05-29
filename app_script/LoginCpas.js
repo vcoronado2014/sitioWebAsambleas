@@ -76,6 +76,14 @@ $(document).ready(function () {
                             sessionStorage.setItem("articulos", JSON.stringify(resArticulos[0]));
                             sessionStorage.setItem("configuracion", JSON.stringify(resConfiguracion[0]));
 
+                            /*
+                            manejo del signal r
+                             */
+
+                            //Conectar(sessionStorage.getItem("NombreUsuario"));
+                            //EnviarMensaje('Session iniciada', sessionStorage.getItem("NombreUsuario"));
+
+
                             var url = 'inicio.html';
                             window.location.href = url;
 
