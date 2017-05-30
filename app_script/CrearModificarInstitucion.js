@@ -118,6 +118,7 @@
                             function (isConfirm) {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    EnviarMensajeSignalR('Se ha creado/modificado una nueva institución.', "ListarInstitucion.html");
                                     window.location.href = "ListarInstitucion.html";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -384,6 +385,7 @@
                                         function (isConfirm) {
                                             if (isConfirm) {
                                                 //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                                EnviarMensajeSignalR('Se ha eliminado una institución.', "ListarInstitucion.html");
                                                 window.location.href = "ListarInstitucion.html";
                                             } else {
                                                 swal("Cancelled", "Your imaginary file is safe :)", "error");

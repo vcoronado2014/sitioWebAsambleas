@@ -10,6 +10,12 @@
     return 'http://localhost:58013/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
+﻿function ObtenerUrlSignalR()
+{
+    //return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
+    return "http://localhost:34080/signalr/hubs";
+    //http://172.16.116.138/apiasambleas/api/
+}
 function getParameterByName(name, url) {
 
     //// query string: ?foo=lorem&bar=&baz

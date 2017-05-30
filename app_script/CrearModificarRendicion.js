@@ -141,6 +141,8 @@
                             function (isConfirm) {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    //enviamos el mensaje SIGNALR
+                                    EnviarMensajeSignalR('Se ha creado una nueva rendición.', "ListarRendicion.html");
                                     window.location.href = "ListarRendicion.html";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -266,6 +268,8 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            //enviamos el mensaje SIGNALR
+                                            EnviarMensajeSignalR('Se ha eliminado una rendición.', "ListarRendicion.html");
                                             window.location.href = "ListarRendicion.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
