@@ -118,7 +118,7 @@
                             function (isConfirm) {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    EnviarMensajeSignalR('Se ha creado/modificado una nueva institución.', "ListarInstitucion.html");
+                                    EnviarMensajeSignalR('Se ha creado/modificado una nueva institución.', "ListarInstitucion.html", "1", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "ListarInstitucion.html";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -385,7 +385,7 @@
                                         function (isConfirm) {
                                             if (isConfirm) {
                                                 //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                                EnviarMensajeSignalR('Se ha eliminado una institución.', "ListarInstitucion.html");
+                                                EnviarMensajeSignalR('Se ha eliminado una institución.', "ListarInstitucion.html", "2", sessionStorage.getItem("RolId"), dataF);
                                                 window.location.href = "ListarInstitucion.html";
                                             } else {
                                                 swal("Cancelled", "Your imaginary file is safe :)", "error");

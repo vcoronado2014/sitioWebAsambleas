@@ -7,8 +7,8 @@
 
 
     //$.connection.chatHub.url ="http://localhost:34080/signalr";
-    //$.connection.hub.url = "http://localhost:34080/signalr/hubs";
-    $.connection.hub.url = "http://signalr.cpas.cl/signalr/hubs";
+    $.connection.hub.url = "http://localhost:34080/signalr/hubs";
+    //$.connection.hub.url = "http://signalr.cpas.cl/signalr/hubs";
     var chat = $.connection.chatHub;
     //chat.url = "http://localhost:34080/signalr";
     var username = sessionStorage.getItem("NombreUsuario") + '_' + sessionStorage.getItem("InstId");
@@ -39,18 +39,6 @@
             chat.server.connect(username);
     });
 
-    $('#btnSendMessage').click(function(){
-        var message = $('#userMessage').val();
-        chat.server.send(message);
-        $('#userMessage').val("");
-    });
-/*
-    function AbrirUsuarios() {
-        //chat.server.send('usuarios');
-        window.location.href = "usuarios.html";
-    }
-  */
-
     function EnviarMensajeSignalR(mensaje) {
         chat.server.send(mensaje);
         //window.location.href = "usuarios.html";
@@ -58,6 +46,12 @@
 
     function EnviarMensajeSignalR(mensaje, url) {
         chat.server.sendUrl(mensaje, url);
+        //window.location.href = "usuarios.html";
+    }
+
+    function EnviarMensajeSignalR(mensaje, url, tipo, rol, result) {
+        chat.server.sendUrl(mensaje, url, rol);
+        //chat.server.sendMensaje(mensaje, url, tipo, rol, result);
         //window.location.href = "usuarios.html";
     }
 

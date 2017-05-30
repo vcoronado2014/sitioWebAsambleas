@@ -142,7 +142,7 @@
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     //enviamos el mensaje SIGNALR
-                                    EnviarMensajeSignalR('Se ha creado una nueva rendición.', "ListarRendicion.html");
+                                    EnviarMensajeSignalR('Se ha creado una nueva rendición.', "ListarRendicion.html", "3", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "ListarRendicion.html";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -269,7 +269,7 @@
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                             //enviamos el mensaje SIGNALR
-                                            EnviarMensajeSignalR('Se ha eliminado una rendición.', "ListarRendicion.html");
+                                            EnviarMensajeSignalR('Se ha eliminado una rendición.', "ListarRendicion.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "ListarRendicion.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
