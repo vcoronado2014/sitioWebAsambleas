@@ -248,6 +248,7 @@ $(document).ready(function () {
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha votado por un Tricel.', "inicio.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "VotarTricel.html?id=" + id + '&puedeVotar=0';
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");

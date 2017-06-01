@@ -207,6 +207,7 @@ $(document).ready(function () {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     var id = getParameterByName('id');
                                     var triId = getParameterByName('triId');
+                                    EnviarMensajeSignalR('Se ha creado/modificado una Lista Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "CrearModificarVotacion.html?id=" + triId + "&ELIMINAR=0";
 
                                 } else {
@@ -539,6 +540,7 @@ $(document).ready(function () {
                                         if (isConfirm) {
                                             var id = getParameterByName('id');
                                             var triId = getParameterByName('triId');
+                                            EnviarMensajeSignalR('Se ha eliminado una Lista Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "CrearModificarVotacion.html?id=" + triId + "&ELIMINAR=0";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");

@@ -275,7 +275,7 @@ $(function () {
                     case '4':
                     case '5':
                         //shouldShowMessage = ko.observable(true);
-
+                        shouldShowMessage = ko.observable(true);
                         menuMenu = ko.observable(true);
                         menuMenuDocumentos = ko.observable(true);
                         menuMenuCalendarrio = ko.observable(true);

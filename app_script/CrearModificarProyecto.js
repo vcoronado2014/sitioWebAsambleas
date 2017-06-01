@@ -229,6 +229,7 @@ $(document).ready(function () {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     //CrearModificarVotacion.html?id=3&ELIMINAR=0
+                                    EnviarMensajeSignalR('Se ha creado/modificado una Proyecto.', "ListarProyecto.html", "4", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "CrearModificarProyecto.html?id=" + idRecuperado + "&ELIMINAR=0";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -307,6 +308,7 @@ $(document).ready(function () {
                                             },
                                             function (isConfirm) {
                                                 if (isConfirm) {
+                                                    EnviarMensajeSignalR('Se ha agregado un archivo a un Proyecto.', "ListarProyecto.html", "4", sessionStorage.getItem("RolId"), data);
                                                     window.location.href = "CrearModificarProyecto.html?id=" + id + "&ELIMINAR=" + eliminado;
 
 
@@ -429,6 +431,7 @@ $(document).ready(function () {
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha eliminado una Proyecto.', "ListarProyecto.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "ListarProyecto.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");

@@ -612,6 +612,7 @@
                 function (isConfirm) {
                     if (isConfirm) {
                         //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        EnviarMensajeSignalR('Se ha creado un nuevo evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
                         window.location.href = "ListarCalendario.html";
                     } else {
                         swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -669,6 +670,7 @@
                             function (isConfirm) {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    EnviarMensajeSignalR('Se ha modificado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "ListarCalendario.html";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -741,6 +743,7 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha eliminado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
                                             window.location.href = "ListarCalendario.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");

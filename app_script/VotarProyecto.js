@@ -210,6 +210,7 @@ $(document).ready(function () {
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha votado por un Proyecto.', "inicio.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "VotarProyecto.html?id=" + id + '&puedeVotar=' + puedeVotar;
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -293,6 +294,7 @@ $(document).ready(function () {
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha votado por un Proyecto.', "inicio.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "VotarProyecto.html?id=" + id + '&puedeVotar=' + puedeVotar;
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");

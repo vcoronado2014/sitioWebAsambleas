@@ -105,6 +105,7 @@ $(function () {
                             var self = this;
 
                             swal("Eliminado con éxito!");
+                            EnviarMensajeSignalR('Se ha eliminado un usuario.', "usuarios.html", "4", sessionStorage.getItem("RolId"), result);
 
                             window.location.href = "usuarios.html";
 

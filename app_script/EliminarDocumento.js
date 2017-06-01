@@ -39,6 +39,7 @@
                                 },
                                 function (isConfirm) {
                                     if (isConfirm) {
+                                        EnviarMensajeSignalR('Se ha subido un Documento.', "ListarDocumento.html", "4", sessionStorage.getItem("RolId"), data);
                                         window.location.href = "ListarDocumento.html";
 
 
@@ -84,6 +85,7 @@
                                 },
                                 function (isConfirm) {
                                     if (isConfirm) {
+                                        EnviarMensajeSignalR('Se ha subido un Documento.', "ListarDocumento.html", "4", sessionStorage.getItem("RolId"), data);
                                         window.location.href = "CrearModificarVotacion.html?id=" + tricelId + "&ELIMINAR=0";
 
 

@@ -223,6 +223,7 @@
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     //CrearModificarVotacion.html?id=3&ELIMINAR=0
+                                    EnviarMensajeSignalR('Se ha creado/modificado un Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "CrearModificarVotacion.html?id=" + idRecuperado + "&ELIMINAR=0";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
@@ -303,6 +304,7 @@
                                             },
                                             function (isConfirm) {
                                                 if (isConfirm) {
+                                                    EnviarMensajeSignalR('Se ha subido un archivo a un Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), data);
                                                     window.location.href = "CrearModificarVotacion.html?id=" + id + "&ELIMINAR=" + eliminado;
 
 
@@ -432,6 +434,7 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha eliminado un Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), dataF);
                                             window.location.href = "ListarVotacion.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
