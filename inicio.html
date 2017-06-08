@@ -60,7 +60,7 @@
     <script src="Scripts/metisMenu.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
-    <script src="http://localhost:34080/signalr/hubs"></script>
+    <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
     <script src="const.js"></script>
@@ -123,6 +123,7 @@
                     </li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
                     <li data-bind="visible: menuLogs"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li><a href="#" id="infoUsuarios"></a></li>
                 </ul>
             </div>
         </div>
@@ -146,7 +147,7 @@
                         <i class="fa fa-users fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div id="infoUsuarios" class="huge">0</div>
+                        <div id="infoUsuariosN" class="huge">0</div>
                         <div>Usuarios!</div>
                     </div>
                 </div>

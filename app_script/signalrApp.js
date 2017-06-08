@@ -7,19 +7,21 @@
 
 
     //$.connection.chatHub.url ="http://localhost:34080/signalr";
-    $.connection.hub.url = "http://localhost:34080/signalr/hubs";
-    //$.connection.hub.url = "http://signalr.cpas.cl/signalr/hubs";
+    //$.connection.hub.url = "http://localhost:34080/signalr/hubs";
+    $.connection.hub.url = "http://signalr.cpas.cl/signalr/hubs";
     var chat = $.connection.chatHub;
     //chat.url = "http://localhost:34080/signalr";
     var username = sessionStorage.getItem("NombreUsuario") + '_' + sessionStorage.getItem("InstId");
 
 
     chat.client.updateUsers = function (userCount, userList) {
-        $('#onlineUsersCount').text('Online users: ' + userCount);
-        $('#userList').empty();
-        userList.forEach(function (username) {
-            $('#userList').append('<li>' + username + '</li>');
-        });
+        //'<i class="fa fa-user-circle-o"> ' + userCount + '</i>'
+        $('#infoUsuarios').html('<i class="fa fa-user-circle-o"> ' + userCount + '</i>');
+        //$('#onlineUsersCount').text('Online users: ' + userCount);
+        //$('#userList').empty();
+       // userList.forEach(function (username) {
+            //$('#userList').append('<li>' + username + '</li>');
+       // });
     }
 
     chat.client.broadcastMessage = function (user, message) {

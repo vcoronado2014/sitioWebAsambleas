@@ -104,7 +104,7 @@ $(document).ready(function () {
             //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
 
-        $('#infoUsuarios').text(dataU.length);
+        $('#infoUsuariosN').text(dataU.length);
         $('#infoInstituciones').text(dataI.proposals.length);
         $('#infoIngresos').text(dataR.proposals.length);
         $('#infoDocumentos').text(dataD.proposals.length);
