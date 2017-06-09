@@ -12,46 +12,109 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="Scripts/bootstrap.min.js"></script>
 
+    <script src="Scripts/knockout-3.4.1.js"></script>
+
+    <script src="Scripts/jquery.validate.min.js"></script>
+
+
     <script type="text/javascript" src="js/jspdf.debug.js"></script>
+
+    <script src="const.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var doc = new jsPDF();
 
-            doc.text(20, 20, 'This is the default font.');
+            var nombreReporte = getParameterByName('NOMBRE_REPORTE');
+            var instId = getParameterByName('INST_ID');
+            var usuId = getParameterByName('USU_ID');
 
-            doc.setFont("courier");
-            doc.setFontType("normal");
-            doc.text(20, 30, 'This is courier normal.');
+            var dataUsuarios = [];
 
-            doc.setFont("times");
-            doc.setFontType("italic");
-            doc.text(20, 40, 'This is times italic.');
+            switch (nombreReporte)
+            {
+                case 'usuarios':
+                    CrearReporteUsuarios(instId, usuId);
+                    break;
+                default:
+                    break;
+            }
 
-            doc.setFont("helvetica");
-            doc.setFontType("bold");
-            doc.text(20, 50, 'This is helvetica bold.');
+            function CrearReporteUsuarios(instId, usuId)
+            {
+                var obtenerUsuarios = jQuery.ajax({
+                    url : ObtenerUrl('ListarUsuarios'),
+                    type: 'POST',
+                    dataType : "json",
+                    contentType: "application/json",
+                    data: ko.toJSON({ InstId: instId })
+                });
 
-            doc.setFont("courier");
-            doc.setFontType("bolditalic");
-            doc.text(20, 60, 'This is courier bolditalic.');
+                $.when(obtenerUsuarios).then(
+                    function(data){
+                        dataUsuarios = data[0];
+                        //aca construir el Reporte
+                        ConstruirPdf('Reporte de Usuarios', 'Este reporte le muestra los usuarios creados en el Sistema.', dataUsuarios);
 
-            doc.setFont("times");
-            doc.setFontType("normal");
-            doc.text(105, 80, 'This is centred text.', null, null, 'center');
-            doc.text(105, 90, 'And a little bit more underneath it.', null, null, 'center');
-            doc.text(200, 100, 'This is right aligned text', null, null, 'right');
-            doc.text(200, 110, 'And some more', null, null, 'right');
-            doc.text(20, 120, 'Back to left');
+                    },
+                    function (){
+                        //alguna ha fallado
+                        alert('error');
+                    },
+                    function(){
+                        //acá podemos quitar el elemento cargando
+                        alert('quitar cargando');
+                    }
+                );
 
-            doc.text(20, 140, '10 degrees rotated', null, 10);
-            doc.text(20, 160, '-10 degrees rotated', null, -10);
 
-            //var string = doc.output('datauristring');
-            //$('#mostrarPdf').html(string);
-            $("#mostrarPdf").attr("src", doc.output('datauristring'));
-            //para descargar
-            //doc.save('Test.pdf');
+            }
+
+            function ConstruirPdf(titulo, subtitulo, arreglo) {
+                var doc = new jsPDF();
+                /*
+                doc.text(20, 20, 'This is the default font.');
+
+                doc.setFont("courier");
+                doc.setFontType("normal");
+                doc.text(20, 30, 'This is courier normal.');
+
+                doc.setFont("times");
+                doc.setFontType("italic");
+                doc.text(20, 40, 'This is times italic.');
+                */
+
+                doc.setFont("helvetica");
+                doc.setFontType("bold");
+                doc.text(20, 20, titulo);
+
+                doc.setFont("helvetica");
+                doc.setFontType("italic");
+                doc.setFontSize("12");
+                doc.text(20, 30, subtitulo);
+
+                doc.setLineWidth(0.5);
+                doc.line(20, 35, 160, 35);
+
+                /*
+                doc.setFont("times");
+                doc.setFontType("normal");
+                doc.text(105, 80, 'This is centred text.', null, null, 'center');
+                doc.text(105, 90, 'And a little bit more underneath it.', null, null, 'center');
+                doc.text(200, 100, 'This is right aligned text', null, null, 'right');
+                doc.text(200, 110, 'And some more', null, null, 'right');
+                doc.text(20, 120, 'Back to left');
+
+                doc.text(20, 140, '10 degrees rotated', null, 10);
+                doc.text(20, 160, '-10 degrees rotated', null, -10);
+
+                //var string = doc.output('datauristring');
+                //$('#mostrarPdf').html(string);
+                */
+
+                $("#mostrarPdf").attr("src", doc.output('datauristring'));
+                //para descargar
+                //doc.save('Test.pdf');
+            }
         });
     </script>
 
