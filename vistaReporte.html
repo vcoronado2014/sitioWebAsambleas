@@ -9,6 +9,8 @@
 
     <script src="Scripts/jquery-1.11.3.min.js"></script>
 
+    <script src="Scripts/moment.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="Scripts/bootstrap.min.js"></script>
 
@@ -27,19 +29,20 @@
             var nombreReporte = getParameterByName('NOMBRE_REPORTE');
             var instId = getParameterByName('INST_ID');
             var usuId = getParameterByName('USU_ID');
+            var nombreUsuario = getParameterByName('NOMBRE_USUARIO');
 
             var dataUsuarios = [];
 
             switch (nombreReporte)
             {
                 case 'usuarios':
-                    CrearReporteUsuarios(instId, usuId);
+                    CrearReporteUsuarios(instId, usuId, nombreUsuario);
                     break;
                 default:
                     break;
             }
 
-            function CrearReporteUsuarios(instId, usuId)
+            function CrearReporteUsuarios(instId, usuId, nombreUsuario)
             {
                 var obtenerUsuarios = jQuery.ajax({
                     url : ObtenerUrl('ListarUsuarios'),
@@ -51,9 +54,51 @@
 
                 $.when(obtenerUsuarios).then(
                     function(data){
-                        dataUsuarios = data[0];
+                        dataUsuarios = [];
+                        var contador = 0;
+                        /*
+                        //pruebas para aumentar el tamaño del arreglo
+                        for (var s=0; s<10; s++) {
+
+
+                            for (var i in data) {
+
+                                dataUsuarios[contador] = data[i];
+                                contador++;
+
+                            }
+                        }
+                        */
                         //aca construir el Reporte
-                        ConstruirPdf('Reporte de Usuarios', 'Este reporte le muestra los usuarios creados en el Sistema.', dataUsuarios);
+
+                        var results = [],
+                            length = Math.ceil(data.length / 22);
+
+                        for (var i = 0; i < length; i++) {
+                            results.push(data.slice(i * 22, (i + 1) * 22));
+                        }
+
+                        var cantidadPaginas = results.length - 1;
+                        var paginas = 0;
+
+                        var doc = new jsPDF();
+
+                        for(var t in results)
+                        {
+                            //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
+                            ConstruirEncabezado('Reporte de Usuarios', 'Este reporte le muestra los usuarios creados en el Sistema.', doc);
+                            ConstruirPdfUsuarios(doc, results[t]);
+                            ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
+                            //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
+                            if (paginas < cantidadPaginas)
+                                doc.addPage();
+                            paginas++;
+                        }
+
+                        //mostrar
+                        $("#mostrarPdf").attr("src", doc.output('datauristring'));
+                        //para descargar
+                        //doc.save('Test.pdf');
 
                     },
                     function (){
@@ -69,20 +114,10 @@
 
             }
 
-            function ConstruirPdf(titulo, subtitulo, arreglo) {
-                var doc = new jsPDF();
-                /*
-                doc.text(20, 20, 'This is the default font.');
-
-                doc.setFont("courier");
-                doc.setFontType("normal");
-                doc.text(20, 30, 'This is courier normal.');
-
-                doc.setFont("times");
-                doc.setFontType("italic");
-                doc.text(20, 40, 'This is times italic.');
-                */
-
+            function ConstruirEncabezado(titulo, subtitulo, doc)
+            {
+                //set color gray
+                doc.setTextColor(0);
                 doc.setFont("helvetica");
                 doc.setFontType("bold");
                 doc.text(20, 20, titulo);
@@ -92,28 +127,76 @@
                 doc.setFontSize("12");
                 doc.text(20, 30, subtitulo);
 
+                //linea
                 doc.setLineWidth(0.5);
-                doc.line(20, 35, 160, 35);
+                doc.line(20, 35, 200, 35);
+
+            }
+            function ConstruirPie(usuario, paginaActual, paginasTotal, doc)
+            {
+                doc.setLineWidth(0.3);
+                doc.line(20, 270, 200, 270);
+
+                //set color gray
+                doc.setTextColor(100);
+
+                doc.setFont("helvetica");
+                doc.setFontType("italic");
+                doc.setFontSize("8");
+                doc.text(20, 280, usuario);
+
+                doc.text(105, 280, 'Pág. ' + paginaActual + ' de ' + paginasTotal, null, null, 'center');
+                var fecha = FechaString(new Date());
+                doc.text(200, 280, fecha, null, null, 'right');
+
+
+            }
+
+            function ConstruirPdfUsuarios(doc, arreglo) {
+                //set color gray
+                doc.setTextColor(0);
+                doc.setFontType("normal");
+                doc.setFontSize("9");
+                doc.text(20, 40, "Institución");
+
+                doc.text(70, 40, "Nombre");
+
+                doc.text(140, 40, "Usuario");
+
+                doc.text(170, 40, "Rol");
+
+                //linea
+                doc.setLineWidth(0.5);
+                doc.line(20, 45, 200, 45);
 
                 /*
-                doc.setFont("times");
-                doc.setFontType("normal");
-                doc.text(105, 80, 'This is centred text.', null, null, 'center');
-                doc.text(105, 90, 'And a little bit more underneath it.', null, null, 'center');
-                doc.text(200, 100, 'This is right aligned text', null, null, 'right');
-                doc.text(200, 110, 'And some more', null, null, 'right');
-                doc.text(20, 120, 'Back to left');
+                var itemsProcesar = dataR;
+                 */
 
-                doc.text(20, 140, '10 degrees rotated', null, 10);
-                doc.text(20, 160, '-10 degrees rotated', null, -10);
 
-                //var string = doc.output('datauristring');
-                //$('#mostrarPdf').html(string);
-                */
+                var lineaInicio = 50;
 
-                $("#mostrarPdf").attr("src", doc.output('datauristring'));
-                //para descargar
-                //doc.save('Test.pdf');
+                    if (arreglo != null) {
+
+
+                        for (var i in arreglo) {
+
+                            doc.text(20, lineaInicio, arreglo[i].OtroUno);
+
+                            doc.text(70, lineaInicio, arreglo[i].NombreCompleto);
+
+                            doc.text(140, lineaInicio, arreglo[i].NombreUsuario);
+
+                            doc.text(170, lineaInicio, arreglo[i].Rol);
+
+                            lineaInicio = lineaInicio + 10;
+
+                        }
+                    }
+
+
+                //el tope son 280 para el salto de pagina
+
             }
         });
     </script>

@@ -25,9 +25,10 @@ function MostrarReporteUsuarios()
 {
     var idInst = sessionStorage.getItem("InstId");
     var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
     var nombreReporte = 'usuarios';
 
-    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte;
+    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario;
     var win = window.open(URL, "_blank");
 
 }
