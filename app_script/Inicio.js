@@ -220,6 +220,7 @@ $(document).ready(function () {
     var dataRendiciones = [];
     var dataDocumentos = [];
 
+    /*
     var obtenerCalendario = jQuery.ajax({
         url : ObtenerUrl('Calendario'),
         type: 'POST',
@@ -304,7 +305,50 @@ $(document).ready(function () {
         }
     );
 
+    */
 
+    var obtenerInicio = jQuery.ajax({
+        url : ObtenerUrlDos('Inicio'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), RolId: sessionStorage.getItem("RolId"), UsuId: 0, Tipo: '1' })
+    });
+
+    $.when(obtenerInicio).then(
+        function(data){
+            if (data.Eventos != null)
+                dataCalendario = data.Eventos;
+            if (data.Proyectos != null)
+                dataProyecto = data.Proyectos;
+            if (data.Votaciones != null)
+                dataTricel = data.Votaciones;
+            if (data.Usuarios != null)
+                dataUsuarios = data.Usuarios;
+            if (data.Establecimientos != null)
+                dataInstituciones = data.Establecimientos;
+            if (data.Rendiciones != null)
+                dataRendiciones = data.Rendiciones;
+            if (data.Documentos != null)
+                dataDocumentos = data.Documentos;
+
+
+            elem = document.getElementById('principal');
+
+            ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel, dataUsuarios, dataInstituciones, dataRendiciones, dataDocumentos));
+
+        },
+        function (){
+            //alguna ha fallado
+            //alert('error');
+            $('#principal').show();
+            $('#loading').hide();
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            alert('quitar cargando');
+        }
+    );
 
 
 });

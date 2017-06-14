@@ -26,9 +26,22 @@ function MostrarReporteUsuarios()
     var idInst = sessionStorage.getItem("InstId");
     var idUsuario = sessionStorage.getItem("Id");
     var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
     var nombreReporte = 'usuarios';
 
-    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario;
+    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId;
+    var win = window.open(URL, "_blank");
+
+}
+function MostrarReporteInstituciones()
+{
+    var idInst = sessionStorage.getItem("InstId");
+    var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
+    var nombreReporte = 'instituciones';
+
+    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId;
     var win = window.open(URL, "_blank");
 
 }
