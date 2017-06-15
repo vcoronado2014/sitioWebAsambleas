@@ -79,10 +79,12 @@
             //acá hay que validar todo!!
             if (validar(frmNombreInstitucion, $("#selectIdComuna").val(), frmCorreoElectronico, frmTelefono, frmDireccion)) {
                 if (validarEmail(frmCorreoElectronico)) {
-
+                    var esCpasGuardar = '0';
                     var idRegion = $("#selectIdRegion").val();
                     var idInstitucion = getParameterByName('id');
                     var idComuna = $("#selectIdComuna").val();
+                    if (sessionStorage.getItem("ES_CPAS") == "true")
+                        esCpasGuardar = '1';
 
                     //ahora se podría guardar
                     var institucion = {
@@ -92,7 +94,8 @@
                         Telefono: frmTelefono,
                         Direccion: frmDireccion,
                         IdRegion: idRegion,
-                        IdComuna: idComuna
+                        IdComuna: idComuna,
+                        EsCpas: esCpasGuardar
                     };
                     $.ajax({
                         url: ObtenerUrl('Institucion'),

@@ -99,41 +99,6 @@ $(document).ready(function () {
                 }
             )
 
-
-            /*
-            $.ajax({
-                url: ObtenerUrl('ListarUsuarios'),
-                type: "POST",
-                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
-                contentType: "application/json",
-                dataType: "json",
-                success: function (usuario) {
-                    //// ok
-                    if (usuario != undefined) {
-                        if (usuario.length == 1) {
-                            swal({
-                                title: "Existe",
-                                text: "Este usuario ya existe intente con otro",
-                                type: "warning",
-                                customClass: 'sweetalert-xs'
-                            });
-                            $("#txtNombreUsuario").val("");
-
-                        }
-                    }
-
-                },
-                error: function (error) {
-                    if (error.status.toString() == "500") {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                    else {
-                        getNotify('error', 'Error', 'Error de Servidor!');
-                    }
-                }
-            });
-            */
-
         };
     }
 

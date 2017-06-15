@@ -46,7 +46,8 @@ $(document).ready(function () {
                     IdComuna: sessionStorage.getItem("idComunaInstitucionPrueba"),
                     Direccion: sessionStorage.getItem("direccionInstitucionPrueba"),
                     Password: $("#txtPassword").val(),
-                    NombreInstitucion: sessionStorage.getItem("nombreInstitucionPrueba")
+                    NombreInstitucion: sessionStorage.getItem("nombreInstitucionPrueba"),
+                    EsCpas: '0'
                 };
 
                 var obtenerDatos = jQuery.ajax({
