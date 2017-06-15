@@ -1,15 +1,15 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    return 'https://localhost:44364/api/' + api;
+    //return 'https://localhost:44364/api/' + api;
     //return 'http://api.asambleas.cl/api/' + api;
-    //return 'http://localhost:50929/api/' + api;
+    return 'http://localhost:50929/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlDos(api)
 {
-    return 'https://localhost:44334/api/' + api;
+    //return 'https://localhost:44334/api/' + api;
     //return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
-    //return 'http://localhost:58013/api/' + api;
+    return 'http://localhost:58013/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlSignalR()
@@ -199,6 +199,7 @@ function Menu()
             menuMenuDocumentos = ko.observable(false);
             menuMenuCalendarrio = ko.observable(false);
             menuMenuCargaMasiva = ko.observable(false);
+            menuMenuReportes = ko.observable(false);
             //tricel
             menuTricel = ko.observable(false);
             //hijo
@@ -226,6 +227,7 @@ function Menu()
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
+                    menuMenuReportes = ko.observable(true);
                     menuLogs = ko.observable(true);
                     break;
                 //administrador centro educacional
@@ -243,6 +245,7 @@ function Menu()
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
+                    menuMenuReportes = ko.observable(true);
                     break;
                 //presidente
                 case '3':
@@ -260,6 +263,7 @@ function Menu()
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
+                    menuMenuReportes = ko.observable(true);
                     break;
                 //tesorero, secretario
                 case '4':
@@ -273,6 +277,7 @@ function Menu()
                     //menuTricelListar = ko.observable(true);
                     menuProyecto = ko.observable(true);
                     menuProyectoListar = ko.observable(true);
+                    menuMenuReportes = ko.observable(true);
                     break;
                 default:
                     menuMenu = ko.observable(true);

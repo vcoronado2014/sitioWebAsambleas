@@ -92,9 +92,9 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
                     <li style="cursor: pointer;"><a  id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
-                    <li data-bind="visible: menuMenu" class="dropdown">
+                    <li data-bind="visible: menuMenu" class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li data-bind="visible: menuMenuUsuarios"><a href="usuarios.html">Usuarios</a></li>
@@ -108,6 +108,8 @@
                             <li data-bind="visible: menuMenuCalendarrio"><a href="ListarCalendario.html">Calendario</a></li>
                             <li data-bind="visible: menuMenuCargaMasiva" role="separator" class="divider"></li>
                             <li data-bind="visible: menuMenuCargaMasiva"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: menuMenuReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: menuMenuReportes"><a href="InicioReportes.html">Reportes</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: menuTricel">
@@ -149,19 +151,29 @@
     <div class="jumbotron">
         <h3>Usuarios</h3>
         <p>Muestra el Listado de Usuarios de su Institución</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteUsuarios()">Mostrar</a></p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteUsuarios()"><i class="fa fa-search"> </i> Mostrar</a>
+            <a class="btn btn-success btn-lg pull-right" href="#" role="button" onclick="DescargarReporteUsuarios()"><i class="fa fa-download"> </i> Descargar</a>
+        </p>
     </div>
     <div class="jumbotron">
         <h3>Instituciones</h3>
         <p>Muestra el Listado de Instituciones</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteInstituciones()">Mostrar</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteInstituciones()"><i class="fa fa-search"> </i> Mostrar</a>
+            <a class="btn btn-success btn-lg pull-right" href="#" role="button" onclick="DescargarReporteInstituciones()"><i class="fa fa-download"> </i> Descargar</a></p>
     </div>
     <div class="jumbotron">
         <h3>Rendiciones</h3>
-        <p>Muestra el Listado de Instituciones</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Mostrar</a></p>
+        <p>Muestra los Ingresos/Egresos de dinero de la Institución</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteRendiciones()"><i class="fa fa-search"> </i> Mostrar</a>
+            <a class="btn btn-success btn-lg pull-right" href="#" role="button" onclick="DescargarReporteRendiciones()"><i class="fa fa-download"> </i> Descargar</a></p>
     </div>
-
+    <div class="jumbotron">
+        <h3>Votaciones</h3>
+        <p>Muestra las Votaciones de Listas y Proyectos de la Institución</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteRendiciones()"><i class="fa fa-search"> </i> Mostrar</a>
+            <a class="btn btn-success btn-lg pull-right" href="#" role="button" onclick="DescargarReporteUsuarios()"><i class="fa fa-download"> </i> Descargar</a></p>
+    </div>
 
 </div>
 
