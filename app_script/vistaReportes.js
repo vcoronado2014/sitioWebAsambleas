@@ -1,7 +1,7 @@
 /**
  * Created by VICTOR CORONADO on 14/06/2017.
  */
-$(document).ready(function () {
+//$(document).ready(function () {
 
     var nombreReporte = getParameterByName('NOMBRE_REPORTE');
     var instId = getParameterByName('INST_ID');
@@ -13,6 +13,7 @@ $(document).ready(function () {
     var dataUsuarios = [];
     var dataInstituciones = [];
     var dataRendiciones = [];
+    var dataVotaciones = [];
 
     var sort_by = function(field, reverse, primer){
 
@@ -38,6 +39,9 @@ $(document).ready(function () {
         case 'rendiciones':
             CrearReporteRendiciones(instId, usuId, nombreUsuario, rolId, modo);
             break;
+        case 'votaciones':
+            CrearReporteVotaciones(instId, usuId, nombreUsuario, rolId, modo);
+            break;            
         default:
             break;
     }
@@ -238,6 +242,67 @@ $(document).ready(function () {
 
     }
 
+    function CrearReporteVotaciones(instId, usuId, nombreUsuario, rolId, modo)
+    {
+        var obtenerRendiciones = jQuery.ajax({
+            url : ObtenerUrlDos('Reporte'),
+            type: 'POST',
+            dataType : "json",
+            contentType: "application/json",
+            data: ko.toJSON({ InstId: instId, RolId: rolId })
+        });
+
+        $.when(obtenerRendiciones).then(
+            function(data){
+                dataVotaciones = [];
+                var contador = 0;
+
+                //aca construir el Reporte
+
+                var results = [],
+                    length = Math.ceil(data.length / 22);
+
+                for (var i = 0; i < length; i++) {
+                    results.push(data.slice(i * 22, (i + 1) * 22));
+                }
+
+                var cantidadPaginas = results.length - 1;
+                var paginas = 0;
+
+                var doc = new jsPDF();
+
+                for(var t in results)
+                {
+                    //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
+                    ConstruirEncabezado('Reporte de Votaciones', 'Este reporte le muestra las votaciones de Proyectos y Listas Tricel de su Institución.', doc);
+                    ConstruirPdfVotaciones(doc, results[t]);
+                    ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
+                    //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
+                    if (paginas < cantidadPaginas)
+                        doc.addPage();
+                    paginas++;
+                }
+
+                //mostrar
+                if (modo == 'mostrar')
+                    $("#mostrarPdf").attr("src", doc.output('datauristring'));
+                else
+                    doc.save('votaciones.pdf');
+
+            },
+            function (){
+                //alguna ha fallado
+                alert('error');
+            },
+            function(){
+                //acá podemos quitar el elemento cargando
+                alert('quitar cargando');
+            }
+        );
+
+
+    }
+
     function ConstruirEncabezado(titulo, subtitulo, doc)
     {
         //set color gray
@@ -423,4 +488,71 @@ $(document).ready(function () {
         //el tope son 280 para el salto de pagina
 
     }
-});
+
+    function ConstruirPdfVotaciones(doc, arreglo) {
+        //aca voy
+        //set color gray
+        doc.setTextColor(0);
+        doc.setFontType("normal");
+        doc.setFontSize("9");
+        doc.text(10, 40, "Institución");
+
+        doc.text(50, 40, "Fechas");
+
+        doc.text(90, 40, "Nombre");
+
+        doc.text(130, 40, "Lista");
+
+        doc.text(170, 40, "Si");
+
+        doc.text(180, 40, "No");
+
+        doc.text(190, 40, "Tipo");
+
+
+        //linea
+        doc.setLineWidth(0.5);
+        doc.line(10, 45, 200, 45);
+
+        /*
+         var itemsProcesar = dataR;
+         */
+
+
+        var lineaInicio = 50;
+
+        if (arreglo != null) {
+
+
+            //arreglo.sort(sort_by('OtroUno', false, function(a){return a.toUpperCase()}));
+
+            for (var i in arreglo) {
+
+                doc.text(10, lineaInicio, arreglo[i].Institucion);
+
+                doc.text(50, lineaInicio, arreglo[i].Fechas);
+
+                doc.text(90, lineaInicio, arreglo[i].Nombre);
+
+                doc.text(130, lineaInicio, arreglo[i].Lista);
+
+                doc.text(170, lineaInicio, arreglo[i].VotosSi.toString());
+                if (arreglo[i].Tipo == 'Lista')
+                    doc.text(180, lineaInicio, '');
+                else
+                    doc.text(180, lineaInicio, arreglo[i].VotosNo.toString());
+
+                doc.text(190, lineaInicio, arreglo[i].Tipo);
+
+
+                lineaInicio = lineaInicio + 10;
+
+            }
+        }
+
+
+        //el tope son 280 para el salto de pagina
+
+    }
+
+//});

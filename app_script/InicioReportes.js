@@ -113,6 +113,18 @@ function MostrarReporteRendiciones()
     var win = window.open(URL, "_blank");
 
 }
+function MostrarReporteVotaciones()
+{
+    var idInst = sessionStorage.getItem("InstId");
+    var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
+    var nombreReporte = 'votaciones';
+
+    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId + '&MODO=mostrar';
+    var win = window.open(URL, "_blank");
+
+}
 
 function DescargarReporteUsuarios()
 {
@@ -122,9 +134,7 @@ function DescargarReporteUsuarios()
     var rolId= sessionStorage.getItem("RolId");
     var nombreReporte = 'usuarios';
 
-    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId + '&MODO=desc1argar';
-    var win = window.open(URL, "_blank");
-    win.close();
+    CrearReporteUsuarios(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
 
 }
 function DescargarReporteInstituciones()
@@ -135,9 +145,7 @@ function DescargarReporteInstituciones()
     var rolId= sessionStorage.getItem("RolId");
     var nombreReporte = 'instituciones';
 
-    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId+ '&MODO=descargar';
-    var win = window.open(URL, "_blank");
-
+    CrearReporteInstituciones(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
 }
 function DescargarReporteRendiciones()
 {
@@ -147,7 +155,17 @@ function DescargarReporteRendiciones()
     var rolId= sessionStorage.getItem("RolId");
     var nombreReporte = 'rendiciones';
 
-    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId + '&MODO=descargar';
-    var win = window.open(URL, "_blank");
+    CrearReporteRendiciones(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
+
+}
+function DescargarReporteVotaciones()
+{
+    var idInst = sessionStorage.getItem("InstId");
+    var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
+    var nombreReporte = 'votaciones';
+
+    CrearReporteVotaciones(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
 
 }

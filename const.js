@@ -209,7 +209,10 @@ function Menu()
             //hijo
             menuProyectoListar = ko.observable(false);
             menuLogs = ko.observable(false);
-
+            //mostrar reporte Usuarios
+            mostrarRptUsuarios = ko.observable(false);
+            //mostrar reporte instituciones
+            mostrarRptInstituciones = ko.observable(false);
             switch(rolId)
             {
                 //super
@@ -229,6 +232,10 @@ function Menu()
                     menuMenuCargaMasiva = ko.observable(true);
                     menuMenuReportes = ko.observable(true);
                     menuLogs = ko.observable(true);
+                    //mostrar reporte Usuarios
+                    mostrarRptUsuarios = ko.observable(true);
+                    //mostrar reporte instituciones
+                    mostrarRptInstituciones = ko.observable(true);                    
                     break;
                 //administrador centro educacional
                 case '2':
@@ -246,6 +253,8 @@ function Menu()
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
                     menuMenuReportes = ko.observable(true);
+                    //mostrar reporte Usuarios
+                    mostrarRptUsuarios = ko.observable(true);
                     break;
                 //presidente
                 case '3':
@@ -264,6 +273,8 @@ function Menu()
                     menuProyectoListar = ko.observable(true);
                     menuMenuCargaMasiva = ko.observable(true);
                     menuMenuReportes = ko.observable(true);
+                    //mostrar reporte Usuarios
+                    mostrarRptUsuarios = ko.observable(true);
                     break;
                 //tesorero, secretario
                 case '4':
