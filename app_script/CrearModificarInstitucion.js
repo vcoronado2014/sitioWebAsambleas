@@ -19,7 +19,7 @@
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
 
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexCpas.html';
             }
@@ -33,7 +33,7 @@
         else
         {
             //directo al login
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexcpas.html';
             }
@@ -66,6 +66,7 @@
         self.frmTelefono = ko.observable();
         self.frmCorreoElectronico = ko.observable();
         self.frmDireccion = ko.observable();
+        self.frmEsCpas = ko.observable();
 
 /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -83,8 +84,7 @@
                     var idRegion = $("#selectIdRegion").val();
                     var idInstitucion = getParameterByName('id');
                     var idComuna = $("#selectIdComuna").val();
-                    if (sessionStorage.getItem("ES_CPAS") == "true")
-                        esCpasGuardar = '1';
+                    var idEsCpas = $("#selectEsCpas").val();
 
                     //ahora se podría guardar
                     var institucion = {
@@ -95,7 +95,7 @@
                         Direccion: frmDireccion,
                         IdRegion: idRegion,
                         IdComuna: idComuna,
-                        EsCpas: esCpasGuardar
+                        EsCpas: idEsCpas
                     };
                     $.ajax({
                         url: ObtenerUrl('Institucion'),
@@ -163,6 +163,9 @@
                 self.frmTelefono = data.Telefono;
                 self.frmCorreoElectronico = data.CorreoElectronico;
                 self.frmDireccion = data.Direccion;
+                frmEsCpas = data.EsCpas;
+                $("#selectEsCpas").val(data.EsCpas);
+                selectedEsCpas = frmEsCpas;
 
                 getNotify('success', 'Éxito', 'Recuperado con éxito!');
 
@@ -324,6 +327,7 @@
             $("#txtDireccion").attr('disabled', 'disabled');
             $("#selectIdRegion").attr('disabled', 'disabled');
             $("#selectIdComuna").attr('disabled', 'disabled');
+            $("#selectEsCpas").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",
@@ -431,7 +435,11 @@
                 // ok
                 self.regiones = dataR;
                 selectedRegion = 0;
+                selectedEsCpas = 0;
+                if (sessionStorage.getItem("RolId") != 1) {
+                    $("#selectEsCpas").attr('disabled', 'disabled');
 
+                }
                 $.ajax({
                     url: ObtenerUrl('ObtenerComunas'),
                     type: "POST",

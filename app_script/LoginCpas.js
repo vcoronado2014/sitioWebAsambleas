@@ -41,7 +41,8 @@ $(document).ready(function () {
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
 
                     //importante para determinar de donde se esta ingresando, en este caso es cpas.
-                    sessionStorage.setItem("ES_CPAS", "true");
+                    sessionStorage.setItem("ES_CPAS", result.Institucion.EsCpas);
+                    sessionStorage.setItem("ES_CPAS_1", "true");
 
 
                     var obtenerVinculos = jQuery.ajax({

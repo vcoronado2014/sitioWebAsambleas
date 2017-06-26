@@ -307,7 +307,7 @@ function Menu()
 
 function IrInicio()
 {
-    if (sessionStorage.getItem("ES_CPAS") == "true")
+    if (sessionStorage.getItem("ES_CPAS_1") == "true")
     {
         window.location.href = 'indexCpas.html';
     }

@@ -38,7 +38,9 @@ $(document).ready(function () {
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
 
                     //importante para determinar de donde se esta ingresando, en este caso es asambleas.
-                    sessionStorage.setItem("ES_CPAS", "false");
+                    //sessionStorage.setItem("ES_CPAS", "false");
+                    sessionStorage.setItem("ES_CPAS", result.Institucion.EsCpas);
+                    sessionStorage.setItem("ES_CPAS_1", "false");
 
                     var obtenerVinculos = jQuery.ajax({
                         url : ObtenerUrlDos('Vinculo'),

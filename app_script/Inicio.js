@@ -30,7 +30,7 @@ $(document).ready(function () {
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
 
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexCpas.html';
             }
@@ -44,7 +44,7 @@ $(document).ready(function () {
         else
         {
             //directo al login
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexcpas.html';
             }
@@ -104,10 +104,26 @@ $(document).ready(function () {
             //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
 
-        $('#infoUsuariosN').text(dataU.length);
-        $('#infoInstituciones').text(dataI.proposals.length);
-        $('#infoIngresos').text(dataR.proposals.length);
-        $('#infoDocumentos').text(dataD.proposals.length);
+        if (dataU != undefined)
+            $('#infoUsuariosN').text(dataU.length);
+        else
+            $('#infoUsuariosN').text('0');
+
+        if (dataI.proposals != undefined)
+            $('#infoInstituciones').text(dataI.proposals.length);
+        else
+            $('#infoInstituciones').text('0');
+
+        if (dataR.proposals != undefined)
+            $('#infoIngresos').text(dataR.proposals.length);
+        else
+            $('#infoIngresos').text('0');
+
+        if (dataD.proposals != undefined)
+            $('#infoDocumentos').text(dataD.proposals.length);
+        else
+            $('#infoDocumentos').text('0');
+
 
         var items = [];
         var itemsProcesar = data;

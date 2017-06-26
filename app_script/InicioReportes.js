@@ -22,7 +22,7 @@ $(document).ready(function () {
         {
             //acá debe direccionarlo directamente al login y vaciar la variable de session
 
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexCpas.html';
             }
@@ -36,7 +36,7 @@ $(document).ready(function () {
         else
         {
             //directo al login
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+            if (sessionStorage.getItem("ES_CPAS_1") == "true")
             {
                 window.location.href = 'indexcpas.html';
             }
