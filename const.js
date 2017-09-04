@@ -1,21 +1,21 @@
 ﻿﻿function ObtenerUrl(api)
 {
     //return 'https://localhost:44364/api/' + api;
-    //return 'http://api.asambleas.cl/api/' + api;
-    return 'http://localhost:50929/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:50929/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlDos(api)
 {
     //return 'https://localhost:44334/api/' + api;
-    //return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
-    return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlSignalR()
 {
-    //return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
-    return "http://localhost:34080/signalr/hubs";
+    return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
+    //return "http://localhost:34080/signalr/hubs";
     //http://172.16.116.138/apiasambleas/api/
 }
 function getParameterByName(name, url) {

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.js" afterPath="$PROJECT_DIR$/const.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,21 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="const.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="const.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/const.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="191" column="53" lean-forward="true" selection-start-line="191" selection-start-column="53" selection-end-line="191" selection-end-column="53" />
+            <state relative-caret-position="85">
+              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usuarios.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usuarios.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/usuarios.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="24" />
+            <state relative-caret-position="462">
+              <caret line="158" column="48" lean-forward="true" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/VotarTricel.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1938">
-              <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+              <caret line="114" column="25" lean-forward="false" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -235,7 +235,6 @@
         <option value="$PROJECT_DIR$/app_script/signalrApp.js" />
         <option value="$PROJECT_DIR$/app_script/Inicio.js" />
         <option value="$PROJECT_DIR$/app_script/indexCpas.js" />
-        <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/CargaMasiva.html" />
         <option value="$PROJECT_DIR$/Contacto.html" />
         <option value="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" />
@@ -259,6 +258,7 @@
         <option value="$PROJECT_DIR$/app_script/vistaReportes.js" />
         <option value="$PROJECT_DIR$/InicioReportes.html" />
         <option value="$PROJECT_DIR$/app_script/InicioReportes.js" />
+        <option value="$PROJECT_DIR$/const.js" />
       </list>
     </option>
   </component>
@@ -289,7 +289,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -303,22 +302,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sitioWebAsambleas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sitioWebAsambleas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app_script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,7 +315,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="C:/DESARROLLO/FRONT_VISOR/FrontEnd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -484,6 +470,7 @@
       <workItem from="1497984290338" duration="71000" />
       <workItem from="1499691053728" duration="2647000" />
       <workItem from="1499955928789" duration="20000" />
+      <workItem from="1504548918590" duration="1848000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -503,10 +490,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="450936000" />
+    <option name="totallyTimeSpent" value="452784000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="1358" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13814956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -859,7 +846,7 @@
     <entry file="file://$PROJECT_DIR$/VotarTricel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
-          <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+          <caret line="114" column="25" lean-forward="false" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -882,14 +869,6 @@
             <element signature="e#2404#4442#0" expanded="false" />
             <element signature="e#6570#6944#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/usuarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,8 +921,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/const.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="191" column="53" lean-forward="true" selection-start-line="191" selection-start-column="53" selection-end-line="191" selection-end-column="53" />
+        <state relative-caret-position="85">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usuarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="158" column="48" lean-forward="true" selection-start-line="158" selection-start-column="48" selection-end-line="158" selection-end-column="48" />
           <folding />
         </state>
       </provider>
