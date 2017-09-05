@@ -34,8 +34,12 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreRol", result.Rol.Nombre);
                     sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
-
+                    //roles permisos
+                    sessionStorage.setItem("RolesPermisos", JSON.stringify(result.RolesPermisos));
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
+
+                    //para abrir el json
+                    //var obj = JSON.parse(sessionStorage.RolesPermisos);
 
                     //importante para determinar de donde se esta ingresando, en este caso es asambleas.
                     sessionStorage.setItem("ES_CPAS", "false");
