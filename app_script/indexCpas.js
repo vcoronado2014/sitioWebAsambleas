@@ -204,7 +204,7 @@ $(function () {
                 //ahora procesamos el menu
                 menuMenu = ko.observable(false);
                 //hijos
-                menuMenuUsuarios = ko.observable(false);
+                VerUsuario = ko.observable(false);
                 menuMenuInstituciones = ko.observable(false);
                 menuMenuRendiciones = ko.observable(false);
                 menuMenuDocumentos = ko.observable(false);
@@ -231,7 +231,7 @@ $(function () {
                         shouldShowMessage = ko.observable(true);
 
                         menuMenu = ko.observable(true);
-                        menuMenuUsuarios = ko.observable(true);
+                        VerUsuario = ko.observable(true);
                         menuMenuInstituciones = ko.observable(true);
                         menuMenuRendiciones = ko.observable(true);
                         menuMenuDocumentos = ko.observable(true);
@@ -253,7 +253,7 @@ $(function () {
                         shouldShowMessage = ko.observable(true);
 
                         menuMenu = ko.observable(true);
-                        menuMenuUsuarios = ko.observable(true);
+                        VerUsuario = ko.observable(true);
                         //menuMenuInstituciones = ko.observable(true);
                         menuMenuRendiciones = ko.observable(true);
                         menuMenuDocumentos = ko.observable(true);
@@ -273,7 +273,7 @@ $(function () {
                         shouldShowMessage = ko.observable(true);
 
                         menuMenu = ko.observable(true);
-                        menuMenuUsuarios = ko.observable(true);
+                        VerUsuario = ko.observable(true);
                         //menuMenuInstituciones = ko.observable(true);
                         menuMenuRendiciones = ko.observable(true);
                         menuMenuDocumentos = ko.observable(true);
@@ -321,7 +321,7 @@ $(function () {
             //ahora procesamos el menu
             menuMenu = ko.observable(true);
             //hijos
-            menuMenuUsuarios = ko.observable(false);
+            VerUsuario = ko.observable(false);
             menuMenuInstituciones = ko.observable(false);
             menuMenuRendiciones = ko.observable(true);
             menuMenuDocumentos = ko.observable(true);

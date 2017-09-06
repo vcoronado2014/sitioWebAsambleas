@@ -186,6 +186,180 @@ function Menu()
     //antes evaluamos si esta variable existe
     if (sessionStorage != null)
     {
+        var obj = JSON.parse(sessionStorage.RolesPermisos);
+        //"{"Id":1,"InstId":3,"RolId":1,"CreaUsuario":1,
+        // "ModificaUsuario":1,"EliminaUsuario":1,
+        // "VerUsuario":1,"CreaInstitucion":1,
+        // "ModificaInstitucion":1,"EliminaInstitucion":1,
+        // "VerInstitucion":1,"CreaDocumento":1,
+        // "EliminaDocumento":1,"VerDocumento":1,
+        // "CreaCalendario":1,"ModificaCalendario":1,
+        // "EliminaCalendario":1,"VerCalendario":1,
+        // "CreaTricel":1,"ModificaTricel":1,
+        // "EliminaTricel":1,"VerTricel":1,
+        // "CreaProyecto":1,"ModificaProyecto":1,
+        // "EliminaProyecto":1,"VerProyecto":1,
+        // "CreaRendicion":1,"ModificaRendicion":1,
+        // "EliminaRendicion":1,"VerRendicion":1,
+        // "CreaRol":1,"ModificaRol":1,"EliminaRol":1,
+        // "VerRol":1,"CreaMuro":1,"ModificaMuro":1,
+        // "EliminaMuro":1,"VerMuro":1,
+        // "PuedeVotarProyecto":1,"PuedeVotarTricel":1}"
+
+        //valores predeterminados
+        CreaUsuario = ko.observable(false);
+        ModificaUsuario = ko.observable(false);
+        EliminaUsuario = ko.observable(false);
+        VerUsuario = ko.observable(false);
+        CreaInstitucion = ko.observable(false);
+        ModificaInstitucion = ko.observable(false);
+        EliminaInstitucion = ko.observable(false);
+        VerInstitucion = ko.observable(false);
+        CreaDocumento = ko.observable(false);
+        EliminaDocumento = ko.observable(false);
+        VerDocumento = ko.observable(false);
+        CreaCalendario = ko.observable(false);
+        ModificaCalendario = ko.observable(false);
+        EliminaCalendario = ko.observable(false);
+        VerCalendario = ko.observable(false);
+        CreaTricel = ko.observable(false);
+        ModificaTricel = ko.observable(false);
+        EliminaTricel = ko.observable(false);
+        VerTricel = ko.observable(false);
+        CreaProyecto = ko.observable(false);
+        ModificaProyecto = ko.observable(false);
+        EliminaProyecto = ko.observable(false);
+        VerProyecto = ko.observable(false);
+        CreaRendicion = ko.observable(false);
+        ModificaRendicion = ko.observable(false);
+        EliminaRendicion = ko.observable(false);
+        VerRendicion = ko.observable(false);
+        CreaRol = ko.observable(false);
+        ModificaRol = ko.observable(false);
+        EliminaRol = ko.observable(false);
+        VerRol = ko.observable(false);
+        CreaMuro = ko.observable(false);
+        ModificaMuro = ko.observable(false);
+        EliminaMuro = ko.observable(false);
+        VerMuro = ko.observable(false);
+        PuedeVotarProyecto = ko.observable(false);
+        PuedeVotarTricel = ko.observable(false);
+        //el menu se ve siempre
+        menuMenu = ko.observable(true);
+
+        if (obj.CreaUsuario == 1)
+            CreaUsuario = ko.observable(true);
+
+        if (obj.ModificaUsuario == 1)
+            ModificaUsuario = ko.observable(true);
+
+        if (obj.EliminaUsuario == 1)
+            EliminaUsuario = ko.observable(true);
+
+        if (obj.VerUsuario == 1)
+            VerUsuario = ko.observable(true);
+
+        if (obj.CreaInstitucion == 1)
+            CreaInstitucion = ko.observable(true);
+
+        if (obj.ModificaInstitucion == 1)
+            ModificaInstitucion = ko.observable(true);
+
+        if (obj.EliminaInstitucion == 1)
+            EliminaInstitucion = ko.observable(true);
+
+        if (obj.VerInstitucion == 1)
+            VerInstitucion = ko.observable(true);
+
+        if (obj.CreaDocumento == 1)
+            CreaDocumento = ko.observable(true);
+
+        if (obj.EliminaDocumento == 1)
+            EliminaDocumento = ko.observable(true);
+
+        if (obj.VerDocumento == 1)
+            VerDocumento = ko.observable(true);
+
+        if (obj.CreaCalendario == 1)
+            CreaCalendario = ko.observable(true);
+
+        if (obj.ModificaCalendario == 1)
+            ModificaCalendario = ko.observable(true);
+
+        if (obj.EliminaCalendario == 1)
+            EliminaCalendario = ko.observable(true);
+
+        if (obj.VarCalendario == 1)
+            VerCalendario = ko.observable(true);
+
+        if (obj.CreaTricel == 1)
+            CreaTricel = ko.observable(true);
+
+        if (obj.ModificaTricel == 1)
+            ModificaTricel = ko.observable(true);
+
+        if (obj.EliminaTricel == 1)
+            EliminaTricel = ko.observable(true);
+
+        if (obj.VerTricel == 1)
+            VerTricel = ko.observable(true);
+
+        if (obj.CreaProyecto == 1)
+            CreaProyecto = ko.observable(true);
+
+        if (obj.ModificaProyecto == 1)
+            ModificaProyecto = ko.observable(true);
+
+        if (obj.EliminaProyecto == 1)
+            EliminaProyecto = ko.observable(true);
+
+        if (obj.VerProyecto == 1)
+            VerProyecto = ko.observable(true);
+
+        if (obj.CreaRendicion == 1)
+            CreaRendicion = ko.observable(true);
+
+        if (obj.ModificaRendicion == 1)
+            ModificaRendicion = ko.observable(true);
+
+        if (obj.EliminaRendicion == 1)
+            EliminaRendicion = ko.observable(true);
+
+        if (obj.VerRendicion == 1)
+            VerRendicion = ko.observable(true);
+
+        if (obj.CreaRol == 1)
+            CreaRol = ko.observable(true);
+
+        if (obj.ModificaRol == 1)
+            ModificaRol = ko.observable(true);
+
+        if (obj.EliminaRol == 1)
+            EliminaRol = ko.observable(true);
+
+        if (obj.VerRol == 1)
+            VerRol = ko.observable(true);
+
+        if (obj.CreaMuro == 1)
+            CreaMuro = ko.observable(true);
+
+        if (obj.ModificaMuro == 1)
+            ModificaMuro = ko.observable(true);
+
+        if (obj.EliminaMuro == 1)
+            EliminaMuro = ko.observable(true);
+
+        if (obj.VerMuro == 1)
+            VerMuro = ko.observable(true);
+
+        if (obj.PuedeVotarProyecto == 1)
+            PuedeVotarProyecto = ko.observable(true);
+
+        if (obj.PuedeVotarTricel == 1)
+            PuedeVotarTricel = ko.observable(true);
+
+        /*
+
         var rolId = sessionStorage.getItem("RolId");
         if (rolId != null)
         {
@@ -300,6 +474,8 @@ function Menu()
 
 
         }
+
+        */
     }
 
 

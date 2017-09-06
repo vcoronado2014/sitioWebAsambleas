@@ -49,35 +49,35 @@
                     <li data-bind="visible: menuMenu" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li data-bind="visible: menuMenuUsuarios"><a href="usuarios.html">Usuarios</a></li>
-                            <li data-bind="visible: menuMenuInstituciones" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuInstituciones"><a href="ListarInstitucion.html">Intituciones</a></li>
-                            <li data-bind="visible: menuMenuRendiciones" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuRendiciones"><a href="ListarRendicion.html">Rendiciones</a></li>
-                            <li data-bind="visible: menuMenuDocumentos" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuDocumentos"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
-                            <li data-bind="visible: menuMenuCalendarrio" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuCalendarrio"><a href="ListarCalendario.html">Calendario</a></li>
-                            <li data-bind="visible: menuMenuCargaMasiva" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuCargaMasiva"><a href="CargaMasiva.html">Carga Masiva</a></li>
-                            <li data-bind="visible: menuMenuReportes" role="separator" class="divider"></li>
-                            <li data-bind="visible: menuMenuReportes"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: VerUsuario"><a href="usuarios.html">Usuarios</a></li>
+                            <li data-bind="visible: VerInstitucion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerInstitucion"><a href="ListarInstitucion.html">Intituciones</a></li>
+                            <li data-bind="visible: VerRendicion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRendicion"><a href="ListarRendicion.html">Rendiciones</a></li>
+                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
+                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
+                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerCalendario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerDocumento"><a href="InicioReportes.html">Reportes</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" data-bind="visible: menuTricel">
+                    <li class="dropdown" data-bind="visible: VerTricel">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a data-bind="visible: menuTricelListar" href="ListarVotacion.html">Listar Triceles</a></li>
+                            <li><a data-bind="visible: VerTricel" href="ListarVotacion.html">Listar Triceles</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown active" data-bind="visible: menuProyecto">
+                    <li class="dropdown active" data-bind="visible: VerProyecto">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a data-bind="visible: menuProyectoListar" href="ListarProyecto.html">Listar Proyectos</a></li>
+                            <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
                         </ul>
                     </li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
-                    <li data-bind="visible: menuLogs"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li data-bind="visible: VerUsuario"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
                     <li><a href="#" id="infoUsuarios"></a></li>
                 </ul>
             </div>
@@ -94,7 +94,7 @@
 
     <div class="col-xs-12 page-header">
         <h3 class="col-xs-9 col-md-10">Listado <small>de Proyectos</small></h3>
-        <a href="CrearModificarProyecto.html?id=0&ELIMINADO=0" class="col-xs-3 col-md-2"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Nuevo Proyecto"></i></a>
+        <a href="CrearModificarProyecto.html?id=0&ELIMINADO=0" class="col-xs-3 col-md-2" data-bind="visible: CreaProyecto"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Nuevo Proyecto"></i></a>
     </div>
 
     <div class="col-xs-12">
@@ -113,8 +113,8 @@
             <!-- ko foreach: proposals() -->
             <tr data-toggle="tooltip" data-placement="left" title="Crear Nuevo Tricel">
                 <td>
-                    <a data-bind="attr: { href: $data.Url }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fa fa-2x fa-edit"></i></a>
-                    <a data-bind="attr: { href: $data.UrlEliminar }, visible: shouldShowMessage" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fa fa-2x fa-trash"></i></a>
+                    <a data-bind="attr: { href: $data.Url }, visible: ModificaProyecto" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fa fa-2x fa-edit"></i></a>
+                    <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaProyecto" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fa fa-2x fa-trash"></i></a>
 
                 </td>
                 <td class="hidden-xs"><span data-bind="text: $data.OtroTres"></span></td>
