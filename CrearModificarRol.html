@@ -7,7 +7,7 @@
     <meta name="description" content="." />
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
     <meta name="author" content="Victor Coronado" />
-    <title>Crear Modificar Institucion</title>
+    <title>Crear Modificar Rol</title>
     <!-- Bootstrap Core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -53,7 +53,7 @@
     <script src="app_script/signalrApp.js"></script>
 
     <script src="const.js"></script>
-    <script src="app_script/CrearModificarInstitucion.js"></script>
+    <script src="app_script/CrearModificarRol.js"></script>
 
 
 
@@ -126,87 +126,112 @@
     </nav>
 
     <div class="col-xs-12 page-header">
-        <h3>Mantenedor <small>de Instituciones</small></h3>
+        <h3>Mantenedor <small>de Roles</small></h3>
     </div>
 
+    <!-- nombre rol -->
     <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Nombre Institución</label>
+        <label for="basic-url">Nombre Rol</label>
         <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">
                         <i class="fa fa-user"></i>
                     </span>
-            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Nombre de institución" aria-describedby="basic-addon1" disabled="disabled" data-bind="event: { change: onChangeUsuario }, value: self.frmNombreInstitucion"   />
+            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Nombre del Rol" aria-describedby="basic-addon1" disabled="disabled" data-bind="event: { change: onChangeUsuario }, value: self.frmNombre"   />
         </div>
 
     </div>
 
+    <!-- descripcion -->
     <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Teléfono</label>
+        <label for="basic-url">Descripción</label>
         <div class="input-group">
                 <span class="input-group-addon" id="basic-addon6">
-                    <i class="fa fa-phone"></i>
+                    <i class="fa fa-info-circle"></i>
                 </span>
-            <input type="text" class="form-control" name="telefono" id="txtTelefono" placeholder="Teléfono" aria-describedby="basic-addon6" data-bind="value: self.frmTelefono" />
+            <input type="text" class="form-control" name="descripcion" id="txtDescripcion" placeholder="Descripción" aria-describedby="basic-addon6" data-bind="value: self.frmDescripcion" />
         </div>
 
     </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Correo</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon7">
-                    <i class="fa fa-envelope"></i>
-                </span>
-            <input type="text" class="form-control" name="correo" id="txtCorreo" placeholder="Correo" aria-describedby="basic-addon7" data-bind="value: self.frmCorreoElectronico" />
-        </div>
-
+    <br/>
+    <div class="col-xs-12" style="padding-top: 20px;">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="font-80">Módulo</th>
+                <th class="font-80 text-center">Ver</th>
+                <th class="font-80 text-center">Crear</th>
+                <th class="font-80 text-center">Modificar</th>
+                <th class="font-80 text-center">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Usuarios</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerUsuario" id="chkVerUsuario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaUsuario" id="chkCreaUsuario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPModificaUsuario" id="chkModificaUsuario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPEliminaUsuario" id="chkEliminaUsuario"></td>
+            </tr>
+            <tr>
+                <td>Institución</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerInstitucion" id="chkVerInstitucion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaInstitucion" id="chkCreaInstitucion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaInstitucion" id="chkModificaInstitucion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaInstitucion" id="chkEliminaInstitucion"></td>
+            </tr>
+            <tr>
+                <td>Roles</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerRol" id="chkVerRol"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRol" id="chkCreaRol"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaRol" id="chkModificaRol"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaRol" id="chkEliminaRol"></td>
+            </tr>
+            <tr>
+                <td>Documentos</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerDocumento" id="chkVerDocumento"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaDocumento" id="chkCreaDocumento"></td>
+                <td class="text-center">--</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaDocumento" id="chkEliminaDocumento"></td>
+            </tr>
+            <tr>
+                <td>Rendición</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerRendicion" id="chkVerRendicion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRendicion" id="chkCreaRendicion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaRendicion" id="chkModificaRendicion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaRendicion" id="chkEliminaRendicion"></td>
+            </tr>
+            <tr>
+                <td>Calendario</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerCalendario" id="chkVerCalendario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaCalendario" id="chkCreaCalendario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaCalendario" id="chkModificaCalendario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaCalendario" id="chkEliminaCalendario"></td>
+            </tr>
+            <tr>
+                <td>Proyectos</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerProyecto" id="chkVerProyecto"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaProyecto" id="chkCreaProyecto"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaProyecto" id="chkModificaProyecto"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaProyecto" id="chkEliminaProyecto"></td>
+            </tr>
+            <tr>
+                <td>Tricel</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerTricel" id="chkVerTricel"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaTricel" id="chkCreaTricel"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaTricel" id="chkModificaTricel"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaTricel" id="chkEliminaTricel"></td>
+            </tr>
+            <tr>
+                <td>Muro</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerMuro" id="chkVerMuro"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaMuro" id="chkCreaMuro"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaMuro" id="chkModificaMuro"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaMuro" id="chkEliminaMuro"></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Región</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon8">
-                    <i class="fa fa-globe"></i>
-                </span>
-            <select id="selectIdRegion" class="form-control" data-bind="options: self.regiones,
-                    optionsText: 'Nombre',
-                    optionsValue: 'Id',
-                    value: selectedRegion,
-                    event: { change: onChange },
-                    valueAllowUnset: true">
-            </select>
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Comuna</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon9">
-                    <i class="fa fa-globe"></i>
-                </span>
-            <select id="selectIdComuna" class="form-control" data-bind="options: self.comunas,
-                    optionsText: 'Nombre',
-                    optionsValue: 'Id',
-                    value: selectedComuna,
-                    valueAllowUnset: true
-                    ">
-            </select>
-        </div>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <label for="basic-url">Dirección</label>
-        <div class="input-group">
-                <span class="input-group-addon" id="basic-addon10">
-                    <i class="fa fa-compass"></i>
-                </span>
-            <input type="text" class="form-control" id="txtDireccion" name="direccion" placeholder="Dirección" aria-describedby="basic-addon10" data-bind="value: self.frmDireccion" />
-        </div>
-
-    </div>
-
+   <!-- <input type="checkbox" class="custom-control-input">-->
     <div class="col-xs-12" style="padding-bottom: 20px;">
     </div>
     <hr class="style17" style="width: 100%;" />
@@ -217,7 +242,6 @@
     <div class="col-xs-6">
         <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar" />
     </div>
-
 
 </div>
 </body>

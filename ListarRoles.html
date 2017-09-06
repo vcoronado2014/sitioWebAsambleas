@@ -2,7 +2,7 @@
 <html lang="es">
 <head runat="server">
 
-    <title>Instituciones</title>
+    <title>Roles y Permisos</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,27 +92,28 @@
     </nav>
 
     <div class="col-xs-12 page-header">
-        <h3 class="col-xs-9 col-md-10">Listado <small>de Instituciones</small></h3>
-        <a href="CrearModificarInstitucion.html?id=0&ELIMINADO=0" class="col-xs-3 col-md-2" data-bind="visible: CreaInstitucion"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Nueva Institución"></i></a>
+        <h3 class="col-xs-9 col-md-10">Listado <small>de Roles</small></h3>
+        <a href="CrearModificarRol.html?id=0&ELIMINADO=0" class="col-xs-3 col-md-2" data-bind="visible: CreaRol"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Nuevo Rol"></i></a>
     </div>
 
     <table id="proposals" class="table table-striped table-bordered">
         <thead>
         <tr>
-            <th data-bind="visible: CreaInstitucion"></th>
+            <th data-bind="visible: CreaRol"></th>
             <th>Nombre</th>
+            <th>Descripción</th>
         </tr>
         </thead>
         <tbody>
         <!-- ko foreach: proposals() -->
         <tr>
-            <td data-bind="visible: CreaInstitucion">
-                <a data-bind="attr: { href: $data.Url }, visible: ModificaInstitucion"><i class="fa fa-2x fa-edit"></i></a>
-                <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaInstitucion"><i class="fa fa-2x fa-trash"></i></a>
+            <td data-bind="visible: CreaRol">
+                <a data-bind="attr: { href: 'CrearModificarRol.html?id=' + $data.Id() + '&ELIMINADO=0' }, visible: ModificaRol"><i class="fa fa-2x fa-edit"></i></a>
+                <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaRol"><i class="fa fa-2x fa-trash"></i></a>
 
             </td>
-            <td><span data-bind="text: $data.NombreCompleto"></span></td>
-
+            <td><span data-bind="text: $data.Nombre"></span></td>
+            <td><span data-bind="text: $data.Descripcion"></span></td>
         </tr>
         <!-- /ko -->
         </tbody>
@@ -154,7 +155,7 @@
 
     <script src="const.js"></script>
 
-    <script src="app_script/ListarInstitucion.js"></script>
+    <script src="app_script/ListarRoles.js"></script>
 
 </div>
 </body>

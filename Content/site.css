@@ -137,7 +137,18 @@ hr.style16:after {
   color: #8c8b8b; 
   font-size: 18px; 
 }
-
+.custom-control {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: 1rem;
+}
+        .big-checkbox {width: 25px; height: 25px;}
+        .font-80{
+            font-size: 80%;
+        }
 /*
 hr.style17 {
 	border-top: 1px solid #8c8b8b;
