@@ -205,15 +205,6 @@
             data: ko.toJSON({ InstId: 90 })
         });
 
-
-        var obtenerRoles = jQuery.ajax({
-            url : ObtenerUrl('ObtenerRoles'),
-            type: 'POST',
-            dataType : "json",
-            contentType: "application/json",
-            data: ko.toJSON({ InstId: 90 })
-        });
-
         var obtenerInstitucion = jQuery.ajax({
             url : ObtenerUrl('Institucion'),
             type: 'POST',
@@ -222,8 +213,12 @@
             data: ko.toJSON({ IdUsuario: 9 })
         });
 
-        $.when(obtenerUsuario, obtenerRegiones, obtenerRoles, obtenerInstitucion).then(
-            function(data, dataR, dataF, dataI){
+
+
+
+
+        $.when(obtenerUsuario, obtenerRegiones, obtenerInstitucion).then(
+            function(data, dataR, dataI){
 
                 elem = document.getElementById('principal');
 
@@ -253,7 +248,15 @@
                     data: ko.toJSON({ RegId: data[0].Region.Id })
                 });
 
-                $.when(obtenerComunas).then(function (dataC)
+                var obtenerRoles = jQuery.ajax({
+                    url : ObtenerUrl('RolInstitucion'),
+                    type: 'POST',
+                    dataType : "json",
+                    contentType: "application/json",
+                    data: ko.toJSON({ InstId: data[0].Institucion.Id })
+                });
+
+                $.when(obtenerComunas, obtenerRoles).then(function (dataC, dataF)
                     {
                         //regiones
                         if (dataR != null)
@@ -263,7 +266,7 @@
                         }
                         if (dataC != null)
                         {
-                            self.comunas = dataC;
+                            self.comunas = dataC[0];
                             selectedComuna = frmIdComuna;
                         }
                         if (dataF != null)
@@ -277,7 +280,7 @@
                             selectedInstitucion = self.frmIdInstitucion;
                         }
 
-                        ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataC, dataF[0], dataI[0]), self.elem);
+                        ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataC[0], dataF[0], dataI[0]), self.elem);
 
                     },
                     function (){
@@ -307,6 +310,35 @@
                             elem = document.getElementById('principal');
                             ko.cleanNode(elem);
                             ko.applyBindings(new PersonViewModel(data[0], dataR[0], dataCC, self.roles, dataI[0]), elem);
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
+                self.onChangeRoles = function () {
+                    $.ajax({
+                        url: ObtenerUrl('RolInstitucion'),
+                        type: "POST",
+                        data: ko.toJSON({ InstId: $("#selectInstitucion").val() }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (dataRR) {
+                            // ok
+                            //self.Reset();
+                            self.roles = dataRR;
+                            selectedRol = 0;
+
+                            elem = document.getElementById('principal');
+                            ko.cleanNode(elem);
+                            ko.applyBindings(new PersonViewModel(data[0], dataR[0], self.comunas, self.roles, dataI[0]), elem);
 
                         },
                         error: function (error) {
@@ -367,223 +399,6 @@
                 alert('quitar cargando');
             }
         );
-
-
-
-
-        /******************
-
-        $.ajax({
-            url: ObtenerUrl('ObtenerUsuario'),
-            type: "POST",
-            data: ko.toJSON({ IdUsuario: getParameterByName('idUsuario') }),
-            contentType: "application/json",
-            dataType: "json",
-            success: function (data) {
-                // ok
-
-                
-                frmIdRegion = ko.observable(data.Region.Id);
-                
-
-                self.frmNombreUsuario = data.AutentificacionUsuario.NombreUsuario;
-                self.frmNombres = data.Persona.Nombres;
-                self.frmApellidoPaterno = data.Persona.ApellidoPaterno;
-                self.frmApellidoMaterno = data.Persona.ApellidoMaterno;
-                self.frmRut = data.Persona.Rut;
-                self.frmTelefono = data.Persona.Telefonos;
-                self.frmCorreoElectronico = data.AutentificacionUsuario.CorreoElectronico;
-                //self.frmIdRegion = data.Region.Id;
-                frmIdComuna = ko.observable(data.Comuna.Id);
-                self.frmDireccion = data.Persona.DireccionCompleta;
-                self.frmIdRol = data.Rol.Id;
-                //************* agregado para la institucion *******
-
-                self.frmIdInstitucion = data.Institucion.Id;
-                //************************************
-                //self.frmPassword = data.AutentificacionUsuario.Password;
-                //self.frmNuevaPassword = frmPassword;
-
-                getNotify('success', 'Éxito', 'Recuperado con éxito!');
-                //desactivamos el nombre usuario
-                //  $("txtNombreUsuario").prop('disabled', true);
-
-                $.ajax({
-                    url: ObtenerUrl('ObtenerRegiones'),
-                    type: "POST",
-                    data: ko.toJSON({ InstId: 90 }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (dataR) {
-                        // ok
-                        self.regiones = dataR;
-                        selectedRegion = frmIdRegion;
-
-                        $.ajax({
-                            url: ObtenerUrl('ObtenerComunas'),
-                            type: "POST",
-                            data: ko.toJSON({ RegId: frmIdRegion }),
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (dataC) {
-                                // ok
-                                self.comunas = dataC;
-                                selectedComuna = frmIdComuna;
-
-                                $.ajax({
-                                    url: ObtenerUrl('ObtenerRoles'),
-                                    type: "POST",
-                                    data: ko.toJSON({ InstId: 90 }),
-                                    contentType: "application/json",
-                                    dataType: "json",
-                                    success: function (dataF) {
-                                        //ok
-                                        self.roles = dataF;
-                                        selectedRol = self.frmIdRol;
-                                        //aca la ultima llamada para obtener las instituciones
-
-                                        //ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
-
-                                        $.ajax({
-                                            url: ObtenerUrl('Institucion'),
-                                            type: "POST",
-                                            data: ko.toJSON({ IdUsuario: 9 }),
-                                            contentType: "application/json",
-                                            dataType: "json",
-                                            success: function (dataI) {
-                                                //ok
-                                                self.instituciones = dataI.proposals;
-                                                selectedInstitucion = self.frmIdInstitucion;
-                                                //aca la ultima llamada para obtener las instituciones
-
-                                                ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF, dataI), self.elem);
-                                            },
-                                            error: function (error) {
-                                                if (error.status.toString() == "500") {
-                                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                                }
-                                                else {
-                                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                                }
-                                            }
-                                        });
-
-
-                                    },
-                                    error: function (error) {
-                                        if (error.status.toString() == "500") {
-                                            getNotify('error', 'Error', 'Error de Servidor!');
-                                        }
-                                        else {
-                                            getNotify('error', 'Error', 'Error de Servidor!');
-                                        }
-                                    }
-                                });
-
-
-                                self.onChange = function () {
-                                    $.ajax({
-                                        url: ObtenerUrl('ObtenerComunas'),
-                                        type: "POST",
-                                        data: ko.toJSON({ RegId: self.frmIdRegion }),
-                                        contentType: "application/json",
-                                        dataType: "json",
-                                        success: function (dataCC) {
-                                            // ok
-                                            //self.Reset();
-                                            self.comunas = dataCC;
-                                            selectedComuna = 0;
-                                            //ko.applyBindings(new PersonViewModel(dataCC));
-                                            elem = document.getElementById('principal');
-                                            ko.cleanNode(elem);
-                                            ko.applyBindings(new PersonViewModel(data, dataR, dataCC, self.roles), elem);
-
-                                        },
-                                        error: function (error) {
-                                            if (error.status.toString() == "500") {
-                                                getNotify('error', 'Error', 'Error de Servidor!');
-                                            }
-                                            else {
-                                                getNotify('error', 'Error', 'Error de Servidor!');
-                                            }
-                                        }
-                                    });
-                                };
-
-                                self.onChangeUsuario = function () {
-                                    var nombreUsuario = $("#txtNombreUsuario").val();
-
-                                    $.ajax({
-                                        url: ObtenerUrl('ListarUsuarios'),
-                                        type: "POST",
-                                        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
-                                        contentType: "application/json",
-                                        dataType: "json",
-                                        success: function (usuario) {
-                                            //// ok
-                                            if (usuario != undefined) {
-                                                if (usuario.length == 1) {
-                                                    swal({
-                                                        title: "Existe",
-                                                        text: "Este usuario ya existe intente con otro",
-                                                        type: "warning",
-                                                        customClass: 'sweetalert-xs'
-                                                    });
-                                                    $("#txtNombreUsuario").val("");
-
-                                                }
-                                            }
-
-                                        },
-                                        error: function (error) {
-                                            if (error.status.toString() == "500") {
-                                                getNotify('error', 'Error', 'Error de Servidor!');
-                                            }
-                                            else {
-                                                getNotify('error', 'Error', 'Error de Servidor!');
-                                            }
-                                        }
-                                    });
-                                };
-
-                            },
-                            error: function (error) {
-                                if (error.status.toString() == "500") {
-                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                }
-                                else {
-                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                }
-                            }
-                        });
-
-
-
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
-
-
-
-            },
-            error: function (error) {
-                if (error.status.toString() == "500") {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-                else {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-            }
-        });
-
-    *******************/
 
         if (elimina == 1) {
             //determinar si es el mismo usuario a eliminar
@@ -722,11 +537,11 @@
 
 
         var obtenerRoles = jQuery.ajax({
-            url : ObtenerUrl('ObtenerRoles'),
+            url : ObtenerUrl('RolInstitucion'),
             type: 'POST',
             dataType : "json",
             contentType: "application/json",
-            data: ko.toJSON({ InstId: 90 })
+            data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
         });
 
         var obtenerInstitucion = jQuery.ajax({
@@ -819,6 +634,36 @@
                     });
                 };
 
+                self.onChangeRoles = function () {
+                    var idRegion = $("#selectInstitucion").val();
+                    $.ajax({
+                        url: ObtenerUrl('RolInstitucion'),
+                        type: "POST",
+                        data: ko.toJSON({ InstId: idRegion }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (dataRR) {
+                            // ok
+                            //self.Reset();
+                            self.roles = dataRR;
+                            selectedRol = 0;
+
+                            elem = document.getElementById('principal');
+                            ko.cleanNode(elem);
+                            ko.applyBindings(new PersonViewModel(data[0], dataR[0], self.comunas, self.roles, dataI[0]), elem);
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                };
+
                 self.onChangeUsuario = function () {
                     var nombreUsuario = $("#txtNombreUsuario").val();
 
@@ -867,171 +712,6 @@
             }
         );
 
-
-        /*
-        $.ajax({
-            url: ObtenerUrl('ObtenerRegiones'),
-            type: "POST",
-            data: ko.toJSON({ InstId: 90 }),
-            contentType: "application/json",
-            dataType: "json",
-            success: function (dataR) {
-                // ok
-                self.regiones = dataR;
-                selectedRegion = 0;
-
-                $.ajax({
-                    url: ObtenerUrl('ObtenerComunas'),
-                    type: "POST",
-                    data: ko.toJSON({ RegId: 13 }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (dataC) {
-                        // ok
-                        self.comunas = dataC;
-                        selectedComuna = 0;
-
-                        $.ajax({
-                            url: ObtenerUrl('ObtenerRoles'),
-                            type: "POST",
-                            data: ko.toJSON({ InstId: 90 }),
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (dataF) {
-                                //ok
-                                self.roles = dataF;
-                                selectedRol = 0;
-                                //comentado, se agrega nueva llamada
-
-                                //ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF), self.elem);
-
-                                $.ajax({
-                                    url: ObtenerUrl('Institucion'),
-                                    type: "POST",
-                                    data: ko.toJSON({ IdUsuario: 9 }),
-                                    contentType: "application/json",
-                                    dataType: "json",
-                                    success: function (dataI) {
-                                        //ok
-                                        self.instituciones = dataI.proposals;
-                                        selectedInstitucion = 0;
-                                        //comentado, se agrega nueva llamada
-
-                                        ko.applyBindings(new PersonViewModel(data, dataR, dataC, dataF, dataI), self.elem);
-                                    },
-                                    error: function (error) {
-                                        if (error.status.toString() == "500") {
-                                            getNotify('error', 'Error', 'Error de Servidor!');
-                                        }
-                                        else {
-                                            getNotify('error', 'Error', 'Error de Servidor!');
-                                        }
-                                    }
-                                });
-                            },
-                            error: function (error) {
-                                if (error.status.toString() == "500") {
-                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                }
-                                else {
-                                    getNotify('error', 'Error', 'Error de Servidor!');
-                                }
-                            }
-                        });
-
-                        
-                        self.onChange = function () {
-                            var idRegion = $("#selectIdRegion").val();
-                            //alert(frmIdRegion);
-                            $.ajax({
-                                url: ObtenerUrl('ObtenerComunas'),
-                                type: "POST",
-                                data: ko.toJSON({ RegId: idRegion }),
-                                contentType: "application/json",
-                                dataType: "json",
-                                success: function (dataCC) {
-                                    // ok
-                                    //self.Reset();
-                                    self.comunas = dataCC;
-                                    selectedComuna = 0;
-                                    //ko.applyBindings(new PersonViewModel(dataCC));
-                                    elem = document.getElementById('principal');
-                                    ko.cleanNode(elem);
-                                    ko.applyBindings(new PersonViewModel(data, dataR, dataCC, self.roles), elem);
-
-                                },
-                                error: function (error) {
-                                    if (error.status.toString() == "500") {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                    else {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                }
-                            });
-                        };
-
-                        self.onChangeUsuario = function () {
-                            var nombreUsuario = $("#txtNombreUsuario").val();
-
-                            $.ajax({
-                                url: ObtenerUrl('ListarUsuarios'),
-                                type: "POST",
-                                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
-                                contentType: "application/json",
-                                dataType: "json",
-                                success: function (usuario) {
-                                    //// ok
-                                    if (usuario != undefined) {
-                                        if (usuario.length == 1) {
-                                            swal({
-                                                title: "Existe",
-                                                text: "Este usuario ya existe intente con otro",
-                                                type: "warning",
-                                                customClass: 'sweetalert-xs'
-                                            });
-                                            $("#txtNombreUsuario").val("");
-
-                                        }
-                                    }
-
-                                },
-                                error: function (error) {
-                                    if (error.status.toString() == "500") {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                    else {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                }
-                            });
-                        };
-
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
-
-
-
-            },
-            error: function (error) {
-                if (error.status.toString() == "500") {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-                else {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-            }
-        });
-
-        */
     }
 
     function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword, InstId) {

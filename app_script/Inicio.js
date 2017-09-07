@@ -103,11 +103,22 @@ $(document).ready(function () {
             claseMostrarDocumentos = ko.observable("col-xs-12 col-md-4");
             //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
-
-        $('#infoUsuariosN').text(dataU.length);
-        $('#infoInstituciones').text(dataI.proposals.length);
-        $('#infoIngresos').text(dataR.proposals.length);
-        $('#infoDocumentos').text(dataD.proposals.length);
+        if (dataU)
+            $('#infoUsuariosN').text(dataU.length);
+        else
+            $('#infoUsuariosN').text('0');
+        if (dataI && dataI.proposals)
+            $('#infoInstituciones').text(dataI.proposals.length);
+        else
+            $('#infoInstituciones').text('0');
+        if (dataR && dataR.proposals)
+            $('#infoIngresos').text(dataR.proposals.length);
+        else
+            $('#infoIngresos').text('0');
+        if (dataD && dataD.proposals)
+            $('#infoDocumentos').text(dataD.proposals.length);
+        else
+            $('#infoDocumentos').text('0');
 
         var items = [];
         var itemsProcesar = data;

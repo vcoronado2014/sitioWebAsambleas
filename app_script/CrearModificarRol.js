@@ -125,7 +125,7 @@ $(document).ready(function () {
                 ModificaUsuario: $('#chkModificaUsuario')[0].checked,
                 EliminaUsuario: $('#chkEliminaUsuario')[0].checked,
                 VerInstitucion: $('#chkVerInstitucion')[0].checked,
-                CreaIntitucion: $('#chkCreaInstitucion')[0].checked,
+                CreaInstitucion: $('#chkCreaInstitucion')[0].checked,
                 ModificaInstitucion: $('#chkModificaInstitucion')[0].checked,
                 EliminaInstitucion: $('#chkEliminaInstitucion')[0].checked,
                 VerDocumento: $('#chkVerDocumento')[0].checked,
@@ -201,77 +201,9 @@ $(document).ready(function () {
                 }
             });
 
-
-            /*
-            //acá hay que validar todo!!
-            if (validar(frmNombreInstitucion, $("#selectIdComuna").val(), frmCorreoElectronico, frmTelefono, frmDireccion)) {
-                if (validarEmail(frmCorreoElectronico)) {
-                    var esCpasGuardar = '0';
-                    var idRegion = $("#selectIdRegion").val();
-                    var idInstitucion = getParameterByName('id');
-                    var idComuna = $("#selectIdComuna").val();
-                    if (sessionStorage.getItem("ES_CPAS") == "true")
-                        esCpasGuardar = '1';
-
-                    //ahora se podría guardar
-                    var institucion = {
-                        Id: idInstitucion,
-                        Nombre: frmNombreInstitucion,
-                        CorreoElectronico: frmCorreoElectronico,
-                        Telefono: frmTelefono,
-                        Direccion: frmDireccion,
-                        IdRegion: idRegion,
-                        IdComuna: idComuna,
-                        EsCpas: esCpasGuardar
-                    };
-                    $.ajax({
-                        url: ObtenerUrl('Institucion'),
-                        type: "PUT",
-                        data: ko.toJSON(institucion),
-                        contentType: "application/json",
-                        dataType: "json",
-                        success: function (result) {
-                            //TODO OK INFORMAR EL GUARDADO CORRECTO
-
-                            swal({
-                                    title: "Guardado",
-                                    text: "El Registro ha sido guardado con éxito.",
-                                    type: "success",
-                                    showCancelButton: false,
-                                    confirmButtonClass: "btn-success",
-                                    confirmButtonText: "Ok",
-                                    cancelButtonText: "No, cancel plx!",
-                                    closeOnConfirm: false,
-                                    customClass: 'sweetalert-xs',
-                                    closeOnCancel: false
-                                },
-                                function (isConfirm) {
-                                    if (isConfirm) {
-                                        //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                        EnviarMensajeSignalR('Se ha creado/modificado una nueva institución.', "ListarInstitucion.html", "1", sessionStorage.getItem("RolId"), result);
-                                        window.location.href = "ListarInstitucion.html";
-                                    } else {
-                                        swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                    }
-                                });
-                        },
-                        error: function (error) {
-                            if (error.status.toString() == "500") {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
-                            }
-                            else {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
-                                //alert("fail");
-                            }
-                        }
-                    });
-                }
-
-            }
-            */
         }
         cancelar = function () {
-            window.location.href = "ListarInstitucion.html";
+            window.location.href = "ListarRoles.html";
 
         }
     }
@@ -458,15 +390,17 @@ $(document).ready(function () {
         {
             //bloquear todos los controles y cambiar el nombre del botòn
             $("#txtNombreUsuario").attr('disabled', 'disabled');
-            $("#txtTelefono").attr('disabled', 'disabled');
+            $("#txtDescripcion").attr('disabled', 'disabled');
+            /*
             $("#txtCorreo").attr('disabled', 'disabled');
             $("#txtDireccion").attr('disabled', 'disabled');
             $("#selectIdRegion").attr('disabled', 'disabled');
             $("#selectIdComuna").attr('disabled', 'disabled');
+            */
 
             swal({
                 title: "Eliminar",
-                text: "¿Está seguro de eliminar esta Institución?",
+                text: "¿Está seguro de eliminar este Rol?",
                 type: "info",
                 showCancelButton: true,
                 closeOnConfirm: false,
@@ -475,13 +409,13 @@ $(document).ready(function () {
             }, function (isConfirm) {
                 if (isConfirm) {
 
-                    if (sessionStorage.getItem("NombreInstitucion") == $("#txtNombreUsuario").val()) {
+                    if ($("#txtNombreUsuario").val() == "Super Administrador") {
 
                         setTimeout(function () {
 
                             swal({
                                     title: "Error",
-                                    text: "No se puede eliminar LA INSTITUCIÓN del usuario logueado.",
+                                    text: "No se puede eliminar el Rol Super Administrador.",
                                     type: "error",
                                     showCancelButton: false,
                                     confirmButtonClass: "btn-success",
@@ -493,7 +427,7 @@ $(document).ready(function () {
                                 },
                                 function (isConfirm) {
                                     if (isConfirm) {
-                                        window.location.href = "ListarInstitucion.html";
+                                        window.location.href = "ListarRoles.html";
                                     } else {
                                         swal("Cancelled", "Your imaginary file is safe :)", "error");
                                     }
@@ -506,33 +440,56 @@ $(document).ready(function () {
                     {
                         setTimeout(function () {
                             $.ajax({
-                                url: ObtenerUrl('Institucion'),
+                                url: ObtenerUrl('PermisoRol'),
                                 type: "DELETE",
-                                data: ko.toJSON({ Id: idInstitucionP }),
+                                data: ko.toJSON({ Id: idRolP, InstId: frmPInstId() }),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {
-                                    swal({
-                                            title: "Eliminado",
-                                            text: "El Registro ha sido eliminado con éxito.",
-                                            type: "success",
-                                            showCancelButton: false,
-                                            confirmButtonClass: "btn-success",
-                                            confirmButtonText: "Ok",
-                                            cancelButtonText: "No, cancel plx!",
-                                            closeOnConfirm: false,
-                                            customClass: 'sweetalert-xs',
-                                            closeOnCancel: false
-                                        },
-                                        function (isConfirm) {
-                                            if (isConfirm) {
-                                                //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                                EnviarMensajeSignalR('Se ha eliminado una institución.', "ListarInstitucion.html", "2", sessionStorage.getItem("RolId"), dataF);
-                                                window.location.href = "ListarInstitucion.html";
-                                            } else {
-                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                            }
-                                        });
+                                    if (dataF.Descripcion.length < 50 ){
+                                        swal({
+                                                title: "Error",
+                                                text: "No se puede eliminar este rol",
+                                                type: "error",
+                                                showCancelButton: false,
+                                                confirmButtonClass: "btn-success",
+                                                confirmButtonText: "Ok",
+                                                cancelButtonText: "No, cancel plx!",
+                                                closeOnConfirm: false,
+                                                customClass: 'sweetalert-xs',
+                                                closeOnCancel: false
+                                            },
+                                            function (isConfirm) {
+                                                if (isConfirm) {
+                                                    window.location.href = "ListarRoles.html";
+                                                } else {
+                                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                                }
+                                            });
+                                    }
+                                    else {
+                                        swal({
+                                                title: "Eliminado",
+                                                text: "El Registro ha sido eliminado con éxito.",
+                                                type: "success",
+                                                showCancelButton: false,
+                                                confirmButtonClass: "btn-success",
+                                                confirmButtonText: "Ok",
+                                                cancelButtonText: "No, cancel plx!",
+                                                closeOnConfirm: false,
+                                                customClass: 'sweetalert-xs',
+                                                closeOnCancel: false
+                                            },
+                                            function (isConfirm) {
+                                                if (isConfirm) {
+                                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                                    EnviarMensajeSignalR('Se ha eliminado un rol.', "ListarRoles.html", "2", sessionStorage.getItem("RolId"), dataF);
+                                                    window.location.href = "ListarRoles.html";
+                                                } else {
+                                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                                }
+                                            });
+                                    }
                                 },
                                 error: function (error) {
                                     if (error.status.toString() == "500") {
@@ -551,7 +508,7 @@ $(document).ready(function () {
                 }
                 else
                 {
-                    window.location.href = "ListarInstitucion.html";
+                    window.location.href = "ListarRoles.html";
                 }
             });
         }
@@ -563,8 +520,9 @@ $(document).ready(function () {
         var dataR = [];
 
         self.frmPId= ko.observable(0);
-        self.frmPInstId= ko.observable(0);
+        self.frmPInstId= ko.observable(sessionStorage.getItem("InstId"));
         self.frmPRolId= ko.observable(0);
+
 
         self.onChangeUsuario = function () {
             var nombreUsuario = $("#txtNombreUsuario").val();
@@ -613,124 +571,6 @@ $(document).ready(function () {
         };
 
         ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
-
-        /*
-        $.ajax({
-            url: ObtenerUrl('ObtenerRegiones'),
-            type: "POST",
-            data: ko.toJSON({ InstId: 90 }),
-            contentType: "application/json",
-            dataType: "json",
-            success: function (dataR) {
-                // ok
-                self.regiones = dataR;
-                selectedRegion = 0;
-
-                $.ajax({
-                    url: ObtenerUrl('ObtenerComunas'),
-                    type: "POST",
-                    data: ko.toJSON({ RegId: 13 }),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (dataC) {
-                        // ok
-                        self.comunas = dataC;
-                        selectedComuna = 0;
-                        dataF = [];
-                        ko.applyBindings(new InstitucionViewModel(data, dataR, dataC, dataF), self.elem);
-
-                        self.onChange = function () {
-                            var idRegion = $("#selectIdRegion").val();
-                            //alert(frmIdRegion);
-                            $.ajax({
-                                url: ObtenerUrl('ObtenerComunas'),
-                                type: "POST",
-                                data: ko.toJSON({ RegId: idRegion }),
-                                contentType: "application/json",
-                                dataType: "json",
-                                success: function (dataCC) {
-                                    // ok
-                                    //self.Reset();
-                                    self.comunas = dataCC;
-                                    selectedComuna = 0;
-                                    //ko.applyBindings(new PersonViewModel(dataCC));
-                                    elem = document.getElementById('principal');
-                                    ko.cleanNode(elem);
-                                    ko.applyBindings(new InstitucionViewModel(data, dataR, dataCC, self.roles), elem);
-
-                                },
-                                error: function (error) {
-                                    if (error.status.toString() == "500") {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                    else {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                }
-                            });
-                        };
-
-                        self.onChangeInstitucion = function () {
-                            var nombreUsuario = $("#txtNombreUsuario").val();
-
-                            $.ajax({
-                                url: ObtenerUrl('Institucion'),
-                                type: "POST",
-                                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), BuscarId: nombreUsuario }),
-                                contentType: "application/json",
-                                dataType: "json",
-                                success: function (usuario) {
-                                    //// ok
-                                    if (usuario != undefined) {
-                                        if (usuario.length == 1) {
-                                            swal({
-                                                title: "Existe",
-                                                text: "Esta Intitución ya existe intente con otra",
-                                                type: "warning",
-                                                customClass: 'sweetalert-xs'
-                                            });
-                                            $("#txtNombreUsuario").val("");
-
-                                        }
-                                    }
-
-                                },
-                                error: function (error) {
-                                    if (error.status.toString() == "500") {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                    else {
-                                        getNotify('error', 'Error', 'Error de Servidor!');
-                                    }
-                                }
-                            });
-                        };
-
-                    },
-                    error: function (error) {
-                        if (error.status.toString() == "500") {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                        else {
-                            getNotify('error', 'Error', 'Error de Servidor!');
-                        }
-                    }
-                });
-
-
-
-            },
-            error: function (error) {
-                if (error.status.toString() == "500") {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-                else {
-                    getNotify('error', 'Error', 'Error de Servidor!');
-                }
-            }
-        });
-        */
-
 
     }
 

@@ -61,6 +61,8 @@
                             <li data-bind="visible: VerCalendario"><a href="CargaMasiva.html">Carga Masiva</a></li>
                             <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
                             <li data-bind="visible: VerDocumento"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: VerRol" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -109,7 +111,7 @@
         <tr>
             <td data-bind="visible: CreaRol">
                 <a data-bind="attr: { href: 'CrearModificarRol.html?id=' + $data.Id() + '&ELIMINADO=0' }, visible: ModificaRol"><i class="fa fa-2x fa-edit"></i></a>
-                <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaRol"><i class="fa fa-2x fa-trash"></i></a>
+                <a data-bind="attr: { href: 'CrearModificarRol.html?id=' + $data.Id() + '&ELIMINADO=1' }, visible: EliminaRol"><i class="fa fa-2x fa-trash"></i></a>
 
             </td>
             <td><span data-bind="text: $data.Nombre"></span></td>
