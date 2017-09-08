@@ -1,14 +1,14 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlDos(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
@@ -187,24 +187,9 @@ function Menu()
     if (sessionStorage != null)
     {
         var obj = JSON.parse(sessionStorage.RolesPermisos);
-        //"{"Id":1,"InstId":3,"RolId":1,"CreaUsuario":1,
-        // "ModificaUsuario":1,"EliminaUsuario":1,
-        // "VerUsuario":1,"CreaInstitucion":1,
-        // "ModificaInstitucion":1,"EliminaInstitucion":1,
-        // "VerInstitucion":1,"CreaDocumento":1,
-        // "EliminaDocumento":1,"VerDocumento":1,
-        // "CreaCalendario":1,"ModificaCalendario":1,
-        // "EliminaCalendario":1,"VerCalendario":1,
-        // "CreaTricel":1,"ModificaTricel":1,
-        // "EliminaTricel":1,"VerTricel":1,
-        // "CreaProyecto":1,"ModificaProyecto":1,
-        // "EliminaProyecto":1,"VerProyecto":1,
-        // "CreaRendicion":1,"ModificaRendicion":1,
-        // "EliminaRendicion":1,"VerRendicion":1,
-        // "CreaRol":1,"ModificaRol":1,"EliminaRol":1,
-        // "VerRol":1,"CreaMuro":1,"ModificaMuro":1,
-        // "EliminaMuro":1,"VerMuro":1,
-        // "PuedeVotarProyecto":1,"PuedeVotarTricel":1}"
+        MuestraLogueados = ko.observable(false);
+        if (obj.RolId == 1)
+            MuestraLogueados = ko.observable(true);
 
         //valores predeterminados
         CreaUsuario = ko.observable(false);
@@ -358,124 +343,6 @@ function Menu()
         if (obj.PuedeVotarTricel == 1)
             PuedeVotarTricel = ko.observable(true);
 
-        /*
-
-        var rolId = sessionStorage.getItem("RolId");
-        if (rolId != null)
-        {
-            shouldShowMessage = ko.observable(false);
-            //ahora procesamos el menu
-            menuMenu = ko.observable(false);
-            //hijos
-            menuMenuUsuarios = ko.observable(false);
-            menuMenuInstituciones = ko.observable(false);
-            menuMenuRendiciones = ko.observable(false);
-            menuMenuDocumentos = ko.observable(false);
-            menuMenuCalendarrio = ko.observable(false);
-            menuMenuCargaMasiva = ko.observable(false);
-            menuMenuReportes = ko.observable(false);
-            //tricel
-            menuTricel = ko.observable(false);
-            //hijo
-            menuTricelListar = ko.observable(false);
-            //proyecto
-            menuProyecto = ko.observable(false);
-            //hijo
-            menuProyectoListar = ko.observable(false);
-            menuLogs = ko.observable(false);
-            //mostrar reporte Usuarios
-            mostrarRptUsuarios = ko.observable(false);
-            //mostrar reporte instituciones
-            mostrarRptInstituciones = ko.observable(false);
-            switch(rolId)
-            {
-                //super
-                case '1':
-                    shouldShowMessage = ko.observable(true);
-
-                    menuMenu = ko.observable(true);
-                    menuMenuUsuarios = ko.observable(true);
-                    menuMenuInstituciones = ko.observable(true);
-                    menuMenuRendiciones = ko.observable(true);
-                    menuMenuDocumentos = ko.observable(true);
-                    menuMenuCalendarrio = ko.observable(true);
-                    menuTricel = ko.observable(true);
-                    menuTricelListar = ko.observable(true);
-                    menuProyecto = ko.observable(true);
-                    menuProyectoListar = ko.observable(true);
-                    menuMenuCargaMasiva = ko.observable(true);
-                    menuMenuReportes = ko.observable(true);
-                    menuLogs = ko.observable(true);
-                    //mostrar reporte Usuarios
-                    mostrarRptUsuarios = ko.observable(true);
-                    //mostrar reporte instituciones
-                    mostrarRptInstituciones = ko.observable(true);                    
-                    break;
-                //administrador centro educacional
-                case '2':
-                    shouldShowMessage = ko.observable(true);
-
-                    menuMenu = ko.observable(true);
-                    menuMenuUsuarios = ko.observable(true);
-                    //menuMenuInstituciones = ko.observable(true);
-                    menuMenuRendiciones = ko.observable(true);
-                    menuMenuDocumentos = ko.observable(true);
-                    menuMenuCalendarrio = ko.observable(true);
-                    menuTricel = ko.observable(true);
-                    menuTricelListar = ko.observable(true);
-                    menuProyecto = ko.observable(true);
-                    menuProyectoListar = ko.observable(true);
-                    menuMenuCargaMasiva = ko.observable(true);
-                    menuMenuReportes = ko.observable(true);
-                    //mostrar reporte Usuarios
-                    mostrarRptUsuarios = ko.observable(true);
-                    break;
-                //presidente
-                case '3':
-                case '6':
-                    shouldShowMessage = ko.observable(true);
-
-                    menuMenu = ko.observable(true);
-                    menuMenuUsuarios = ko.observable(true);
-                    //menuMenuInstituciones = ko.observable(true);
-                    menuMenuRendiciones = ko.observable(true);
-                    menuMenuDocumentos = ko.observable(true);
-                    menuMenuCalendarrio = ko.observable(true);
-                    //menuTricel = ko.observable(true);
-                    //menuTricelListar = ko.observable(true);
-                    menuProyecto = ko.observable(true);
-                    menuProyectoListar = ko.observable(true);
-                    menuMenuCargaMasiva = ko.observable(true);
-                    menuMenuReportes = ko.observable(true);
-                    //mostrar reporte Usuarios
-                    mostrarRptUsuarios = ko.observable(true);
-                    break;
-                //tesorero, secretario
-                case '4':
-                case '5':
-                    //shouldShowMessage = ko.observable(true);
-
-                    menuMenu = ko.observable(true);
-                    menuMenuDocumentos = ko.observable(true);
-                    menuMenuCalendarrio = ko.observable(true);
-                    //menuTricel = ko.observable(true);
-                    //menuTricelListar = ko.observable(true);
-                    menuProyecto = ko.observable(true);
-                    menuProyectoListar = ko.observable(true);
-                    menuMenuReportes = ko.observable(true);
-                    break;
-                default:
-                    menuMenu = ko.observable(true);
-                    menuMenuRendiciones = ko.observable(true);
-                    menuMenuDocumentos = ko.observable(true);
-                    menuMenuCalendarrio = ko.observable(true);
-                    break;
-            }
-
-
-        }
-
-        */
     }
 
 

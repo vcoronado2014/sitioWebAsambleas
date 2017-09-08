@@ -67,6 +67,11 @@ $(document).ready(function () {
         self.instId = ko.observable(sessionStorage.getItem("InstId"));
         self.nombreInstitucion = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
+        //items
+        self.MuestraListaEventos = ko.observable(false);
+        self.MuestraListaProyectos = ko.observable(false);
+        self.MuestraListaTriceles = ko.observable(false);
+
         var cuadroInstitucion = $('#cuadroInstitucion');
 
         //self.totalInstituciones = ko.observable();
@@ -216,6 +221,17 @@ $(document).ready(function () {
         }
 
         self.itemsT = ko.observableArray(itemsT);
+
+        //ahora vemos si mostramos o no los items
+        //items son los eventos
+        if (items != null && items.length > 0)
+            self.MuestraListaEventos = ko.observable(true);
+        //itmesd proyectos
+        if (itemsP != null && itemsP.length > 0)
+            self.MuestraListaProyectos = ko.observable(true);
+        //itmes triceles
+        if (itemsT != null && itemsT.length > 0)
+            self.MuestraListaTriceles = ko.observable(true);
 
         $('#principal').show();
         $('#loading').hide();

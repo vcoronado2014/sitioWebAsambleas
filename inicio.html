@@ -126,8 +126,8 @@
                         </ul>
                     </li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
-                    <li data-bind="visible: VerUsuario"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
-                    <li><a href="#" id="infoUsuarios"></a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
                 </ul>
             </div>
         </div>
@@ -242,7 +242,7 @@
     </div>
 
     <!-- eventos -->
-    <div class="col-xs-12 col-md-4 text-center">
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaEventos">
      <div class="chat-panel panel panel-primary">
         <div class="panel-heading">
             <i class="fa fa-calendar fa-fw"></i> Eventos
@@ -293,7 +293,7 @@
     </div>
 
     <!-- Proyectos -->
-    <div class="col-xs-12 col-md-4 text-center">
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaProyectos">
         <div class="chat-panel panel panel-secondary">
             <div class="panel-heading">
                 <i class="fa fa-building fa-fw"></i> Votación en Linea
@@ -344,7 +344,7 @@
     </div>
 
     <!-- Triceles -->
-    <div class="col-xs-12 col-md-4 text-center">
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaTriceles">
         <div class="chat-panel panel panel-primary">
             <div class="panel-heading">
                 <i class="fa fa-building fa-fw"></i> Tricel
