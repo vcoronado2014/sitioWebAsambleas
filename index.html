@@ -74,6 +74,9 @@
                     <li>
                         <a href="#portfolioModal7" class="page-scroll" data-toggle="modal">Ingresar al Sistema</a>
                     </li>
+                    <li>
+                        <a href="#portfolioModal8" class="page-scroll" data-toggle="modal">Recuperar Clave</a>
+                    </li>
                     <!-- lo comentamos por mientras hasta dejar operativo el tema de los roles -->
 <!--                    <li>
                         <a href="PruebaInicio.html" class="page-scroll">Versión de Prueba</a>
@@ -742,6 +745,70 @@
                                 <br />
                                 <div class="row">
                                     <div id="progressbar"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recuperar Clave -->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Recuperar Clave</h2>
+                                <p class="item-intro text-muted">Para recuperar su clave ingrese su Rut (sin puntos y guión ej. 11111111-1) o su Nombre de Usuario</p>
+
+                                <div class="row">
+
+                                    <div class="col-xs-12">
+                                        <div class="input-group input-group-lg">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                            <input type="text" class="form-control" name="rutRecuperar" id="rutRecuperar" placeholder="Ingrese Rut o nombre de usuario" aria-describedby="basic-addon1" data-bind="value:rutRecuperar" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button type="button" class="btn btn-primary btn-lg  col-xs-12 col-md-6 pull-right" data-bind="click: recuperarClave">
+                                            Recuperar
+                                        </button>
+                                    </div>
+
+
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="alert alert-warning" role="alert">
+                                        <span id="mensajeRecuperar"></span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div id="progressbarRecuperar"></div>
 
                                 </div>
 

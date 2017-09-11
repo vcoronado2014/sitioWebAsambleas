@@ -7,6 +7,7 @@ $(document).ready(function () {
     var PersonaViewModel = {
         usuario: ko.observable(),
         password: ko.observable(),
+        rutRecuperar: ko.observable(),
 
         autentificar: function () {
 
@@ -60,6 +61,52 @@ $(document).ready(function () {
                     //alert('quitar cargando');
                 }
             )
+        },
+
+        recuperarClave: function(){
+            $("#progressbarRecuperar").progressbar({
+                value: false
+            });
+
+            $('#mensajeRecuperar').text('');
+
+            var obtenerLoginRecuperar = jQuery.ajax({
+                url : ObtenerUrl('RecuperarClave'),
+                type: 'POST',
+                dataType : "json",
+                contentType: "application/json",
+                data: ko.toJSON({ NombreUsuario: this.rutRecuperar })
+            });
+
+            $.when(obtenerLoginRecuperar).then(
+                function(result){
+                    if (result.Id == 0)
+                        $('#mensajeRecuperar').text("NO EXISTE EL USUARIO, CONTACTE AL ADMINISTRADOR.");
+                    else
+                        $('#mensajeRecuperar').text("Su Clave ha sido enviada al correo: " + result.CorreoElectronico);
+
+                    $('#rutRecuperar').val('');
+                    $('#progressbarRecuperar').hide();
+
+
+
+                },
+                function (error){
+
+                    if (error.status.toString() == "500") {
+                        $('#mensajeRecuperar').text("ERROR DE COMUNICACION.");
+                    }
+                    else {
+                        $('#mensajeRecuperar').text(error.statusText);
+                    }
+
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    //alert('quitar cargando');
+                }
+            )
+
         }
 
     };

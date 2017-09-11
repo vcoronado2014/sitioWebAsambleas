@@ -1,14 +1,14 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
 ﻿function ObtenerUrlDos(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //http://172.16.116.138/apiasambleas/api/
 }
@@ -274,7 +274,7 @@ function Menu()
         if (obj.EliminaCalendario == 1)
             EliminaCalendario = ko.observable(true);
 
-        if (obj.VarCalendario == 1)
+        if (obj.VerCalendario == 1)
             VerCalendario = ko.observable(true);
 
         if (obj.CreaTricel == 1)
@@ -471,6 +471,31 @@ function FechaEntera(fechaC)
         minutoTer = "0" + minutoTer;
 
     var terminoStr = annoTer + mesTer + diaTer;
+    return parseInt(terminoStr);
+}
+function FechaEnteraConHora(fechaC)
+{
+    var fecha = moment(fechaC);
+
+    var annoTer = fecha.get('year');
+    var mesTer = fecha.get('month');
+    var diaTer = fecha.get('date');
+    var horaTer = fecha.get('hour');
+    var minutoTer = fecha.get('minute');
+
+    if (diaTer < 10)
+        diaTer = "0" + diaTer;
+
+    if (mesTer < 10)
+        mesTer = "0" + mesTer;
+
+    if (horaTer < 10)
+        horaTer = "0" + horaTer;
+
+    if (minutoTer < 10)
+        minutoTer = "0" + minutoTer;
+
+    var terminoStr = annoTer.toString() + mesTer.toString() + diaTer.toString() + horaTer.toString() + minutoTer.toString();
     return parseInt(terminoStr);
 }
 function FechaEnteraStr(fechaStr)

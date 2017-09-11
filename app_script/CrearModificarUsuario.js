@@ -94,7 +94,7 @@
 
         guardar = function () {
             //acá hay que validar todo!!
-            if (validar($("#txtNombreUsuario").val(), $("#txtNombres").val(), $("#txtPrimerApellido").val(), $("#txtRut").val(), $("#txtCorreo").val(), $("#txtTelefono").val(), $("#selectIdComuna").val(), $("#txtPassword").val(), $("#txtNuevaPassword").val(), $("#selectInstitucion").val()))
+            if (validar($("#txtNombreUsuario").val(), $("#txtNombres").val(), $("#txtPrimerApellido").val(), $("#txtRut").val(), $("#txtCorreo").val(), $("#txtTelefono").val(), $("#selectIdComuna").val(), $("#txtPassword").val(), $("#txtNuevaPassword").val(), $("#selectInstitucion").val(), $("#selectIdRol").val()))
             {
                 if (Rut(frmRut) && validarEmail(frmCorreoElectronico))
                 {
@@ -714,7 +714,7 @@
 
     }
 
-    function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword, InstId) {
+    function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, CorreoElectronico, Telefono, IdComuna, Password, NuevaPassword, InstId, RolId) {
         var retorno = true;
         if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined){
                 getNotify('error', 'Requerido', 'Nombre de Usuario Requerido.');
@@ -746,6 +746,10 @@
             }
             if (InstId === '0' || InstId === null) {
                 getNotify('error', 'Requerido', 'Institución Requerida.');
+                retorno = false;
+            }
+            if (RolId === '0' || RolId === null) {
+                getNotify('error', 'Requerido', 'Rol Requerido.');
                 retorno = false;
             }
             if (Password != '') {

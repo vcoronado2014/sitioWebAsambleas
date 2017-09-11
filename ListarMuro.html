@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head runat="server">
-    <title>Tricel</title>
+
+    <title>Muro</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,10 +19,19 @@
     <!-- Custom Fonts -->
     <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- metis menu -->
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- sb admin -->
+    <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
 
     <link href="Content/site.css" rel="stylesheet" />
-    <link href="Content/sweetalert.css" rel="stylesheet" />
+    <!--<link href="Content/sweetalert.css" rel="stylesheet" />-->
+    <!-- sweet alert 2 -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.css"/>
+
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
     <link href="Content/morris.css" rel="stylesheet" />
 </head>
@@ -46,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
                     <li style="cursor: pointer;"><a  id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
-                    <li data-bind="visible: menuMenu" class="dropdown">
+                    <li data-bind="visible: menuMenu" class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li data-bind="visible: VerUsuario"><a href="usuarios.html">Usuarios</a></li>
@@ -68,7 +78,7 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown active" data-bind="visible: VerTricel">
+                    <li class="dropdown" data-bind="visible: VerTricel">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a data-bind="visible: VerTricel" href="ListarVotacion.html">Listar Triceles</a></li>
@@ -97,43 +107,108 @@
     </nav>
 
     <div class="col-xs-12 page-header">
-        <h3 class="col-xs-9 col-md-10">Listado <small>de Triceles</small></h3>
-        <a href="CrearModificarVotacion.html?id=0&ELIMINADO=0" class="col-xs-3 col-md-2" data-bind="visible: CreaTricel"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Nuevo Tricel"></i></a>
+        <h3 class="col-xs-9 col-md-10">Novedades <small></small></h3>
+        <a href="#" class="col-xs-3 col-md-2" data-bind="click: guardarMuro, visible: CreaMuro"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Comentario"></i></a>
     </div>
-
+    <div class="col-xs-12 panel">
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/red.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Alta Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/blue.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Media Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/green.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Baja Prioridad
+            </span>
+        </div>
+    </div>
+    <!-- Acá el contenido del muro -->
     <div class="col-xs-12">
-        <table id="proposals" class="table table-striped table-bordered">
-            <thead>
-            <tr>
-                <th></th>
-                <th class="hidden-xs">Creación</th>
-                <th>Nombre</th>
-                <th>Fechas</th>
-               <!-- <th>Término</th>-->
-                <th>Listas</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- ko foreach: proposals() -->
-            <tr data-toggle="tooltip" data-placement="left" title="Crear Nuevo Tricel">
-                <td>
-                    <a data-bind="attr: { href: $data.Url }, visible: ModificaTricel" data-toggle="tooltip" data-placement="left" title="Editar"><i class="fa fa-2x fa-edit"></i></a>
-                    <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaTricel" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fa fa-2x fa-trash"></i></a>
 
-                </td>
-                <td class="hidden-xs"><span data-bind="text: $data.OtroTres"></span></td>
-                <td><span data-bind="text: $data.NombreUsuario"></span></td>
-                <td><span data-bind="text: $data.OtroCinco"></span></td>
-                <!-- <td><span data-bind="text: $data.OtroDos"></span></td>-->
-                <td class="text-center"><span class="label label-success" data-bind="text: $data.OtroCuatro"></span></td>
-            </tr>
-            <!-- /ko -->
-            </tbody>
-        </table>
+        <!-- solo para pruebas -->
+
+
+        <ul class="chat" data-bind="foreach: { data: muro, as: 'muro' }">
+            <!-- elemento principal -->
+            <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <!--<img src="img/red.png" alt="User Avatar" class="img-circle">-->
+                    <img data-bind="attr: { src: muro.UrlImagen }"  alt="User Avatar" class="img-circle" width="35px" height="35px">
+                    <!--data-bind="attr:{ src: '/imagefolder/' + PhotoName }"-->
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">
+                            <span data-bind="text: muro.NombreUsuario"></span> --
+                            <span data-bind="text: muro.NombreRol"></span>
+                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar">
+                                <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                            </small>
+                        </strong>
+                        <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
+                        </small>
+                    </div>
+                    <p data-bind="text: muro.Texto">
+
+                    </p>
+                    <div class="footer">
+                        <small class="pull-right text-muted cursorPointer">
+                            <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
+                        </small>
+                    </div>
+                </div>
+                <!-- comentarios -->
+                <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;" data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
+                    <!-- comentario 1 -->
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                                <i class="fa fa-comment fa-fw text-muted"></i>
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font text-muted">
+                                    <span data-bind="text: item.NombreUsuario"></span> --
+                                    <span data-bind="text: item.NombreRol"></span>
+                                </strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                </small>
+                            </div>
+                            <p class="text-muted" data-bind="text: item.Texto">
+
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+<!--                <div class="chat" style="margin-left: 10%;">
+                    <div class="left clearfix">
+                    <span class="chat-img pull-left">
+                        <i class="fa fa-comment-o fa-fw text-muted"></i>
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" placeholder="Escriba un comentario..." >
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"><i class="fa fa-send-o" data-bind="click: EnviarMensaje" ></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+            </li>
+
+        </ul>
     </div>
-
-    <!-- tabla -->
-
 
 
     <!-- Include ALL THE SCRIPTS -->
@@ -159,11 +234,21 @@
     <!-- Responsive DataTables http://www.datatables.net/extensions/responsive/ -->
     <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
 
-    <script src="Scripts/sweetalert.js"></script>
+    <!-- esta es la version antigua, usaremos la nueva -->
+    <!-- <script src="Scripts/sweetalert.js"></script> -->
+
+    <!-- sweet alert 2 -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.js"></script>
 
     <script src="Scripts/pnotify.custom.min.js"></script>
 
     <script src="Scripts/moment.js"></script>
+    <script src="Scripts/locale/es.js"></script>
+
+    <script src="js/jquery.signalR-2.2.0.js"></script>
+    <script src="http://signalr.cpas.cl/signalr/hubs"></script>
+    <script src="app_script/signalrApp.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 
@@ -171,15 +256,9 @@
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
 
-    <script src="js/jquery.signalR-2.2.0.js"></script>
-    <script src="http://signalr.cpas.cl/signalr/hubs"></script>
-    <script src="app_script/signalrApp.js"></script>
-
     <script src="const.js"></script>
 
-    <script src="app_script/ListarVotacion.js"></script>
-
-
+    <script src="app_script/ListarMuro.js"></script>
 
 </div>
 </body>
