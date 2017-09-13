@@ -23,7 +23,9 @@
     <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
     <link href="Content/morris.css" rel="stylesheet" />
-    <link href="Content/sweetalert.css" rel="stylesheet" />
+    <!--<link href="Content/sweetalert.css" rel="stylesheet" />-->
+    <!-- sweet alert 2 -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.css"/>
 
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
@@ -43,11 +45,18 @@
     <script src="Scripts/bootstrap.min.js"></script>
 
     <script src="Scripts/knockout-3.4.1.js"></script>
+    <!-- KnockoutJS Mapping http://knockoutjs.com/documentation/plugins-mapping.html -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
 
 
     <script src="Scripts/jquery.validate.min.js"></script>
 
-    <script src="Scripts/sweetalert.js"></script>
+    <!-- esta es la version antigua, usaremos la nueva -->
+    <!-- <script src="Scripts/sweetalert.js"></script> -->
+
+    <!-- sweet alert 2 -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.js"></script>
     <script src="Scripts/pnotify.custom.min.js"></script>
 
     <script src="Scripts/moment.js"></script>
@@ -105,10 +114,10 @@
                             <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
                             <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
                             <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
-                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerCalendario"><a href="CargaMasiva.html">Carga Masiva</a></li>
-                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerDocumento"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: CreaUsuario" role="separator" class="divider"></li>
+                            <li data-bind="visible: CreaUsuario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
                             <li data-bind="visible: VerRol" role="separator" class="divider"></li>
                             <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
                             <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
@@ -145,7 +154,7 @@
 
 
     <!-- usuarios -->
-    <div class="col-lg-3 col-md-6" data-bind="visible: CreaUsuario" >
+    <div class="col-lg-3 col-md-6" data-bind="visible: VerUsuario, css: claseGeneral" >
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="row">
@@ -171,7 +180,7 @@
 
     <!-- instituciones -->
 
-    <div class="col-lg-3 col-md-6" id="cuadroInstitucion">
+    <div class="col-lg-3 col-md-6" id="cuadroInstitucion" data-bind="visible: VerInstitucion, css: claseGeneral">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <div class="row">
@@ -195,7 +204,7 @@
     </div>
 
     <!-- ingresos egresos -->
-    <div data-bind="css: claseMostrarIngresos">
+    <div data-bind="visible: VerRendicion, css: claseGeneral">
         <div class="panel panel-green">
             <div class="panel-heading">
                 <div class="row">
@@ -220,7 +229,7 @@
 
 
     <!-- Documentos -->
-    <div data-bind="css: claseMostrarDocumentos">
+    <div data-bind="visible: VerDocumento, css: claseGeneral">
         <div class="panel panel-red">
             <div class="panel-heading">
                 <div class="row">
@@ -241,6 +250,110 @@
                 </div>
             </a>
         </div>
+    </div>
+
+    <!-- Acá el contenido del muro -->
+    <div class="col-xs-12 page-header">
+        <h3 class="col-xs-9 col-md-10">Novedades <small></small></h3>
+        <a href="#" class="col-xs-3 col-md-2" data-bind="click: guardarMuro, visible: CreaMuro"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Comentario"></i></a>
+    </div>
+    <div class="col-xs-12 panel">
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/red.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Alta Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/blue.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Media Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/green.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Baja Prioridad
+            </span>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <!-- solo para pruebas -->
+        <ul class="chat" data-bind="foreach: { data: muro, as: 'muro' }">
+            <!-- elemento principal -->
+            <li class="left clearfix">
+                <span class="chat-img pull-left">
+                    <!--<img src="img/red.png" alt="User Avatar" class="img-circle">-->
+                    <img data-bind="attr: { src: muro.UrlImagen }"  alt="User Avatar" class="img-circle" width="35px" height="35px">
+                    <!--data-bind="attr:{ src: '/imagefolder/' + PhotoName }"-->
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">
+                            <span data-bind="text: muro.NombreUsuario"></span> --
+                            <span data-bind="text: muro.NombreRol"></span>
+                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"  style="color: orangered;">
+                                <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                            </small>
+                        </strong>
+                        <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
+                        </small>
+                    </div>
+                    <p data-bind="text: muro.Texto">
+
+                    </p>
+                    <div class="footer">
+                        <small class="pull-right text-muted cursorPointer"  style="color: blue;">
+                            <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
+                        </small>
+                    </div>
+                </div>
+                <!-- comentarios -->
+                <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;" data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
+                    <!-- comentario 1 -->
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                                <i class="fa fa-comment fa-fw text-muted"></i>
+                        </span>
+                        <div class="chat-body clearfix" style="margin-left: 30px;">
+                            <div class="header">
+                                <strong class="primary-font text-muted">
+                                    <span data-bind="text: item.NombreUsuario"></span> --
+                                    <span data-bind="text: item.NombreRol"></span>
+                                    <small class="pull-right cursorPointer" data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"  style="color: orangered;">
+                                        <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                    </small>
+                                </strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                </small>
+                            </div>
+                            <p class="text-muted" data-bind="text: item.Texto">
+
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!--                <div class="chat" style="margin-left: 10%;">
+                                    <div class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <i class="fa fa-comment-o fa-fw text-muted"></i>
+                                        </span>
+                                        <div class="chat-body clearfix">
+                                            <div class="form-group input-group">
+                                                <input type="text" class="form-control" placeholder="Escriba un comentario..." >
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-send-o" data-bind="click: EnviarMensaje" ></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+            </li>
+
+        </ul>
     </div>
 
     <!-- eventos -->

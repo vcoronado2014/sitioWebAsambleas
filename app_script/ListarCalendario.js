@@ -588,172 +588,84 @@
 
     function Insertar(jsonEntidad, eventRecorder)
     {
-        $.ajax({
-            url: ObtenerUrl('Calendario'),
-            type: "PUT",
-            data: jsonEntidad,
-            contentType: "application/json",
-            dataType: "json",
-            success: function (result) {
-                //TODO OK INFORMAR EL GUARDADO CORRECTO
+        //solo puede crear si tiene rol
+        if (CreaCalendario()) {
+            $.ajax({
+                url: ObtenerUrl('Calendario'),
+                type: "PUT",
+                data: jsonEntidad,
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    //TODO OK INFORMAR EL GUARDADO CORRECTO
 
-                swal({
-                    title: "Guardado",
-                    text: "El Registro ha sido guardado con éxito.",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonClass: "btn-success",
-                    confirmButtonText: "Ok",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    customClass: 'sweetalert-xs',
-                    closeOnCancel: false
+                    swal({
+                            title: "Guardado",
+                            text: "El Registro ha sido guardado con éxito.",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Ok",
+                            cancelButtonText: "No, cancel plx!",
+                            closeOnConfirm: false,
+                            customClass: 'sweetalert-xs',
+                            closeOnCancel: false
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                EnviarMensajeSignalR('Se ha creado un nuevo evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
+                                window.location.href = "ListarCalendario.html";
+                            } else {
+                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                            }
+                        });
                 },
-                function (isConfirm) {
-                    if (isConfirm) {
-                        //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                        EnviarMensajeSignalR('Se ha creado un nuevo evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
-                        window.location.href = "ListarCalendario.html";
-                    } else {
-                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                error: function (error) {
+                    if (error.status.toString() == "500") {
+                        getNotify('error', 'Error', 'Error en el Servidor.');
                     }
-                });
-            },
-            error: function (error) {
-                if (error.status.toString() == "500") {
-                    getNotify('error', 'Error', 'Error en el Servidor.');
+                    else {
+                        getNotify('error', 'Error', 'Error en el Servidor.');
+                        //alert("fail");
+                    }
                 }
-                else {
-                    getNotify('error', 'Error', 'Error en el Servidor.');
-                    //alert("fail");
-                }
-            }
-        });
+            });
+        }
+        else
+        {
+            swal("Permiso", "No tiene permisos para crear evento.", "error");
+        }
     }
 
     function Modificar(jsonEntidad) {
-        swal({
-            title: "Modificar",
-            text: "¿Está seguro de modificar este evento del Calendario?",
-            type: "info",
-            showCancelButton: true,
-            closeOnConfirm: false,
-            customClass: 'sweetalert-xs',
-            showLoaderOnConfirm: true
-        }, function (isConfirm) {
-            if (isConfirm) {
+        if (ModificaCalendario()) {
+            swal({
+                title: "Modificar",
+                text: "¿Está seguro de modificar este evento del Calendario?",
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                customClass: 'sweetalert-xs',
+                showLoaderOnConfirm: true
+            }, function (isConfirm) {
+                if (isConfirm) {
 
 
-                setTimeout(function () {
+                    setTimeout(function () {
 
-                    $.ajax({
-                        url: ObtenerUrl('Calendario'),
-                        type: "PUT",
-                        data: jsonEntidad,
-                        contentType: "application/json",
-                        dataType: "json",
-                        success: function (result) {
-                            //TODO OK INFORMAR EL GUARDADO CORRECTO
+                        $.ajax({
+                            url: ObtenerUrl('Calendario'),
+                            type: "PUT",
+                            data: jsonEntidad,
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (result) {
+                                //TODO OK INFORMAR EL GUARDADO CORRECTO
 
-                            swal({
-                                title: "Guardado",
-                                text: "El Registro ha sido guardado con éxito.",
-                                type: "success",
-                                showCancelButton: false,
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "Ok",
-                                cancelButtonText: "No, cancel plx!",
-                                closeOnConfirm: false,
-                                customClass: 'sweetalert-xs',
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    EnviarMensajeSignalR('Se ha modificado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
-                                    window.location.href = "ListarCalendario.html";
-                                } else {
-                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
-                            });
-                        },
-                        error: function (error) {
-                            if (error.status.toString() == "500") {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
-                            }
-                            else {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
-                                //alert("fail");
-                            }
-                        }
-                    });
-
-                    //swal("Ajax request finished!");
-
-                }, 2000);
-
-            }
-            else {
-                window.location.href = "ListarCalendario.html";
-            }
-        });
-
-
-
-
-    }
-
-    function Eliminar(jsonEntidad) {
-        swal({
-            title: "Eliminar",
-            text: "¿Está seguro de eliminar este evento del Calendario?",
-            type: "info",
-            showCancelButton: true,
-            closeOnConfirm: false,
-            customClass: 'sweetalert-xs',
-            showLoaderOnConfirm: true
-        }, function (isConfirm) {
-            if (isConfirm) {
-
-
-                setTimeout(function () {
-
-                    $.ajax({
-                        url: ObtenerUrl('Calendario'),
-                        type: "DELETE",
-                        data: jsonEntidad,
-                        contentType: "application/json",
-                        dataType: "json",
-                        success: function (result) {
-                            //TODO OK INFORMAR EL GUARDADO CORRECTO
-                            if (result == null)
-                            {
                                 swal({
-                                        title: "Eliminado",
-                                        text: "El Registro NO se eliminó, no existe, revise si el nombre del evento fué cambiado.",
-                                        type: "error",
-                                        showCancelButton: false,
-                                        confirmButtonClass: "btn-success",
-                                        confirmButtonText: "Ok",
-                                        cancelButtonText: "No, cancel plx!",
-                                        closeOnConfirm: false,
-                                        customClass: 'sweetalert-xs',
-                                        closeOnCancel: false
-                                    },
-                                    function (isConfirm) {
-                                        if (isConfirm) {
-                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                            EnviarMensajeSignalR('Se ha eliminado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
-                                            window.location.href = "ListarCalendario.html";
-                                        } else {
-                                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                        }
-                                    });
-                            }
-                            else {
-                                swal({
-                                        title: "Eliminado",
-                                        text: "El Registro ha sido eliminado con éxito.",
+                                        title: "Guardado",
+                                        text: "El Registro ha sido guardado con éxito.",
                                         type: "success",
                                         showCancelButton: false,
                                         confirmButtonClass: "btn-success",
@@ -766,35 +678,139 @@
                                     function (isConfirm) {
                                         if (isConfirm) {
                                             //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            EnviarMensajeSignalR('Se ha modificado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
                                             window.location.href = "ListarCalendario.html";
                                         } else {
                                             swal("Cancelled", "Your imaginary file is safe :)", "error");
                                         }
                                     });
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    getNotify('error', 'Error', 'Error en el Servidor.');
+                                }
+                                else {
+                                    getNotify('error', 'Error', 'Error en el Servidor.');
+                                    //alert("fail");
+                                }
                             }
-                        },
-                        error: function (error) {
-                            if (error.status.toString() == "500") {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
+                        });
+
+                        //swal("Ajax request finished!");
+
+                    }, 2000);
+
+                }
+                else {
+                    window.location.href = "ListarCalendario.html";
+                }
+            });
+
+
+        }
+        else
+        {
+            swal("Permiso", "No tiene permisos para modificar evento.", "error");
+        }
+
+    }
+
+    function Eliminar(jsonEntidad) {
+        if (EliminaCalendario()) {
+            swal({
+                title: "Eliminar",
+                text: "¿Está seguro de eliminar este evento del Calendario?",
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                customClass: 'sweetalert-xs',
+                showLoaderOnConfirm: true
+            }, function (isConfirm) {
+                if (isConfirm) {
+
+
+                    setTimeout(function () {
+
+                        $.ajax({
+                            url: ObtenerUrl('Calendario'),
+                            type: "DELETE",
+                            data: jsonEntidad,
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (result) {
+                                //TODO OK INFORMAR EL GUARDADO CORRECTO
+                                if (result == null) {
+                                    swal({
+                                            title: "Eliminado",
+                                            text: "El Registro NO se eliminó, no existe, revise si el nombre del evento fué cambiado.",
+                                            type: "error",
+                                            showCancelButton: false,
+                                            confirmButtonClass: "btn-success",
+                                            confirmButtonText: "Ok",
+                                            cancelButtonText: "No, cancel plx!",
+                                            closeOnConfirm: false,
+                                            customClass: 'sweetalert-xs',
+                                            closeOnCancel: false
+                                        },
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                                EnviarMensajeSignalR('Se ha eliminado un evento.', "ListarCalendario.html", "4", sessionStorage.getItem("RolId"), result);
+                                                window.location.href = "ListarCalendario.html";
+                                            } else {
+                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                            }
+                                        });
+                                }
+                                else {
+                                    swal({
+                                            title: "Eliminado",
+                                            text: "El Registro ha sido eliminado con éxito.",
+                                            type: "success",
+                                            showCancelButton: false,
+                                            confirmButtonClass: "btn-success",
+                                            confirmButtonText: "Ok",
+                                            cancelButtonText: "No, cancel plx!",
+                                            closeOnConfirm: false,
+                                            customClass: 'sweetalert-xs',
+                                            closeOnCancel: false
+                                        },
+                                        function (isConfirm) {
+                                            if (isConfirm) {
+                                                //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                                window.location.href = "ListarCalendario.html";
+                                            } else {
+                                                swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                            }
+                                        });
+                                }
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    getNotify('error', 'Error', 'Error en el Servidor.');
+                                }
+                                else {
+                                    getNotify('error', 'Error', 'Error en el Servidor.');
+                                    //alert("fail");
+                                }
                             }
-                            else {
-                                getNotify('error', 'Error', 'Error en el Servidor.');
-                                //alert("fail");
-                            }
-                        }
-                    });
+                        });
 
-                    //swal("Ajax request finished!");
+                        //swal("Ajax request finished!");
 
-                }, 2000);
+                    }, 2000);
 
-            }
-            else {
-                window.location.href = "ListarCalendario.html";
-            }
-        });
+                }
+                else {
+                    window.location.href = "ListarCalendario.html";
+                }
+            });
 
-
+        }
+        else
+        {
+            swal("Permiso", "No tiene permisos para eliminar evento.", "error");
+        }
 
 
     }

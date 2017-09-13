@@ -108,6 +108,9 @@ $(document).ready(function () {
         self.frmPVerMuro= ko.observable(false);
         self.frmPPuedeVotarProyecto= ko.observable(false);
         self.frmPPuedeVotarTricel= ko.observable(false);
+        self.frmPVerReportes= ko.observable(false);
+        self.frmPVerMailing= ko.observable(false);
+        self.frmPCreaMailing= ko.observable(false);
 
 
         Menu();
@@ -156,7 +159,10 @@ $(document).ready(function () {
                 ModificaRol: $('#chkModificaRol')[0].checked,
                 EliminaRol: $('#chkEliminaRol')[0].checked,
                 PuedeVotarProyecto: true,
-                PuedeVotarTricel: true
+                PuedeVotarTricel: true,
+                VerReportes: $('#chkVerReportes')[0].checked,
+                VerMailing: $('#chkVerMailing')[0].checked,
+                CreaMailing: $('#chkCreaMailing')[0].checked
             };
 
             $.ajax({
@@ -312,6 +318,12 @@ $(document).ready(function () {
                             self.frmPPuedeVotarProyecto= ko.observable(true);
                         if (dataR[0].PuedeVotarTricel == 1)
                             self.frmPPuedeVotarTricel= ko.observable(true);
+                        if (dataR[0].VerReportes == 1)
+                            self.frmPVerReportes= ko.observable(true);
+                        if (dataR[0].VerMailing == 1)
+                            self.frmPVerMailing= ko.observable(true);
+                        if (dataR[0].CreaMailing == 1)
+                            self.frmPCreaMailing= ko.observable(true);
 
                         ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
 

@@ -58,8 +58,11 @@ $(document).ready(function () {
     });
 
 
-    function PersonViewModel(data, dataP, dataT, dataU, dataI, dataR, dataD) {
+    function PersonViewModel(data, dataP, dataT, dataU, dataI, dataR, dataD, dataMuro) {
         var self = this;
+
+        var dataMuroRecortada = dataMuro.splice(0,CantidadComentarios());
+        muro = ko.observableArray(dataMuroRecortada);
         //self.people = ko.observableArray([]);
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
         self.nombreRol = ko.observable(sessionStorage.getItem("NombreRol"));
@@ -86,8 +89,44 @@ $(document).ready(function () {
         //aplicar Menu
         Menu();
 
-        //manejaremos un poco la vista para que no se vea mal
-        //claseMostrarInstituciones = ko.observable("col-lg-4 col-md-4");
+        claseGeneral = ko.observable("col-xs-12 col-lg-3 col-md-3");
+
+        var totalMostrar = 0;
+
+        if (VerDocumento())
+        {
+            totalMostrar++;
+
+        }
+        if (VerInstitucion())
+        {
+            totalMostrar++;
+
+        }
+        if (VerRendicion())
+        {
+            totalMostrar++;
+
+        }
+        if (VerUsuario())
+        {
+            totalMostrar++;
+
+        }
+        if (totalMostrar == 4){
+            claseGeneral = ko.observable("col-xs-12 col-lg-3 col-md-6");
+        }
+        if (totalMostrar == 3){
+            claseGeneral = ko.observable("col-xs-12 col-lg-4 col-md-4");
+        }
+        if (totalMostrar == 2){
+            claseGeneral = ko.observable("col-xs-12 col-lg-6 col-md-6");
+        }
+        if (totalMostrar == 1){
+            claseGeneral = ko.observable("col-xs-12");
+        }
+
+/*
         var rolEvaluar = sessionStorage.getItem("RolId");
         claseMostrarIngresos = ko.observable("col-lg-3 col-md-4");
         claseMostrarDocumentos = ko.observable("col-lg-3 col-md-4");
@@ -108,6 +147,7 @@ $(document).ready(function () {
             claseMostrarDocumentos = ko.observable("col-xs-12 col-md-4");
             //claseMostrarInstituciones = ko.observable("col-xs-12 col-md-4");
         }
+  */
         if (dataU)
             $('#infoUsuariosN').text(dataU.length);
         else
@@ -232,6 +272,9 @@ $(document).ready(function () {
         //itmes triceles
         if (itemsT != null && itemsT.length > 0)
             self.MuestraListaTriceles = ko.observable(true);
+
+        ko.mapping.fromJS(dataMuro, {}, self);
+
 
         $('#principal').show();
         $('#loading').hide();
@@ -359,10 +402,43 @@ $(document).ready(function () {
             if (data.Documentos != null)
                 dataDocumentos = data.Documentos;
 
+            //muro
+            var obtenerMuro = jQuery.ajax({
+                url : ObtenerUrl('Muro'),
+                type: 'POST',
+                dataType : "json",
+                contentType: "application/json",
+                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") })
+            });
 
+            $.when(obtenerMuro).then(
+                function(dataM){
+                    elem = document.getElementById('principal');
+
+                    ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel, dataUsuarios, dataInstituciones, dataRendiciones, dataDocumentos, dataM));
+
+                    $('#principal').show();
+                    $('#loading').hide();
+
+                },
+                function (){
+                    //alguna ha fallado
+                    swal("Error de Servidor");
+                    $('#principal').show();
+                    $('#loading').hide();
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    //alert('quitar cargando');
+                }
+            )
+
+        /*
             elem = document.getElementById('principal');
 
             ko.applyBindings(new PersonViewModel(dataCalendario, dataProyecto, dataTricel, dataUsuarios, dataInstituciones, dataRendiciones, dataDocumentos));
+
+        */
 
         },
         function (){
@@ -376,6 +452,332 @@ $(document).ready(function () {
             alert('quitar cargando');
         }
     );
+
+    EnviarMensaje = function (item) {
+        /*
+         var mensaje = '';
+         var MroId = item.MroId;
+         var instId = sessionStorage.getItem("InstId");
+         var usuId = sessionStorage.getItem("Id");
+         var rolId = sessionStorage.getItem("RolId");
+         */
+        var textoOriginal = '<div class="col-xs-12">' +  item.Texto + "</div>";
+        var prioridadId = item.PrioridadId;
+        var mroId = item.Id;
+        swal({
+            title: 'Responder',
+            showCancelButton: true,
+            confirmButtonClass: "btn-success",
+            confirmButtonText: "Enviar",
+            cancelButtonText: "Cancelar",
+            customClass: 'sweetalert-xs',
+            html:
+            textoOriginal +
+            '<div class="col-xs-12><div class="input-group"  style="width: 100%;">' +
+            '<input id="swal-input1" class="swal2-input" style="width: 100%;" />' +
+            '</div></div>',
+            preConfirm: function () {
+
+                return new Promise(function (resolve, reject) {
+                    var texto = $('#swal-input1').val();
+                    var instId = sessionStorage.getItem("InstId");
+                    var usuId = sessionStorage.getItem("Id");
+                    var rolId = sessionStorage.getItem("RolId");
+
+
+
+                    if (texto === false) return false;
+                    if (texto === ""){
+                        reject("Debe ingresar comentario.");
+                        return false
+                    }
+                    //aca todo bien
+                    var entidad = {
+                        InstId: instId,
+                        UsuId: usuId,
+                        PrioridadId: prioridadId,
+                        MroId: mroId,
+                        RolId: rolId,
+                        Texto: texto
+                    };
+
+                    setTimeout(function () {
+
+                        $.ajax({
+                            url: ObtenerUrl('RespuestaMuro'),
+                            type: 'PUT',
+                            data: ko.toJSON(entidad),
+                            contentType: "application/json",
+                            dataType: "json",
+                            complete: function (data) {
+                                swal({
+                                    title: 'Guardado',
+                                    text: "Registro guardado con éxito.",
+                                    type: 'success',
+                                    showCancelButton: false,
+                                    confirmButtonClass: "btn-success",
+                                    customClass: 'sweetalert-xs',
+                                    confirmButtonText: "Aceptar"
+                                }).then(function () {
+                                    EnviarMensajeSignalR('Se ha agregado una Respuesta al muro.', "ListarMuro.html", "4", sessionStorage.getItem("RolId"), data);
+                                    window.location.href = "inicio.html";
+                                });
+
+
+                            }
+                        });
+
+                    }, 2000);
+                    /*
+                     resolve([
+                     $('#swal-input1').val(),
+                     $('#swal-input2').val()
+                     ])
+                     */
+
+                })
+
+            },
+            onOpen: function () {
+                $('#swal-input1').focus()
+            }
+        }).then(function (result) {
+            swal(JSON.stringify(result))
+        }).catch(swal.noop)
+
+    }
+
+    guardarMuro = function(){
+
+
+        /*
+         <select id = "swal-input2"><option value = "0">Baja</option><option value = "1">Media</option><option value = "2">Alta</option></select>
+         '<label>Ingrese Comentario</label><input id="swal-input1" class="swal2-input">' +
+         '<label>Prioridad</label><select id = "swal-input2"><option value = "0">Baja</option><option value = "1">Media</option><option value = "2">Alta</option></select>',
+
+
+
+         '<div class="col-xs-12><label for="basic-url">Comentario</label><div class="input-group"><span class="input-group-addon" id="basic-addon6">' +
+         '<i class="fa fa-comment"></i></span><input id="swal-input1" class="swal2-input" aria-describedby="basic-addon6" />' +
+         '</div></div><div class="col-xs-12><label for="basic-url">Prioridad</label><div class="input-group"><span class="input-group-addon" id="basic-addon7">' +
+         '<select id = "swal-input2" aria-describedby="basic-addon7"><option value = "0">Baja</option><option value = "1">Media</option><option value = "2">Alta</option></select></div></div>',
+         */
+        swal({
+            title: 'Agregar Comentario',
+            showCancelButton: true,
+            confirmButtonClass: "btn-success",
+            confirmButtonText: "Enviar",
+            cancelButtonText: "Cancelar",
+            customClass: 'sweetalert-xs',
+            html:
+            '<div class="col-xs-12><label for="basic-url">Comentario</label><div class="input-group"  style="width: 100%;">' +
+            '<input id="swal-input1" class="swal2-input" style="width: 100%;" />' +
+            '</div></div><div class="col-xs-12><label for="basic-url">Prioridad</label><div class="input-group"  style="width: 100%;">' +
+            '<select id = "swal-input2" style="width: 100%;"><option value = "0">Baja</option><option value = "1">Media</option><option value = "2">Alta</option></select></div></div>',
+            preConfirm: function () {
+
+                return new Promise(function (resolve, reject) {
+                    var texto = $('#swal-input1').val();
+                    var prioridadId = $('#swal-input2').val();
+                    var instId = sessionStorage.getItem("InstId");
+                    var usuId = sessionStorage.getItem("Id");
+                    var rolId = sessionStorage.getItem("RolId");
+
+                    if (texto === false) return false;
+                    if (texto === ""){
+                        reject("Debe ingresar comentario.");
+                        return false
+                    }
+                    //aca todo bien
+                    var entidad = {
+                        InstId: instId,
+                        UsuId: usuId,
+                        PrioridadId: prioridadId,
+                        RolId: rolId,
+                        Texto: texto
+                    };
+
+                    setTimeout(function () {
+
+                        $.ajax({
+                            url: ObtenerUrl('Muro'),
+                            type: 'PUT',
+                            data: ko.toJSON(entidad),
+                            contentType: "application/json",
+                            dataType: "json",
+                            complete: function (data) {
+                                swal({
+                                    title: 'Guardado',
+                                    text: "Registro guardado con éxito.",
+                                    type: 'success',
+                                    showCancelButton: false,
+                                    confirmButtonClass: "btn-success",
+                                    customClass: 'sweetalert-xs',
+                                    confirmButtonText: "Aceptar"
+                                }).then(function () {
+                                    EnviarMensajeSignalR('Se ha agregado una Novedad al Muro.', "ListarMuro.html", "4", sessionStorage.getItem("RolId"), data);
+                                    window.location.href = "inicio.html";
+                                });
+
+
+                            }
+                        });
+
+                    }, 2000);
+                })
+
+            },
+            onOpen: function () {
+                $('#swal-input1').focus()
+            }
+        }).then(function (result) {
+            swal(JSON.stringify(result))
+        }).catch(swal.noop)
+
+    }
+
+    eliminarMuro = function (item) {
+        var texto = "Está seguro de eliminar el comentario: " + item.Texto;
+        var id = item.Id;
+
+        swal({
+            title: 'Eliminar',
+            text: texto,
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Aceptar',
+            showLoaderOnConfirm: true,
+            preConfirm: function () {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function() {
+
+                        $.ajax({
+                            url: ObtenerUrl('Muro'),
+                            type: "DELETE",
+                            data: ko.toJSON({ Id: id }),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataF) {
+                                //swal("¡Eliminado!", "Registro Eliminado con éxito.", "success");
+                                swal({
+                                    title: 'Eliminado',
+                                    text: "Registro eliminado con éxito",
+                                    type: 'success',
+                                    showCancelButton: false,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Aceptar'
+                                }).then(function () {
+                                    EnviarMensajeSignalR('Se ha eliminado un mensaje del muro.', "ListarMuro.html", "2", sessionStorage.getItem("RolId"), dataF);
+                                    window.location.href = "inicio.html";
+                                })
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                                else {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                            }
+                        });
+                    }, 2000)
+                })
+            },
+            allowOutsideClick: false
+        }).then(function () {
+            swal({
+                type: 'success',
+                title: 'Ajax request finished!',
+                html: 'Registro Eliminado con éxito.'
+            })
+        })
+
+
+    }
+
+    eliminarRespuestaMuro = function (item) {
+        var texto = "Está seguro de eliminar el comentario: " + item.Texto;
+        var id = item.Id;
+
+        swal({
+            title: 'Eliminar',
+            text: texto,
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Aceptar',
+            showLoaderOnConfirm: true,
+            preConfirm: function () {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function() {
+
+                        $.ajax({
+                            url: ObtenerUrl('RespuestaMuro'),
+                            type: "DELETE",
+                            data: ko.toJSON({ Id: id }),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataF) {
+                                //swal("¡Eliminado!", "Registro Eliminado con éxito.", "success");
+                                swal({
+                                    title: 'Eliminado',
+                                    text: "Registro eliminado con éxito",
+                                    type: 'success',
+                                    showCancelButton: false,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Aceptar'
+                                }).then(function () {
+                                    EnviarMensajeSignalR('Se ha eliminado un mensaje del muro.', "ListarMuro.html", "2", sessionStorage.getItem("RolId"), dataF);
+                                    window.location.href = "inicio.html";
+                                })
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                                else {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                            }
+                        });
+                    }, 2000)
+                })
+            },
+            allowOutsideClick: false
+        }).then(function () {
+            swal({
+                type: 'success',
+                title: 'Ajax request finished!',
+                html: 'Registro Eliminado con éxito.'
+            })
+        })
+
+
+    }
+
+    function getNotify(type, title, message) {
+        if (type == 'error') {
+            new PNotify({
+                title: title,
+                text: message,
+                type: 'error'
+            });
+        }
+        if (type == 'success') {
+            new PNotify({
+                title: title,
+                text: message,
+                icon: 'glyphicon glyphicon-ok'
+            });
+        }
+    }
 
 
 });

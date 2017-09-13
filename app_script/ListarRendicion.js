@@ -59,21 +59,13 @@
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YY"));
         self.frmUrlDocumento = ko.observable("");
 
-        /*
-        if (sessionStorage.getItem("RolId") == '1')
-            shouldShowMessage = ko.observable(true);
-        else
-            shouldShowMessage = ko.observable(false);
-        */
-
         Menu();
-
-        // knockout mapping JSON data to view model
         ko.mapping.fromJS(data, {}, self);
 
 
 
     }
+    //Menu();
 
     var obtenerRendiciones = jQuery.ajax({
         url : ObtenerUrl('Rendicion'),
@@ -120,6 +112,12 @@
                     }
                 });
             }
+          else{
+                //Menu();
+                var datos = {proposals: []};
+                ko.applyBindings(new ViewModel(datos), elem);
+            }
+
             $('#principal').show();
             $('#loading').hide();
 
@@ -153,26 +151,6 @@
             });
         }
     }
-
-    //var chart = Morris.Donut({
-    //    element: 'graph',
-    //    data: [
-    //      { value: 0, label: 'Ingresos' },
-    //      { value: 0, label: 'Egresos' }
-    //    ],
-    //    backgroundColor: '#ccc',
-    //    labelColor: '#060',
-    //    colors: [
-    //      'rgb(11, 98, 164)',
-    //      'rgb(160, 0, 0)'
-    //    ],
-    //    formatter: function (x) { return "$" +  x}
-    //});
-
-    //chart.setData([
-    //      { value: 0, label: 'Ingresos' },
-    //      { value: 0, label: 'Egresos' }
-    //]);
 
 
     $.ajax({

@@ -18,6 +18,9 @@
     //return "http://localhost:34080/signalr/hubs";
     //http://172.16.116.138/apiasambleas/api/
 }
+function CantidadComentarios(){
+    return 3;
+}
 function getParameterByName(name, url) {
 
     //// query string: ?foo=lorem&bar=&baz
@@ -229,6 +232,9 @@ function Menu()
         VerMuro = ko.observable(false);
         PuedeVotarProyecto = ko.observable(false);
         PuedeVotarTricel = ko.observable(false);
+        VerMailing= ko.observable(false);
+        CreaMailing= ko.observable(false);
+        VerReportes= ko.observable(false);
         //el menu se ve siempre
         menuMenu = ko.observable(true);
 
@@ -342,6 +348,15 @@ function Menu()
 
         if (obj.PuedeVotarTricel == 1)
             PuedeVotarTricel = ko.observable(true);
+
+        if (obj.VerMailing == 1)
+            VerMailing = ko.observable(true);
+
+        if (obj.CreaMailing == 1)
+            CreaMailing = ko.observable(true);
+
+        if (obj.VerReportes == 1)
+            VerReportes = ko.observable(true);
 
     }
 

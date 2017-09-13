@@ -68,10 +68,10 @@
                             <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
                             <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
                             <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
-                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerCalendario"><a href="CargaMasiva.html">Carga Masiva</a></li>
-                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerDocumento"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: CreaUsuario" role="separator" class="divider"></li>
+                            <li data-bind="visible: CreaUsuario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
                             <li data-bind="visible: VerRol" role="separator" class="divider"></li>
                             <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
                             <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
@@ -129,10 +129,7 @@
     </div>
     <!-- Acá el contenido del muro -->
     <div class="col-xs-12">
-
         <!-- solo para pruebas -->
-
-
         <ul class="chat" data-bind="foreach: { data: muro, as: 'muro' }">
             <!-- elemento principal -->
             <li class="left clearfix">
@@ -146,7 +143,7 @@
                         <strong class="primary-font">
                             <span data-bind="text: muro.NombreUsuario"></span> --
                             <span data-bind="text: muro.NombreRol"></span>
-                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar">
+                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"  style="color: orangered;">
                                 <i class="fa fa-trash-o fa-fw fa-2x"></i>
                             </small>
                         </strong>
@@ -158,7 +155,7 @@
 
                     </p>
                     <div class="footer">
-                        <small class="pull-right text-muted cursorPointer">
+                        <small class="pull-right text-muted cursorPointer"  style="color: blue;">
                             <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
                         </small>
                     </div>
@@ -170,11 +167,14 @@
                         <span class="chat-img pull-left">
                                 <i class="fa fa-comment fa-fw text-muted"></i>
                         </span>
-                        <div class="chat-body clearfix">
+                        <div class="chat-body clearfix" style="margin-left: 30px;">
                             <div class="header">
                                 <strong class="primary-font text-muted">
                                     <span data-bind="text: item.NombreUsuario"></span> --
                                     <span data-bind="text: item.NombreRol"></span>
+                                    <small class="pull-right cursorPointer" data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"  style="color: orangered;">
+                                        <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                    </small>
                                 </strong>
                                 <small class="pull-right text-muted">
                                     <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>

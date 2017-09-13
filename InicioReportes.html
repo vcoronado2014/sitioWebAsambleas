@@ -110,10 +110,10 @@
                             <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
                             <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
                             <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
-                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerCalendario"><a href="CargaMasiva.html">Carga Masiva</a></li>
-                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
-                            <li data-bind="visible: VerDocumento"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: CreaUsuario" role="separator" class="divider"></li>
+                            <li data-bind="visible: CreaUsuario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
                             <li data-bind="visible: VerRol" role="separator" class="divider"></li>
                             <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
                             <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
@@ -156,7 +156,7 @@
     </div>
     <!-- aca el contenido -->
 
-    <div class="jumbotron" data-bind="visible: VerUsuario">
+    <div class="jumbotron" data-bind="visible: VerReportes">
         <h3>Usuarios</h3>
         <p>Muestra el Listado de Usuarios de su Institución</p>
         <p>
@@ -164,19 +164,19 @@
             <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteUsuarios()"><i class="fa fa-download"> </i> Descargar</a>
         </p>
     </div>
-    <div class="jumbotron" data-bind="visible: VerInstitucion">
+    <div class="jumbotron" data-bind="visible: VerReportes">
         <h3>Instituciones</h3>
         <p>Muestra el Listado de Instituciones</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteInstituciones()"><i class="fa fa-search"> </i> Mostrar</a>
             <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteInstituciones()"><i class="fa fa-download"> </i> Descargar</a></p>
     </div>
-    <div class="jumbotron">
+    <div class="jumbotron"  data-bind="visible: VerReportes">
         <h3>Rendiciones</h3>
         <p>Muestra los Ingresos/Egresos de dinero de la Institución</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteRendiciones()"><i class="fa fa-search"> </i> Mostrar</a>
             <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteRendiciones()"><i class="fa fa-download"> </i> Descargar</a></p>
     </div>
-    <div class="jumbotron">
+    <div class="jumbotron"  data-bind="visible: VerReportes">
         <h3>Votaciones</h3>
         <p>Muestra las Votaciones de Listas y Proyectos de la Institución</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteVotaciones()"><i class="fa fa-search"> </i> Mostrar</a>

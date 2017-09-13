@@ -298,7 +298,7 @@ $(function () {
     }
 
     eliminarMuro = function (item) {
-        var texto = "Está seguro de eliminar el comentario: " + item.Texto;;
+        var texto = "Está seguro de eliminar el comentario: " + item.Texto;
         var id = item.Id;
 
         swal({
@@ -314,6 +314,69 @@ $(function () {
 
                         $.ajax({
                             url: ObtenerUrl('Muro'),
+                            type: "DELETE",
+                            data: ko.toJSON({ Id: id }),
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (dataF) {
+                                //swal("¡Eliminado!", "Registro Eliminado con éxito.", "success");
+                                swal({
+                                    title: 'Eliminado',
+                                    text: "Registro eliminado con éxito",
+                                    type: 'success',
+                                    showCancelButton: false,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Aceptar'
+                                }).then(function () {
+                                    EnviarMensajeSignalR('Se ha eliminado un mensaje del muro.', "ListarMuro.html", "2", sessionStorage.getItem("RolId"), dataF);
+                                    window.location.href = "ListarMuro.html";
+                                })
+
+                            },
+                            error: function (error) {
+                                if (error.status.toString() == "500") {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                                else {
+                                    //getNotify('error', 'Error', 'Error de Servidor!');
+                                    swal("Error de Servidor");
+                                }
+                            }
+                        });
+                    }, 2000)
+                })
+            },
+            allowOutsideClick: false
+        }).then(function () {
+            swal({
+                type: 'success',
+                title: 'Ajax request finished!',
+                html: 'Registro Eliminado con éxito.'
+            })
+        })
+
+
+    }
+
+    eliminarRespuestaMuro = function (item) {
+        var texto = "Está seguro de eliminar el comentario: " + item.Texto;
+        var id = item.Id;
+
+        swal({
+            title: 'Eliminar',
+            text: texto,
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Aceptar',
+            showLoaderOnConfirm: true,
+            preConfirm: function () {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function() {
+
+                        $.ajax({
+                            url: ObtenerUrl('RespuestaMuro'),
                             type: "DELETE",
                             data: ko.toJSON({ Id: id }),
                             contentType: "application/json",
