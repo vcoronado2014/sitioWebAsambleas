@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
+    <meta name="author" content="Victor Coronado" />
+    <title>Crear Modificar Mailing</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- metis menu -->
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- sb admin -->
+    <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="Content/sweetalert.css" rel="stylesheet" />
+
+    <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery-1.11.3.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/knockout-3.4.1.js"></script>
+
+
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/sweetalert.js"></script>
+    <script src="Scripts/pnotify.custom.min.js"></script>
+    <script src="Scripts/moment.js"></script>
+
+    <script src="js/jquery.signalR-2.2.0.js"></script>
+    <script src="http://signalr.cpas.cl/signalr/hubs"></script>
+    <script src="app_script/signalrApp.js"></script>
+
+    <script src="const.js"></script>
+    <script src="app_script/CrearModificarMailing.js"></script>
+
+
+
+
+</head>
+<body class="bodyFixed">
+<div class="container" id="principal">
+    <!-- encabezado -->
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-right: 70px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand fg-white" style="cursor: pointer;"  data-bind="text: nombreInstitucion" onclick="IrInicio()"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li style="cursor: pointer;"><a  id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
+                    <li data-bind="visible: menuMenu" class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li data-bind="visible: VerUsuario"><a href="usuarios.html">Usuarios</a></li>
+                            <li data-bind="visible: VerInstitucion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerInstitucion"><a href="ListarInstitucion.html">Intituciones</a></li>
+                            <li data-bind="visible: VerRendicion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRendicion"><a href="ListarRendicion.html">Rendiciones</a></li>
+                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
+                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
+                            <li data-bind="visible: CreaUsuario" role="separator" class="divider"></li>
+                            <li data-bind="visible: CreaUsuario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: VerRol" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
+                            <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-bind="visible: VerTricel">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bind="visible: VerTricel" href="ListarVotacion.html">Listar Triceles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-bind="visible: VerProyecto">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span data-bind="text: nombreCompleto"></span>&nbsp;<span data-bind="text: nombreRol"></span></a>
+            <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
+        </div>
+    </nav>
+
+    <div class="col-xs-12 page-header">
+        <h3>Mantenedor <small>de Mailing</small></h3>
+    </div>
+
+    <!-- nombre Intitución -->
+    <div class="col-xs-12">
+        <label for="basic-url">Nombre Institución</label>
+        <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-user"></i>
+                    </span>
+            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Nombre de Institución" aria-describedby="basic-addon1" disabled="disabled" data-bind="value: self.frmNombre"   />
+        </div>
+
+    </div>
+
+
+    <br/>
+    <div class="col-xs-12" style="padding-top: 20px;">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="font-80">Módulo</th>
+                <th class="font-80 text-center">Crear</th>
+                <th class="font-80 text-center">Modificar</th>
+                <th class="font-80 text-center">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Usuarios</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaUsuario" id="chkCreaUsuario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPModificaUsuario" id="chkModificaUsuario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPEliminaUsuario" id="chkEliminaUsuario"></td>
+            </tr>
+            <tr>
+                <td>Institución</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaInstitucion" id="chkCreaInstitucion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaInstitucion" id="chkModificaInstitucion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaInstitucion" id="chkEliminaInstitucion"></td>
+            </tr>
+            <tr>
+                <td>Roles</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRol" id="chkCreaRol"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaRol" id="chkModificaRol"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaRol" id="chkEliminaRol"></td>
+            </tr>
+            <tr>
+                <td>Documentos</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaDocumento" id="chkCreaDocumento"></td>
+                <td class="text-center">--</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaDocumento" id="chkEliminaDocumento"></td>
+            </tr>
+            <tr>
+                <td>Rendición</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRendicion" id="chkCreaRendicion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaRendicion" id="chkModificaRendicion"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaRendicion" id="chkEliminaRendicion"></td>
+            </tr>
+            <tr>
+                <td>Calendario</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaCalendario" id="chkCreaCalendario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaCalendario" id="chkModificaCalendario"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaCalendario" id="chkEliminaCalendario"></td>
+            </tr>
+            <tr>
+                <td>Proyectos</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaProyecto" id="chkCreaProyecto"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaProyecto" id="chkModificaProyecto"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaProyecto" id="chkEliminaProyecto"></td>
+            </tr>
+            <tr>
+                <td>Tricel</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaTricel" id="chkCreaTricel"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaTricel" id="chkModificaTricel"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaTricel" id="chkEliminaTricel"></td>
+            </tr>
+            <tr>
+                <td>Muro</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaMuro" id="chkCreaMuro"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaMuro" id="chkModificaMuro"></td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaMuro" id="chkEliminaMuro"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- <input type="checkbox" class="custom-control-input">-->
+    <div class="col-xs-12" style="padding-bottom: 20px;">
+    </div>
+    <hr class="style17" style="width: 100%;" />
+
+    <div class="col-xs-6">
+        <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width: 100%;" data-bind="click: cancelar" />
+    </div>
+    <div class="col-xs-6">
+        <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar" />
+    </div>
+
+</div>
+
+</body>
+</html>

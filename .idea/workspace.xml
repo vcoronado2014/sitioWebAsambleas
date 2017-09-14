@@ -2,37 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CrearModificarMailing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_script/CrearModificarMailing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CargaMasiva.html" afterPath="$PROJECT_DIR$/CargaMasiva.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contacto.html" afterPath="$PROJECT_DIR$/Contacto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" afterPath="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarInstitucion.html" afterPath="$PROJECT_DIR$/CrearModificarInstitucion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarListaTricel.html" afterPath="$PROJECT_DIR$/CrearModificarListaTricel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarProyecto.html" afterPath="$PROJECT_DIR$/CrearModificarProyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarRol.html" afterPath="$PROJECT_DIR$/CrearModificarRol.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarUsuario.html" afterPath="$PROJECT_DIR$/CrearModificarUsuario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarVotacion.html" afterPath="$PROJECT_DIR$/CrearModificarVotacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InicioReportes.html" afterPath="$PROJECT_DIR$/InicioReportes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarCalendario.html" afterPath="$PROJECT_DIR$/ListarCalendario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarDocumento.html" afterPath="$PROJECT_DIR$/ListarDocumento.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarInstitucion.html" afterPath="$PROJECT_DIR$/ListarInstitucion.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarMuro.html" afterPath="$PROJECT_DIR$/ListarMuro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarProyecto.html" afterPath="$PROJECT_DIR$/ListarProyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarRendicion.html" afterPath="$PROJECT_DIR$/ListarRendicion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarRoles.html" afterPath="$PROJECT_DIR$/ListarRoles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarVotacion.html" afterPath="$PROJECT_DIR$/ListarVotacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logs.html" afterPath="$PROJECT_DIR$/Logs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VotarProyecto.html" afterPath="$PROJECT_DIR$/VotarProyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VotarTricel.html" afterPath="$PROJECT_DIR$/VotarTricel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarRol.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarRol.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/Inicio.js" afterPath="$PROJECT_DIR$/app_script/Inicio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/ListarCalendario.js" afterPath="$PROJECT_DIR$/app_script/ListarCalendario.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/ListarMuro.js" afterPath="$PROJECT_DIR$/app_script/ListarMuro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/ListarRendicion.js" afterPath="$PROJECT_DIR$/app_script/ListarRendicion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.js" afterPath="$PROJECT_DIR$/const.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexCpas.html" afterPath="$PROJECT_DIR$/indexCpas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inicio.html" afterPath="$PROJECT_DIR$/inicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/usuarios.html" afterPath="$PROJECT_DIR$/usuarios.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,124 +26,89 @@
       <file leaf-file-name="ListarRoles.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListarRoles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="59" column="63" lean-forward="false" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+            <state relative-caret-position="697">
+              <caret line="41" column="106" lean-forward="false" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListarVotacion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarVotacion.html">
+      <file leaf-file-name="CrearModificarRol.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrearModificarRol.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="263" selection-end-column="6" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logs.html">
+      <file leaf-file-name="CrearModificarMailing.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrearModificarMailing.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="59" column="63" lean-forward="false" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VotarProyecto.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VotarProyecto.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="104" column="67" lean-forward="false" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="const.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/const.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
-                <element signature="n#!!block;n#getNotify#0" expanded="false" />
-                <element signature="n#!!block;n#revisarDigito#0" expanded="false" />
-                <element signature="n#!!block;n#revisarDigito2#0" expanded="false" />
-                <element signature="n#!!block;n#Rut#0" expanded="false" />
-                <element signature="n#!!block;n#validarEmail#0" expanded="false" />
-                <element signature="n#!!block;n#IrInicio#0" expanded="false" />
-                <element signature="n#!!block;n#ValidaExtension#0" expanded="false" />
-                <element signature="n#!!block;n#FormatMiles#0" expanded="false" />
-                <element signature="n#!!block;n#FechaString#0" expanded="false" />
-                <element signature="n#!!block;n#FechaEntera#0" expanded="false" />
-                <element signature="n#!!block;n#FechaEnteraConHora#0" expanded="false" />
+                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListarCalendario.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
+      <file leaf-file-name="CrearModificarRol.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarRol.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="784" column="43" lean-forward="true" selection-start-line="784" selection-start-column="43" selection-end-line="784" selection-end-column="43" />
+            <state relative-caret-position="-527">
+              <caret line="64" column="57" lean-forward="true" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
               <folding>
-                <element signature="e#105#436#0" expanded="false" />
-                <element signature="e#547#1362#0" expanded="false" />
-                <element signature="e#3959#8463#0" expanded="false" />
-                <element signature="e#27706#30324#0" expanded="false" />
-                <marker date="1505337007428" expanded="true" signature="12187:12204" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="12247:12264" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="12432:12449" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="12493:12510" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="14130:14147" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="14488:14505" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="17159:17176" ph="..." />
-                <marker date="1505337007428" expanded="true" signature="19993:20010" ph="..." />
+                <element signature="e#0#46#0" expanded="false" />
+                <element signature="e#26486#28345#0" expanded="false" />
+                <element signature="e#28522#29439#0" expanded="false" />
+                <element signature="e#29484#30183#0" expanded="false" />
+                <element signature="e#30229#30603#0" expanded="false" />
+                <element signature="e#30638#31029#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VotarTricel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VotarTricel.html">
+      <file leaf-file-name="CrearModificarMailing.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarMailing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="109" column="63" lean-forward="false" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
-              <folding />
+            <state relative-caret-position="213">
+              <caret line="405" column="22" lean-forward="true" selection-start-line="405" selection-start-column="22" selection-end-line="405" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#46#0" expanded="false" />
+                <element signature="e#3951#5892#0" expanded="false" />
+                <element signature="e#12301#18718#0" expanded="false" />
+                <element signature="e#19170#20087#0" expanded="false" />
+                <element signature="e#20132#20831#0" expanded="false" />
+                <element signature="e#20877#21251#0" expanded="false" />
+                <element signature="e#21286#21677#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListarRendicion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarRendicion.html">
+      <file leaf-file-name="ListarMuro.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ListarMuro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="63" column="63" lean-forward="false" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usuarios.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/usuarios.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListarProyecto.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarProyecto.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="60" column="63" lean-forward="false" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+            <state relative-caret-position="3213">
+              <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -266,8 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app_script/CrearModificarListaTricel.js" />
-        <option value="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
         <option value="$PROJECT_DIR$/app_script/EliminarDocumento.js" />
         <option value="$PROJECT_DIR$/app_script/Usuarios.js" />
@@ -290,7 +226,6 @@
         <option value="$PROJECT_DIR$/app_script/CrearModificarUsuario.js" />
         <option value="$PROJECT_DIR$/app_script/ListarRendicion.js" />
         <option value="$PROJECT_DIR$/app_script/ListarMuro.js" />
-        <option value="$PROJECT_DIR$/app_script/CrearModificarRol.js" />
         <option value="$PROJECT_DIR$/indexCpas.html" />
         <option value="$PROJECT_DIR$/CargaMasiva.html" />
         <option value="$PROJECT_DIR$/Contacto.html" />
@@ -306,7 +241,6 @@
         <option value="$PROJECT_DIR$/ListarCalendario.html" />
         <option value="$PROJECT_DIR$/ListarDocumento.html" />
         <option value="$PROJECT_DIR$/ListarInstitucion.html" />
-        <option value="$PROJECT_DIR$/ListarMuro.html" />
         <option value="$PROJECT_DIR$/ListarProyecto.html" />
         <option value="$PROJECT_DIR$/ListarRendicion.html" />
         <option value="$PROJECT_DIR$/ListarRoles.html" />
@@ -317,6 +251,10 @@
         <option value="$PROJECT_DIR$/VotarTricel.html" />
         <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/app_script/ListarCalendario.js" />
+        <option value="$PROJECT_DIR$/ListarMuro.html" />
+        <option value="$PROJECT_DIR$/app_script/CrearModificarRol.js" />
+        <option value="$PROJECT_DIR$/CrearModificarMailing.html" />
+        <option value="$PROJECT_DIR$/app_script/CrearModificarMailing.js" />
       </list>
     </option>
   </component>
@@ -347,8 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,6 +313,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -549,7 +487,8 @@
       <workItem from="1504743816504" duration="4892000" />
       <workItem from="1504786442550" duration="45101000" />
       <workItem from="1505175056511" duration="3002000" />
-      <workItem from="1505218350871" duration="7781000" />
+      <workItem from="1505218350871" duration="10822000" />
+      <workItem from="1505422658047" duration="1137000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -569,7 +508,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="544892000" />
+    <option name="totallyTimeSpent" value="549070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
@@ -578,7 +517,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18314321" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32357043" sideWeight="0.50760454" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32357043" sideWeight="0.49239543" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -590,6 +528,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32357043" sideWeight="0.49239543" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -640,20 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_script/ListarArchivosProyecto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/indexCpas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1224">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_script/ListarInstitucion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -788,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="55" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,22 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarRol.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="429" column="81" lean-forward="false" selection-start-line="429" selection-start-column="81" selection-end-line="429" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-            <element signature="e#26486#28345#0" expanded="false" />
-            <element signature="e#28522#29439#0" expanded="false" />
-            <element signature="e#29484#30183#0" expanded="false" />
-            <element signature="e#30229#30603#0" expanded="false" />
-            <element signature="e#30638#31029#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -878,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="98" column="32" lean-forward="false" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,14 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrearModificarRol.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="92" column="63" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrearModificarUsuario.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -976,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="112" column="63" lean-forward="false" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,14 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListarMuro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="70" column="63" lean-forward="false" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ListarProyecto.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1026,14 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="63" column="63" lean-forward="false" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ListarRoles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="59" column="63" lean-forward="false" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1101,7 +983,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="641">
           <caret line="784" column="43" lean-forward="true" selection-start-line="784" selection-start-column="43" selection-end-line="784" selection-end-column="43" />
           <folding>
             <element signature="e#105#436#0" expanded="false" />
@@ -1116,6 +998,85 @@
             <marker date="1505337007428" expanded="true" signature="14488:14505" ph="..." />
             <marker date="1505337007428" expanded="true" signature="17159:17176" ph="..." />
             <marker date="1505337007428" expanded="true" signature="19993:20010" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListarMuro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3213">
+          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListarRoles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="106" lean-forward="false" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrearModificarRol.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="263" selection-end-column="6" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarRol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="64" column="57" lean-forward="true" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+            <element signature="e#26486#28345#0" expanded="false" />
+            <element signature="e#28522#29439#0" expanded="false" />
+            <element signature="e#29484#30183#0" expanded="false" />
+            <element signature="e#30229#30603#0" expanded="false" />
+            <element signature="e#30638#31029#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrearModificarMailing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarMailing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="405" column="22" lean-forward="true" selection-start-line="405" selection-start-column="22" selection-end-line="405" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+            <element signature="e#3951#5892#0" expanded="false" />
+            <element signature="e#12301#18718#0" expanded="false" />
+            <element signature="e#19170#20087#0" expanded="false" />
+            <element signature="e#20132#20831#0" expanded="false" />
+            <element signature="e#20877#21251#0" expanded="false" />
+            <element signature="e#21286#21677#0" expanded="false" />
           </folding>
         </state>
       </provider>
