@@ -48,10 +48,12 @@ $(document).ready(function () {
 
 
     });
+    $("#txtNombreUsuario").attr('disabled', 'disabled');
 
     function InstitucionViewModel(data, dataR) {
         var self = this;
         //self.people = ko.observableArray([]);
+
         self.nombreCompleto = ko.observable(sessionStorage.getItem("NombreCompleto"));
         self.nombreRol = ko.observable(sessionStorage.getItem("NombreRol"));
         self.id = ko.observable(sessionStorage.getItem("Id"));
@@ -65,7 +67,7 @@ $(document).ready(function () {
         self.elem = document.getElementById('principal');
 
         //del formulario
-        self.frmNombre = ko.observable();
+        self.frmNombre = ko.observable(sessionStorage.getItem("NombreInstitucion"));
         //de los permisos
         self.frmPId= ko.observable(0);
         self.frmPInstId= ko.observable(0);
@@ -101,7 +103,7 @@ $(document).ready(function () {
         Menu();
         guardar = function () {
 
-            var verUsuario = $('#chkVerUsuario')[0].checked;
+
             var entidad = {
                 Id: getParameterByName('id'),
                 Nombre: $("#txtNombreUsuario").val(),
@@ -184,88 +186,101 @@ $(document).ready(function () {
 
         }
     }
-    var idMailing = getParameterByName('id');
-    if (idMailing > 0) {
+    var instIdBuscar = sessionStorage.getItem('InstId');
+    if (parseInt(instIdBuscar) > 0) {
         $.ajax({
-            url: ObtenerUrl('Mailing') + '?id=' + idMailing,
+            url: ObtenerUrl('Mailing') + '?instId=' + instIdBuscar,
             type: "GET",
             contentType: "application/json",
             dataType: "json",
-            success: function (data) {
+            success: function (dataR) {
                 // ok
                 //frmIdRegion = ko.observable(data.RegId);
-                self.frmNombre = sessionStorage.getItem("NombreInstitucion");
+                if (dataR.length > 0) {
+                    self.frmNombre = sessionStorage.getItem("NombreInstitucion");
 
-                // los datos del formulario
-                // ok
-                self.frmPId= ko.observable(dataR[0].Id);
-                self.frmPInstId= ko.observable(sessionStorage.getItem("InstId"));
-                self.frmPRolId= ko.observable(sessionStorage.getItem("RolId"));
-                if (dataR[0].CreaUsuario == 1)
-                    self.frmPCreaUsuario= ko.observable(true);
-                if (dataR[0].ModificaUsuario == 1)
-                    self.frmPModificaUsuario= ko.observable(true);
-                if (dataR[0].EliminaUsuario == 1)
-                    self.frmPEliminaUsuario= ko.observable(true);
+                    // los datos del formulario
+                    // ok
+                    self.frmPId = ko.observable(dataR[0].Id);
+                    self.frmPInstId = ko.observable(sessionStorage.getItem("InstId"));
+                    self.frmPRolId = ko.observable(sessionStorage.getItem("RolId"));
+                    if (dataR[0].CreaUsuario == 1)
+                        self.frmPCreaUsuario = ko.observable(true);
+                    if (dataR[0].ModificaUsuario == 1)
+                        self.frmPModificaUsuario = ko.observable(true);
+                    if (dataR[0].EliminaUsuario == 1)
+                        self.frmPEliminaUsuario = ko.observable(true);
 
-                if (dataR[0].CreaInstitucion == 1)
-                    self.frmPCreaInstitucion= ko.observable(true);
-                if (dataR[0].ModificaInstitucion == 1)
-                    self.frmPModificaInstitucion= ko.observable(true);
-                if (dataR[0].EliminaInstitucion == 1)
-                    self.frmPEliminaInstitucion= ko.observable(true);
+                    if (dataR[0].CreaInstitucion == 1)
+                        self.frmPCreaInstitucion = ko.observable(true);
+                    if (dataR[0].ModificaInstitucion == 1)
+                        self.frmPModificaInstitucion = ko.observable(true);
+                    if (dataR[0].EliminaInstitucion == 1)
+                        self.frmPEliminaInstitucion = ko.observable(true);
 
-                if (dataR[0].CreaDocumento == 1)
-                    self.frmPCreaDocumento= ko.observable(true);
-                if (dataR[0].EliminaDocumento == 1)
-                    self.frmPEliminaDocumento= ko.observable(true);
+                    if (dataR[0].CreaDocumento == 1)
+                        self.frmPCreaDocumento = ko.observable(true);
+                    if (dataR[0].EliminaDocumento == 1)
+                        self.frmPEliminaDocumento = ko.observable(true);
 
-                if (dataR[0].CreaCalendario == 1)
-                    self.frmPCreaCalendario= ko.observable(true);
-                if (dataR[0].ModificaCalendario == 1)
-                    self.frmPModificaCalendario= ko.observable(true);
-                if (dataR[0].EliminaCalendario == 1)
-                    self.frmPEliminaCalendario= ko.observable(true);
+                    if (dataR[0].CreaCalendario == 1)
+                        self.frmPCreaCalendario = ko.observable(true);
+                    if (dataR[0].ModificaCalendario == 1)
+                        self.frmPModificaCalendario = ko.observable(true);
+                    if (dataR[0].EliminaCalendario == 1)
+                        self.frmPEliminaCalendario = ko.observable(true);
 
-                if (dataR[0].CreaTricel == 1)
-                    self.frmPCreaTricel= ko.observable(true);
-                if (dataR[0].ModificaTricel == 1)
-                    self.frmPModificaTricel= ko.observable(true);
-                if (dataR[0].EliminaTricel == 1)
-                    self.frmPEliminaTricel= ko.observable(true);
+                    if (dataR[0].CreaTricel == 1)
+                        self.frmPCreaTricel = ko.observable(true);
+                    if (dataR[0].ModificaTricel == 1)
+                        self.frmPModificaTricel = ko.observable(true);
+                    if (dataR[0].EliminaTricel == 1)
+                        self.frmPEliminaTricel = ko.observable(true);
 
-                if (dataR[0].CreaProyecto == 1)
-                    self.frmPCreaProyecto= ko.observable(true);
-                if (dataR[0].ModificaProyecto == 1)
-                    self.frmPModificaProyecto= ko.observable(true);
-                if (dataR[0].EliminaProyecto == 1)
-                    self.frmPEliminaProyecto= ko.observable(true);
+                    if (dataR[0].CreaProyecto == 1)
+                        self.frmPCreaProyecto = ko.observable(true);
+                    if (dataR[0].ModificaProyecto == 1)
+                        self.frmPModificaProyecto = ko.observable(true);
+                    if (dataR[0].EliminaProyecto == 1)
+                        self.frmPEliminaProyecto = ko.observable(true);
 
-                if (dataR[0].CreaRendicion == 1)
-                    self.frmPCreaRendicion= ko.observable(true);
-                if (dataR[0].ModificaRendicion == 1)
-                    self.frmPModificaRendicion= ko.observable(true);
-                if (dataR[0].EliminaRendicion == 1)
-                    self.frmPEliminaRendicion= ko.observable(true);
+                    if (dataR[0].CreaRendicion == 1)
+                        self.frmPCreaRendicion = ko.observable(true);
+                    if (dataR[0].ModificaRendicion == 1)
+                        self.frmPModificaRendicion = ko.observable(true);
+                    if (dataR[0].EliminaRendicion == 1)
+                        self.frmPEliminaRendicion = ko.observable(true);
 
-                if (dataR[0].CreaRol == 1)
-                    self.frmPCreaRol= ko.observable(true);
-                if (dataR[0].ModificaRol == 1)
-                    self.frmPModificaRol= ko.observable(true);
-                if (dataR[0].EliminaRol == 1)
-                    self.frmPEliminaRol= ko.observable(true);
+                    if (dataR[0].CreaRol == 1)
+                        self.frmPCreaRol = ko.observable(true);
+                    if (dataR[0].ModificaRol == 1)
+                        self.frmPModificaRol = ko.observable(true);
+                    if (dataR[0].EliminaRol == 1)
+                        self.frmPEliminaRol = ko.observable(true);
 
-                if (dataR[0].CreaMuro == 1)
-                    self.frmPCreaMuro= ko.observable(true);
-                if (dataR[0].ModificaMuro == 1)
-                    self.frmPModificaMuro= ko.observable(true);
-                if (dataR[0].EliminaMuro == 1)
-                    self.frmPEliminaMuro= ko.observable(true);
+                    if (dataR[0].CreaMuro == 1)
+                        self.frmPCreaMuro = ko.observable(true);
+                    if (dataR[0].ModificaMuro == 1)
+                        self.frmPModificaMuro = ko.observable(true);
+                    if (dataR[0].EliminaMuro == 1)
+                        self.frmPEliminaMuro = ko.observable(true);
 
 
-                getNotify('success', 'Éxito', 'Recuperado con éxito!');
+                    getNotify('success', 'Éxito', 'Recuperado con éxito!');
 
-                ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
+                    ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
+                }
+                else{
+                    var data = [];
+                    var dataR = [];
+                    self.frmNombre = sessionStorage.getItem("NombreInstitucion");
+                    self.frmPId= ko.observable(0);
+                    self.frmPInstId= ko.observable(sessionStorage.getItem("InstId"));
+                    self.frmPRolId= ko.observable(0);
+
+                    ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
+                }
+
 
 
             },
@@ -402,10 +417,10 @@ $(document).ready(function () {
 
     }
     else {
-        $("#txtNombreUsuario").removeAttr('disabled');
+        //$("#txtNombreUsuario").removeAttr('disabled');
         var data = [];
         var dataR = [];
-
+        self.frmNombre = sessionStorage.getItem("NombreInstitucion");
         self.frmPId= ko.observable(0);
         self.frmPInstId= ko.observable(sessionStorage.getItem("InstId"));
         self.frmPRolId= ko.observable(0);

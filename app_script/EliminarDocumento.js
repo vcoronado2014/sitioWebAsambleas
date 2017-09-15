@@ -105,12 +105,69 @@
                         }
                     });
                 }
+                if (tipo == 'archivoproyecto'){
+                    var proId = getParameterByName('proyectoId');
+
+                    $.ajax({
+                        url: ObtenerUrl('ArchivoProyecto'),
+                        type: "DELETE",
+                        data: ko.toJSON({ Id: id }),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+
+                            swal({
+                                    title: "Eliminado",
+                                    text: "El Registro ha sido eliminado con éxito.",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonClass: "btn-success",
+                                    confirmButtonText: "Ok",
+                                    cancelButtonText: "No, cancel plx!",
+                                    closeOnConfirm: true,
+                                    customClass: 'sweetalert-xs',
+                                    closeOnCancel: false
+                                },
+                                function (isConfirm) {
+                                    if (isConfirm) {
+                                        EnviarMensajeSignalR('Se ha subido un Documento.', "ListarDocumento.html", "4", sessionStorage.getItem("RolId"), data);
+                                        window.location.href = "CrearModificarProyecto.html?id=" + proId + "&ELIMINAR=0";
+
+
+                                    } else {
+                                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                    }
+                                });
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                        }
+                    });
+                }
 
             }, 2000);
 
             }
             else {
-                window.location.href = "listarDocumento.html";
+                //window.location.href = "listarDocumento.html";
+                if (tipo=='documentousuario') {
+                    window.location.href = "listarDocumento.html";
+                }
+            if (tipo=='archivotricel') {
+                var tricelId = getParameterByName('tricelId');
+                window.location.href = "CrearModificarVotacion.html?id=" + tricelId + "&ELIMINAR=0";
+            }
+            if (tipo=='archivoproyecto') {
+                var proId = getParameterByName('proyectoId');
+                window.location.href = "CrearModificarProyecto.html?id=" + proId + "&ELIMINAR=0";
+            }
+
             }
     });
 

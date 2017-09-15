@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CrearModificarMailing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_script/CrearModificarMailing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plantilla_Usuarios_CargaMasiva.xlsx" afterPath="$PROJECT_DIR$/Plantilla_Usuarios_CargaMasiva.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ListarMuro.html" afterPath="$PROJECT_DIR$/ListarMuro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CargaMasiva.html" afterPath="$PROJECT_DIR$/CargaMasiva.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarMailing.html" afterPath="$PROJECT_DIR$/CrearModificarMailing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarMailing.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarMailing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/EliminarDocumento.js" afterPath="$PROJECT_DIR$/app_script/EliminarDocumento.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +26,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ListarRoles.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarRoles.html">
+      <file leaf-file-name="CargaMasiva.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CargaMasiva.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="106" lean-forward="false" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
+            <state relative-caret-position="102">
+              <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -36,15 +39,11 @@
       <file leaf-file-name="CrearModificarRol.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CrearModificarRol.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="263" selection-end-column="6" />
+            <state relative-caret-position="-82">
+              <caret line="124" column="58" lean-forward="true" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -54,17 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrearModificarMailing.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CrearModificarMailing.html">
+      <file leaf-file-name="ListarMuro.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ListarMuro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-              <folding>
-                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="383">
+              <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="110" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,8 +66,8 @@
       <file leaf-file-name="CrearModificarRol.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_script/CrearModificarRol.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-527">
-              <caret line="64" column="57" lean-forward="true" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
+            <state relative-caret-position="374">
+              <caret line="403" column="31" lean-forward="true" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="64" />
               <folding>
                 <element signature="e#0#46#0" expanded="false" />
                 <element signature="e#26486#28345#0" expanded="false" />
@@ -86,30 +80,82 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrearModificarMailing.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarMailing.js">
+      <file leaf-file-name="CrearModificarUsuario.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrearModificarUsuario.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="405" column="22" lean-forward="true" selection-start-line="405" selection-start-column="22" selection-end-line="405" selection-end-column="22" />
+            <state relative-caret-position="289">
+              <caret line="291" column="30" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="294" selection-end-column="10" />
               <folding>
-                <element signature="e#0#46#0" expanded="false" />
-                <element signature="e#3951#5892#0" expanded="false" />
-                <element signature="e#12301#18718#0" expanded="false" />
-                <element signature="e#19170#20087#0" expanded="false" />
-                <element signature="e#20132#20831#0" expanded="false" />
-                <element signature="e#20877#21251#0" expanded="false" />
-                <element signature="e#21286#21677#0" expanded="false" />
+                <element signature="n#style#0;n#div#13;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListarMuro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ListarMuro.html">
+      <file leaf-file-name="CrearModificarMailing.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrearModificarMailing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3213">
-              <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-121">
+              <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+              <folding>
+                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="const.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/const.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
+                <element signature="n#!!block;n#getNotify#0" expanded="false" />
+                <element signature="n#!!block;n#revisarDigito#0" expanded="false" />
+                <element signature="n#!!block;n#revisarDigito2#0" expanded="false" />
+                <element signature="n#!!block;n#Rut#0" expanded="false" />
+                <element signature="n#!!block;n#validarEmail#0" expanded="false" />
+                <element signature="n#!!block;n#IrInicio#0" expanded="false" />
+                <element signature="n#!!block;n#ValidaExtension#0" expanded="false" />
+                <element signature="n#!!block;n#FormatMiles#0" expanded="false" />
+                <element signature="n#!!block;n#FechaString#0" expanded="false" />
+                <element signature="n#!!block;n#FechaEntera#0" expanded="false" />
+                <element signature="n#!!block;n#FechaEnteraConHora#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="189" column="22" lean-forward="true" selection-start-line="189" selection-start-column="22" selection-end-line="189" selection-end-column="22" />
+              <folding>
+                <element signature="n#div#2;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrearModificarMailing.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_script/CrearModificarMailing.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#46#0" expanded="false" />
+                <element signature="e#13175#19592#0" expanded="false" />
+                <element signature="e#20115#21032#0" expanded="false" />
+                <element signature="e#21077#21776#0" expanded="false" />
+                <element signature="e#21822#22196#0" expanded="false" />
+                <element signature="e#22231#22622#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>menuMenuDocumentos</find>
       <find>menuMenuCalendarrio</find>
       <find>menuMenuCargaMasiva</find>
       <find>menuMenuReportes</find>
@@ -156,6 +201,7 @@
       <find>VarCalendario</find>
       <find>&lt;li data-bind=&quot;visible: VerDocumento&quot;&gt;&lt;a href=&quot;InicioReportes.html&quot;&gt;Reportes&lt;/a&gt;&lt;/li&gt;</find>
       <find>&lt;li data-bind=&quot;visible: VerCalendario&quot;&gt;&lt;a href=&quot;CargaMasiva.html&quot;&gt;Carga Masiva&lt;/a&gt;&lt;/li&gt;</find>
+      <find>txtNombreUsuario</find>
     </findStrings>
     <replaceStrings>
       <replace>http://127.0.0.1:8080/</replace>
@@ -205,7 +251,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
-        <option value="$PROJECT_DIR$/app_script/EliminarDocumento.js" />
         <option value="$PROJECT_DIR$/app_script/Usuarios.js" />
         <option value="$PROJECT_DIR$/app_script/VotarProyecto.js" />
         <option value="$PROJECT_DIR$/app_script/VotarTricel.js" />
@@ -221,13 +266,11 @@
         <option value="$PROJECT_DIR$/app_script/ListarRoles.js" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarInstitucion.js" />
         <option value="$PROJECT_DIR$/Content/site.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app_script/Inicio.js" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarUsuario.js" />
         <option value="$PROJECT_DIR$/app_script/ListarRendicion.js" />
         <option value="$PROJECT_DIR$/app_script/ListarMuro.js" />
         <option value="$PROJECT_DIR$/indexCpas.html" />
-        <option value="$PROJECT_DIR$/CargaMasiva.html" />
         <option value="$PROJECT_DIR$/Contacto.html" />
         <option value="$PROJECT_DIR$/CrearModificarIngresoEgreso.html" />
         <option value="$PROJECT_DIR$/CrearModificarInstitucion.html" />
@@ -249,12 +292,15 @@
         <option value="$PROJECT_DIR$/usuarios.html" />
         <option value="$PROJECT_DIR$/VotarProyecto.html" />
         <option value="$PROJECT_DIR$/VotarTricel.html" />
-        <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/app_script/ListarCalendario.js" />
         <option value="$PROJECT_DIR$/ListarMuro.html" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarRol.js" />
+        <option value="$PROJECT_DIR$/app_script/EliminarDocumento.js" />
+        <option value="$PROJECT_DIR$/CargaMasiva.html" />
         <option value="$PROJECT_DIR$/CrearModificarMailing.html" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarMailing.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/const.js" />
       </list>
     </option>
   </component>
@@ -488,7 +534,7 @@
       <workItem from="1504786442550" duration="45101000" />
       <workItem from="1505175056511" duration="3002000" />
       <workItem from="1505218350871" duration="10822000" />
-      <workItem from="1505422658047" duration="1137000" />
+      <workItem from="1505422658047" duration="10100000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -508,7 +554,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="549070000" />
+    <option name="totallyTimeSpent" value="558033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
@@ -565,7 +611,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/CargaMasiva.html</url>
-          <line>49</line>
+          <line>48</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -574,18 +620,11 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_script/ListarInstitucion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_script/InicioReportes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1893">
@@ -623,13 +662,6 @@
           <folding>
             <element signature="e#0#52#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/CargaMasiva.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="260" column="29" lean-forward="true" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -692,19 +724,6 @@
             <element signature="e#22547#24372#0" expanded="false" />
             <element signature="e#25167#26342#0" expanded="false" />
             <element signature="e#26388#27714#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3919">
-          <caret line="319" column="22" lean-forward="true" selection-start-line="319" selection-start-column="22" selection-end-line="319" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,14 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CargaMasiva.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="67" column="63" lean-forward="false" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Contacto.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -843,14 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="125" column="63" lean-forward="false" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrearModificarUsuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="92" column="63" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -960,27 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/const.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
-            <element signature="n#!!block;n#getNotify#0" expanded="false" />
-            <element signature="n#!!block;n#revisarDigito#0" expanded="false" />
-            <element signature="n#!!block;n#revisarDigito2#0" expanded="false" />
-            <element signature="n#!!block;n#Rut#0" expanded="false" />
-            <element signature="n#!!block;n#validarEmail#0" expanded="false" />
-            <element signature="n#!!block;n#IrInicio#0" expanded="false" />
-            <element signature="n#!!block;n#ValidaExtension#0" expanded="false" />
-            <element signature="n#!!block;n#FormatMiles#0" expanded="false" />
-            <element signature="n#!!block;n#FechaString#0" expanded="false" />
-            <element signature="n#!!block;n#FechaEntera#0" expanded="false" />
-            <element signature="n#!!block;n#FechaEnteraConHora#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_script/ListarCalendario.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="641">
@@ -1002,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListarMuro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3213">
-          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ListarRoles.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -1018,17 +992,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/EliminarDocumento.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="130" column="54" lean-forward="true" selection-start-line="130" selection-start-column="54" selection-end-line="130" selection-end-column="54" />
+          <folding>
+            <element signature="e#494#2546#0" expanded="false" />
+            <element signature="e#2590#4794#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_script/CargaMasiva.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="258" column="20" lean-forward="true" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
+          <folding>
+            <marker date="1505149640000" expanded="true" signature="9512:9564" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CargaMasiva.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListarMuro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CrearModificarRol.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="263" selection-end-column="6" />
+        <state relative-caret-position="-82">
+          <caret line="124" column="58" lean-forward="true" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1039,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_script/CrearModificarRol.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="64" column="57" lean-forward="true" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
+        <state relative-caret-position="374">
+          <caret line="403" column="31" lean-forward="true" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="64" />
           <folding>
             <element signature="e#0#46#0" expanded="false" />
             <element signature="e#26486#28345#0" expanded="false" />
@@ -1052,31 +1059,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrearModificarUsuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="291" column="30" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="294" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#13;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CrearModificarMailing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+        <state relative-caret-position="-121">
+          <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
           <folding>
             <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#nav#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_script/CrearModificarMailing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="405" column="22" lean-forward="true" selection-start-line="405" selection-start-column="22" selection-end-line="405" selection-end-column="22" />
+        <state relative-caret-position="288">
+          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
           <folding>
             <element signature="e#0#46#0" expanded="false" />
-            <element signature="e#3951#5892#0" expanded="false" />
-            <element signature="e#12301#18718#0" expanded="false" />
-            <element signature="e#19170#20087#0" expanded="false" />
-            <element signature="e#20132#20831#0" expanded="false" />
-            <element signature="e#20877#21251#0" expanded="false" />
-            <element signature="e#21286#21677#0" expanded="false" />
+            <element signature="e#13175#19592#0" expanded="false" />
+            <element signature="e#20115#21032#0" expanded="false" />
+            <element signature="e#21077#21776#0" expanded="false" />
+            <element signature="e#21822#22196#0" expanded="false" />
+            <element signature="e#22231#22622#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="189" column="22" lean-forward="true" selection-start-line="189" selection-start-column="22" selection-end-line="189" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#2;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/const.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#getParameterByName#0" expanded="false" />
+            <element signature="n#!!block;n#getNotify#0" expanded="false" />
+            <element signature="n#!!block;n#revisarDigito#0" expanded="false" />
+            <element signature="n#!!block;n#revisarDigito2#0" expanded="false" />
+            <element signature="n#!!block;n#Rut#0" expanded="false" />
+            <element signature="n#!!block;n#validarEmail#0" expanded="false" />
+            <element signature="n#!!block;n#IrInicio#0" expanded="false" />
+            <element signature="n#!!block;n#ValidaExtension#0" expanded="false" />
+            <element signature="n#!!block;n#FormatMiles#0" expanded="false" />
+            <element signature="n#!!block;n#FechaString#0" expanded="false" />
+            <element signature="n#!!block;n#FechaEntera#0" expanded="false" />
+            <element signature="n#!!block;n#FechaEnteraConHora#0" expanded="false" />
           </folding>
         </state>
       </provider>
