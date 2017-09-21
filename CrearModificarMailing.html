@@ -52,8 +52,8 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js"></script>
-    <script src="app_script/CrearModificarMailing.js"></script>
+    <script src="const.js?v=1.1"></script>
+    <script src="app_script/CrearModificarMailing.js?v=1.1"></script>
 
 
 
@@ -98,6 +98,8 @@
                             <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
                             <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
+                            <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -168,12 +170,12 @@
                 <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPModificaUsuario" id="chkModificaUsuario"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPEliminaUsuario" id="chkEliminaUsuario"></td>
             </tr>
-            <tr>
+<!--            <tr>
                 <td>Institución</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaInstitucion" id="chkCreaInstitucion"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaInstitucion" id="chkModificaInstitucion"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaInstitucion" id="chkEliminaInstitucion"></td>
-            </tr>
+            </tr>-->
             <tr>
                 <td>Roles</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRol" id="chkCreaRol"></td>
@@ -229,7 +231,7 @@
         <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width: 100%;" data-bind="click: cancelar" />
     </div>
     <div class="col-xs-6">
-        <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar" />
+        <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" data-bind="click: guardar, visible: CreaMailing" />
     </div>
 
 </div>

@@ -112,9 +112,9 @@ $(document).ready(function () {
                 CreaUsuario: $('#chkCreaUsuario')[0].checked,
                 ModificaUsuario: $('#chkModificaUsuario')[0].checked,
                 EliminaUsuario: $('#chkEliminaUsuario')[0].checked,
-                CreaInstitucion: $('#chkCreaInstitucion')[0].checked,
-                ModificaInstitucion: $('#chkModificaInstitucion')[0].checked,
-                EliminaInstitucion: $('#chkEliminaInstitucion')[0].checked,
+                CreaInstitucion: false,
+                ModificaInstitucion: false,
+                EliminaInstitucion: false,
                 CreaDocumento: $('#chkCreaDocumento')[0].checked,
                 EliminaDocumento: $('#chkEliminaDocumento')[0].checked,
                 CreaCalendario: $('#chkCreaCalendario')[0].checked,
@@ -163,7 +163,7 @@ $(document).ready(function () {
                             if (isConfirm) {
                                 //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                 //EnviarMensajeSignalR('Se ha creado/modificado Mailing.', "inicio.html", "1", sessionStorage.getItem("RolId"), result);
-                                window.location.href = "inicio.html";
+                                window.location.href = "CrearModificarMailing.html";
                             } else {
                                 swal("Cancelled", "Your imaginary file is safe :)", "error");
                             }
