@@ -114,6 +114,7 @@ $(document).ready(function () {
 
 
         Menu();
+
         guardar = function () {
 
             var verUsuario = $('#chkVerUsuario')[0].checked;

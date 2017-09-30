@@ -2,6 +2,7 @@
 <html lang="es">
 <head runat="server">
     <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-store" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="." />
@@ -52,8 +53,8 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=1.1"></script>
-    <script src="app_script/CrearModificarMailing.js?v=1.1"></script>
+    <script src="const.js?v=1.5"></script>
+    <script src="app_script/CrearModificarMailing.js?v=1.5"></script>
 
 
 
@@ -170,12 +171,6 @@
                 <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPModificaUsuario" id="chkModificaUsuario"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox"  data-bind="checked: self.frmPEliminaUsuario" id="chkEliminaUsuario"></td>
             </tr>
-<!--            <tr>
-                <td>Institución</td>
-                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaInstitucion" id="chkCreaInstitucion"></td>
-                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaInstitucion" id="chkModificaInstitucion"></td>
-                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaInstitucion" id="chkEliminaInstitucion"></td>
-            </tr>-->
             <tr>
                 <td>Roles</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaRol" id="chkCreaRol"></td>

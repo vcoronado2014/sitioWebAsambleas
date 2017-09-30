@@ -1,16 +1,16 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
-    //http://172.16.116.138/apiasambleas/api/
+    //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
-    //http://172.16.116.138/apiasambleas/api/
+    return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlSignalR()
 {
@@ -371,7 +371,8 @@ function IrInicio()
     }
     else
     {
-        window.location.href = 'index.html';
+        //window.location.href = 'index.html';
+        window.location.href = '#';
     }
 }
 
@@ -517,6 +518,14 @@ function FechaEnteraStr(fechaStr)
 {
     var parteUno = fechaStr.split('-');
     var parteDos = parteUno[2].split(' ');
+
+    return parseInt(parteDos[0] + parteUno[1] + parteUno[0]);
+
+}
+function FechaEnteraStrT(fechaStr)
+{
+    var parteUno = fechaStr.split('-');
+    var parteDos = parteUno[2].split('T');
 
     return parseInt(parteDos[0] + parteUno[1] + parteUno[0]);
 

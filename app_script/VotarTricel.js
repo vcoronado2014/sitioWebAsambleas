@@ -399,7 +399,7 @@ $(document).ready(function () {
         type: 'POST',
         dataType : "json",
         contentType: "application/json",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") })
+        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"),BuscarId: getParameterByName('id'), UsuId: sessionStorage.getItem("Id") })
     });
 
     var obtenerGrafico= jQuery.ajax({
