@@ -551,6 +551,9 @@ $(document).ready(function() {
                         end: new Date(itemsProcesar[i].annoTer, itemsProcesar[i].mesTer, parseInt(itemsProcesar[i].diaTer), parseInt(itemsProcesar[i].horaTer), itemsProcesar[i].minutosTer, 0, 0),
                         allDay: false,
                         id: itemsProcesar[i].clientId,
+                        details: itemsProcesar[i].details,
+                        usuIdCreador: itemsProcesar[i].usuIdCreador,
+                        ubication: itemsProcesar[i].ubication,
                         className: itemsProcesar[i].className
                     }
                     items[i] = s;
@@ -582,7 +585,7 @@ $(document).ready(function() {
                 },
                 allDaySlot: false,
                 selectHelper: true,
-                select: function(start, end, allDay) {
+                select: function(start, end, allDay, details, ubication) {
                     if (CreaCalendario()) {
                         var fechaInicioControl = moment(start, 'America/New_York').local().format('YYYY-MM-DDTHH:mm');
                         var fechaTerminoControl = moment(moment(fechaInicioControl).add(1, 'h'), 'America/New_York').local().format('YYYY-MM-DDTHH:mm');
@@ -599,18 +602,20 @@ $(document).ready(function() {
                         var spanGroup = '<div class="input-group"><span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-calendar"></span></span>';
                         var inputFechaTermino = '<input type="datetime-local" class="form-control" placeholder="hora" aria-describedby="sizing-addon2" id="swal-input3" value="' + fechaTerminoControl + '"></div>';
 
-                        var labelEtiqueta = '<label for="basic-url">Etiqueta</label><div class="input-group" style="padding-bottom: 30px;"><span class="input-group-addon" id="basic-addon8"><i class="fa fa-globe"></i></span>';
-                        var selectEiqueta = '<select id="selectIdEtiqueta" class="form-control">';
-                        var optionNinguna = '<option value="0">Ninguna</option>';
-                        var optionInfo = '<option value="1">Información</option>';
-                        var optionImportante = '<option value="2">Importante</option>';
-                        var optionMuyImportante = '<option value="3">Muy importante</option>';
-                        var cierreOption = '</select></div>';
+                        var labelUbicacion = '<label for="basic-url" class="text-right">Ubicación</label>';
+                        var spanUbicacion = '<div class="input-group"><span class="input-group-addon" id="sizing-addon13"><span class="glyphicon glyphicon-calendar"></span></span>';
+                        var inputUbioacion = '<input type="text" class="form-control" placeholder="ubicación" aria-describedby="sizing-addon13" id="swal-input13"></div>';
+
+                        var labelDetails = '<label for="basic-url" class="text-right">Detalle</label>';
+                        var spanDetails = '<div class="input-group"><span class="input-group-addon" id="sizing-addon14"></span>';
+                        var inputDetails = '<textarea class="form-control"  aria-describedby="sizing-addon14" id="swal-input14"></textarea></div>';
+
 
                         var htmlFinal = hiddenLabel + labelTitulo + inputGroupTitulo + inputTitulo + labelFechaInicio + inputGroupFechas + inputFechaInicio + labelFechaTermino + spanGroup + inputFechaTermino;
-                        htmlFinal = htmlFinal + labelEtiqueta + selectEiqueta + optionNinguna + optionInfo + optionImportante + optionMuyImportante + cierreOption;
+                        //htmlFinal = htmlFinal + labelEtiqueta + selectEiqueta + optionNinguna + optionInfo + optionImportante + optionMuyImportante + cierreOption;
+                        htmlFinal = htmlFinal + labelUbicacion + spanUbicacion + inputUbioacion + labelDetails + spanDetails + inputDetails;
                         swal({
-                            title: 'Crear Evento',
+                            title: 'Crear Cita',
                             html: htmlFinal,
                             showCancelButton: true,
                             confirmButtonText: 'Aceptar',
@@ -624,6 +629,8 @@ $(document).ready(function() {
                                     var fecha1 = $('#swal-input2').val();
                                     var fecha2 = $('#swal-input3').val();
                                     var etiqueta = $('#selectIdEtiqueta').val();
+                                    var ubicacion = $('#swal-input13').val();
+                                    var detalles = $('#swal-input14').val();
 
                                     var instId = sessionStorage.getItem("InstId");
                                     var usuId = sessionStorage.getItem("Id");
@@ -662,8 +669,9 @@ $(document).ready(function() {
                                         FechaInicio: fechaHoraInicio.replace('T', ' '),
                                         FechaTermino: fechaHoraTermino.replace('T', ' '),
                                         EsNuevo: true,
-                                        Etiqueta: etiqueta
-
+                                        Etiqueta: 1,
+                                        Ubicacion: ubicacion,
+                                        Detalle: detalles
                                     };
 
                                     var json = ko.toJSON(eventoCal);
@@ -700,7 +708,7 @@ $(document).ready(function() {
                             var fechaTerminoMoment = moment(result.FechaTermino);
                             var fechaTerminoGuardar = new Date(fechaTerminoMoment.get('year'), fechaTerminoMoment.get('month') + 1, fechaTerminoMoment.get('date'), fechaTerminoMoment.get('hour'), fechaTerminoMoment.get('minute'), 0, 0);
 
-                            var nombreClase = '';
+                            var nombreClase = 'info';
                             if (result.Etiqueta == 0)
                                 nombreClase = '';
                             if (result.Etiqueta == 1)
@@ -770,6 +778,7 @@ $(document).ready(function() {
                 eventClick:  function(event, jsEvent, view) {
                     var evento = event;
                     var eventId = event._id;
+                    var usuarioIdCreador = event.usuIdCreador;
                     var fechaInicio = moment(event.start, 'America/New_York').local().format('YYYY-MM-DDTHH:mm');
                     var fechaTermino;
                     if (event.end){
@@ -786,36 +795,28 @@ $(document).ready(function() {
                     var labelTitulo = '<label for="basic-url" class="text-right">Titulo</label>';
                     var inputGroupTitulo = '<div class="input-group"><span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-exclamation-sign"></span></span>';
                     var inputTitulo = '<input type="text" class="form-control" placeholder="Titulo" aria-describedby="sizing-addon1" id="swal-input1" value="' + titulo + '"></div>';
-                    var labelFechaInicio = '<label for="basic-url" class="text-right">Inicio y fin</label>';
+                    var labelFechaInicio = '<label for="basic-url" class="text-right">Inicio</label>';
                     var inputGroupFechas = '<div class="input-group"><span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-calendar"></span></span>';
                     var inputFechaInicio = '<input type="datetime-local" class="form-control" placeholder="hora" aria-describedby="sizing-addon2" id="swal-input2" value="' + fechaInicio + '"></div>';
                     var labelFechaTermino = '<label for="basic-url" class="text-right">Término</label>';
                     var spanGroup = '<div class="input-group"><span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-calendar"></span></span>';
                     var inputFechaTermino = '<input type="datetime-local" class="form-control" placeholder="hora" aria-describedby="sizing-addon2" id="swal-input3" value="' + fechaTermino + '"></div>';
 
-                    var labelEtiqueta = '<label for="basic-url">Etiqueta</label><div class="input-group"><span class="input-group-addon" id="basic-addon8"><i class="fa fa-globe"></i></span>';
-                    var selectEiqueta = '<select id="selectIdEtiqueta" class="form-control">';
-                    var optionNinguna = '<option value="0">Ninguna</option>';
-                    if (event.className == '')
-                        optionNinguna = '<option value="0" selected>Ninguna</option>';
-                    var optionInfo = '<option value="1">Información</option>';
-                    if (event.className == 'info')
-                        optionInfo = '<option value="1" selected>Información</option>';
-                    var optionImportante = '<option value="2">Importante</option>';
-                    if (event.className == 'success')
-                        optionImportante = '<option value="2" selected>Importante</option>';
-                    var optionMuyImportante = '<option value="3">Muy importante</option>';
-                    if (event.className == 'important')
-                        optionMuyImportante = '<option value="3" selected>Muy importante</option>';
-                    var cierreOption = '</select></div>';
+                    var labelUbicacion = '<label for="basic-url" class="text-right">Ubicación</label>';
+                    var spanUbicacion = '<div class="input-group"><span class="input-group-addon" id="sizing-addon13"><span class="glyphicon glyphicon-calendar"></span></span>';
+                    var inputUbioacion = '<input type="text" class="form-control" placeholder="ubicación" aria-describedby="sizing-addon13" id="swal-input13" value="' + event.ubication + '"></div>';
 
+                    var labelDetails = '<label for="basic-url" class="text-right">Detalle</label>';
+                    var spanDetails = '';
+                    var inputDetails = '<textarea class="form-control"  aria-describedby="sizing-addon14" id="swal-input14">' + event.details + '</textarea></div>';
 
                     var htmlFinal =hiddenLabel + labelTitulo + inputGroupTitulo + inputTitulo + labelFechaInicio + inputGroupFechas + inputFechaInicio + labelFechaTermino + spanGroup + inputFechaTermino;
-                    htmlFinal = htmlFinal + labelEtiqueta + selectEiqueta + optionNinguna + optionInfo + optionImportante + optionMuyImportante + cierreOption;
+                    //htmlFinal = htmlFinal + labelEtiqueta + selectEiqueta + optionNinguna + optionInfo + optionImportante + optionMuyImportante + cierreOption;
+                    htmlFinal = htmlFinal + labelUbicacion + spanUbicacion + inputUbioacion + labelDetails + spanDetails + inputDetails;
 
 
                     $.sweetModal({
-                        title: 'Titulo',
+                        title: 'Cita',
                         content: htmlFinal,
 
                         buttons: {
@@ -824,12 +825,19 @@ $(document).ready(function() {
                                 label: 'Eliminar',
                                 classes: 'redB bordered flat',
                                 action: function() {
+
                                     var idEliminar = $('#swal-input-hidden').val();
                                     var titulo = $('#swal-input1').val();
                                     var fecha1 = moment($('#swal-input2').val());
                                     var fecha2 = moment($('#swal-input3').val());
                                     var etiqueta = $('#selectIdEtiqueta').val();
-                                    eliminarEvento(titulo, fecha1, fecha2, idEliminar, etiqueta);
+                                    var usuId = sessionStorage.getItem("Id");
+                                    if (usuarioIdCreador == usuId) {
+                                        eliminarEvento(titulo, fecha1, fecha2, idEliminar, etiqueta);
+                                    }
+                                    else {
+                                        getNotify('error', 'Usuario', 'Este evento fué creado por otro usuario, NO se puede eliminar.');
+                                    }
                                     //return $.sweetModal('You clicked Action 2!');
                                 }
                             },
@@ -854,6 +862,8 @@ $(document).ready(function() {
                                     var fechaInicioLimite = moment().add(-1, 'day');
                                     var fechaInicioMoment = moment(fechaHoraInicio);
                                     var fechaTerminoMoment = moment(fechaHoraTermino);
+                                    var ubicacion = $('#swal-input13').val();
+                                    var detalles = $('#swal-input14').val();
                                     esValido = true;
                                     //validaciones
                                     //titulo no vacio
@@ -878,7 +888,9 @@ $(document).ready(function() {
                                         FechaInicio: fechaHoraInicio.replace('T', ' '),
                                         FechaTermino: fechaHoraTermino.replace('T', ' '),
                                         EsNuevo: false,
-                                        Etiqueta: etiqueta
+                                        Etiqueta: '1',
+                                        Ubicacion: ubicacion,
+                                        Detalle: detalles
 
                                     };
 

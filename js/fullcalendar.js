@@ -1138,6 +1138,9 @@ function EventManager(options, _sources) {
 					e.end = null;
 				}
 				e.title = event.title;
+				e.details = event.details;
+				e.ubication = event.ubication;
+				e.usuIdCreador = event.usuIdCreador,
 				e.url = event.url;
 				e.allDay = event.allDay;
 				e.className = event.className;
@@ -1993,7 +1996,8 @@ function MonthView(element, calendar) {
 		}
 
 		t.title = formatDate(start, opt('titleFormat'));
-
+/*		t.details = details;
+		t.ubication = ubication;*/
 		t.start = start;
 		t.end = end;
 		t.visStart = visStart;
@@ -2511,6 +2515,11 @@ function BasicView(element, calendar, viewName) {
 	function renderSelection(startDate, endDate, allDay) {
 		renderDayOverlay(startDate, addDays(cloneDate(endDate), 1), true); // rebuild every time???
 	}
+
+	//agregado por coro
+    function renderSelection(startDate, endDate, allDay, details, ubication) {
+        renderDayOverlay(startDate, addDays(cloneDate(endDate), 1), true, details, ubication); // rebuild every time???
+    }
 	
 	
 	function clearSelection() {
@@ -3545,6 +3554,9 @@ function AgendaView(element, calendar, viewName) {
 								title: '',
 								start: startDate,
 								end: endDate,
+								details: '',
+								ubication:'',
+								usuIdCreador:'',
 								className: ['fc-select-helper'],
 								editable: false
 							},
@@ -3995,6 +4007,9 @@ function AgendaEventRenderer() {
 			"<div class='fc-event-title'>" +
 			htmlEscape(event.title || '') +
 			"</div>" +
+            "<div class='fc-event-title'>" +
+            htmlEscape(event.ubication || '') +
+            "</div>" +
 			"</div>" +
 			"<div class='fc-event-bg'></div>";
 		if (seg.isEnd && isEventResizable(event)) {
@@ -5879,7 +5894,20 @@ function SelectionManager() {
 		renderSelection(startDate, endDate, allDay);
 		reportSelection(startDate, endDate, allDay);
 	}
-	
+
+	//agregado por coro
+    function select(startDate, endDate, allDay, details, ubication) {
+        unselect();
+        if (!endDate) {
+            endDate = defaultSelectionEnd(startDate, allDay);
+        }
+        renderSelection(startDate, endDate, allDay, details, ubication);
+        reportSelection(startDate, endDate, allDay, details, ubication);
+    }
+    function reportSelection(startDate, endDate, allDay, details, ubication, ev) {
+        selected = true;
+        trigger('select', null, startDate, endDate, allDay, ev);
+    }
 	
 	function unselect(ev) {
 		if (selected) {
