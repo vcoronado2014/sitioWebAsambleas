@@ -49,7 +49,7 @@
     });
 
     //manejo de las fechas
-    $("#txtFechaInicio").datepicker({
+/*    $("#txtFechaInicio").datepicker({
         dateFormat: "dd-mm-yyyy",
         maxDate: 30,
         minDate: 0,
@@ -90,7 +90,7 @@
             //var dateFormatted = momDate.format('YYYY-M-DD');
             //console.log(dateFormatted);
         }
-    });
+    });*/
 
     $('[data-toggle="tooltip"]').tooltip();
 

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84818e5-ab1b-4864-a036-281b6bc6ea84" name="Default" comment="cambios en la casa">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarProyecto.html" afterPath="$PROJECT_DIR$/CrearModificarProyecto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CrearModificarVotacion.html" afterPath="$PROJECT_DIR$/CrearModificarVotacion.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" afterPath="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/const.js" afterPath="$PROJECT_DIR$/const.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,12 +63,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrearModificarVotacion.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CrearModificarVotacion.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_script/CrearModificarVotacion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="363" column="26" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="363" selection-end-column="85" />
-              <folding />
+            <state relative-caret-position="305">
+              <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+              <folding>
+                <element signature="e#1397#2971#0" expanded="false" />
+                <marker date="1507065786111" expanded="false" signature="2221:2967" ph="{&quot;dateFormat&quot;: &quot;dd-mm-yyyy&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,15 +104,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrearModificarProyecto.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CrearModificarProyecto.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4828">
-              <caret line="348" column="44" lean-forward="true" selection-start-line="348" selection-start-column="44" selection-end-line="348" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <element signature="e#1487#2231#0" expanded="false" />
-                <element signature="e#2272#3016#0" expanded="false" />
-                <element signature="e#15094#18954#0" expanded="false" />
+                <element signature="e#15098#18958#0" expanded="false" />
+                <marker date="1507065786214" expanded="false" signature="2274:3018" ph="{&quot;dateFormat&quot;: &quot;dd-mm-yy&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -259,10 +257,10 @@
         <option value="$PROJECT_DIR$/VotarTricel.html" />
         <option value="$PROJECT_DIR$/VotarProyecto.html" />
         <option value="$PROJECT_DIR$/CrearModificarVotacion.html" />
-        <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
         <option value="$PROJECT_DIR$/const.js" />
         <option value="$PROJECT_DIR$/CrearModificarProyecto.html" />
         <option value="$PROJECT_DIR$/app_script/CrearModificarProyecto.js" />
+        <option value="$PROJECT_DIR$/app_script/CrearModificarVotacion.js" />
       </list>
     </option>
   </component>
@@ -498,7 +496,7 @@
       <workItem from="1505218350871" duration="10822000" />
       <workItem from="1505422658047" duration="20054000" />
       <workItem from="1506362912262" duration="56175000" />
-      <workItem from="1506957233984" duration="13111000" />
+      <workItem from="1506957233984" duration="13675000" />
     </task>
     <task id="LOCAL-00001" summary="cambios en la casa">
       <created>1489456192661</created>
@@ -518,10 +516,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="637273000" />
+    <option name="totallyTimeSpent" value="637837000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15525982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -590,7 +588,7 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1020,22 +1018,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarVotacion.js">
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="363" column="26" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="363" selection-end-column="85" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#15098#18958#0" expanded="false" />
+            <marker date="1507065786214" expanded="false" signature="2274:3018" ph="{&quot;dateFormat&quot;: &quot;dd-mm-yy&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarProyecto.js">
+    <entry file="file://$PROJECT_DIR$/app_script/CrearModificarVotacion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4828">
-          <caret line="348" column="44" lean-forward="true" selection-start-line="348" selection-start-column="44" selection-end-line="348" selection-end-column="44" />
+        <state relative-caret-position="305">
+          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
           <folding>
-            <element signature="e#1487#2231#0" expanded="false" />
-            <element signature="e#2272#3016#0" expanded="false" />
-            <element signature="e#15094#18954#0" expanded="false" />
+            <element signature="e#1397#2971#0" expanded="false" />
+            <marker date="1507065786111" expanded="false" signature="2221:2967" ph="{&quot;dateFormat&quot;: &quot;dd-mm-yyyy&quot;...}" />
           </folding>
         </state>
       </provider>

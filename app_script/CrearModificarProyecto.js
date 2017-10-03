@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     //manejo de las fechas
 
-    $("#txtFechaInicio").datepicker({
+/*    $("#txtFechaInicio").datepicker({
         dateFormat: "dd-mm-yy",
         maxDate: 30,
         minDate: 0,
@@ -95,7 +95,7 @@ $(document).ready(function () {
             //var dateFormatted = momDate.format('YYYY-M-DD');
             //console.log(dateFormatted);
         }
-    });
+    });*/
 
     $('[data-toggle="tooltip"]').tooltip();
 
