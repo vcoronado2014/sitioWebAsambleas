@@ -50,7 +50,7 @@
 
     //manejo de las fechas
     $("#txtFechaInicio").datepicker({
-        dateFormat: "dd-mm-yy",
+        dateFormat: "dd-mm-yyyy",
         maxDate: 30,
         minDate: 0,
         onSelect: function (dateText) {
@@ -71,7 +71,7 @@
         }
     });
     $("#txtFechaTermino").datepicker({
-        dateFormat: "dd-mm-yy",
+        dateFormat: "dd-mm-yyyy",
         maxDate: 90,
         minDate: 0,
         onSelect: function (dateText) {
@@ -185,8 +185,8 @@
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
-                    FechaInicio : fechaInicio,
-                    FechaTermino: fechaTermino,
+                    FechaInicio : InvertirFechaStr(fechaInicio),
+                    FechaTermino: InvertirFechaStr(fechaTermino),
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
                     UsuIdResponsable: usuIdResponsable,
@@ -360,12 +360,15 @@
             dataType: "json",
             success: function (data) {
                 // ok
-
+                var fIniMoment = moment(EntregaFechaDate(data.proposals[0].OtroUno));
+                var fTerMoment = moment(EntregaFechaDate(data.proposals[0].OtroDos));
                 self.frmNombre = data.proposals[0].NombreUsuario;
                 self.frmObjetivo = data.proposals[0].NombreCompleto;
                 //self.frmFechaInicio = moment(data.proposals[0].OtroUno).format("MM-DD-YYYY");
-                self.frmFechaInicio = data.proposals[0].OtroUno;
-                self.frmFechaTermino = data.proposals[0].OtroDos;
+                //self.frmFechaInicio = data.proposals[0].OtroUno;
+                self.frmFechaInicio = moment(fIniMoment, 'America/New_York').local().format('YYYY-MM-DD');
+                //self.frmFechaTermino = data.proposals[0].OtroDos;
+                self.frmFechaTermino = moment(fTerMoment, 'America/New_York').local().format('YYYY-MM-DD');
                 self.frmFechaCreacion = data.proposals[0].OtroTres;
 
                 frmIdResponsable = ko.observable(parseInt(data.proposals[0].OtroOcho));
@@ -600,6 +603,21 @@
             getNotify('error', 'Requerido', 'Usuario Responsable Requerido.');
             retorno = false;
         }
+        //validamos fecha de inicio y termino
+        var fechaIniMoment = moment(FechaInicio);
+        var fechaTerMoment = moment(FechaTermino);
+        var fechaAhoraMoment = moment(new Date());
+        //fecha termino menor a la de inicio
+        if (fechaTerMoment < fechaIniMoment){
+            getNotify('error', 'Fechas', 'La fecha de término no puede ser menor a la de inicio.');
+            retorno = false;
+        }
+        //fecha termino menor a la actual
+        if (fechaTerMoment < fechaAhoraMoment){
+            getNotify('error', 'Fechas', 'No se puede crear un tricel con fecha término anterior a la actual.');
+            retorno = false;
+        }
+
         return retorno;
     }
 

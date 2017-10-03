@@ -1,14 +1,14 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
@@ -514,6 +514,36 @@ function FechaEnteraConHora(fechaC)
     var terminoStr = annoTer.toString() + mesTer.toString() + diaTer.toString() + horaTer.toString() + minutoTer.toString();
     return parseInt(terminoStr);
 }
+function InvertirFechaStr(fechaStr){
+    var arrFecha = fechaStr.split('-');
+    if (arrFecha.length == 3){
+        if (arrFecha[0].length == 4){
+            return arrFecha[2] + '-' + arrFecha[1] + '-' + arrFecha[0];
+        }
+        else{
+            return fechaStr;
+        }
+    }
+    else{
+        return fechaStr;
+    }
+}
+function EntregaFechaDate(fechaStr){
+
+    var arrFecha = fechaStr.split('-');
+    if (arrFecha != null && arrFecha.length == 3){
+        var intYear = parseInt(arrFecha[2]);
+        var intMonth = parseInt(arrFecha[1]) - 1;
+        var intDay = parseInt(arrFecha[0]);
+        return new Date(intYear, intMonth, intDay);
+    }
+    else{
+        //entrega fecha hora actual.
+        return new Date();
+    }
+
+}
+
 function FechaEnteraStr(fechaStr)
 {
     var parteUno = fechaStr.split('-');

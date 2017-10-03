@@ -35,6 +35,7 @@
 
     <link href="Content/site.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,6 +77,8 @@
     <script src="Scripts/morris.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
@@ -217,7 +220,7 @@
                 <span class="input-group-addon" id="basic-addon5">
                     <i class="fa fa-calendar"></i>
                 </span>
-            <input type="text" class="form-control" name="monto" id="txtFechaInicio" aria-describedby="basic-addon5" data-bind="value: self.frmFechaInicio" />
+            <input type="date" class="form-control" name="monto" id="txtFechaInicio" data-date-format="dd-mm-yyyy" aria-describedby="basic-addon5" data-bind="value: self.frmFechaInicio" />
         </div>
 
 
@@ -228,7 +231,7 @@
                     <span class="input-group-addon" id="basic-addon9">
                         <i class="fa fa-calendar"></i>
                     </span>
-            <input type="text" class="form-control" name="monto" id="txtFechaTermino" aria-describedby="basic-addon9" data-bind="value: self.frmFechaTermino" />
+            <input type="date" class="form-control" name="monto" id="txtFechaTermino" data-date-format="dd-mm-yyyy" aria-describedby="basic-addon9" data-bind="value: self.frmFechaTermino" />
         </div>
 
     </div>
