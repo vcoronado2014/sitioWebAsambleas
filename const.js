@@ -1,14 +1,14 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
+    return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }

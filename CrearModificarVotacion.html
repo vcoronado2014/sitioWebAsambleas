@@ -84,8 +84,8 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=1.7"></script>
-    <script src="app_script/CrearModificarVotacion.js?v=1.7"></script>
+    <script src="const.js?v=1.8"></script>
+    <script src="app_script/CrearModificarVotacion.js?v=1.8"></script>
 
 </head>
 <body class="bodyFixed">
@@ -220,7 +220,7 @@
                 <span class="input-group-addon" id="basic-addon5">
                     <i class="fa fa-calendar"></i>
                 </span>
-            <input type="date" class="form-control" name="monto" id="txtFechaInicio" data-date-format="dd-mm-yyyy" aria-describedby="basic-addon5" data-bind="value: self.frmFechaInicio" />
+            <input type="date" class="form-control" name="monto" id="txtFechaInicio" data-date-format="dd-mm-yyyy" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" aria-describedby="basic-addon5" data-bind="value: self.frmFechaInicio" />
         </div>
 
 
