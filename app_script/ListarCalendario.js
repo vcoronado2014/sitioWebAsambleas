@@ -2,10 +2,6 @@
  * Created by VICTOR CORONADO on 29/09/2017.
  */
 $(document).ready(function() {
-    var datepicker = $.fn.datepicker.noConflict();
-    $.fn.bootstrapDP = datepicker;
-    $("#datetimepicker13").bootstrapDP();
-    // $('#datetimepicker1').datetimepicker();
 
     var date = new Date();
     var d = date.getDate();

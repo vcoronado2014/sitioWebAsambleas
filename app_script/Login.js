@@ -34,6 +34,7 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreRol", result.Rol.Nombre);
                     sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
+                    sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
                     //roles permisos
                     sessionStorage.setItem("RolesPermisos", JSON.stringify(result.RolesPermisos));
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));

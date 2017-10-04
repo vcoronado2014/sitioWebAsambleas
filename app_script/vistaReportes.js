@@ -41,7 +41,10 @@
             break;
         case 'votaciones':
             CrearReporteVotaciones(instId, usuId, nombreUsuario, rolId, modo);
-            break;            
+            break;
+        case 'asistencia':
+            CrearReporteAsistencia(instId, usuId, nombreUsuario, rolId, modo);
+            break;
         default:
             break;
     }
@@ -85,6 +88,74 @@
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
                     if (paginas < cantidadPaginas)
                         doc.addPage();
+                    paginas++;
+                }
+
+                //mostrar
+                if (modo == 'mostrar')
+                    $("#mostrarPdf").attr("src", doc.output('datauristring'));
+                else
+                    doc.save('usuarios.pdf');
+
+            },
+            function (){
+                //alguna ha fallado
+                alert('error');
+            },
+            function(){
+                //acá podemos quitar el elemento cargando
+                alert('quitar cargando');
+            }
+        );
+
+
+    }
+
+    function CrearReporteAsistencia(instId, usuId, nombreUsuario, rolId, modo)
+    {
+        var obtenerUsuarios = jQuery.ajax({
+            url : ObtenerUrl('ListarUsuarios') + '?instId=' + instId + '&rolId=' + rolId,
+            type: 'GET',
+            dataType : "json"
+            //,
+            //contentType: "application/json",
+            //data: ko.toJSON({ InstId: instId })
+        });
+
+        $.when(obtenerUsuarios).then(
+            function(data){
+                dataUsuarios = [];
+                var contador = 0;
+
+                //aca construir el Reporte
+
+                var results = [],
+                    length = Math.ceil(data.proposals.length / 22);
+
+                for (var i = 0; i < length; i++) {
+                    results.push(data.proposals.slice(i * 22, (i + 1) * 22));
+                }
+
+                var cantidadPaginas = results.length - 1;
+                var paginas = 0;
+
+                var doc = new jsPDF();
+
+                for(var t in results)
+                {
+                    var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
+                    var dirInstitucion = sessionStorage.getItem("DireccionInstitucion");
+                    //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
+                    var fr = moment().locale('es');
+                    //ConstruirEncabezado('LISTADO DE ASISTENCIA A LA ASAMBLEA DE ELECCIÓN', 'DE DIRECTORIO DE LA ORGANIZACIÓN ' + nombreInstitucion + ' ' + fr.format('LL'), doc);
+                    ConstruirEncabezadoAsistencia('LISTADO DE ASISTENCIA A LA ASAMBLEA',nombreInstitucion, dirInstitucion, doc);
+                    ConstruirPdfAsistencia(doc, results[t]);
+                    ConstruirPieAsistencia(paginas + 1, cantidadPaginas + 1, doc);
+                    //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
+                    if (paginas < cantidadPaginas) {
+                        doc.addPage();
+                        doc.setFontSize("16");
+                    }
                     paginas++;
                 }
 
@@ -321,6 +392,26 @@
         doc.line(10, 35, 200, 35);
 
     }
+    function ConstruirEncabezadoAsistencia(titulo, institucion, direccion, doc)
+    {
+        //set color gray
+        doc.setTextColor(0);
+        doc.setFontSize("10");
+        doc.setFont("helvetica");
+        doc.setFontType("italic");
+        doc.text(10, 10, institucion);
+        doc.text(10, 15, direccion);
+
+        doc.setFontSize("14");
+        doc.setFont("helvetica");
+        doc.setFontType("bold");
+        doc.text(50, 30, titulo);
+
+        //linea
+        doc.setLineWidth(0.5);
+        doc.line(10, 35, 200, 35);
+
+    }
     function ConstruirPie(usuario, paginaActual, paginasTotal, doc)
     {
         doc.setLineWidth(0.3);
@@ -341,6 +432,73 @@
 
     }
 
+    function ConstruirPieAsistencia(paginaActual, paginasTotal, doc)
+    {
+        doc.setLineWidth(0.3);
+        doc.line(10, 270, 200, 270);
+
+        //set color gray
+        doc.setTextColor(100);
+
+        doc.setFont("helvetica");
+        doc.setFontType("italic");
+        doc.setFontSize("8");
+        doc.text(20, 280, 'Pág. ' + paginaActual + ' de ' + paginasTotal);
+
+        //doc.text(105, 280, 'Pág. ' + paginaActual + ' de ' + paginasTotal, null, null, 'center');
+        var fecha = FechaString(new Date());
+        doc.text(200, 280, fecha, null, null, 'right');
+
+
+    }
+
+
+function ConstruirPdfAsistencia(doc, arreglo) {
+    //set color gray
+    doc.setTextColor(0);
+    doc.setFontType("normal");
+    doc.setFontSize("9");
+    doc.text(10, 40, "Nombre");
+
+    doc.text(70, 40, "Rut");
+
+    doc.text(100, 40, "Domicilio");
+
+    doc.text(170, 40, "Firma");
+
+    //linea
+    doc.setLineWidth(0.5);
+    doc.line(10, 45, 200, 45);
+
+    /*
+     var itemsProcesar = dataR;
+     */
+
+
+    var lineaInicio = 50;
+
+    if (arreglo != null) {
+        arreglo.sort(sort_by('OtroUno', false, function(a){return a.toUpperCase()}));
+
+        for (var i in arreglo) {
+
+            doc.text(10, lineaInicio, arreglo[i].NombreCompleto);
+
+            doc.text(70, lineaInicio, arreglo[i].OtroCuatro);
+
+            doc.text(100, lineaInicio, arreglo[i].OtroCinco);
+
+            doc.text(170, lineaInicio, "______________");
+
+            lineaInicio = lineaInicio + 10;
+
+        }
+    }
+
+
+    //el tope son 280 para el salto de pagina
+
+}
     function ConstruirPdfUsuarios(doc, arreglo) {
         //set color gray
         doc.setTextColor(0);

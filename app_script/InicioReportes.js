@@ -89,6 +89,18 @@ function MostrarReporteUsuarios()
     var win = window.open(URL, "_blank");
 
 }
+function MostrarReporteAsistencia()
+{
+    var idInst = sessionStorage.getItem("InstId");
+    var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
+    var nombreReporte = 'asistencia';
+
+    var URL = 'vistaReporte.html?INST_ID=' + idInst + '&USU_ID=' + idUsuario + '&NOMBRE_REPORTE=' + nombreReporte+ '&NOMBRE_USUARIO=' + nombreUsuario + '&ROL_ID=' + rolId + '&MODO=mostrar';
+    var win = window.open(URL, "_blank");
+
+}
 function MostrarReporteInstituciones()
 {
     var idInst = sessionStorage.getItem("InstId");
@@ -135,6 +147,17 @@ function DescargarReporteUsuarios()
     var nombreReporte = 'usuarios';
 
     CrearReporteUsuarios(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
+
+}
+function DescargarReporteAsistencia()
+{
+    var idInst = sessionStorage.getItem("InstId");
+    var idUsuario = sessionStorage.getItem("Id");
+    var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+    var rolId= sessionStorage.getItem("RolId");
+    var nombreReporte = 'asistencia';
+
+    CrearReporteAsistencia(idInst, idUsuario, nombreUsuario, rolId, 'descarga');
 
 }
 function DescargarReporteInstituciones()

@@ -37,7 +37,7 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreRol", result.Rol.Nombre);
                     sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
-
+                    sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
                     sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
 
                     //importante para determinar de donde se esta ingresando, en este caso es cpas.

@@ -39,6 +39,7 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
                     //roles permisos
                     sessionStorage.setItem("RolesPermisos", JSON.stringify(result.PermisoRol));
+                    sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
                     //ahora redireccionamos
                     var url = 'inicio.html';
                     window.location.href = url;
