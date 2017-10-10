@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
     <link href="Content/morris.css" rel="stylesheet" />
 </head>
-<body class="bodyFixed">
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
 <div class="container" id="loading">
 </div>
 <div class="container" id="principal">
@@ -79,6 +79,8 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                             <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -242,9 +244,9 @@
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
 
-    <script src="const.js?v=1.9"></script>
+    <script src="const.js?v=2.0"></script>
 
-    <script src="app_script/ListarMuro.js?v=1.9"></script>
+    <script src="app_script/ListarMuro.js?v=2.0"></script>
 
 </div>
 </body>

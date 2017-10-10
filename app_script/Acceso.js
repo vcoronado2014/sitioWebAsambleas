@@ -40,6 +40,8 @@ $(document).ready(function () {
                     //roles permisos
                     sessionStorage.setItem("RolesPermisos", JSON.stringify(result.PermisoRol));
                     sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
+                    sessionStorage.setItem("ComunaUsuario", result.Comuna.Nombre);
+                    sessionStorage.setItem("ComunaInstitucion", result.ComunaInstitucion.Nombre);
                     //ahora redireccionamos
                     var url = 'inicio.html';
                     window.location.href = url;

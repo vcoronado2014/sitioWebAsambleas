@@ -120,7 +120,7 @@
 
 
         self.details = ko.observable("Pinche aquí para abrir");
-
+        self.frmIdQuorumMinimo = ko.observable("");
         /*
         if (sessionStorage.getItem("RolId") == '1')
             shouldShowMessage = ko.observable(true);
@@ -182,6 +182,7 @@
                 var fechaInicio = $("#txtFechaInicio").val();
                 var fechaTermino = $("#txtFechaTermino").val();
                 var usuIdResponsable = $("#selectIdUsuario").val();
+                var quorumMinimo = $("#selectIdQuorum").val();
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -190,6 +191,7 @@
                     IdUsuario: sessionStorage.getItem("Id"),
                     InstId: sessionStorage.getItem("InstId"),
                     UsuIdResponsable: usuIdResponsable,
+                    QuorumMinimo: quorumMinimo,
                     Id: getParameterByName('id')
                 };
 
@@ -373,6 +375,7 @@
 
                 frmIdResponsable = ko.observable(parseInt(data.proposals[0].OtroOcho));
                 self.details= "Pinche aqui para abrir";
+                self.frmIdQuorumMinimo = data.proposals[0].OtroDiez;
 
 
                 //ko.applyBindings(new VotacionViewModel(data), self.elem);
@@ -399,6 +402,7 @@
             $("#txtObjetivo").attr('disabled', 'disabled');
             $("#txtNombreUsuario").attr('disabled', 'disabled');
             $("#selectIdUsuario").attr('disabled', 'disabled');
+            $("#selectIdQuorum").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",
@@ -629,4 +633,33 @@ function Volver() {
 }
 function buscar(regId) {
     alert(regId);
+}
+function CerrarIniciar(){
+    if ($('#ancoreSesion').html() == '<i class="fa fa-close"></i> Cerrar Sesión')
+    {
+        //acá debe direccionarlo directamente al login y vaciar la variable de session
+
+        if (sessionStorage.getItem("ES_CPAS") == "true")
+        {
+            window.location.href = 'indexCpas.html';
+        }
+        else
+        {
+            window.location.href = 'index.html';
+        }
+        sessionStorage.clear();
+        return;
+    }
+    else
+    {
+        //directo al login
+        if (sessionStorage.getItem("ES_CPAS") == "true")
+        {
+            window.location.href = 'indexcpas.html';
+        }
+        else
+        {
+            window.location.href = 'index.html';
+        }
+    }
 }

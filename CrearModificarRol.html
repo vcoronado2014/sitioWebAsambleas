@@ -53,14 +53,14 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=1.9"></script>
-    <script src="app_script/CrearModificarRol.js?v=1.9"></script>
+    <script src="const.js?v=2.0"></script>
+    <script src="app_script/CrearModificarRol.js?v=2.0"></script>
 
 
 
 
 </head>
-<body class="bodyFixed">
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
 <div class="container" id="principal">
     <!-- encabezado -->
     <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
@@ -101,6 +101,8 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                             <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -232,7 +234,7 @@
                 <td>Muro</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerMuro" id="chkVerMuro"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaMuro" id="chkCreaMuro"></td>
-                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPModificaMuro" id="chkModificaMuro"></td>
+                <td class="text-center">--</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPEliminaMuro" id="chkEliminaMuro"></td>
             </tr>
             <tr>
@@ -246,6 +248,13 @@
                 <td>Mailing</td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerMailing" id="chkVerMailing"></td>
                 <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPCreaMailing" id="chkCreaMailing"></td>
+                <td class="text-center">--</td>
+                <td class="text-center">--</td>
+            </tr>
+            <tr>
+                <td>Reporte Asistencia</td>
+                <td class="text-center"><input type="checkbox" class="big-checkbox" data-bind="checked: self.frmPVerReporteAsistencia" id="chkVerReporteAsistencia"></td>
+                <td class="text-center">--</td>
                 <td class="text-center">--</td>
                 <td class="text-center">--</td>
             </tr>

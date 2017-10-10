@@ -66,7 +66,7 @@
                 var contador = 0;
 
                 //aca construir el Reporte
-
+                var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
                 var results = [],
                     length = Math.ceil(data.proposals.length / 22);
 
@@ -82,7 +82,7 @@
                 for(var t in results)
                 {
                     //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
-                    ConstruirEncabezado('Reporte de Usuarios', 'Este reporte le muestra los usuarios creados en el Sistema.', doc);
+                    ConstruirEncabezado('Reporte de Usuarios', 'Este reporte le muestra los usuarios creados en el Sistema.', nombreInstitucion,  doc);
                     ConstruirPdfUsuarios(doc, results[t]);
                     ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
@@ -145,10 +145,11 @@
                 {
                     var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
                     var dirInstitucion = sessionStorage.getItem("DireccionInstitucion");
+                    var comunaUsuario = sessionStorage.getItem("ComunaInstitucion");
                     //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
                     var fr = moment().locale('es');
                     //ConstruirEncabezado('LISTADO DE ASISTENCIA A LA ASAMBLEA DE ELECCIÓN', 'DE DIRECTORIO DE LA ORGANIZACIÓN ' + nombreInstitucion + ' ' + fr.format('LL'), doc);
-                    ConstruirEncabezadoAsistencia('LISTADO DE ASISTENCIA A LA ASAMBLEA',nombreInstitucion, dirInstitucion, doc);
+                    ConstruirEncabezadoAsistencia('LISTADO DE ASISTENCIA A LA ASAMBLEA',nombreInstitucion, dirInstitucion, comunaUsuario, doc);
                     ConstruirPdfAsistencia(doc, results[t]);
                     ConstruirPieAsistencia(paginas + 1, cantidadPaginas + 1, doc);
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
@@ -207,6 +208,7 @@
                  }
                  */
                 //aca construir el Reporte
+                var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
 
                 var results = [],
                     length = Math.ceil(data.proposals.length / 22);
@@ -223,7 +225,7 @@
                 for(var t in results)
                 {
                     //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
-                    ConstruirEncabezado('Reporte de Instituciones', 'Este reporte le muestra las Instituciones creadas en el Sistema.', doc);
+                    ConstruirEncabezado('Reporte de Instituciones', 'Este reporte le muestra las Instituciones creadas en el Sistema.', nombreInstitucion, doc);
                     ConstruirPdfInstituciones(doc, results[t]);
                     ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
@@ -268,7 +270,7 @@
                 var contador = 0;
 
                 //aca construir el Reporte
-
+                var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
                 var results = [],
                     length = Math.ceil(data.proposals.length / 22);
 
@@ -284,7 +286,7 @@
                 for(var t in results)
                 {
                     //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
-                    ConstruirEncabezado('Reporte de Rendiciones', 'Este reporte le muestra los Ingresos y Egresosde dineros de su Institución.', doc);
+                    ConstruirEncabezado('Reporte de Rendiciones', 'Este reporte le muestra los Ingresos y Egresosde dineros de su Institución.', nombreInstitucion, doc);
                     ConstruirPdfRendiciones(doc, results[t]);
                     ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
@@ -339,13 +341,13 @@
 
                 var cantidadPaginas = results.length - 1;
                 var paginas = 0;
-
+                var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
                 var doc = new jsPDF();
 
                 for(var t in results)
                 {
                     //la data solo se puede construir hasta 22 registros, luego se inserta nueva hoja
-                    ConstruirEncabezado('Reporte de Votaciones', 'Este reporte le muestra las votaciones de Proyectos y Listas Tricel de su Institución.', doc);
+                    ConstruirEncabezado('Reporte de Votaciones', 'Este reporte le muestra las votaciones de Proyectos y Listas Tricel de su Institución.', nombreInstitucion, doc);
                     ConstruirPdfVotaciones(doc, results[t]);
                     ConstruirPie(nombreUsuario, paginas + 1, cantidadPaginas + 1, doc);
                     //agrega pagina mientras el largo del arreglo -1 sea igual a la cantidad de paginas
@@ -374,7 +376,7 @@
 
     }
 
-    function ConstruirEncabezado(titulo, subtitulo, doc)
+    function ConstruirEncabezado(titulo, subtitulo, institucion, doc)
     {
         //set color gray
         doc.setTextColor(0);
@@ -385,6 +387,7 @@
         doc.setFont("helvetica");
         doc.setFontType("italic");
         doc.setFontSize("12");
+        doc.text(10, 10, institucion);
         doc.text(20, 30, subtitulo);
 
         //linea
@@ -392,7 +395,7 @@
         doc.line(10, 35, 200, 35);
 
     }
-    function ConstruirEncabezadoAsistencia(titulo, institucion, direccion, doc)
+    function ConstruirEncabezadoAsistencia(titulo, institucion, direccion, comunaUsuario, doc)
     {
         //set color gray
         doc.setTextColor(0);
@@ -400,7 +403,8 @@
         doc.setFont("helvetica");
         doc.setFontType("italic");
         doc.text(10, 10, institucion);
-        doc.text(10, 15, direccion);
+        doc.text(10, 15, comunaUsuario);
+        doc.text(10, 20, direccion);
 
         doc.setFontSize("14");
         doc.setFont("helvetica");

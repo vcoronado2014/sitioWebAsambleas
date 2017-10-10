@@ -211,6 +211,27 @@ $(document).ready(function () {
                 //por mientras solo para el Administrador
                 if (puedeVotar == "1")
                     disabled = false;
+                //aca debemos procesar los resultados del quorum
+                //antes de empezar si el porcentaje exigido es 0 el quorum es del 100%
+                var porcentajeExigido = parseInt(itemsProcesarP[i].OtroDoce);
+                var valorBarra = 100;
+                var cantidadVotos = parseInt(itemsProcesarP[i].OtroOnce);
+                var totalUsuarios = parseInt(itemsProcesarP[i].TotalUsuarios);
+                if (porcentajeExigido > 0 && totalUsuarios > 0){
+                    //aca procesamos nuevamente el valor de la barra
+                    var usuariosQueDebenVotar = (totalUsuarios * porcentajeExigido) / 100;
+                    //de la cantidad de usuarios que deben votar se compara con los votos emitidos
+                    //cantidadVotos / totalUsuarios * 100
+                    var votados = parseInt((cantidadVotos / usuariosQueDebenVotar) * 100);
+                    if (votados > 100){
+                        valorBarra = 100;
+                    }
+                    else {
+                        valorBarra = votados;
+                    }
+
+
+                }
 
 
                 var s = {
@@ -224,6 +245,7 @@ $(document).ready(function () {
                     descripcion: itemsProcesarP[i].OtroSeis,
                     urlVotar: 'VotarProyecto.html?id=' + itemsProcesarP[i].Id + '&puedeVotar=' + itemsProcesarP[i].OtroSiete,
                     puedeVotar: disabled,
+                    valorBarra: valorBarra,
                     content: 'Nombre: ' + itemsProcesarP[i].NombreUsuario + ', Objetivo: ' + itemsProcesarP[i].NombreCompleto + ', Descripción: ' + itemsProcesarP[i].OtroSeis
                 }
                 itemsP[i] = s;
@@ -244,7 +266,27 @@ $(document).ready(function () {
                 //por mientras solo para el Administrador
                 if (puedeVotar == "1")
                     disabled = false;
+                //aca debemos procesar los resultados del quorum
+                //antes de empezar si el porcentaje exigido es 0 el quorum es del 100%
+                var porcentajeExigido = parseInt(itemsProcesarT[i].OtroDoce);
+                var valorBarra = 100;
+                var cantidadVotos = parseInt(itemsProcesarT[i].OtroOnce);
+                var totalUsuarios = parseInt(itemsProcesarT[i].TotalUsuarios);
+                if (porcentajeExigido > 0 && totalUsuarios > 0){
+                    //aca procesamos nuevamente el valor de la barra
+                    var usuariosQueDebenVotar = (totalUsuarios * porcentajeExigido) / 100;
+                    //de la cantidad de usuarios que deben votar se compara con los votos emitidos
+                    //cantidadVotos / totalUsuarios * 100
+                    var votados = parseInt((cantidadVotos / usuariosQueDebenVotar) * 100);
+                    if (votados > 100){
+                        valorBarra = 100;
+                    }
+                    else {
+                        valorBarra = votados;
+                    }
 
+
+                }
 
                 var s = {
                     nombre: itemsProcesarT[i].NombreUsuario,
@@ -254,6 +296,7 @@ $(document).ready(function () {
                     fechaCreacion: itemsProcesarT[i].OtroTres,
                     urlVotar: 'VotarTricel.html?id=' + itemsProcesarT[i].Id + '&puedeVotar=' + itemsProcesarT[i].OtroSiete,
                     puedeVotar: disabled,
+                    valorBarra: valorBarra,
                     content: 'Nombre: ' + itemsProcesarT[i].NombreUsuario + ', Objetivo: ' + itemsProcesarT[i].NombreCompleto
                 }
                 itemsT[i] = s;

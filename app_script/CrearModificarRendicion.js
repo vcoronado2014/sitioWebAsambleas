@@ -68,6 +68,7 @@
         self.frmMonto = ko.observable("");
         self.frmUrlDocumento = ko.observable("");
         self.details = ko.observable("Pinche aquí para abrir");
+        self.frmIdTipoMovimiento = ko.observable("");
 
         /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -190,6 +191,8 @@
                 self.frmNombreUsuario = data.proposals[0].NombreCompleto;
                 self.frmFecha = data.proposals[0].NombreUsuario;
                 self.frmNumeroComprobante = data.proposals[0].OtroDos;
+                //tipo movimiento
+                self.frmIdTipoMovimiento = data.proposals[0].OtroCinco;
                 self.frmMonto = data.proposals[0].OtroTres;
                 if (data.proposals[0].UrlDocumento == "#") {
                     self.frmUrlDocumento = data.proposals[0].UrlDocumento;

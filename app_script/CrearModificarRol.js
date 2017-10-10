@@ -111,6 +111,7 @@ $(document).ready(function () {
         self.frmPVerReportes= ko.observable(false);
         self.frmPVerMailing= ko.observable(false);
         self.frmPCreaMailing= ko.observable(false);
+        self.frmPVerReporteAsistencia = ko.observable(false);
 
 
         Menu();
@@ -153,7 +154,7 @@ $(document).ready(function () {
                 EliminaRendicion: $('#chkEliminaRendicion')[0].checked,
                 VerMuro: $('#chkVerMuro')[0].checked,
                 CreaMuro: $('#chkCreaMuro')[0].checked,
-                ModificaMuro: $('#chkModificaMuro')[0].checked,
+                ModificaMuro: false,
                 EliminaMuro: $('#chkEliminaMuro')[0].checked,
                 VerRol: $('#chkVerRol')[0].checked,
                 CreaRol: $('#chkCreaRol')[0].checked,
@@ -163,6 +164,7 @@ $(document).ready(function () {
                 PuedeVotarTricel: true,
                 VerReportes: $('#chkVerReportes')[0].checked,
                 VerMailing: $('#chkVerMailing')[0].checked,
+                VerReporteAsistencia: $('#chkVerReporteAsistencia')[0].checked,
                 CreaMailing: $('#chkCreaMailing')[0].checked
             };
 
@@ -325,6 +327,8 @@ $(document).ready(function () {
                             self.frmPVerMailing= ko.observable(true);
                         if (dataR[0].CreaMailing == 1)
                             self.frmPCreaMailing= ko.observable(true);
+                        if (dataR[0].VerReporteAsistencia == 1)
+                            self.frmPVerReporteAsistencia= ko.observable(true);
 
                         ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
 

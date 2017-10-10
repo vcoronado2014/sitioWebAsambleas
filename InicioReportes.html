@@ -66,16 +66,16 @@
 
     <script type="text/javascript" src="js/jspdf.debug.js"></script>
 
-    <script src="const.js?v=1.9"></script>
+    <script src="const.js?v=2.0"></script>
 
-    <script src="app_script/vistaReportes.js?v=1.9"></script>
-    <script src="app_script/InicioReportes.js?v=1.9"></script>
+    <script src="app_script/vistaReportes.js?v=2.0"></script>
+    <script src="app_script/InicioReportes.js?v=2.0"></script>
     
 
 
 
 </head>
-<body class="bodyFixed">
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
 
 <div class="container" id="loading">
 
@@ -121,6 +121,8 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                             <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -184,12 +186,6 @@
         <p>Muestra las Votaciones de Listas y Proyectos de la Institución</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteVotaciones()"><i class="fa fa-search"> </i> Mostrar</a>
             <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteVotaciones()"><i class="fa fa-download"> </i> Descargar</a></p>
-    </div>
-    <div class="jumbotron"  data-bind="visible: VerReportes">
-        <h3>Asistencia</h3>
-        <p>Muestra un listado de usuarios de la Institución para firmar asistencia</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteAsistencia()"><i class="fa fa-search"> </i> Mostrar</a>
-            <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteAsistencia()"><i class="fa fa-download"> </i> Descargar</a></p>
     </div>
 
 </div>

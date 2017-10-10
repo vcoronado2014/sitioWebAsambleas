@@ -53,10 +53,10 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=1.9"></script>
-    <script src="app_script/CrearModificarRendicion.js?v=1.9"></script>
+    <script src="const.js?v=2.0"></script>
+    <script src="app_script/CrearModificarRendicion.js?v=2.0"></script>
 </head>
-<body class="bodyFixed">
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
 <div class="container" id="principal">
     <!-- encabezado -->
     <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
@@ -97,6 +97,8 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                             <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -159,7 +161,7 @@
                 <span class="input-group-addon" id="basic-addon8">
                     <i class="fa fa-globe"></i>
                 </span>
-            <select id="selectIdTipoMovimiento" class="form-control">
+            <select id="selectIdTipoMovimiento" class="form-control" data-bind="value: self.frmIdTipoMovimiento">
                 <option value="1">Ingreso</option>
                 <option value="2">Egreso</option>
             </select>

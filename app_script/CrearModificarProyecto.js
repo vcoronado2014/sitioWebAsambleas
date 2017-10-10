@@ -125,6 +125,7 @@ $(document).ready(function () {
         self.frmDescripcion = ko.observable("");
 
         self.details = ko.observable("Pinche aquí para abrir");
+        self.frmIdQuorumMinimo = ko.observable("");
 
         /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -182,6 +183,7 @@ $(document).ready(function () {
                 var monto = $("#txtMonto").val();
                 var beneficios = $("#txtBeneficios").val();
                 var descripcion = $("#txtDescripcion").val();
+                var quorumMinimo = $("#selectIdQuorum").val();
                 var tricel = {
                     Nombre: nombre,
                     Objetivo: objetivo,
@@ -192,6 +194,7 @@ $(document).ready(function () {
                     Costo: monto,
                     Beneficios: beneficios,
                     Descripcion: descripcion,
+                    QuorumMinimo: quorumMinimo,
                     Id: getParameterByName('id')
                 };
 
@@ -366,6 +369,7 @@ $(document).ready(function () {
                 self.frmDescripcion = data.proposals[0].OtroSeis;
 
                 self.details= "Pinche aqui para abrir";
+                self.frmIdQuorumMinimo = data.proposals[0].QuorumMinimo;
 
                 //ko.applyBindings(new VotacionViewModel(data), self.elem);
 
@@ -393,6 +397,7 @@ $(document).ready(function () {
             $("#txtMonto").attr('disabled', 'disabled');
             $("#txtBeneficios").attr('disabled', 'disabled');
             $("#txtDescripcion").attr('disabled', 'disabled');
+            $("#selectIdQuorum").attr('disabled', 'disabled');
 
             swal({
                 title: "Eliminar",

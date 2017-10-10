@@ -93,6 +93,29 @@ $(document).ready(function () {
                     self.visibleBoton = true;
                 }
                 self.textoVoto = itemsProcesarP[i].OtroNueve;
+                //aca debemos procesar los resultados del quorum
+                //antes de empezar si el porcentaje exigido es 0 el quorum es del 100%
+                var porcentajeExigido = parseInt(itemsProcesarP[i].OtroDoce);
+                var valorBarra = 100;
+                var cantidadVotos = parseInt(itemsProcesarP[i].OtroOnce);
+                var totalUsuarios = parseInt(itemsProcesarP[i].TotalUsuarios);
+                var minimoUsuarios = 0;
+                if (porcentajeExigido > 0 && totalUsuarios > 0){
+                    //aca procesamos nuevamente el valor de la barra
+                    var usuariosQueDebenVotar = (totalUsuarios * porcentajeExigido) / 100;
+                    minimoUsuarios = usuariosQueDebenVotar;
+                    //de la cantidad de usuarios que deben votar se compara con los votos emitidos
+                    //cantidadVotos / totalUsuarios * 100
+                    var votados = parseInt((cantidadVotos / usuariosQueDebenVotar) * 100);
+                    if (votados > 100){
+                        valorBarra = 100;
+                    }
+                    else {
+                        valorBarra = votados;
+                    }
+
+
+                }
 
                 var s = {
                     nombre: itemsProcesarP[i].NombreUsuario,
@@ -107,6 +130,10 @@ $(document).ready(function () {
                     puedeVotar: disabled,
                     fechas: itemsProcesarP[i].OtroOcho,
                     textoVoto: itemsProcesarP[i].OtroNueve,
+                    valorBarra: valorBarra,
+                    minimoExigido: minimoUsuarios,
+                    hanVotado: cantidadVotos,
+                    totalUsuarios: totalUsuarios,
                     content: 'Nombre: ' + itemsProcesarP[i].NombreUsuario + ', Objetivo: ' + itemsProcesarP[i].NombreCompleto + ', Descripción: ' + itemsProcesarP[i].OtroSeis
                 }
                 itemsP[i] = s;

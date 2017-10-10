@@ -66,14 +66,14 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=1.9"></script>
+    <script src="const.js?v=2.0"></script>
 
-    <script src="app_script/VotarTricel.js?v=1.9"></script>
+    <script src="app_script/VotarTricel.js?v=2.0"></script>
 
 
 
 </head>
-<body class="bodyFixed">
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
 <div class="container" id="loading">
 
 </div>
@@ -118,6 +118,8 @@
                             <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
                             <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active" data-bind="visible: VerTricel">
@@ -172,6 +174,26 @@
                     <i> <span>Objetivo: </span></i>
                     <span data-bind="text: objetivo"></span>
                 </li>
+                <div class="col-xs-12">
+                    <small class="text-muted">
+                        <i class="fa fa-balance-scale fa-fw"></i>
+                        <span>Quorum</span>
+                    </small>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" data-bind="style:{width: valorBarra + '%'}, text: valorBarra + '%'" aria-valuemin="0" aria-valuemax="100">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                        <span class="text-muted">
+                            <small>
+                                <label data-bind="text: 'Mínimo de Usuarios por Quorum: ' + minimoExigido"></label>,
+                                <label data-bind="text: 'han Votado: ' + hanVotado"></label>,
+                                <label data-bind="text: 'de un total de: ' + totalUsuarios"></label>
+                            </small>
+                        </span>
+                </div>
 
             </ul>
         </div>

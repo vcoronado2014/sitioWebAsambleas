@@ -21,6 +21,11 @@
 function CantidadComentarios(){
     return 3;
 }
+function TiempoCierreSesion(){
+    //en milisegundos estos son por defecto 15 minutos
+    return 900000;
+}
+
 function getParameterByName(name, url) {
 
     //// query string: ?foo=lorem&bar=&baz
@@ -235,6 +240,7 @@ function Menu()
         VerMailing= ko.observable(false);
         CreaMailing= ko.observable(false);
         VerReportes= ko.observable(false);
+        VerReporteAsistencia= ko.observable(false);
         //el menu se ve siempre
         menuMenu = ko.observable(true);
 
@@ -357,6 +363,9 @@ function Menu()
 
         if (obj.VerReportes == 1)
             VerReportes = ko.observable(true);
+
+        if (obj.VerReporteAsistencia == 1)
+            VerReporteAsistencia = ko.observable(true);
 
     }
 
@@ -559,4 +568,12 @@ function FechaEnteraStrT(fechaStr)
 
     return parseInt(parteDos[0] + parteUno[1] + parteUno[0]);
 
+}
+var victor;
+function ini() {
+    victor = setTimeout('location="index.html"',TiempoCierreSesion());
+}
+function parar() {
+    clearTimeout(victor);
+    victor = setTimeout('location=location.href',TiempoCierreSesion());
 }
