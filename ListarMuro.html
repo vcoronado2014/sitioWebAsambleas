@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand fg-white" style="cursor: pointer;"  data-bind="text: nombreInstitucion" onclick="IrInicio()"></a>
+                <a class="navbar-brand fg-white" style="cursor: pointer;"  data-bind="text: nombreInstitucion" onclick="IrInicio()"></a><span style="font-size: 1em; color: white; font-weight: bold;" data-bind="text: versionCorta"></span>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -151,6 +151,9 @@
                             <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"  style="color: orangered;">
                                 <i class="fa fa-trash-o fa-fw fa-2x"></i>
                             </small>
+                            <small class="pull-right cursorPointer" data-bind="click: modificarMuro, visible: muro.VisibleEliminar"  style="color: #00b8f5;">
+                                <i class="fa fa-edit fa-fw fa-2x"></i>
+                            </small>
                         </strong>
                         <small class="pull-right text-muted">
                             <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
@@ -179,6 +182,9 @@
                                     <span data-bind="text: item.NombreRol"></span>
                                     <small class="pull-right cursorPointer" data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"  style="color: orangered;">
                                         <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                    </small>
+                                    <small class="pull-right cursorPointer" data-bind="click: modificarMensaje, visible: item.VisibleEliminar"  style="color: #00b8f5;">
+                                        <i class="fa fa-edit fa-fw fa-2x"></i>
                                     </small>
                                 </strong>
                                 <small class="pull-right text-muted">

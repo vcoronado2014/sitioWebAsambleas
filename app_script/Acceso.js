@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
 
+    //versionCorta = ko.observable(RetornaVersionUltraCorta());
     //un poco de nockout
     var PersonaViewModel = {
         usuario: ko.observable(),
@@ -42,6 +43,8 @@ $(document).ready(function () {
                     sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
                     sessionStorage.setItem("ComunaUsuario", result.Comuna.Nombre);
                     sessionStorage.setItem("ComunaInstitucion", result.ComunaInstitucion.Nombre);
+                    sessionStorage.setItem("TelefonoInstitucion", result.Institucion.Telefono);
+                    sessionStorage.setItem("CorreoInstitucion", result.Institucion.CorreoElectronico);
                     //ahora redireccionamos
                     var url = 'inicio.html';
                     window.location.href = url;

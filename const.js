@@ -1,14 +1,14 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    //return 'http://localhost:58013/api/' + api;
-    return 'http://apps.asambleas.cl/api/' + api;
+    return 'http://localhost:58013/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
@@ -25,7 +25,16 @@ function TiempoCierreSesion(){
     //en milisegundos estos son por defecto 15 minutos
     return 900000;
 }
-
+versionCorta = ko.observable(RetornaVersionUltraCorta());
+function RetornaVersionLarga() {
+    return 'WebSite v2.1';
+}
+function RetornaVersionCorta() {
+    return 'v=2.1';
+}
+function RetornaVersionUltraCorta() {
+    return 'v2.1';
+}
 function getParameterByName(name, url) {
 
     //// query string: ?foo=lorem&bar=&baz

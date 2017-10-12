@@ -154,7 +154,7 @@ $(document).ready(function () {
                 EliminaRendicion: $('#chkEliminaRendicion')[0].checked,
                 VerMuro: $('#chkVerMuro')[0].checked,
                 CreaMuro: $('#chkCreaMuro')[0].checked,
-                ModificaMuro: false,
+                ModificaMuro: $('#chkModificaMuro')[0].checked,
                 EliminaMuro: $('#chkEliminaMuro')[0].checked,
                 VerRol: $('#chkVerRol')[0].checked,
                 CreaRol: $('#chkCreaRol')[0].checked,
