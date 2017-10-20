@@ -38,7 +38,13 @@ $(document).ready(function () {
                     sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
                     sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
                     sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
-                    sessionStorage.setItem("instituciones", JSON.stringify(result.Institucion));
+                    //roles permisos
+                    sessionStorage.setItem("RolesPermisos", JSON.stringify(result.PermisoRol));
+                    sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
+                    sessionStorage.setItem("ComunaUsuario", result.Comuna.Nombre);
+                    sessionStorage.setItem("ComunaInstitucion", result.ComunaInstitucion.Nombre);
+                    sessionStorage.setItem("TelefonoInstitucion", result.Institucion.Telefono);
+                    sessionStorage.setItem("CorreoInstitucion", result.Institucion.CorreoElectronico);
 
                     //importante para determinar de donde se esta ingresando, en este caso es cpas.
                     sessionStorage.setItem("ES_CPAS", "true");
