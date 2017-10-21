@@ -103,7 +103,8 @@
                 IdTipoMovimiento: idTipoMovimiento,
                 IdUsuario: idUsuario,
                 NombreArchivo: nombreArchivo,
-                InstId: instId
+                InstId: instId,
+                EsCpas: sessionStorage.getItem("ES_CPAS")
             };
             var dataF = new FormData();
 
@@ -251,7 +252,7 @@
                             $.ajax({
                                 url: ObtenerUrl('Rendicion'),
                                 type: "DELETE",
-                                data: ko.toJSON({ Id: id }),
+                                data: ko.toJSON({ Id: id, EsCpas: sessionStorage.getItem("ES_CPAS") }),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {

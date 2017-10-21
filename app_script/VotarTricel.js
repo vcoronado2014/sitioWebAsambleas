@@ -68,6 +68,10 @@ $(document).ready(function () {
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         self.textoVoto = ko.observable("");
         visibleBoton = ko.observable(false);
+        //para imprimir
+        pNombreProyecto= ko.observable("");
+        pObjetivoProyecto= ko.observable("");
+        pTextoVoto= ko.observable("");
 
     /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -120,6 +124,8 @@ $(document).ready(function () {
 
 
                 }
+                pNombreProyecto = ko.observable(itemsProcesarP[i].NombreUsuario);
+                pObjetivoProyecto = ko.observable(itemsProcesarP[i].NombreCompleto);
 
                 var s = {
                     nombre: itemsProcesarP[i].NombreUsuario,
@@ -218,7 +224,13 @@ $(document).ready(function () {
             //chart.setData(ko.toJSON(dataGraficoArr));
         }
 
-
+        imprimir = function () {
+            //alert(pObjetivoProyecto());
+            var idUsuario = sessionStorage.getItem("Id");
+            var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + '&DESCRIPCION_PROYECTO='+ '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=0'  + '&TEXTO_PROYECTO=' + pTextoVoto() +  '&MODO=mostrar' + '&TIPO=Tricel';
+            var win = window.open(URL, "_blank");
+        }
 
         volver = function (){
             window.location.href = "inicio.html";
@@ -234,7 +246,8 @@ $(document).ready(function () {
                 InstId: instId,
                 LtrId: ltrId,
                 UsuId: usuId,
-                TriId: id
+                TriId: id,
+                EsCpas: sessionStorage.getItem("ES_CPAS")
             }
 
 

@@ -192,7 +192,8 @@
                     InstId: sessionStorage.getItem("InstId"),
                     UsuIdResponsable: usuIdResponsable,
                     QuorumMinimo: quorumMinimo,
-                    Id: getParameterByName('id')
+                    Id: getParameterByName('id'),
+                    EsCpas: sessionStorage.getItem("ES_CPAS")
                 };
 
                 $.ajax({
@@ -421,7 +422,7 @@
                             $.ajax({
                                 url: ObtenerUrlDos('Votacion'),
                                 type: "DELETE",
-                                data: ko.toJSON({ Id: id }),
+                                data: ko.toJSON({ Id: id, EsCpas: sessionStorage.getItem("ES_CPAS") }),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {

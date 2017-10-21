@@ -38,15 +38,16 @@ $(function () {
         }
         else
         {
+            window.location.href = 'login.html';
             //directo al login
-            if (sessionStorage.getItem("ES_CPAS") == "true")
+/*            if (sessionStorage.getItem("ES_CPAS") == "true")
             {
                 window.location.href = 'indexcpas.html';
             }
             else
             {
                 window.location.href = 'index.html';
-            }
+            }*/
         }
 
 
@@ -190,7 +191,7 @@ $(function () {
     ko.applyBindings(new ViewModel(vinculos, articulos, instituciones, configuracion, idUsuario));
 
 
-    function Menu()
+/*    function Menu()
     {
         //ahora procesamos a variable de session
         //rescatamos el rol desde la variable de session
@@ -340,6 +341,6 @@ $(function () {
         }
 
 
-    }
+    }*/
 
 });

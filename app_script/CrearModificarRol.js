@@ -165,7 +165,8 @@ $(document).ready(function () {
                 VerReportes: $('#chkVerReportes')[0].checked,
                 VerMailing: $('#chkVerMailing')[0].checked,
                 VerReporteAsistencia: $('#chkVerReporteAsistencia')[0].checked,
-                CreaMailing: $('#chkCreaMailing')[0].checked
+                CreaMailing: $('#chkCreaMailing')[0].checked,
+                EsCpas: sessionStorage.getItem("ES_CPAS")
             };
 
             $.ajax({
@@ -459,7 +460,7 @@ $(document).ready(function () {
                             $.ajax({
                                 url: ObtenerUrl('PermisoRol'),
                                 type: "DELETE",
-                                data: ko.toJSON({ Id: idRolP, InstId: frmPInstId() }),
+                                data: ko.toJSON({ Id: idRolP, InstId: frmPInstId(), EsCpas: sessionStorage.getItem("ES_CPAS") }),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {

@@ -195,7 +195,8 @@ $(document).ready(function () {
                     Beneficios: beneficios,
                     Descripcion: descripcion,
                     QuorumMinimo: quorumMinimo,
-                    Id: getParameterByName('id')
+                    Id: getParameterByName('id'),
+                    EsCpas: sessionStorage.getItem("ES_CPAS")
                 };
 
                 $.ajax({
@@ -416,7 +417,7 @@ $(document).ready(function () {
                         $.ajax({
                             url: ObtenerUrlDos('Proyecto'),
                             type: "DELETE",
-                            data: ko.toJSON({ Id: id }),
+                            data: ko.toJSON({ Id: id, EsCpas: sessionStorage.getItem("ES_CPAS") }),
                             contentType: "application/json",
                             dataType: "json",
                             success: function (dataF) {

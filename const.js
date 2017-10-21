@@ -1,5 +1,6 @@
 ﻿﻿function ObtenerUrl(api)
 {
+    //return 'http://api.asambleas.cl/api/' + api;
     return 'http://localhost:58013/api/' + api;
     //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
@@ -7,6 +8,7 @@
 }
 ﻿function ObtenerUrlDos(api)
 {
+    //return 'http://api.asambleas.cl/api/' + api;
     return 'http://localhost:58013/api/' + api;
     //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
@@ -203,10 +205,15 @@ function Menu()
     //antes evaluamos si esta variable existe
     if (sessionStorage != null)
     {
-        var obj = JSON.parse(sessionStorage.RolesPermisos);
+        //var obj = JSON.parse(sessionStorage.RolesPermisos);
+        var obj;
+
         MuestraLogueados = ko.observable(false);
-        if (obj.RolId == 1)
-            MuestraLogueados = ko.observable(true);
+
+        if (sessionStorage.getItem("ES_CPAS"))
+            CssEncabezado = ko.observable("navbar bg-success navbar-fixed-top");
+        else
+            CssEncabezado = ko.observable("navbar navbar-inverse navbar-default navbar-fixed-top");
 
         //valores predeterminados
         CreaUsuario = ko.observable(false);
@@ -253,129 +260,135 @@ function Menu()
         //el menu se ve siempre
         menuMenu = ko.observable(true);
 
-        if (obj.CreaUsuario == 1)
-            CreaUsuario = ko.observable(true);
+        if (sessionStorage.RolesPermisos) {
+            obj = JSON.parse(sessionStorage.RolesPermisos);
 
-        if (obj.ModificaUsuario == 1)
-            ModificaUsuario = ko.observable(true);
+            if (obj.RolId == 1)
+                MuestraLogueados = ko.observable(true);
 
-        if (obj.EliminaUsuario == 1)
-            EliminaUsuario = ko.observable(true);
+            if (obj.CreaUsuario == 1)
+                CreaUsuario = ko.observable(true);
 
-        if (obj.VerUsuario == 1)
-            VerUsuario = ko.observable(true);
+            if (obj.ModificaUsuario == 1)
+                ModificaUsuario = ko.observable(true);
 
-        if (obj.CreaInstitucion == 1)
-            CreaInstitucion = ko.observable(true);
+            if (obj.EliminaUsuario == 1)
+                EliminaUsuario = ko.observable(true);
 
-        if (obj.ModificaInstitucion == 1)
-            ModificaInstitucion = ko.observable(true);
+            if (obj.VerUsuario == 1)
+                VerUsuario = ko.observable(true);
 
-        if (obj.EliminaInstitucion == 1)
-            EliminaInstitucion = ko.observable(true);
+            if (obj.CreaInstitucion == 1)
+                CreaInstitucion = ko.observable(true);
 
-        if (obj.VerInstitucion == 1)
-            VerInstitucion = ko.observable(true);
+            if (obj.ModificaInstitucion == 1)
+                ModificaInstitucion = ko.observable(true);
 
-        if (obj.CreaDocumento == 1)
-            CreaDocumento = ko.observable(true);
+            if (obj.EliminaInstitucion == 1)
+                EliminaInstitucion = ko.observable(true);
 
-        if (obj.EliminaDocumento == 1)
-            EliminaDocumento = ko.observable(true);
+            if (obj.VerInstitucion == 1)
+                VerInstitucion = ko.observable(true);
 
-        if (obj.VerDocumento == 1)
-            VerDocumento = ko.observable(true);
+            if (obj.CreaDocumento == 1)
+                CreaDocumento = ko.observable(true);
 
-        if (obj.CreaCalendario == 1)
-            CreaCalendario = ko.observable(true);
+            if (obj.EliminaDocumento == 1)
+                EliminaDocumento = ko.observable(true);
 
-        if (obj.ModificaCalendario == 1)
-            ModificaCalendario = ko.observable(true);
+            if (obj.VerDocumento == 1)
+                VerDocumento = ko.observable(true);
 
-        if (obj.EliminaCalendario == 1)
-            EliminaCalendario = ko.observable(true);
+            if (obj.CreaCalendario == 1)
+                CreaCalendario = ko.observable(true);
 
-        if (obj.VerCalendario == 1)
-            VerCalendario = ko.observable(true);
+            if (obj.ModificaCalendario == 1)
+                ModificaCalendario = ko.observable(true);
 
-        if (obj.CreaTricel == 1)
-            CreaTricel = ko.observable(true);
+            if (obj.EliminaCalendario == 1)
+                EliminaCalendario = ko.observable(true);
 
-        if (obj.ModificaTricel == 1)
-            ModificaTricel = ko.observable(true);
+            if (obj.VerCalendario == 1)
+                VerCalendario = ko.observable(true);
 
-        if (obj.EliminaTricel == 1)
-            EliminaTricel = ko.observable(true);
+            if (obj.CreaTricel == 1)
+                CreaTricel = ko.observable(true);
 
-        if (obj.VerTricel == 1)
-            VerTricel = ko.observable(true);
+            if (obj.ModificaTricel == 1)
+                ModificaTricel = ko.observable(true);
 
-        if (obj.CreaProyecto == 1)
-            CreaProyecto = ko.observable(true);
+            if (obj.EliminaTricel == 1)
+                EliminaTricel = ko.observable(true);
 
-        if (obj.ModificaProyecto == 1)
-            ModificaProyecto = ko.observable(true);
+            if (obj.VerTricel == 1)
+                VerTricel = ko.observable(true);
 
-        if (obj.EliminaProyecto == 1)
-            EliminaProyecto = ko.observable(true);
+            if (obj.CreaProyecto == 1)
+                CreaProyecto = ko.observable(true);
 
-        if (obj.VerProyecto == 1)
-            VerProyecto = ko.observable(true);
+            if (obj.ModificaProyecto == 1)
+                ModificaProyecto = ko.observable(true);
 
-        if (obj.CreaRendicion == 1)
-            CreaRendicion = ko.observable(true);
+            if (obj.EliminaProyecto == 1)
+                EliminaProyecto = ko.observable(true);
 
-        if (obj.ModificaRendicion == 1)
-            ModificaRendicion = ko.observable(true);
+            if (obj.VerProyecto == 1)
+                VerProyecto = ko.observable(true);
 
-        if (obj.EliminaRendicion == 1)
-            EliminaRendicion = ko.observable(true);
+            if (obj.CreaRendicion == 1)
+                CreaRendicion = ko.observable(true);
 
-        if (obj.VerRendicion == 1)
-            VerRendicion = ko.observable(true);
+            if (obj.ModificaRendicion == 1)
+                ModificaRendicion = ko.observable(true);
 
-        if (obj.CreaRol == 1)
-            CreaRol = ko.observable(true);
+            if (obj.EliminaRendicion == 1)
+                EliminaRendicion = ko.observable(true);
 
-        if (obj.ModificaRol == 1)
-            ModificaRol = ko.observable(true);
+            if (obj.VerRendicion == 1)
+                VerRendicion = ko.observable(true);
 
-        if (obj.EliminaRol == 1)
-            EliminaRol = ko.observable(true);
+            if (obj.CreaRol == 1)
+                CreaRol = ko.observable(true);
 
-        if (obj.VerRol == 1)
-            VerRol = ko.observable(true);
+            if (obj.ModificaRol == 1)
+                ModificaRol = ko.observable(true);
 
-        if (obj.CreaMuro == 1)
-            CreaMuro = ko.observable(true);
+            if (obj.EliminaRol == 1)
+                EliminaRol = ko.observable(true);
 
-        if (obj.ModificaMuro == 1)
-            ModificaMuro = ko.observable(true);
+            if (obj.VerRol == 1)
+                VerRol = ko.observable(true);
 
-        if (obj.EliminaMuro == 1)
-            EliminaMuro = ko.observable(true);
+            if (obj.CreaMuro == 1)
+                CreaMuro = ko.observable(true);
 
-        if (obj.VerMuro == 1)
-            VerMuro = ko.observable(true);
+            if (obj.ModificaMuro == 1)
+                ModificaMuro = ko.observable(true);
 
-        if (obj.PuedeVotarProyecto == 1)
-            PuedeVotarProyecto = ko.observable(true);
+            if (obj.EliminaMuro == 1)
+                EliminaMuro = ko.observable(true);
 
-        if (obj.PuedeVotarTricel == 1)
-            PuedeVotarTricel = ko.observable(true);
+            if (obj.VerMuro == 1)
+                VerMuro = ko.observable(true);
 
-        if (obj.VerMailing == 1)
-            VerMailing = ko.observable(true);
+            if (obj.PuedeVotarProyecto == 1)
+                PuedeVotarProyecto = ko.observable(true);
 
-        if (obj.CreaMailing == 1)
-            CreaMailing = ko.observable(true);
+            if (obj.PuedeVotarTricel == 1)
+                PuedeVotarTricel = ko.observable(true);
 
-        if (obj.VerReportes == 1)
-            VerReportes = ko.observable(true);
+            if (obj.VerMailing == 1)
+                VerMailing = ko.observable(true);
 
-        if (obj.VerReporteAsistencia == 1)
-            VerReporteAsistencia = ko.observable(true);
+            if (obj.CreaMailing == 1)
+                CreaMailing = ko.observable(true);
 
+            if (obj.VerReportes == 1)
+                VerReportes = ko.observable(true);
+
+            if (obj.VerReporteAsistencia == 1)
+                VerReporteAsistencia = ko.observable(true);
+        }
     }
 
 
@@ -385,7 +398,7 @@ function IrInicio()
 {
     if (sessionStorage.getItem("ES_CPAS") == "true")
     {
-        window.location.href = 'indexCpas.html';
+        window.location.href = '#';
     }
     else
     {

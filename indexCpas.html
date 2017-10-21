@@ -81,9 +81,9 @@
 				<!-- este es el menu del sistema -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 					<ul class="nav navbar-nav navbar-right" >
-						<li><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+						<li><a href="indexCpas.html"><i class="fa fa-home"></i> Inicio</a></li>
 						<li style="cursor: pointer;"><a  id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
-						<li data-bind="visible: menuMenu" class="dropdown">
+<!--						<li data-bind="visible: menuMenu" class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li data-bind="visible: VerUsuario"><a href="usuarios.html">Usuarios</a></li>
@@ -100,8 +100,8 @@
 								<li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
 								<li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
 							</ul>
-						</li>
-						<li class="dropdown" data-bind="visible: VerTricel">
+						</li>-->
+<!--						<li class="dropdown" data-bind="visible: VerTricel">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a data-bind="visible: VerTricel" href="ListarVotacion.html">Listar Triceles</a></li>
@@ -112,7 +112,7 @@
 							<ul class="dropdown-menu">
 								<li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
 							</ul>
-						</li>
+						</li>-->
 						<li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
 						<li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
 						<li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
@@ -240,7 +240,7 @@
 	        	<div class="row">
 	
 				<div class="section-title">
-				<h1>Portafolio</h1>
+				<h1>Portafolio <span style="font-size: 0.5em;" data-bind="text: versionCorta"></span></h1>
 				</div>
 		
 		
@@ -378,8 +378,8 @@
 		<script src="http://signalr.cpas.cl/signalr/hubs"></script>
 		<script src="app_script/signalrApp.js"></script>
 
-		<script src="app_script/indexCpas.js"></script>
-		<script src="const.js"></script>
+		<script src="app_script/indexCpas.js?v=2.1"></script>
+		<script src="const.js?v=2.1"></script>
 
     </body>
 </html>

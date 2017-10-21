@@ -328,7 +328,8 @@ $(function () {
                             UsuId: usuId,
                             PrioridadId: prioridadId,
                             RolId: rolId,
-                            Texto: texto
+                            Texto: texto,
+                            EsCpas: sessionStorage.getItem("ES_CPAS")
                         };
 
                         setTimeout(function () {
@@ -426,7 +427,8 @@ $(function () {
                             PrioridadId: prioridadId,
                             RolId: rolId,
                             Texto: texto,
-                            Id: mroId
+                            Id: mroId,
+                            EsCpas: sessionStorage.getItem("ES_CPAS")
                         };
 
                         setTimeout(function () {
@@ -477,7 +479,7 @@ $(function () {
         if (EliminaMuro()) {
             var texto = "Está seguro de eliminar el comentario: " + item.Texto;
             var id = item.Id;
-
+            var EsCpas = sessionStorage.getItem("ES_CPAS");
             swal({
                 title: 'Eliminar',
                 text: texto,
@@ -492,7 +494,7 @@ $(function () {
                             $.ajax({
                                 url: ObtenerUrl('Muro'),
                                 type: "DELETE",
-                                data: ko.toJSON({Id: id}),
+                                data: ko.toJSON({Id: id, EsCpas: EsCpas}),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {

@@ -97,7 +97,12 @@ hr.style13 {
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
-
+.bg-success {
+    background-color: darkslategray;
+}
+.nav .navbar-nav .navbar-right li a{
+    color: white;
+}
 hr.style14 { 
   border: 0; 
   height: 1px; 

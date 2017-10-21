@@ -68,6 +68,13 @@ $(document).ready(function () {
         self.birthDay = ko.observable(moment(new Date()).format("DD-MM-YYYY"));
         self.textoVoto = ko.observable("");
         self.visibleBoton = ko.observable(false);
+        //para imprimir
+        pNombreProyecto= ko.observable("");
+        pObjetivoProyecto= ko.observable("");
+        pBeneficiosProyecto= ko.observable("");
+        pDescripcionProyecto= ko.observable("");
+        pMontoProyecto= ko.observable("");
+        pTextoVoto= ko.observable("");
 
     /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -116,6 +123,11 @@ $(document).ready(function () {
 
 
                 }
+                pNombreProyecto = ko.observable(itemsProcesarP[i].NombreUsuario);
+                pBeneficiosProyecto = ko.observable(itemsProcesarP[i].Rol);
+                pDescripcionProyecto = ko.observable(itemsProcesarP[i].OtroSeis);
+                pObjetivoProyecto = ko.observable(itemsProcesarP[i].NombreCompleto);
+                pMontoProyecto = ko.observable(itemsProcesarP[i].OtroDiez);
 
                 var s = {
                     nombre: itemsProcesarP[i].NombreUsuario,
@@ -197,7 +209,8 @@ $(document).ready(function () {
                 InstId: instId,
                 ProId: id,
                 Valor: valor,
-                UsuId: usuId
+                UsuId: usuId,
+                EsCpas: sessionStorage.getItem("ES_CPAS")
             }
 
             swal({
@@ -269,6 +282,17 @@ $(document).ready(function () {
             });
 
         }
+        imprimir = function () {
+            //alert(pObjetivoProyecto());
+            var idUsuario = sessionStorage.getItem("Id");
+            var nombreUsuario= sessionStorage.getItem("NombreUsuario");
+            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + pBeneficiosProyecto() + '&DESCRIPCION_PROYECTO=' + pDescripcionProyecto() + '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=' + pMontoProyecto() + '&TEXTO_PROYECTO=' + pTextoVoto() +  '&MODO=mostrar' + '&TIPO=Proyecto';
+            var win = window.open(URL, "_blank");
+        }
+
+        volver = function (){
+            window.location.href = "inicio.html";
+        }
 
         votarNegativo = function(){
             var id = getParameterByName('id');
@@ -281,7 +305,8 @@ $(document).ready(function () {
                 InstId: instId,
                 ProId: id,
                 Valor: valor,
-                UsuId: usuId
+                UsuId: usuId,
+                EsCpas: sessionStorage.getItem("ES_CPAS")
             }
 
             swal({

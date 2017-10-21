@@ -311,7 +311,8 @@ $(document).ready(function() {
                                 Titulo: titulo,
                                 FechaInicio: fechaInicio,
                                 FechaTermino: fechaTermino,
-                                EsNuevo: false
+                                EsNuevo: false,
+                                EsCpas: sessionStorage.getItem("ES_CPAS")
 
                             };
 
@@ -667,7 +668,8 @@ $(document).ready(function() {
                                         EsNuevo: true,
                                         Etiqueta: 1,
                                         Ubicacion: ubicacion,
-                                        Detalle: detalles
+                                        Detalle: detalles,
+                                        EsCpas: sessionStorage.getItem("ES_CPAS")
                                     };
 
                                     var json = ko.toJSON(eventoCal);
@@ -886,7 +888,8 @@ $(document).ready(function() {
                                         EsNuevo: false,
                                         Etiqueta: '1',
                                         Ubicacion: ubicacion,
-                                        Detalle: detalles
+                                        Detalle: detalles,
+                                        EsCpas: sessionStorage.getItem("ES_CPAS")
 
                                     };
 

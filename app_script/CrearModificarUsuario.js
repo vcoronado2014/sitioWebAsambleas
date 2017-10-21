@@ -128,7 +128,8 @@
                         IdRol: idRol,
                         Password: pass,
                         InstId: instId,
-                        NuevaPassword: nuevaPass
+                        NuevaPassword: nuevaPass,
+                        EsCpas: sessionStorage.getItem("ES_CPAS")
                     };
                     $.ajax({
                         url: ObtenerUrl('ObtenerUsuario'),
@@ -462,7 +463,7 @@
                                 $.ajax({
                                     url: ObtenerUrl('ObtenerUsuario'),
                                     type: "DELETE",
-                                    data: ko.toJSON({ IdUsuario: idUsuario }),
+                                    data: ko.toJSON({ IdUsuario: idUsuario, EsCpas: sessionStorage.getItem("ES_CPAS") }),
                                     contentType: "application/json",
                                     dataType: "json",
                                     success: function (dataF) {

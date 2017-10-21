@@ -6,19 +6,25 @@ $(function () {
     $('#principal').hide();
     $('#loading').show();
 
-    if (sessionStorage != null) {
+    var pagAnterior = document.referrer.includes('indexcpas.html');
+
+
+   if (sessionStorage != null) {
 
         if (sessionStorage.getItem("Id") != null) {
             $('#ancoreSesion').html('<i class="fa fa-close"></i> Cerrar Sesión');
         }
         else {
             $('#ancoreSesion').html('<i class="fa fa-sign-in"></i> Iniciar Sesión');
-            window.location.href = "index.html";
-            return;
+            if (pagAnterior == false) {
+                window.location.href = "index.html";
+                return;
+            }
         }
     }
     else {
-        window.location.href = "index.html";
+       if (pagAnterior == false)
+            window.location.href = "index.html";
     }
 
     $('#ancoreSesion').on('click', function () {
@@ -84,7 +90,8 @@ $(function () {
                     Para: frmCorreoElectronico,
                     Mensaje: frmMotivo,
                     Nombre: frmNombreUsuario,
-                    Telefono: frmTelefono
+                    Telefono: frmTelefono,
+                    EsCpas: sessionStorage.getItem("ES_CPAS")
                 };
 
                 var obtenerContacto = jQuery.ajax({
@@ -113,7 +120,11 @@ $(function () {
                                 if (isConfirm) {
                                     //swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     //CrearModificarVotacion.html?id=3&ELIMINAR=0
-                                    window.location.href = "Contacto.html";
+                                    if (sessionStorage != null)
+                                        window.location.href = "Contacto.html";
+                                    else
+                                        window.location.href = "indexcpas.html";
+
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
                                 }
@@ -143,67 +154,7 @@ $(function () {
 
     elem = document.getElementById('principal');
     ko.applyBindings(new ViewModel([]), elem);
-/*
-    var obtenerProyecto = jQuery.ajax({
-        url : ObtenerUrlDos('Proyecto'),
-        type: 'POST',
-        dataType : "json",
-        contentType: "application/json",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId") })
-    });
 
-    $.when(obtenerProyecto).then(
-        function(data){
-            elem = document.getElementById('principal');
-
-
-            ko.applyBindings(new ViewModel(data), elem);
-            // apply DataTables magic
-            $("#proposals").DataTable({
-                responsive: true,
-                language: {
-                    "sProcessing": "Procesando...",
-                    "sLengthMenu": "Mostrar _MENU_ registros",
-                    "sZeroRecords": "No se encontraron resultados",
-                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                    "sInfo": "del _START_ al _END_  de _TOTAL_ registros",
-                    "sInfoEmpty": "del 0 al 0 de 0 registros",
-                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    "sInfoPostFix": "",
-                    "sSearch": "Buscar:",
-                    "sUrl": "",
-                    "bDestroy": true,
-                    "sInfoThousands": ",",
-                    "sLoadingRecords": "Cargando...",
-                    "oPaginate": {
-                        "sFirst": "<<",
-                        "sLast": ">>",
-                        "sNext": ">",
-                        "sPrevious": "<"
-                    },
-                    "oAria": {
-                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                    }
-                }
-            });
-
-            $('#principal').show();
-            $('#loading').hide();
-
-        },
-        function (){
-            //alguna ha fallado
-            swal("Error de Servidor");
-            $('#principal').show();
-            $('#loading').hide();
-        },
-        function(){
-            //acá podemos quitar el elemento cargando
-            //alert('quitar cargando');
-        }
-    )
-*/
 
     function getNotify(type, title, message) {
         if (type == 'error') {

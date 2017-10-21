@@ -105,7 +105,7 @@ $(document).ready(function () {
 
 
             var entidad = {
-                Id: getParameterByName('id'),
+                Id: frmPId(),
                 Nombre: $("#txtNombreUsuario").val(),
                 PermisoId: frmPId(),
                 InstId: frmPInstId(),
@@ -344,7 +344,7 @@ $(document).ready(function () {
                             $.ajax({
                                 url: ObtenerUrl('PermisoRol'),
                                 type: "DELETE",
-                                data: ko.toJSON({ Id: idRolP, InstId: frmPInstId() }),
+                                data: ko.toJSON({ Id: idRolP, InstId: frmPInstId(), EsCpas: sessionStorage.getItem("ES_CPAS") }),
                                 contentType: "application/json",
                                 dataType: "json",
                                 success: function (dataF) {

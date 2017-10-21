@@ -19,7 +19,7 @@
                 if (tipo=='documentousuario') {
 
                     $.ajax({
-                        url: ObtenerUrl('FileNuevo') + "?id=" + id,
+                        url: ObtenerUrl('FileNuevo') + "?id=" + id + "&EsCpas=" + sessionStorage.getItem("ES_CPAS"),
                         type: "GET",
                         contentType: "application/json",
                         dataType: "json",

@@ -28,7 +28,8 @@ $(function() {
                     Nombre: name,
                     Telefono: phone,
                     Para: email,
-                    Mensaje: message
+                    Mensaje: message,
+                    EsCpas: sessionStorage.getItem("ES_CPAS")
                 }),
                 success: function() {
                     // Success message

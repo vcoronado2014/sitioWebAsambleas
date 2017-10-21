@@ -10,6 +10,7 @@ $(document).ready(function () {
         password: ko.observable(),
         rutRecuperar: ko.observable(),
 
+
         autentificar: function () {
 
 
@@ -81,7 +82,7 @@ $(document).ready(function () {
                 type: 'POST',
                 dataType : "json",
                 contentType: "application/json",
-                data: ko.toJSON({ NombreUsuario: this.rutRecuperar })
+                data: ko.toJSON({ NombreUsuario: this.rutRecuperar, EsCpas: sessionStorage.getItem("ES_CPAS") })
             });
 
             $.when(obtenerLoginRecuperar).then(

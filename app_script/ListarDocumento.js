@@ -178,6 +178,7 @@
             var model = new FormData();
             model.append("UsuId", sessionStorage.getItem("Id"));
             model.append("InstId", sessionStorage.getItem("InstId"));
+            model.append("EsCpas", sessionStorage.getItem("ES_CPAS"));
             model.append("UploadedImage", files[0]);
 
             var guardarArchivo = jQuery.ajax({
