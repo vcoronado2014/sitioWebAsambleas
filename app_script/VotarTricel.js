@@ -72,6 +72,8 @@ $(document).ready(function () {
         pNombreProyecto= ko.observable("");
         pObjetivoProyecto= ko.observable("");
         pTextoVoto= ko.observable("");
+        pHaVotado = ko.observable(false);
+        pFechaVoto = ko.observable("");
 
     /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -126,6 +128,8 @@ $(document).ready(function () {
                 }
                 pNombreProyecto = ko.observable(itemsProcesarP[i].NombreUsuario);
                 pObjetivoProyecto = ko.observable(itemsProcesarP[i].NombreCompleto);
+                pHaVotado = ko.observable(itemsProcesarP[i].HaVotado);
+                pFechaVoto = ko.observable(itemsProcesarP[i].FechaVotacion);
 
                 var s = {
                     nombre: itemsProcesarP[i].NombreUsuario,
@@ -228,7 +232,7 @@ $(document).ready(function () {
             //alert(pObjetivoProyecto());
             var idUsuario = sessionStorage.getItem("Id");
             var nombreUsuario= sessionStorage.getItem("NombreUsuario");
-            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + '&DESCRIPCION_PROYECTO='+ '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=0'  + '&TEXTO_PROYECTO=' + pTextoVoto() +  '&MODO=mostrar' + '&TIPO=Tricel';
+            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + '&DESCRIPCION_PROYECTO='+ '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=0'  + '&TEXTO_PROYECTO=' + pFechaVoto() +  '&MODO=mostrar' + '&TIPO=Tricel';
             var win = window.open(URL, "_blank");
         }
 

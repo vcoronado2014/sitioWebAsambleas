@@ -75,6 +75,8 @@ $(document).ready(function () {
         pDescripcionProyecto= ko.observable("");
         pMontoProyecto= ko.observable("");
         pTextoVoto= ko.observable("");
+        pHaVotado = ko.observable(false);
+        pFechaVoto = ko.observable("");
 
     /*
         if (sessionStorage.getItem("RolId") == '1')
@@ -128,6 +130,8 @@ $(document).ready(function () {
                 pDescripcionProyecto = ko.observable(itemsProcesarP[i].OtroSeis);
                 pObjetivoProyecto = ko.observable(itemsProcesarP[i].NombreCompleto);
                 pMontoProyecto = ko.observable(itemsProcesarP[i].OtroDiez);
+                pHaVotado = ko.observable(itemsProcesarP[i].HaVotado);
+                pFechaVoto = ko.observable(itemsProcesarP[i].FechaVotacion);
 
                 var s = {
                     nombre: itemsProcesarP[i].NombreUsuario,
@@ -286,7 +290,7 @@ $(document).ready(function () {
             //alert(pObjetivoProyecto());
             var idUsuario = sessionStorage.getItem("Id");
             var nombreUsuario= sessionStorage.getItem("NombreUsuario");
-            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + pBeneficiosProyecto() + '&DESCRIPCION_PROYECTO=' + pDescripcionProyecto() + '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=' + pMontoProyecto() + '&TEXTO_PROYECTO=' + pTextoVoto() +  '&MODO=mostrar' + '&TIPO=Proyecto';
+            var URL = 'ticket.html?NOMBRE_USUARIO=' + nombreUsuario + '&NOMBRE_PROYECTO=' + pNombreProyecto() + '&BENEFICIOS_PROYECTO=' + pBeneficiosProyecto() + '&DESCRIPCION_PROYECTO=' + pDescripcionProyecto() + '&OBJETIVO_PROYECTO=' + pObjetivoProyecto() + '&MONTO_PROYECTO=' + pMontoProyecto() + '&TEXTO_PROYECTO=' + pFechaVoto() +  '&MODO=mostrar' + '&TIPO=Proyecto';
             var win = window.open(URL, "_blank");
         }
 

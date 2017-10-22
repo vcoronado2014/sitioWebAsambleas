@@ -29,7 +29,7 @@ $(function() {
                     Telefono: phone,
                     Para: email,
                     Mensaje: message,
-                    EsCpas: sessionStorage.getItem("ES_CPAS")
+                    EsCpas: false
                 }),
                 success: function() {
                     // Success message

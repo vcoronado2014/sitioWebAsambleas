@@ -15,6 +15,7 @@ $(document).ready(function () {
     var texto = getParameterByName('TEXTO_PROYECTO');
     var tipo = getParameterByName('TIPO');
     var nombreInstitucion = sessionStorage.getItem("NombreInstitucion").toUpperCase();
+    var nombreCompleto = sessionStorage.getItem("NombreCompleto").toUpperCase();
     if (tipo == 'Proyecto')
         ConstruirReporte(nombreUsuario, nombre, beneficios, descripcion, objetivo, monto, texto, nombreInstitucion, tipo, doc);
     else
@@ -34,12 +35,16 @@ $(document).ready(function () {
 
         doc.setFontSize("10");
         doc.setFontType('bold');
-        doc.text(10, 80, texto);
+        doc.text(10, 50, "Fecha Votación:");
+        doc.text(50, 50, texto);
+
+        doc.text(10, 60, "Usuario Que vota:");
+        doc.text(50, 60, nombreCompleto);
 
         doc.setLineWidth(0.5);
-        doc.line(10, 90, 200, 90);
+        doc.line(10, 65, 200, 65);
 
-        ConstruirPie(nombreUsuario, doc);
+        ConstruirPieTricel(nombreUsuario, doc);
 
         $("#mostrarPdf").attr("src", doc.output('datauristring'));
 
@@ -67,10 +72,14 @@ $(document).ready(function () {
 
         doc.setFontSize("10");
         doc.setFontType('bold');
-        doc.text(10, 80, texto);
+        doc.text(10, 80, "Fecha Votación:");
+        doc.text(50, 80, texto);
+
+        doc.text(10, 90, "Usuario Que vota:");
+        doc.text(50, 90, nombreCompleto);
 
         doc.setLineWidth(0.5);
-        doc.line(10, 90, 200, 90);
+        doc.line(10, 95, 200, 95);
 
         ConstruirPie(nombreUsuario, doc);
 
@@ -85,10 +94,25 @@ $(document).ready(function () {
         doc.setFont("helvetica");
         doc.setFontType("italic");
         doc.setFontSize("8");
-        doc.text(10, 95, '');
+        doc.text(10, 100, '');
 
         var fecha = FechaString(new Date());
-        doc.text(200, 95, fecha, null, null, 'right');
+        doc.text(200, 100, fecha, null, null, 'right');
+
+
+    }
+    function ConstruirPieTricel(usuario,doc)
+    {
+        //set color gray
+        doc.setTextColor(100);
+
+        doc.setFont("helvetica");
+        doc.setFontType("italic");
+        doc.setFontSize("8");
+        doc.text(10, 70, '');
+
+        var fecha = FechaString(new Date());
+        doc.text(200, 70, fecha, null, null, 'right');
 
 
     }
