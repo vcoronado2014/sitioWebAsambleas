@@ -46,6 +46,7 @@ $(document).ready(function () {
                     sessionStorage.setItem("ComunaInstitucion", result.ComunaInstitucion.Nombre);
                     sessionStorage.setItem("TelefonoInstitucion", result.Institucion.Telefono);
                     sessionStorage.setItem("CorreoInstitucion", result.Institucion.CorreoElectronico);
+                    sessionStorage.setItem("ES_CPAS", false);
                     //ahora redireccionamos
                     var url = 'inicio.html';
                     window.location.href = url;
