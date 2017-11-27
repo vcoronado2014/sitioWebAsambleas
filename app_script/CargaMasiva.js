@@ -69,12 +69,15 @@ $(document).ready(function () {
 
         self.elem = document.getElementById('principal');
 
-        /*
-         if (sessionStorage.getItem("RolId") != '9')
-         shouldShowMessage = ko.observable(true);
-         else
-         shouldShowMessage = ko.observable(false);
-         */
+        if (data != null && data.proposals.length > 0){
+            for(var i in data.proposals){
+                data.proposals[i].OtroSeis = 'detallecarga.html?FECHA_SUBIDA=' + data.proposals[i].NombreUsuario +
+                    '&NOMBRE_ARCHIVO=' + data.proposals[i].NombreCompleto + '&TOTAL_FILAS=' + data.proposals[i].OtroCuatro +
+                    '&FILAS_ERROR=' + data.proposals[i].OtroDos + '&FILAS_CORRECTAS='+ data.proposals[i].OtroUno +
+                    '&ID=' + data.proposals[i].Id;
+                data.proposals[i].OtroOcho = ObtenerUrlDescargaExcel(data.proposals[i].NombreCompleto);
+            }
+        }
 
         //solo los super Administradores
         if (sessionStorage.getItem("RolId") == '1') {
@@ -83,6 +86,11 @@ $(document).ready(function () {
 
 
         Menu();
+        mostrarResumen = function (fechaSubida, nombreArchivo, totalFilas, filasError, filasCorrectas, id) {
+            window.location.href = 'detallecarga.html?FECHA_SUBIDA=' + fechaSubida() + '&NOMBRE_ARCHIVO=' + nombreArchivo() + '&TOTAL_FILAS=' + totalFilas() + '&FILAS_ERROR=' + filasError() + '&FILAS_CORRECTAS='+ filasCorrectas() + '&ID=' + id();
+        }
+
+
 
         ko.mapping.fromJS(data, {}, self);
 
@@ -97,7 +105,89 @@ $(document).ready(function () {
         data: ko.toJSON({ IdUsuario: 9 })
     });
 
+    $.when(obtenerInstitucion).then(
+        function(dataI){
 
+            elem = document.getElementById('principal');
+
+            var obtenerCargaMasiva = jQuery.ajax({
+                url : ObtenerUrl('EncabezadoCarga'),
+                type: 'POST',
+                dataType : "json",
+                contentType: "application/json",
+                data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") })
+            });
+
+            $.when(obtenerCargaMasiva).then(function (data)
+                {
+                    if (dataI != null)
+                    {
+                        self.instituciones = dataI.proposals;
+                        selectedInstitucion = sessionStorage.getItem("InstId");
+                    }
+
+                    ko.applyBindings(new DocumentoViewModel(data), self.elem);
+
+                    if (data.proposals.length > 0)
+                    {
+                        $("#proposals").DataTable({
+                            responsive: true,
+                            language: {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar _MENU_ registros",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "bDestroy": true,
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                }
+                            }
+                        });
+                    }
+                    $('#principal').show();
+                    $('#loading').hide();
+
+                },
+                function (){
+                    //alguna ha fallado
+                    alert('error');
+                },
+                function(){
+                    //acá podemos quitar el elemento cargando
+                    alert('quitar cargando');
+                }
+
+
+            );
+
+
+        },
+        function (){
+            //alguna ha fallado
+            alert('error');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            alert('quitar cargando');
+        }
+    );
+
+/*
     $.when(obtenerInstitucion).then(
         function(dataI){
 
@@ -179,68 +269,7 @@ $(document).ready(function () {
             alert('quitar cargando');
         }
     );
-
-    /*
-    $.ajax({
-        url: ObtenerUrlDos('CargaMasiva'),
-        type: "POST",
-        data: ko.toJSON({ InstId: sessionStorage.getItem("InstId"), UsuId: sessionStorage.getItem("Id") }),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            // ok
-
-            //getNotify('success', 'Éxito', 'Recuperado con éxito!');
-            elem = document.getElementById('principal');
-            ko.applyBindings(new DocumentoViewModel(data), elem);
-
-            if (data.proposals.length > 0)
-            {
-                $("#proposals").DataTable({
-                    responsive: true,
-                    language: {
-                        "sProcessing": "Procesando...",
-                        "sLengthMenu": "Mostrar _MENU_ registros",
-                        "sZeroRecords": "No se encontraron resultados",
-                        "sEmptyTable": "Ningún dato disponible en esta tabla",
-                        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                        "sInfoPostFix": "",
-                        "sSearch": "Buscar:",
-                        "sUrl": "",
-                        "bDestroy": true,
-                        "sInfoThousands": ",",
-                        "sLoadingRecords": "Cargando...",
-                        "oPaginate": {
-                            "sFirst": "Primero",
-                            "sLast": "Último",
-                            "sNext": "Siguiente",
-                            "sPrevious": "Anterior"
-                        },
-                        "oAria": {
-                            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
-                    }
-                });
-            }
-            $('#principal').show();
-            $('#loading').hide();
-
-
-        },
-        error: function (error) {
-            if (error.status.toString() == "500") {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-            else {
-                getNotify('error', 'Error', 'Error de Servidor!');
-            }
-        }
-    });
-    */
-
+*/
 
     $('#btnUploadFile').on('click', function () {
 
@@ -254,6 +283,7 @@ $(document).ready(function () {
             var model = new FormData();
             model.append("UsuId", sessionStorage.getItem("Id"));
             model.append("InstId", instIdFrm);
+            model.append("EsCpas", sessionStorage.getItem("ES_CPAS"));
             model.append("UploadedExcel", files[0]);
 
             $.ajax({
@@ -353,6 +383,14 @@ $(document).ready(function () {
                 icon: 'glyphicon glyphicon-ok'
             });
         }
+    }
+
+    function MostrarDetalles(detalle){
+        swal(
+            'Detalle',
+            detalle,
+            'info'
+        )
     }
 
 });

@@ -1,18 +1,24 @@
 ﻿﻿function ObtenerUrl(api)
 {
-    //return 'http://api.asambleas.cl/api/' + api;
-    return 'http://localhost:58013/api/' + api;
+    return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
     //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    //return 'http://api.asambleas.cl/api/' + api;
-    return 'http://localhost:58013/api/' + api;
+    return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://localhost:58013/api/' + api;
     //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
+}
+﻿function ObtenerUrlDescargaExcel(nombreArchivo)
+{
+    return 'http://api.asambleas.cl/Excel/' + nombreArchivo;
+    //return 'http://localhost:58013/Excel/' + nombreArchivo;
+    //return 'http://apps.asambleas.cl/Excel/' + nombreArchivo;
 }
 ﻿function ObtenerUrlSignalR()
 {
@@ -29,13 +35,13 @@ function TiempoCierreSesion(){
 }
 versionCorta = ko.observable(RetornaVersionUltraCorta());
 function RetornaVersionLarga() {
-    return 'WebSite v2.1';
+    return 'WebSite v2.2';
 }
 function RetornaVersionCorta() {
-    return 'v=2.1';
+    return 'v=2.2';
 }
 function RetornaVersionUltraCorta() {
-    return 'v2.1';
+    return 'v2.2';
 }
 function getParameterByName(name, url) {
 
