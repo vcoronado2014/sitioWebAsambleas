@@ -75,6 +75,9 @@
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
                             <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
                             <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
+                            <!-- nuevos -->
+                            <li data-bind="visible: CreaSolicitudes"><a href="AdministracionSolicitudes.html">Administración Solicitudes</a></li>
+                            <li data-bind="visible: VerMroSolicitudes"><a href="ListarMuroSolicitudes.html">Mis Solicitudes</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" data-bind="visible: VerTricel">
@@ -109,6 +112,15 @@
         <h3 class="col-xs-9 col-md-10">Listado <small>de Documentos</small></h3>
 
     </div>
+    <div class="col-xs-12 col-md-6" data-bind="visible: CreaDocumento">
+        <label for="basic-url">Descripción</label>
+        <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon11">
+                        <i class="fa fa-user"></i>
+                    </span>
+            <input type="text" class="form-control" name="descripcion" id="txtDescripcion" placeholder="Descripción" aria-describedby="basic-addon11" data-bind="value: self.frmDescripcion"   />
+        </div>
+    </div>
 
     <div class="col-xs-12 col-md-6" data-bind="visible: CreaDocumento">
         <label for="basic-url">Subir Archivo (máximo 3,5 Mb)</label>
@@ -123,6 +135,7 @@
 
     </div>
 
+
     <div class="col-xs-12" style="padding-bottom: 20px;">
     </div>
     <hr class="style17" style="width: 100%;" />
@@ -134,6 +147,7 @@
             <tr>
                 <th></th>
                 <th>Nombre Archivo</th>
+                <th>Descripción</th>
                 <th class="hidden-xs">Tamaño</th>
                 <th>Fecha Subida</th>
             </tr>
@@ -160,6 +174,7 @@
                     -->
                 </td>
                 <td><span data-bind="text: $data.NombreCompleto"></span></td>
+                <td><span data-bind="text: $data.OtroCinco"></span></td>
                 <td class="hidden-xs"><span data-bind="text: $data.OtroUno"></span></td>
                 <td><span data-bind="text: $data.NombreUsuario"></span></td>
 
@@ -212,9 +227,9 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=2.2"></script>
+    <script src="const.js?v=2.5"></script>
 
-    <script src="app_script/ListarDocumento.js?v=2.2"></script>
+    <script src="app_script/ListarDocumento.js?v=2.5"></script>
 
 </div>
 </body>

@@ -8,7 +8,7 @@
     <meta name="description" content="." />
     <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
     <meta name="author" content="Victor Coronado" />
-    <title>Reportes</title>
+    <title>Administrar Solicitudes</title>
     <!-- Bootstrap Core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -22,8 +22,6 @@
     <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
 
     <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
-    <link href="Content/morris.css" rel="stylesheet" />
     <link href="Content/sweetalert.css" rel="stylesheet" />
 
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
@@ -38,49 +36,35 @@
     <![endif]-->
 
     <!-- jQuery -->
-    <script src="Scripts/jquery-1.11.3.min.js"></script>
+    <script src="Scripts/jquery-1.11.3.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="Scripts/bootstrap.min.js"></script>
 
-    <script src="Scripts/knockout-3.4.1.js"></script>
+    <!-- KnockoutJS http://knockoutjs.com/ -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+
+    <!-- KnockoutJS Mapping http://knockoutjs.com/documentation/plugins-mapping.html -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
 
 
     <script src="Scripts/jquery.validate.min.js"></script>
-
     <script src="Scripts/sweetalert.js"></script>
     <script src="Scripts/pnotify.custom.min.js"></script>
-
     <script src="Scripts/moment.js"></script>
-
-    <script src="Scripts/lib/raphael.min.js"></script>
-    <script src="Scripts/morris.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-    <script src="Scripts/sb-admin-2.js"></script>
-    <script src="Scripts/metisMenu.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script type="text/javascript" src="js/jspdf.debug.js"></script>
-
     <script src="const.js?v=2.5"></script>
+    <script src="app_script/AdministracionSolicitudes.js?v=2.5"></script>
 
-    <script src="app_script/vistaReportes.js?v=2.5"></script>
-    <script src="app_script/InicioReportes.js?v=2.5"></script>
-    
 
 
 
 </head>
 <body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
-
-<div class="container" id="loading">
-
-</div>
-
 <div class="container" id="principal">
     <!-- encabezado -->
     <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
@@ -149,49 +133,101 @@
 
 
     </nav>
+
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
-            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span  data-bind="text: nombreCompleto"></span>&nbsp;<span data-bind="text: nombreRol"></span></a>
+            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span data-bind="text: nombreCompleto"></span>&nbsp;<span data-bind="text: nombreRol"></span></a>
             <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
         </div>
     </nav>
 
-
-
     <div class="col-xs-12 page-header">
-        <h3 class="col-xs-9 col-md-10">Reportes</h3>
+        <h3>Administración <small>de Solicitudes</small></h3>
+    </div>
+
+    <!-- nombre Intitución -->
+    <div class="col-xs-12 col-md-6">
+        <label for="basic-url">Nombre Institución</label>
+        <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-user"></i>
+                    </span>
+            <input type="text" class="form-control" name="usuario" id="txtNombreUsuario" placeholder="Nombre de Institución" aria-describedby="basic-addon1" disabled="true" data-bind="value: nombreInstitucion"   />
+        </div>
 
     </div>
-    <!-- aca el contenido -->
 
-    <div class="jumbotron" data-bind="visible: VerReportes">
-        <h3>Usuarios</h3>
-        <p>Muestra el Listado de Usuarios de su Institución</p>
-        <p>
-            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteUsuarios()"><i class="fa fa-search"> </i> Mostrar</a>
-            <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteUsuarios()"><i class="fa fa-download"> </i> Descargar</a>
-        </p>
+    <!-- listado de las asociadas -->
+    <div class="col-xs-12 col-md-6">
+        <div class="panel panel-secondary">
+            <div class="panel-heading">Usuarios Asociados
+
+            </div>
+            <div class="panel-body">
+                <ul class="list-group" data-bind="foreach: itemsT">
+                    <li class="list-group-item list-group-item-default" data-bind="text: NombreCompleto">
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
     </div>
-    <div class="jumbotron" data-bind="visible: VerReportes">
-        <h3>Instituciones</h3>
-        <p>Muestra el Listado de Instituciones</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="MostrarReporteInstituciones()"><i class="fa fa-search"> </i> Mostrar</a>
-            <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteInstituciones()"><i class="fa fa-download"> </i> Descargar</a></p>
+
+    <br/>
+    <div class="col-xs-12 alert alert-success" role="alert" style="font-size:11px; margin-top:5px;margin-bottom:5px;">
+        <strong>Importante!</strong>  Este mantenedor le permitirá asociar los usuarios de cada rol que podrán ver las solicitudes generadas. Seleccione el Rol y luego marque o desmarque a los usuarios que desee agregar como visualizadores de solicitudes.
+
     </div>
-    <div class="jumbotron"  data-bind="visible: VerReportes">
-        <h3>Rendiciones</h3>
-        <p>Muestra los Ingresos/Egresos de dinero de la Institución</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteRendiciones()"><i class="fa fa-search"> </i> Mostrar</a>
-            <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteRendiciones()"><i class="fa fa-download"> </i> Descargar</a></p>
+
+    <div class="col-xs-12 col-md-6 hidden" >
+        <label for="basic-url">Roles</label>
+        <div class="input-group">
+                <span class="input-group-addon" id="basic-addon8">
+                    <i class="fa fa-globe"></i>
+                </span>
+            <select id="selectIdRol" class="form-control" data-bind="options: roles,
+                       optionsText: 'Nombre',
+                       optionsValue: 'Id',
+                       value: selectedRol,
+                       event: {change: onChange},
+                       valueAllowUnset: true">
+            </select>
+        </div>
+
     </div>
-    <div class="jumbotron"  data-bind="visible: VerReportes">
-        <h3>Votaciones</h3>
-        <p>Muestra las Votaciones de Listas y Proyectos de la Institución</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"  onclick="MostrarReporteVotaciones()"><i class="fa fa-search"> </i> Mostrar</a>
-            <a class="btn btn-success btn-lg pull-right hidden-xs" href="#" role="button" onclick="DescargarReporteVotaciones()"><i class="fa fa-download"> </i> Descargar</a></p>
+
+
+    <div class="col-xs-12" >
+        <div class="card" style="width: 100%" >
+            <div class="card-header bg-success fg-white" style="padding: 0.5em;">
+                <h4>Usuarios Disponibles</h4>
+            </div>
+            <div id="contenidoUsuarios">
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- <input type="checkbox" class="custom-control-input">-->
+    <div class="col-xs-12" style="padding-bottom: 20px;">
+    </div>
+    <hr class="style17" style="width: 100%;" />
+    <div class="row">
+        <div class="col-xs-6">
+            <input id="btnCancelar" type="button" value="Cancelar" class="btn btn-info" style="width: 100%;" data-bind="click: cancelar" />
+        </div>
+        <div class="col-xs-6">
+            <input id="btnOk" type="button" value="Guardar" class="btn btn-primary" style="width: 100%;" onclick="guardar()" />
+        </div>
     </div>
 
 </div>
-
 </body>
 </html>

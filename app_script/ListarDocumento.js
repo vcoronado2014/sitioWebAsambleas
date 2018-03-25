@@ -65,6 +65,8 @@
         self.idUsuario = getParameterByName('idUsuario');
 
         self.elem = document.getElementById('principal');
+        //del formulario
+        frmDescripcion = ko.observable();
 
     /*
         if (sessionStorage.getItem("RolId") != '9')
@@ -165,6 +167,16 @@
         }
     });
 
+    $('#txtArchivo').on('change', function () {
+        var files = $("#txtArchivo").get(0).files;
+        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
+        if (ValidaExtension(files[0], extensiones_permitidas) == true) {
+            //ahora esta correcto, avisar al usuario que puede agregar una descripciòn.
+            getNotify('success','Descripción', 'Puede escribir una descripción si así lo desea, luego presione el botón Subir Archivo.');
+        }
+    });
+
+
     $('#btnUploadFile').on('click', function () {
 
         var files = $("#txtArchivo").get(0).files;
@@ -174,12 +186,14 @@
 
             $('#principal').hide();
             $('#loading').show();
+            var descripcion = frmDescripcion();
 
             var model = new FormData();
             model.append("UsuId", sessionStorage.getItem("Id"));
             model.append("InstId", sessionStorage.getItem("InstId"));
             model.append("EsCpas", sessionStorage.getItem("ES_CPAS"));
             model.append("UploadedImage", files[0]);
+            model.append("Descripcion", descripcion);
 
             var guardarArchivo = jQuery.ajax({
                 url : ObtenerUrl('FileNuevo'),
@@ -231,42 +245,6 @@
                     alert('quitar cargando');
                 }
             );
-
-            /*
-            $.ajax({
-                url: ObtenerUrl('FileNuevo'),
-                type: 'POST',
-                dataType: 'json',
-                data: model,
-                processData: false,
-                contentType: false,// not json
-                complete: function (data) {
-
-                    swal({
-                            title: "Guardado",
-                            text: "El Registro ha sido guardado con éxito.",
-                            type: "success",
-                            showCancelButton: false,
-                            confirmButtonClass: "btn-success",
-                            confirmButtonText: "Ok",
-                            cancelButtonText: "No, cancel plx!",
-                            closeOnConfirm: true,
-                            customClass: 'sweetalert-xs',
-                            closeOnCancel: false
-                        },
-                        function (isConfirm) {
-                            if (isConfirm) {
-                                window.location.href = "ListarDocumento.html";
-
-
-                            } else {
-                                swal("Cancelled", "Your imaginary file is safe :)", "error");
-                            }
-                        });
-
-                }
-            });
-            */
         }
 
     });
@@ -308,9 +286,3 @@
     }
 
 });
-
-//$(window).load(function () {
-//    // Una vez se cargue al completo la página desaparecerá el div "cargando"
-//    $('#principal').show();
-//    $('#loading').hide();
-//});

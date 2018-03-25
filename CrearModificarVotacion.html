@@ -84,8 +84,8 @@
     <script src="http://signalr.cpas.cl/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=2.2"></script>
-    <script src="app_script/CrearModificarVotacion.js?v=2.2"></script>
+    <script src="const.js?v=2.5"></script>
+    <script src="app_script/CrearModificarVotacion.js?v=2.5"></script>
 
 </head>
 <body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
@@ -131,6 +131,9 @@
                             <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
                             <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
                             <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
+                            <!-- nuevos -->
+                            <li data-bind="visible: CreaSolicitudes"><a href="AdministracionSolicitudes.html">Administración Solicitudes</a></li>
+                            <li data-bind="visible: VerMroSolicitudes"><a href="ListarMuroSolicitudes.html">Mis Solicitudes</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active" data-bind="visible: VerTricel">

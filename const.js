@@ -35,13 +35,13 @@ function TiempoCierreSesion(){
 }
 versionCorta = ko.observable(RetornaVersionUltraCorta());
 function RetornaVersionLarga() {
-    return 'WebSite v2.2';
+    return 'WebSite v2.5';
 }
 function RetornaVersionCorta() {
-    return 'v=2.2';
+    return 'v=2.5';
 }
 function RetornaVersionUltraCorta() {
-    return 'v2.2';
+    return 'v2.5';
 }
 function getParameterByName(name, url) {
 
@@ -265,12 +265,35 @@ function Menu()
         VerReporteAsistencia= ko.observable(false);
         //el menu se ve siempre
         menuMenu = ko.observable(true);
+        //este parametro lo vamos a dejar visible siempre
+        CreaMroSolicitudes = ko.observable(false);
+        ModificaMroSolicitudes = ko.observable(false);
+        EliminaMroSolicitudes= ko.observable(false);
+        VerMroSolicitudes= ko.observable(false);
+        //para la administracion de solicitudes
+        CreaSolicitudes= ko.observable(false);
 
         if (sessionStorage.RolesPermisos) {
             obj = JSON.parse(sessionStorage.RolesPermisos);
 
             if (obj.RolId == 1)
                 MuestraLogueados = ko.observable(true);
+
+            //nuevos campos
+            if (obj.CreaMroSolicitud == 1)
+                CreaMroSolicitudes = ko.observable(true);
+
+            if (obj.ModificaMroSolicitud == 1)
+                ModificaMroSolicitudes = ko.observable(true);
+
+            if (obj.EliminaMroSolicitud == 1)
+                EliminaMroSolicitudes = ko.observable(true);
+
+            if (obj.VerMroSolicitud == 1)
+                VerMroSolicitudes = ko.observable(true);
+
+            if (obj.CreaSolicitud == 1)
+                CreaSolicitudes = ko.observable(true);
 
             if (obj.CreaUsuario == 1)
                 CreaUsuario = ko.observable(true);

@@ -112,7 +112,12 @@ $(document).ready(function () {
         self.frmPVerMailing= ko.observable(false);
         self.frmPCreaMailing= ko.observable(false);
         self.frmPVerReporteAsistencia = ko.observable(false);
-
+        //nuevos
+        self.frmPCreaSolicitudes= ko.observable(false);
+        self.frmPCreaMroSolicitudes= ko.observable(false);
+        self.frmPModificaMroSolicitudes= ko.observable(false);
+        self.frmPEliminaMroSolicitudes= ko.observable(false);
+        self.frmPVerMroSolicitudes= ko.observable(false);
 
         Menu();
 
@@ -166,7 +171,13 @@ $(document).ready(function () {
                 VerMailing: $('#chkVerMailing')[0].checked,
                 VerReporteAsistencia: $('#chkVerReporteAsistencia')[0].checked,
                 CreaMailing: $('#chkCreaMailing')[0].checked,
-                EsCpas: sessionStorage.getItem("ES_CPAS")
+                EsCpas: sessionStorage.getItem("ES_CPAS"),
+                CreaSolicitudes: $('#chkCreaSolicitudes')[0].checked,
+                CreaMroSolicitudes: $('#chkCreaMroSolicitudes')[0].checked,
+                ModificaMroSolicitudes: $('#chkModificaMroSolicitudes')[0].checked,
+                EliminaMroSolicitudes: $('#chkEliminaMroSolicitudes')[0].checked,
+                VerMroSolicitudes: $('#chkVerMroSolicitudes')[0].checked
+
             };
 
             $.ajax({
@@ -330,6 +341,17 @@ $(document).ready(function () {
                             self.frmPCreaMailing= ko.observable(true);
                         if (dataR[0].VerReporteAsistencia == 1)
                             self.frmPVerReporteAsistencia= ko.observable(true);
+                        //nuevos
+                        if (dataR[0].CreaSolicitud == 1)
+                            self.frmPCreaSolicitudes= ko.observable(true);
+                        if (dataR[0].CreaMroSolicitud == 1)
+                            self.frmPCreaMroSolicitudes= ko.observable(true);
+                        if (dataR[0].ModificaMroSolicitud == 1)
+                            self.frmPModificaMroSolicitudes= ko.observable(true);
+                        if (dataR[0].EliminaMroSolicitud == 1)
+                            self.frmPEliminaMroSolicitudes= ko.observable(true);
+                        if (dataR[0].VerMroSolicitud == 1)
+                            self.frmPVerMroSolicitudes= ko.observable(true);
 
                         ko.applyBindings(new InstitucionViewModel(data, dataR), self.elem);
 
