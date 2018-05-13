@@ -1,0 +1,1290 @@
+<root>
+  <error>
+    <Fecha>2017-05-18 19:38</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha agregado una rendición  &lt;strong&gt;$1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido agrgada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>1</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-18 19:29</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha agregado una rendición  &lt;strong&gt;$recaudo 1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido agrgada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>2</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-18 19:45</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado una rendición &lt;strong&gt;$1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>3</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-18 20:52</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado una rendición &lt;strong&gt;$1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>4</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-19 14:48</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado una rendición &lt;strong&gt;$1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>5</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-19 14:02</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado una rendición &lt;strong&gt;$recaudo 1 &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>6</Id>
+  </error>
+  <error>
+    <Fecha>2017-05-19 19:00</Fecha>
+    <Detalle>vgarcia@saydex.cl, vgarcia@saydex.com, danny_salazaro@hotmail.com, turck182@gmail.com, danny_salaro@hotmail.com, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha agregado una rendición  &lt;strong&gt;$secretario &lt;/strong&gt;, para el Establecimiento Colegio de Prueba:&lt;br /&gt;
+      Estimado Usuario, ha sido agrgada una rendición para su establecimiento, ingrese a api.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>7</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-07 21:33</Fecha>
+    <Detalle>contacto@cpas.cl -- &lt;html&gt;
+      victor   prueba de contacto, Teléfono Contacto 994359451, correo electónico vmgarcia1@uc.cl:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: porfa quiero saber si esto funciona bien&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de CPAS ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>8</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:00</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>9</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:01</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: &lt;vcoronado.alarcon@gmail.com&gt; No such user here</Detalle>
+    <Id>10</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:36</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>11</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:50</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>12</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:30</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>13</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:45</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>14</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:29</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>15</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-08 19:40</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>16</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-11 13:25</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>17</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-11 13:53</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>18</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-11 14:18</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia.asamblea:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a http://www.asambleas.cl &lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>19</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-15 08:01</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar vcoronadodos y en Password 55555555-5, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>20</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-19 20:51</Fecha>
+    <Detalle>danny_salazaro@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar dsalazar y en Password 13597434-k, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>21</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 12:47</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Ley de Copropiedad-19537_16-DIC-1997.pdf&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>22</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 12:05</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Reglamento de la Ley Nº 19.537 de Copropiedad-46_17-JUN-1998.pdf&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>23</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:16</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha agregado una rendición  &lt;strong&gt;$33472&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido agrgada una rendición para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>24</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:46</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Rotura de cañerias sector principal&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>25</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:15</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha creado el Tricel &lt;strong&gt;Tricel Directiva 2018&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Tricel para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>26</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:33</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Tricel &lt;strong&gt;Tricel Directiva 2018&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Tricel para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>27</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:34</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Tricel &lt;strong&gt;Tricel Directiva 2018&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Tricel para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>28</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-24 13:45</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;Accesos para personas con capacidades diferentes&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>29</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-25 12:20</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba 8 de evento&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su establecimiento, este tendrá lugar en No definida entre 9/30/2017 - 9/30/2017, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>30</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-25 12:25</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;prueba 8 de evento&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su establecimiento, este tendría lugar en No definida entre 9/30/2017 - 9/30/2017, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>31</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-25 17:26</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;1ra reunión de trabajo Asamblea&lt;/strong&gt;, para el Establecimiento Cond. Catedral Bulnes:&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su establecimiento, este tendrá lugar en No definida entre 9/27/2017 - 9/27/2017, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>32</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-26 06:55</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha creado el Usuario &lt;strong&gt;UserTest&lt;/strong&gt;, para el Establecimiento Asambleas:&lt;br /&gt;
+      Estimado Usuario, ha sido creado un nuevo Usuario para su establecimiento, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>33</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-26 20:08</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha agregado una rendición  &lt;strong&gt;$ 15.243&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregada una rendición para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      ***** Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>34</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-30 08:47</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba de calendario para hoy&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, entre 9/30/2017 1:00 PM - 9/30/2017 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>35</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-30 12:46</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 65.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>36</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-30 13:51</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Bingo de Prueba Asamblea&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, entre 9/30/2017 6:00 PM - 9/30/2017 9:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>37</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-30 13:34</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;Prueba de calendario para hoy&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, entre 9/30/2017 1:00 PM - 9/30/2017 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>38</Id>
+  </error>
+  <error>
+    <Fecha>2017-09-30 16:29</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Comunicado a vecinos&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, entre 10/3/2017 7:00 PM - 10/3/2017 8:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>39</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-01 20:45</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;2da Réunion de trabajo directiva 2017&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Palacio Álamos entre 10/4/2017 7:45 PM - 10/4/2017 8:45 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>40</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-01 21:04</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;prueba evento septiembre&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en  entre 9/11/2017 12:00 AM - 9/11/2017 11:59 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>41</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 08:04</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha creado el Tricel &lt;strong&gt;prueba de tricel cuatro&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>42</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 11:41</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha eliminado el Tricel &lt;strong&gt;prueba de tricel cuatro&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un Tricel para su institución.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>43</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 18:06</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Tricel &lt;strong&gt;Tricel Directiva 2018&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>44</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 18:51</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba de evento para validar fechas&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en En el establecimiento entre 10/4/2017 3:00 PM - 10/4/2017 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>45</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 18:25</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;Prueba de evento para validar fechas&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en En el establecimiento entre 10/4/2017 3:00 PM - 10/4/2017 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>46</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-03 18:28</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha creado el Tricel &lt;strong&gt;Prueba Tricel, valudacion controles&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>47</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-04 21:16</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Acta sept 2017.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>48</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-04 21:56</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Acta sept 2017_v2.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>49</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-04 21:40</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;FACULTADES, DERECHOS Y OBLIGACIONES EN LA ADMINISTARCION DE UNA COMUNIDAD.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>50</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-05 14:33</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;gaby&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>51</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-06 04:56</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Acta sept 2017_v3.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>52</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-07 07:53</Fecha>
+    <Detalle>turck182@gmail.com, castrosanguinetti.julio@gmail.com, cvillalobostoro@gmail.com, asepulveda.leon@gmail.com, ppizarrof@gmail.com, cmorenv@gmail.com, lvillafue@hotmail.com, sacevedoc@hotmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;antecedentes apertura.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>53</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-09 20:36</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Super Administrador&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>54</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-10 06:29</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Mejoramiento del lquincho&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>55</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-10 06:09</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Mejoramiento del lquincho&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>56</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:37</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Super Administrador&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>57</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:37</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>58</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:25</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado una novedad &lt;strong&gt;prueba de otro comentario a modificar&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una novedad en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>59</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:25</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>60</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:48</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Accesos para personas con capacidades diferentes&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>61</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-13 20:48</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>62</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-16 11:31</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Hans Neubauer, Teléfono Contacto 993208805, correo electónico hneubauer@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: ¿tienes una versión demo?, esto con el objeto de utilizar y ver realmente si sirve para mis asambleas.
+¿cuanto cuesta? el valor es mensual?
+cual es la capacidad en MB de gestor documental?
+saludos.
+&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>63</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-16 11:31</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>64</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-17 08:18</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Prueba contacto, Teléfono Contacto +56994359451, correo electónico turck182@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: hola quiero probar si el mail de contacto funciona.&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>65</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-17 08:18</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>66</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-18 06:11</Fecha>
+    <Detalle>cvillalobostoro@gmail.com -- &lt;html&gt;
+      Estimado Usuario cvillalobost:&lt;br /&gt;
+      Su password fué cambiada con exito: 14410345&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>67</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 07:17</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>68</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 07:17</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>69</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 07:33</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>70</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 07:54</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>71</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:31</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>72</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:52</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>73</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:37</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>74</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:38</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>75</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:43</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>76</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:43</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: From domain must match authenticated domain</Detalle>
+    <Id>77</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:32</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Coronado, Teléfono Contacto 985006988, correo electónico vcoronado@rayensalud.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>78</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-20 08:07</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Prueba, Teléfono Contacto 985006988, correo electónico vcoronado.alarcon@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: Prueba de mensajeria a traves de la pagina&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>79</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 08:20</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      victor, Teléfono Contacto 985006988, correo electónico vcoronado.alarcon@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba de mensaje asambleas&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>80</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 08:27</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      victor, Teléfono Contacto 985006988, correo electónico vcoronado.alarcon@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: otra prueba de mensaje desde asambleas&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>81</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 08:31</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      victor, Teléfono Contacto 985008988, correo electónico vcoronado.alarcon@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: otra prueba de asambleas&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>82</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 08:33</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      victor, Teléfono Contacto 985006988, correo electónico vcoronado.alarcon@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: prueba 800 del mensaje desde asambleas.&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>83</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 14:55</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor garcia, Teléfono Contacto 227868835, correo electónico vgarcia@asambleas.cl:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: quiero probar esta funcionalidad&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>84</Id>
+  </error>
+  <error>
+    <Fecha>2017-10-22 15:22</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;Ornamentar Jardines&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>85</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-14 12:51</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;fun.png&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>86</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-14 17:26</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;green.png&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>87</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-14 17:31</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgrcia1@uc.cl, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>88</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-15 05:56</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;vgarcia.usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>89</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-17 04:19</Fecha>
+    <Detalle>vickiablanco@gmail.com -- &lt;html&gt;
+      Estimado Usuario Vicki:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>90</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-20 07:31</Fecha>
+    <Detalle>vickiablanco@gmail.com -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Cotizaciones para Auditoría TUGAS&lt;/strong&gt;, para la Institución Cond. Los Andes III:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>91</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-20 07:22</Fecha>
+    <Detalle>vickiablanco@gmail.com -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;Uso de gorros en la psicina&lt;/strong&gt;, para la Institución Cond. Los Andes III:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>92</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-20 13:45</Fecha>
+    <Detalle>Turck182@gmail.com, soledad.adriazola@gmail.com, a_cataldo2155@yahoo.es, domanar2005@gmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Requisitos que debo cumplir para optar a un arriendo en nuestro Condominio.pdf&lt;/strong&gt;, para la Institución Cond. Puertas de Catedral:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>93</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-20 13:03</Fecha>
+    <Detalle>Turck182@gmail.com, soledad.adriazola@gmail.com, a_cataldo2155@yahoo.es, domanar2005@gmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CONTRATO FABRIMETAL ASCENSORES.pdf&lt;/strong&gt;, para la Institución Cond. Puertas de Catedral:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>94</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-20 13:11</Fecha>
+    <Detalle>vickiablanco@gmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;MINUTA 170909 Los Andes III.pdf&lt;/strong&gt;, para la Institución Cond. Los Andes III:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>95</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-22 05:21</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Se ha creado el Usuario &lt;strong&gt;vicki.asambleas&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un nuevo Usuario para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>96</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-23 13:21</Fecha>
+    <Detalle>christiansandoval@dercomaq.cl, vickiablanco@gmail.com, anahinojosaosses@gmail.com, Emilio.farias.neira@gmail.com -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;Asamblea Ordinaria&lt;/strong&gt;, para la Institución Cond. Los Andes III:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Se informará entre 14-12-2017 8:00 PM - 14-12-2017 9:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>97</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-27 18:21</Fecha>
+    <Detalle>vmgarcia1@uc.cl -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar vgarcia.prueba1 y en Password 13671095-8, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>98</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:28</Fecha>
+    <Detalle>antonio.luengo@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar aluengo y en Password 13758150-7, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>99</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:29</Fecha>
+    <Detalle>saavedra_alonso@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar asaavedra y en Password 14668819-5, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>100</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>liweisse28@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar lweisse y en Password 6087159-0, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>101</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>andres.carrasco@live.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar acarrasco y en Password 15784450-4, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>102</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>cecilia.mendez.medel@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar cmendez y en Password 11770217-0, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>103</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>gajicolimitada@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar nlizama y en Password 10338916-k, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>104</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>alejandrosaezdelcanto@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar asaez y en Password 6387962-2, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>105</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>durmarcelo@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar mduran y en Password 10313716-0, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>106</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>fparada@vidanueva.cl -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar fparada y en Password 13071819-1, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>107</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>marisa.rodriguez@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar mrodriguez y en Password 14540028-7, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>108</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>edithmolinata@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar rpino y en Password 13209594-9, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>109</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>kukydelc@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar pdelcanto y en Password 7202760-4, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>110</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 09:30</Fecha>
+    <Detalle>cr.cofre@yahoo.es -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar ccofre y en Password 8987991-4, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>111</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 15:53</Fecha>
+    <Detalle>marisa.rodriguez@hotmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar mrodriguez y en Password 6977134-3, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>112</Id>
+  </error>
+  <error>
+    <Fecha>2017-11-28 15:43</Fecha>
+    <Detalle>cris.astudillo@gmail.com -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar castudillo y en Password  13472129-4, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>113</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-03 11:23</Fecha>
+    <Detalle>christiansandoval@dercomaq.cl, vickiablanco@gmail.com, anahinojosaosses@gmail.com, Emilio.farias.neira@gmail.com -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Reglamento General Condominio Los Andes.pdf&lt;/strong&gt;, para la Institución Cond. Los Andes III:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>114</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-12 18:08</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Super Administrador&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>115</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-12 18:28</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>116</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-12 18:53</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Super Administrador&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>117</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-12 19:05</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Super Administrador&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>118</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-12 19:03</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com, turck182@gmail.com, danny_salazaro@hotmail.com, vmgarcia1@uc.cl, vgarcia@uc.cl, vickiablanco@gmail.com -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;En el 4to piso de la torre F, hay una cañería rota&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>119</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-20 07:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;prueba.asamblea&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>120</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-20 07:53</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 65.001&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>121</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-24 09:35</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Hola Amigos, ahora por medio de esta funcionalidad ustedes podrán dar respuesta de forma individual a cada uno de los vecinos que tengan dudas respecto a la administración general del comité, otra funcionalidad pensada en mantener una comunicación fluida y personalizada con cada vecino.&lt;/strong&gt;, para la Institución Cond. Puertas de Catedral:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>122</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-26 07:41</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;vgarcia.usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>123</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-26 07:03</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Hola necesito saber que pasará con los accesos par apersonas discapacitadas para la entrada del condominio&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>124</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-26 07:30</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;vgarcia.asamblea&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>125</Id>
+  </error>
+  <error>
+    <Fecha>2017-12-28 15:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;COMUNICADO  ACUERDOS ASAMBLEA ORDINARIA.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>126</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-05 11:53</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Tricel &lt;strong&gt;Prueba Tricel, valudacion controles&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>127</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-05 11:31</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba de evento&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Mi Casa entre 06-01-2018 12:00 AM - 06-01-2018 1:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>128</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-07 13:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>129</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-07 14:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado un Rol &lt;strong&gt;Usuario&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>130</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-21 18:17</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;INFORMATIVO ENERO 2018.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>131</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-25 07:38</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;INFORMATIVO ENERO 2018.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>132</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-25 07:58</Fecha>
+    <Detalle>ppizarrof@gmail.com -- &lt;html&gt;
+      Estimado Usuario ppizarro:&lt;br /&gt;
+      Su password fué recuperada con exito: 8306272&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>133</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-25 09:09</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>134</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-25 09:49</Fecha>
+    <Detalle>ppizarrof@gmail.com -- &lt;html&gt;
+      Estimado Usuario ppizarro:&lt;br /&gt;
+      Su password fué recuperada con exito: 8306272&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>135</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-25 09:23</Fecha>
+    <Detalle>ppizarrof@gmail.com -- &lt;html&gt;
+      Estimado Usuario ppizarro:&lt;br /&gt;
+      Su password fué recuperada con exito: 8306272&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>136</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 10:39</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Anexos Carlos Reyes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>137</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 10:29</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Comprobante feriado Legal - Carlos Reyes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>138</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 10:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Carta Informativa Conserjes - Carlos Reyes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>139</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 10:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Liquidaciones 2016 - 2017 - Carlos Reyes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>140</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:49</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Contrato de Trabajo Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>141</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:43</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Renuncia turnos noche 2015 - Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>142</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:58</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Carta Informativa - Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>143</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:12</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Autorizacion asignacion Familiar - Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>144</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:12</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>145</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:24</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Feriado Legal - Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>146</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:24</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>147</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Liquidaciones parciales 2016 a 2017 - Naldo Guzman.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>148</Id>
+  </error>
+  <error>
+    <Fecha>2018-01-31 11:36</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>149</Id>
+  </error>
+  <error>
+    <Fecha>2018-02-07 13:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Cartola transferencia recibidas enero 2018.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>150</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-23 14:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;INFORMATIVO MARZO 2018.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>151</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:11</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo para Comunidad Condominio Catedral Bulnes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>152</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Acta sept 2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>153</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:29</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;AVISO IMPORTANTE - 19-Sep-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>154</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:48</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Mail de respuesta para apertura antecedentes 07-10-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>155</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Comunicado  Auerdos Asamblea Ordinaria 28-12-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>156</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 13:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Inoformativo 01-2018  Condominio Catedral Bulnes.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>157</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 14:40</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Marzo 2018.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>158</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 15:03</Fecha>
+    <Detalle>visorvirtual@hotmail.es -- &lt;html&gt;Estimado usuario, usted ha sido creado en la PLataforma de Asambleas correctamente, para que pueda ingresar al sistema debe entrar a la página web http://www.asambleas.cl y presionar en el menu Ingresar al Sistema, acto seguido en el nombre de usuario debe ingresar hpena y en Password 12049012-5, si usted no ha solicitado este acceso comúniquese con el administrador mediante el formulario de contacto de la misma página.
+
+
+*** mensaje enviado a través de la plataforma automática de asambleas.cl ***&lt;/html&gt;</Detalle>
+    <Id>159</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-25 16:27</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;blue.png&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>160</Id>
+  </error>
+  <error>
+    <Fecha>2018-03-26 08:23</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;1380209117FIESTAS_PATRIAS.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>161</Id>
+  </error>
+  <error>
+    <Fecha>2018-04-02 12:05</Fecha>
+    <Detalle>cris.astudillo@gmail.com -- &lt;html&gt;
+      Estimado Usuario castudillo:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>162</Id>
+  </error>
+  <error>
+    <Fecha>2018-04-02 13:12</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>163</Id>
+  </error>
+</root>

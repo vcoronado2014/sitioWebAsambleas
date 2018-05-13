@@ -8,7 +8,7 @@
 
     //$.connection.chatHub.url ="http://localhost:34080/signalr";
     //$.connection.hub.url = "http://localhost:34080/signalr/hubs";
-    $.connection.hub.url = "http://signalr.cpas.cl/signalr/hubs";
+    $.connection.hub.url = "https://signalr.cpas.cl/signalr/hubs";
     var chat = $.connection.chatHub;
     //chat.url = "http://localhost:34080/signalr";
     var username = sessionStorage.getItem("NombreUsuario") + '_' + sessionStorage.getItem("InstId");

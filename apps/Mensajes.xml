@@ -1,0 +1,173 @@
+﻿<Mensaje>
+  <item id="Proyecto">
+    <nuevo>
+      Se ha creado el Proyecto <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado el Proyecto <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Se ha eliminado el Proyecto <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminado un Proyecto para su institución.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Tricel">
+    <nuevo>
+      Se ha creado el Tricel <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido creado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado el Tricel <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Se ha eliminado el Tricel <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminado un Tricel para su institución.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Documento">
+    <nuevo>
+      Se ha subido el documento <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado el documento <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Ha sido eliminado el documento <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Rendicion">
+    <nuevo>
+      Estimado Usuario, ha sido agregada una rendición para <strong>{NombreInstitucion}</strong>.<br /><br />
+      {TipoMovimiento}: <strong>{NombreItem}</strong>.<br /><br />
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.<br /><br />
+      Saludos.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Estimado Usuario, ha sido modificada una rendición para <strong>{NombreInstitucion}</strong>.<br /><br />
+      {TipoMovimiento}: <strong>{NombreItem}</strong>.<br /><br />
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.<br /><br />
+      Saludos.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Estimado Usuario, ha sido eliminada una rendición para <strong>{NombreInstitucion}</strong>.<br /><br />
+      {TipoMovimiento}: <strong>{NombreItem}</strong>.<br /><br />
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.<br /><br />
+      Saludos.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Evento">
+    <nuevo>
+      Se ha agregado el evento  <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en {Ubicacion} entre {FechaInicioTermino}, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado el evento  <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en {Ubicacion} entre {FechaInicioTermino}, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Ha sido eliminado el evento  <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en {Ubicacion} entre {FechaInicioTermino}, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="RecuperarClave">
+    <nuevo>
+      Estimado Usuario {NombreItem}:<br />
+      Su password fué recuperada con exito: {Clave}<br />
+      Ingrese a www.asambleas.cl/Ingreso.aspx <br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Estimado Usuario {NombreItem}:<br />
+      Su password fué cambiada con exito: {Clave}<br />
+      Ingrese a www.asambleas.cl/Ingreso.aspx <br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+  </item>
+  <item id="Contacto">
+    <nuevo>
+      {Nombre}, Teléfono Contacto {Telefono}, correo electónico {Email}:<br /><br />
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: {Motivo}<br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+  </item>
+  <item id="CrearUsuario">
+    <nuevo>
+      Estimado Usuario {NombreUsuario} se ha creado una cuenta de acceso a CPAS,<br /><br />
+      Su nueva password fué es: {Clave}<br />
+      ***** Puede acceder al Sistema y cambiarla cuando lo estime conveniente www.asambleas.cl/Ingreso.aspx  ******<br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+  </item>
+  <item id="Usuario">
+    <nuevo>
+      Se ha creado el Usuario <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido creado un nuevo Usuario para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado el Proyecto <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Se ha eliminado el Usuario <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminado un Usuario de su institución.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Muro">
+    <nuevo>
+      Se ha creado una novedad <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado una novedad <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificada una novedad en su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Se ha eliminado una novedad <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminada una novedad de su institución.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+  <item id="Rol">
+    <nuevo>
+      Se ha creado un nuevo Rol <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido creada un Rol para su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </nuevo>
+    <modificado>
+      Ha sido modificado un Rol <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido Modificado un Rol en su institución, ingrese a www.asambleas.cl para poder verlo.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </modificado>
+    <eliminado>
+      Se ha eliminado un Rol <strong>{NombreItem}</strong>, para la Institución {NombreInstitucion}:<br /><br />
+      Estimado Usuario, ha sido eliminado un Rol de su institución.<br /><br />
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** <br />
+    </eliminado>
+  </item>
+</Mensaje>

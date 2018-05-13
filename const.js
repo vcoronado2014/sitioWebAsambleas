@@ -1,28 +1,28 @@
-﻿﻿function ObtenerUrl(api)
+﻿﻿﻿function ObtenerUrl(api)
 {
-    return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://api.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    return 'https://www.asambleas.cl/apps/api/' + api;
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://api.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
-    //return 'http://apps.asambleas.cl/api/' + api;
+    return 'https://www.asambleas.cl/apps/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDescargaExcel(nombreArchivo)
 {
-    return 'http://api.asambleas.cl/Excel/' + nombreArchivo;
+    //return 'http://api.asambleas.cl/Excel/' + nombreArchivo;
     //return 'http://localhost:58013/Excel/' + nombreArchivo;
-    //return 'http://apps.asambleas.cl/Excel/' + nombreArchivo;
+    return 'https://www.asambleas.cl/apps/Excel/' + nombreArchivo;
 }
 ﻿function ObtenerUrlSignalR()
 {
-    return 'http://vcoronado-001-site8.dtempurl.com/api/' + api;
+    return 'https://vcoronado-001-site8.dtempurl.com/api/' + api;
     //return "http://localhost:34080/signalr/hubs";
     //http://172.16.116.138/apiasambleas/api/
 }
@@ -35,13 +35,13 @@ function TiempoCierreSesion(){
 }
 versionCorta = ko.observable(RetornaVersionUltraCorta());
 function RetornaVersionLarga() {
-    return 'WebSite v2.5';
+    return 'WebSite v2.6';
 }
 function RetornaVersionCorta() {
-    return 'v=2.5';
+    return 'v=2.6';
 }
 function RetornaVersionUltraCorta() {
-    return 'v2.5';
+    return 'v2.6';
 }
 function getParameterByName(name, url) {
 
