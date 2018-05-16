@@ -192,7 +192,7 @@
       <replace>?v=2.1</replace>
       <replace>?v=2.2</replace>
       <replace>?v=2.3</replace>
-      <replace>?v=2.6</replace>
+      <replace>?v=2.7</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\ASAMBLEAS_MAC\SitioWebAsambleas</dir>
