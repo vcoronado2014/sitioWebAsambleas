@@ -1,4 +1,4 @@
-﻿﻿﻿function ObtenerUrl(api)
+﻿﻿function ObtenerUrl(api)
 {
     //return 'http://api.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
@@ -35,13 +35,13 @@ function TiempoCierreSesion(){
 }
 versionCorta = ko.observable(RetornaVersionUltraCorta());
 function RetornaVersionLarga() {
-    return 'WebSite v2.6';
+    return 'WebSite v2.7';
 }
 function RetornaVersionCorta() {
-    return 'v=2.6';
+    return 'v=2.7';
 }
 function RetornaVersionUltraCorta() {
-    return 'v2.6';
+    return 'v2.7';
 }
 function getParameterByName(name, url) {
 
