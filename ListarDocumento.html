@@ -23,7 +23,8 @@
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
 
     <link href="Content/site.css" rel="stylesheet" />
-    <link href="Content/sweetalert.css" rel="stylesheet" />
+    <!-- <link href="Content/sweetalert.css" rel="stylesheet" /> -->
+    <link href="css/swall2.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
     <link href="Content/morris.css" rel="stylesheet" />
     <link href="css/magnific-popup.css" rel="stylesheet" />
@@ -92,6 +93,7 @@
                             <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
                         </ul>
                     </li>
+                    <li  data-bind="visible: MuestraCambio"><a href="SeleccionInstitucion.html" id="selec"><i class="fa fa-sign-in"></i> Cambiar Institución</a></li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
                     <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
                     <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
@@ -156,9 +158,10 @@
             <!-- ko foreach: proposals() -->
             <tr>
                 <td>
-                    <a data-bind="attr: { href: $data.Url }" download="Descarga"><i class="fa fa-2x fa-download"></i></a>
+                    <a data-bind="attr: { href: $data.Url }" download="Download" target="_blank"><i class="fa fa-2x fa-download"></i></a>
                     <!-- <a data-bind="attr: { href: $data.OtroDos }" target="_blank"><i class="fa fa-2x fa-search"></i></a>-->
-                    <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaDocumento" ><i class="fa fa-2x fa-trash"></i></a>
+                    <!-- <a data-bind="attr: { href: $data.UrlEliminar }, visible: EliminaDocumento" ><i class="fa fa-2x fa-trash"></i></a> -->
+                    <a data-bind="click: eliminarDocumento, attr: { href: $data.UrlEliminar }, visible: EliminaDocumento" ><i class="fa fa-2x fa-trash"></i></a> 
                     <i class="fa fa-2x fa-search" data-bind="click: Mostrar" style="cursor: pointer;"></i>
                     <!--
                     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -209,7 +212,8 @@
     <!-- Responsive DataTables http://www.datatables.net/extensions/responsive/ -->
     <script src="//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js"></script>
 
-    <script src="Scripts/sweetalert.js"></script>
+    <!-- <script src="Scripts/sweetalert.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
 
     <script src="Scripts/pnotify.custom.min.js"></script>
 
@@ -224,12 +228,12 @@
     <script src="js/jquery.magnific-popup.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
-    <script src="https://signalr.cpas.cl/signalr/hubs"></script>
+    <script src="https://www.asambleas.cl/signalr/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=2.7"></script>
+    <script src="const.js?v=3.1"></script>
 
-    <script src="app_script/ListarDocumento.js?v=2.7"></script>
+    <script src="app_script/ListarDocumento.js?v=3.0"></script>
 
 </div>
 </body>

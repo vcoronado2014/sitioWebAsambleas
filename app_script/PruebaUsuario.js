@@ -2,101 +2,192 @@
  * Created by vcoronado on 05-04-2017.
  */
 $(document).ready(function () {
+    exp: var elem = document.getElementById('principal');
+    exp: var regiones = ko.observableArray([]);
+    exp: var tipoOrganizacion = ko.observableArray([]);
+    //objeto a guardar
+    exp: var asistente = {
+        Institucion: {
+            Nombre: '',
+            RegId: 0,
+            PaiId: 0,
+            ComId: 0,
+            Telefono: '',
+            CorreoElectronico: '',
+            RazonSocial: '',
+            Rut: '',
+            Direccion: '',
+            ToId: 0,
+        },
+        ConfiguracionInstitucion: {
+            EnviaDocumentos: 0,
+            EnviaRendiciones: 0,
+            EnviaProyectos: 0,
+            EnviaCorreoEventos: 0,
+            Eliminado: 0,
+            MuestraSlide: 0
+        },
+        mailing: {
+            CreaUsuario: 0,
+            ModificaUsuario: 0,
+            EliminaUsuario: 0,
+            CreaInstitucion: 0,
+            ModificaInstitucion: 0,
+            EliminaInstitucion: 0,
+            CreaDocumento: 0,
+            EliminaDocumento: 0,
+            CreaCalendario: 0,
+            ModificaCalendario: 0,
+            EliminaCalendario: 0,
+            CreaTricel: 0,
+            ModificaTricel: 0,
+            EliminaTricel: 0,
+            CreaProyecto: 0,
+            ModificaProyecto: 0,
+            EliminaProyecto: 0,
+            CreaRendicion: 0,
+            ModificaRendicion: 0,
+            EliminaRendicion: 0,
+            CreaRol: 0,
+            ModificaRol: 0,
+            EliminaRol: 0,
+            CreaMuro: 0,
+            ModificaMuro: 0,
+            EliminaMuro: 0
+        },
+        AutentificacionUsuario: {
+            NombreUsuario: '',
+            Password: '',
+            CorreoElectronico: ''
+        },
+        Persona: {
+            Rut: '',
+            Nombres: '',
+            ApellidoPaterno: '',
+            ApellidoMaterno: '',
+            PaiId: 0,
+            RegId: 0,
+            ComId: 0,
+            DireccionCompleta: '',
+            Telefonos: ''
+        },
+        Roles: [
+            {
+                //rol por defecto
+                Nombre: 'Administrador',
+                Descripcion: 'Administrador del Sistema'
+            },
+            {
+                //rol por defecto
+                Nombre: 'Presidente',
+                Descripcion: 'Presidente de la Institución'
+            },
+            {
+                //rol por defecto
+                Nombre: 'Secretario',
+                Descripcion: 'Secretario de la Institución'
+            },
+            {
+                //rol por defecto
+                Nombre: 'Tesorero',
+                Descripcion: 'Tesorero de la Institución'
+            },
+            {
+                //rol por defecto
+                Nombre: 'Asistente',
+                Descripcion: 'Usuario Normal'
+            }
+        ]
+    };
 
-    function PersonViewModel(){
+    function PersonViewModel(dataR, dataCC, dataT){
         var self = this;
         //del formulario
-        self.frmNombreUsuario = ko.observable("");
-        self.frmNombres = ko.observable("");
-        self.frmApellidoPaterno = ko.observable("");
-        self.frmApellidoMaterno = ko.observable("");
-        self.frmRut = ko.observable("");
-        self.frmTelefono = ko.observable(sessionStorage.getItem("telefonoInstitucionPrueba"));
-        self.frmCorreoElectronico = ko.observable(sessionStorage.getItem("correoInstitucionPrueba"));
-        self.frmIdRegion = ko.observable(sessionStorage.getItem("idRegionInstitucionPrueba"));
-        self.frmIdComuna = ko.observable(sessionStorage.getItem("idComunaInstitucionPrueba"));
-        self.frmDireccion = ko.observable(sessionStorage.getItem("direccionInstitucionPrueba"));
-        self.frmNombreInstitucion = ko.observable(sessionStorage.getItem("nombreInstitucionPrueba"));
+        
+        self.regionesInstitucion = ko.observableArray(dataR);
+        self.tiposOrganizacion = ko.observableArray(dataT);
+        self.comunas = ko.observableArray(dataCC);
 
-        self.frmPassword = ko.observable("");
-        self.frmNuevaPassword = ko.observable("");
+        if (asistente.Institucion && asistente.Institucion.Rut.length <= 0){
+            self.frmNombreInstitucion = ko.observable("");
+            selectedComuna = ko.observable("");
+            self.frmDireccion = ko.observable("");
+            self.frmRazonSocial = ko.observable("");
+    
+            self.frmRut = ko.observable("");
+            self.frmTelefono = ko.observable("");
+            self.frmCorreoElectronico = ko.observable("");
+            self.frmIdRegion = ko.observable("");
+            self.frmIdComuna = ko.observable("");
+            self.frmIdTo = ko.observable("");
+        }
+        onChangeInstitucion = function(item){
+            var nombre = $('#txtNombreInstitucion').val();
+            $.ajax({
+                url: ObtenerUrl('Institucion'),
+                type: "POST",
+                data: ko.toJSON({ BuscarId: nombre, IdUsuario: '1000' }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data) {
+                    // ok
+                    //evaluar respuesta
+                    var datos = data;
+                    var institucionesArr = datos.proposals;
+                    if (institucionesArr.length > 0){
+                      getNotify('error', 'Error', 'El nombre de la Institución ya existe, intente con otro');
+                      $('#txtNombreInstitucion').val('');
+                    }
 
+                    
+                    //ko.cleanNode(elem);
+                    //ko.applyBindings(new PersonViewModel(regiones, dataCC), elem);
+    
+                },
+                error: function (error) {
+                    if (error.status.toString() == "500") {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                    else {
+                        getNotify('error', 'Error', 'Error de Servidor!');
+                    }
+                }
+            });
+        }
 
         siguiente = function(item){
+            self.frmNombreInstitucion = ko.observable($("#txtNombreInstitucion").val());
+            self.frmDireccion = ko.observable($("#txtDireccion").val());
+            self.frmRazonSocial = ko.observable($("#txtRazonSocial").val());
+    
+            self.frmRut = ko.observable($("#txtRut").val());
+            self.frmTelefono = ko.observable($("#txtTelefono").val());
+            self.frmCorreoElectronico = ko.observable($("#txtCorreo").val());
+            self.frmIdRegion = ko.observable($("#selectIdRegion").val());
+            self.frmIdComuna = ko.observable($("#selectIdComuna").val());
+            self.frmIdTo = ko.observable($("#selectIdTo").val());
 
+            if (validar(self.frmNombreInstitucion(), self.frmIdRegion(), self.frmIdComuna(), self.frmDireccion(), 
+                self.frmRazonSocial(), self.frmTelefono(), self.frmCorreoElectronico(), self.frmRut(), self.frmIdTo())){
 
-
-            //antes de todo vamos a validar la informaciòn registrada
-            if (validar($("#txtRut").val(), $("#txtNombres").val(), $("#txtPrimerApellido").val(), $("#txtRut").val(), $("#txtPassword").val())) {
-
-                sessionStorage.setItem("nombreUsuarioPrueba", frmRut);
-                sessionStorage.setItem("nombresUsuarioPrueba", frmNombres);
-                sessionStorage.setItem("apellidoPaternoPrueba", frmApellidoPaterno);
-                sessionStorage.setItem("apellidoMaternoPrueba", frmApellidoMaterno);
-                sessionStorage.setItem("rutPrueba", frmRut);
-
-                var entidad = {
-                    Rut: frmRut,
-                    Nombres: frmNombres,
-                    PrimerApellido: frmApellidoPaterno,
-                    SegundoApellido: frmApellidoMaterno,
-                    Telefono: sessionStorage.getItem("telefonoInstitucionPrueba"),
-                    Correo: sessionStorage.getItem("correoInstitucionPrueba"),
-                    IdRegion: sessionStorage.getItem("idRegionInstitucionPrueba"),
-                    IdComuna: sessionStorage.getItem("idComunaInstitucionPrueba"),
-                    Direccion: sessionStorage.getItem("direccionInstitucionPrueba"),
-                    Password: $("#txtPassword").val(),
-                    NombreInstitucion: sessionStorage.getItem("nombreInstitucionPrueba"),
-                    EsCpas: '0'
-                };
-
-                var obtenerDatos = jQuery.ajax({
-                    url: ObtenerUrlDos('Asistente'),
-                    type: 'PUT',
-                    dataType: "json",
-                    contentType: "application/json",
-                    data: ko.toJSON(entidad)
-                });
-
-                //var llamada y promesa, luego de ser correcto borrar las variables de sesion y redireccionarlo al index
-
-                $.when(obtenerDatos).then(
-                    function (data) {
-                        //aca despues de guardar
-                        swal({
-                                title: "Guardado",
-                                text: "Su cuenta ha sido creada con éxito, puede ingresar a la plataforma con su cuenta recién creada.",
-                                type: "success",
-                                showCancelButton: false,
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "Ok",
-                                cancelButtonText: "No, cancel plx!",
-                                closeOnConfirm: false,
-                                customClass: 'sweetalert-xs',
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    sessionStorage.clear();
-                                    window.location.href = "index.html";
-                                } else {
-                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
-                            });
-
-                    },
-                    function () {
-                        //alguna ha fallado
-                        swal("Error de Servidor");
-                    },
-                    function () {
-                        //acá podemos quitar el elemento cargando
-                        //alert('quitar cargando');
-                    }
-                )
+                //ahora guardamos la variable
+                asistente.Institucion.Nombre = this.frmNombreInstitucion();
+                asistente.Institucion.PaiId = 1;
+                asistente.Institucion.RegId = this.frmIdRegion();
+                asistente.Institucion.ComId = this.frmIdComuna();
+                asistente.Institucion.RazonSocial = this.frmRazonSocial();
+                asistente.Institucion.Rut = this.frmRut();
+                asistente.Institucion.CorreoElectronico = this.frmCorreoElectronico();
+                asistente.Institucion.Telefono = this.frmTelefono();
+                asistente.Institucion.Direccion = this.frmDireccion();
+                asistente.Institucion.ToId = this.frmIdTo();
+                //aca guardar en la variable de session
+                var objeto = JSON.stringify(asistente);
+                sessionStorage.setItem("ASISTENTE", objeto);
+                console.log('guardar');
+                window.location.href = "AsistentePasoDos.html";
             }
-
-
+            console.log(self);
         }
         salir = function(){
             sessionStorage.clear();
@@ -104,42 +195,196 @@ $(document).ready(function () {
 
         }
     }
+    //obtenemos los valores de session storegae
+    if (sessionStorage.getItem('ASISTENTE')){
+        asistente = JSON.parse(sessionStorage.getItem('ASISTENTE'));
+        //aca debemos setear los campos en caso que hayan elementos del asistente
+        if (asistente.Institucion && asistente.Institucion.Rut.length > 1) {
+            //seteamos
+            self.frmNombreInstitucion = ko.observable(asistente.Institucion.Nombre);
+            self.frmDireccion = ko.observable(asistente.Institucion.Direccion);
+            self.frmRazonSocial = ko.observable(asistente.Institucion.RazonSocial);
+    
+    
+            self.frmRut = ko.observable(asistente.Institucion.Rut);
+            self.frmTelefono = ko.observable(asistente.Institucion.Telefono);
+            self.frmCorreoElectronico = ko.observable(asistente.Institucion.CorreoElectronico);
+            self.frmIdRegion = ko.observable(asistente.Institucion.RegId);
+            selectedRegion = ko.observable(asistente.Institucion.RegId);
+            cargarComunas(asistente.Institucion.RegId, asistente.Institucion.ComId);
+            selectedComuna = ko.observable(asistente.Institucion.ComId);
+            self.frmIdTo = ko.observable(asistente.Institucion.idTo);
+        }
+    }
 
-    ko.applyBindings(new PersonViewModel());
+    function cargarComunas(idRegion, comSeleccionada){
+        $.ajax({
+            url: ObtenerUrl('ObtenerComunas'),
+            type: "POST",
+            data: ko.toJSON({ RegId: idRegion }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (dataCC) {
+                // ok
+                //self.Reset();
+                self.comunas = dataCC;
+                selectedComuna = comSeleccionada;
 
-    function validar(NombreUsuario, Nombres, ApellidoPaterno, Rut, Password) {
+                //ko.cleanNode(elem);
+                //ko.applyBindings(new PersonViewModel(regiones, dataCC), elem);
+
+            },
+            error: function (error) {
+                if (error.status.toString() == "500") {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+                else {
+                    getNotify('error', 'Error', 'Error de Servidor!');
+                }
+            }
+        });
+    }
+    var obtenerRegiones = jQuery.ajax({
+        url : ObtenerUrl('ObtenerRegiones'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: 90 })
+    });
+
+    var obtenerTo = jQuery.ajax({
+        url : ObtenerUrl('TipoOrganizacion'),
+        type: 'POST',
+        dataType : "json",
+        contentType: "application/json",
+        data: ko.toJSON({ InstId: 90 })
+    });
+
+    $.when(obtenerRegiones).then(
+        function(dataR){
+            if (dataR != null)
+            {
+                regiones = dataR;
+                self.regionesInstitucion = dataR;
+                if (asistente.Institucion && asistente.Institucion.Rut.length <= 0) {
+                    //por defecto
+                    selectedRegion = 0;
+                }
+
+            }
+            $.when(obtenerTo).then(
+                function(dataTo){
+                    if (dataTo != null)
+                    {
+                        tipoOrganizacion = dataTo;
+                        self.tiposOrganizacion = dataTo;
+                        //por defecto
+                        //selectedRegion = 0;
+                    }
+                    ko.applyBindings(new PersonViewModel(dataR, [], dataTo), elem);
+                }
+            );
+
+            self.onChange = function () {
+                var idRegion = $("#selectIdRegion").val();
+                $.ajax({
+                    url: ObtenerUrl('ObtenerComunas'),
+                    type: "POST",
+                    data: ko.toJSON({ RegId: idRegion }),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (dataCC) {
+                        // ok
+                        //self.Reset();
+                        self.comunas = dataCC;
+                        selectedComuna = 0;
+
+                        ko.cleanNode(elem);
+                        ko.applyBindings(new PersonViewModel(regiones, dataCC), elem);
+
+                    },
+                    error: function (error) {
+                        if (error.status.toString() == "500") {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                        else {
+                            getNotify('error', 'Error', 'Error de Servidor!');
+                        }
+                    }
+                });
+            };
+
+            //ko.applyBindings(new PersonViewModel(dataR, []), elem);
+
+        },
+        function (){
+            //alguna ha fallado
+            alert('error');
+        },
+        function(){
+            //acá podemos quitar el elemento cargando
+            //ko.applyBindings(new PersonViewModel(dataR, []), elem);
+            alert('quitar cargando');
+        }
+    );
+    
+
+    function validar(nombreInstitucion, idRegion, idComuna, direccion, razonSocial, telefono, correo, rut, idTo) {
         var retorno = true;
-        if (NombreUsuario === '' || NombreUsuario === null || NombreUsuario === undefined){
-            getNotify('error', 'Requerido', 'Nombre de Usuario Requerido.');
+        if (nombreInstitucion === '' || nombreInstitucion === null || nombreInstitucion === undefined){
+            getNotify('error', 'Requerido', 'Nombre Institución.');
             retorno = false;
         }
-        if (Nombres === '' || Nombres === null){
-            getNotify('error', 'Requerido', 'Nombres Requerido.');
+        if (idRegion === '' || idRegion === null || idRegion === '0'){
+            getNotify('error', 'Requerido', 'Región.');
             retorno = false;
         }
-        if (ApellidoPaterno === '' || ApellidoPaterno === null) {
-            getNotify('error', 'Requerido', 'Apellido Paterno Requerido.');
+        if (idComuna === '' || idComuna === null || idComuna === '0'){
+            getNotify('error', 'Requerido', 'Comuna.');
             retorno = false;
         }
-        if (Rut === '' || Rut === null){
+        if (idTo === '' || idTo === null || idTo === '0'){
+            getNotify('error', 'Requerido', 'Tipo Organización.');
+            retorno = false;
+        }
+        if (direccion === '' || direccion === null) {
+            getNotify('error', 'Requerido', 'Dirección Requerido.');
+            retorno = false;
+        }
+        if (razonSocial === '' || razonSocial === null) {
+            getNotify('error', 'Requerido', 'Razón Social Requerido.');
+            retorno = false;
+        }
+        if (telefono === '' || telefono === null) {
+            getNotify('error', 'Requerido', 'Teléfono Requerido.');
+            retorno = false;
+        }
+        if (rut === '' || rut === null){
             getNotify('error', 'Requerido', 'Rut Requerido.');
             retorno = false;
         }
-        if (ValidarRut(Rut) == false)
+        if (ValidarRut(rut) == false)
         {
             retorno = false;
         }
-        if (Password != '') {
-            if (Password.length < 5){
-                getNotify('error', 'Password', 'La password debe contener mínimo 5 caracteres.');
-                retorno = false;
-            }
+
+        if (validarEmail(correo) == false) {
+            retorno = false;
 
         }
 
         return retorno;
     }
-
+    function validarEmail(email) {
+        var retorno = true;
+        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!expr.test(email)) {
+            getNotify('error', 'Email', "La dirección de correo " + email + " es incorrecta.")
+            //alert("Error: La dirección de correo " + email + " es incorrecta.");
+            retorno = false;
+        }
+        return retorno;
+    }
     function revisarDigito(dvr) {
         dv = dvr + ""
         if (dv != '0' && dv != '1' && dv != '2' && dv != '3' && dv != '4' && dv != '5' && dv != '6' && dv != '7' && dv != '8' && dv != '9' && dv != 'k' && dv != 'K') {

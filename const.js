@@ -1,16 +1,20 @@
-﻿﻿function ObtenerUrl(api)
+﻿﻿
+﻿function ObtenerUrl(api)
 {
-    //return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     return 'https://www.asambleas.cl/apps/api/' + api;
+    //return 'https://www.asambleas.cl/apis/api/' + api;
+    //return usaCors('https://www.asambleas.cl/apis/api/' + api);
     //return 'http://localhost:50929/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
 ﻿function ObtenerUrlDos(api)
 {
-    //return 'http://api.asambleas.cl/api/' + api;
+    //return 'http://apps.asambleas.cl/api/' + api;
     //return 'http://localhost:58013/api/' + api;
-    return 'https://www.asambleas.cl/apps/api/' + api;
+    //return 'https://www.asambleas.cl/apis/api/' + api;
+   return 'https://www.asambleas.cl/apps/api/' + api;
     //return 'http://localhost:58013/api/' + api;
     //return 'http://127.0.0.1:8080/api/' + api;
 }
@@ -19,6 +23,30 @@
     //return 'http://api.asambleas.cl/Excel/' + nombreArchivo;
     //return 'http://localhost:58013/Excel/' + nombreArchivo;
     return 'https://www.asambleas.cl/apps/Excel/' + nombreArchivo;
+    //return 'https://www.asambleas.cl/apis/Excel/' + nombreArchivo;
+    //return 'http://apps.asambleas.cl/Excel/' + nombreArchivo;
+
+}
+//agregamos estos parametros para el tratamiento de archivos
+function ObtenerUrlFotos(){
+    //return 'http://localhost:58013/Repositorio/';
+    return 'https://www.asambleas.cl/apps/Repositorio/';
+    //return 'https://www.asambleas.cl/apis/Repositorio/';
+
+    //return 'http://apps.asambleas.cl/Repositorio/';
+}
+function ObtenerUrlRaiz(){
+    //return 'http://localhost:58013/';
+    return 'https://www.asambleas.cl/apps/';
+    //return 'https://www.asambleas.cl/apis/';
+    //return 'http://apps.asambleas.cl/';
+
+}
+function ObtenerUrlRaizNovedades(){
+    //return 'http://localhost:58013/Novedades';
+    return 'https://www.asambleas.cl/apps/Novedades';
+    //return 'https://www.asambleas.cl/apis/Novedades';
+    //return 'http://apps.asambleas.cl/Novedades';
 }
 ﻿function ObtenerUrlSignalR()
 {
@@ -35,14 +63,15 @@ function TiempoCierreSesion(){
 }
 versionCorta = ko.observable(RetornaVersionUltraCorta());
 function RetornaVersionLarga() {
-    return 'WebSite v2.7';
+    return 'WebSite v3.1';
 }
 function RetornaVersionCorta() {
-    return 'v=2.7';
+    return 'v=3.1';
 }
 function RetornaVersionUltraCorta() {
-    return 'v2.7';
+    return 'v3.1';
 }
+
 function getParameterByName(name, url) {
 
     //// query string: ?foo=lorem&bar=&baz
@@ -211,6 +240,14 @@ function Menu()
     //antes evaluamos si esta variable existe
     if (sessionStorage != null)
     {
+        MuestraCambio = ko.observable(false);
+        if (sessionStorage.getItem('INSTITUCIONES')){
+            var result = JSON.parse(sessionStorage.getItem('INSTITUCIONES'));
+            var instituciones = result.Instituciones;
+            if (instituciones && instituciones.length > 1){
+                MuestraCambio = ko.observable(true);
+            }
+        }
         //var obj = JSON.parse(sessionStorage.RolesPermisos);
         var obj;
 

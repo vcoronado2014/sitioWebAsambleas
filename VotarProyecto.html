@@ -58,12 +58,12 @@
     <script src="js/jquery.magnific-popup.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
-    <script src="https://signalr.cpas.cl/signalr/hubs"></script>
+    <script src="https://www.asambleas.cl/signalr/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
 
-    <script src="const.js?v=2.7"></script>
+    <script src="const.js?v=3.1"></script>
 
-    <script src="app_script/VotarProyecto.js?v=2.7"></script>
+    <script src="app_script/VotarProyecto.js?v=3.0"></script>
 
 
 
@@ -132,6 +132,7 @@
                                 <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
                             </ul>
                         </li>
+                        <li  data-bind="visible: MuestraCambio"><a href="SeleccionInstitucion.html" id="selec"><i class="fa fa-sign-in"></i> Cambiar Institución</a></li>
                         <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
                         <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
                         <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>

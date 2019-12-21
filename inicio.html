@@ -26,7 +26,8 @@
     <link href="Content/morris.css" rel="stylesheet" />
     <!--<link href="Content/sweetalert.css" rel="stylesheet" />-->
     <!-- sweet alert 2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.css"/> -->
+    <link href="css/swall2.css" rel="stylesheet" />
 
     <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
     <link href="Content/site.css" rel="stylesheet" />
@@ -57,7 +58,8 @@
 
     <!-- sweet alert 2 -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
     <script src="Scripts/pnotify.custom.min.js"></script>
 
     <script src="Scripts/moment.js"></script>
@@ -70,12 +72,13 @@
     <script src="Scripts/metisMenu.js"></script>
 
     <script src="js/jquery.signalR-2.2.0.js"></script>
-    <script src="https://signalr.cpas.cl/signalr/hubs"></script>
+    <script src="https://www.asambleas.cl/signalr/signalr/hubs"></script>
     <script src="app_script/signalrApp.js"></script>
+    <script src='Scripts/inputEmoji.js'></script>
 
-    <script src="const.js?v=2.7"></script>
+    <script src="const.js?v=3.1"></script>
 
-    <script src="app_script/inicio.js?v=2.7"></script>
+    <script src="app_script/inicio.js?v=3.0"></script>
 
 
 
@@ -145,6 +148,7 @@
                             <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
                         </ul>
                     </li>
+                    <li  data-bind="visible: MuestraCambio"><a href="SeleccionInstitucion.html" id="selec"><i class="fa fa-sign-in"></i> Cambiar Institución</a></li>
                     <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
                     <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
                     <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
@@ -160,7 +164,14 @@
             <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
         </div>
     </nav>
-
+    <!-- prueba de archivos -->
+<!--     <div class="col-xs-12">
+        <div class="input-file-container">  
+            <input class="input-file" id="my-file" type="file">
+            <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+          </div>
+          <p class="file-return"></p>
+    </div> -->
 
     <!-- usuarios -->
     <div class="col-lg-3 col-md-6" data-bind="visible: VerUsuario, css: claseGeneral" >
@@ -261,6 +272,26 @@
         </div>
     </div>
 
+    <!-- PRUEBAS DE ARCHIVOS MULTIPLES -->
+<!--     <div class="col-xs-6 input-file-container" style="margin: 0; padding: 1px;">
+        <input class="input-file" type="file" accept="image/*" onchange="agregarArchivo()" #fileInputOriginal id="my-file-original">
+        <label tabindex="0" for="my-file-original" class="input-file-trigger">Seleccione...</label>
+        <p class="file-return" id="file-return-original"></p>
+    </div> -->
+ <!--    <div class="col-xs-6" id="listadoArchivosAdjuntos">
+        <h2>Listado de Archivos</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>Nombre Archivo </strong>
+                <small class="pull-right cursorPointer" style="color: orangered;" onclick="quitarArchivo()">
+                    <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                </small>
+                <span class="badge">54 Kb</span>
+            </li>
+        </ul> 
+    </div>-->
+
+
     <!-- Acá el contenido del muro -->
     <div class="col-xs-12 page-header">
         <h3 class="col-xs-9 col-md-10">Novedades <small></small></h3>
@@ -283,72 +314,191 @@
             </span>
         </div>
     </div>
+    
+    <!-- foreach al muro -->
     <div class="col-xs-12">
         <!-- solo para pruebas -->
         <ul class="chat" data-bind="foreach: { data: muro, as: 'muro' }">
-            <!-- elemento principal -->
             <li class="left clearfix">
-                <span class="chat-img pull-left">
-                    <!--<img src="img/red.png" alt="User Avatar" class="img-circle">-->
-                    <img data-bind="attr: { src: muro.UrlImagen }"  alt="User Avatar" class="img-circle" width="35px" height="35px">
-                    <!--data-bind="attr:{ src: '/imagefolder/' + PhotoName }"-->
-                </span>
-                <div class="chat-body clearfix">
-                    <div class="header">
-                        <strong class="primary-font">
-                            <span data-bind="text: muro.NombreUsuario"></span> --
-                            <span data-bind="text: muro.NombreRol"></span>
-                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"  style="color: orangered;">
-                                <i class="fa fa-trash-o fa-fw fa-2x"></i>
-                            </small>
-                            <small class="pull-right cursorPointer" data-bind="click: modificarMuro, visible: muro.VisibleEliminar"  style="color: #00b8f5;">
-                                <i class="fa fa-edit fa-fw fa-2x"></i>
-                            </small>
-                        </strong>
-                        <small class="pull-right text-muted">
-                            <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
-                        </small>
-                    </div>
-                    <p data-bind="text: muro.Texto">
-
-                    </p>
-                    <div class="footer">
-                        <small class="pull-right text-muted cursorPointer"  style="color: blue;">
-                            <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
-                        </small>
-
+                <!-- para las imagenes -->
+                <div class="col-xs-12 col-md-6" data-bind="if: ArchivosAdjuntos.length > 0">
+                    <div data-bind="foreach: {data: ArchivosAdjuntos, as: 'archivo'}" style="margin: 2%; text-align: center;">
+                        <a data-bind="attr: { href: archivo.Src }" target="_blank">
+                            <img data-bind="attr: { src: archivo.Src, width: archivo.Width }" alt="User Avatar" class="img-novedades">
+                        </a>
                     </div>
                 </div>
-                <!-- comentarios -->
-                <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;" data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
-                    <!-- comentario 1 -->
-                    <li class="left clearfix">
-                        <span class="chat-img pull-left">
-                                <i class="fa fa-comment fa-fw text-muted"></i>
-                        </span>
-                        <div class="chat-body clearfix" style="margin-left: 30px;">
-                            <div class="header">
-                                <strong class="primary-font text-muted">
-                                    <span data-bind="text: item.NombreUsuario"></span> --
-                                    <span data-bind="text: item.NombreRol"></span>
-                                    <small class="pull-right cursorPointer" data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"  style="color: orangered;">
-                                        <i class="fa fa-trash-o fa-fw fa-2x"></i>
-                                    </small>
-                                    <small class="pull-right cursorPointer" data-bind="click: modificarMensaje, visible: item.VisibleEliminar"  style="color: #00b8f5;">
-                                        <i class="fa fa-edit fa-fw fa-2x"></i>
-                                    </small>
-                                </strong>
-                                <small class="pull-right text-muted">
-                                    <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+
+                <!-- con archivos adjuntos -->
+                <div class="col-xs-12 col-md-6" data-bind="if: ArchivosAdjuntos.length > 0" style="padding: 0;">
+                    <!-- elemento avatar -->
+                    <span class="chat-img pull-left">
+                        <img data-bind="attr: { src: muro.UrlImagen }" alt="User Avatar" class="img-circle" width="35px" height="35px">
+                    </span>
+                    <!-- comentario inicial -->
+                    <div class="chat-body clearfix">
+                        <div class="header">
+                            <strong class="primary-font">
+                                <span data-bind="text: muro.NombreUsuario"></span> --
+                                <span data-bind="text: muro.NombreRol"></span>
+                                <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"
+                                    style="color: orangered;">
+                                    <i class="fa fa-trash-o fa-fw fa-2x"></i>
                                 </small>
-                            </div>
-                            <p class="text-muted" data-bind="text: item.Texto">
-
-                            </p>
+                                <small class="pull-right cursorPointer" data-bind="click: modificarMuro, visible: muro.VisibleEliminar"
+                                    style="color: #00b8f5;">
+                                    <i class="fa fa-edit fa-fw fa-2x"></i>
+                                </small>
+                            </strong>
+                            <small class="pull-right text-muted">
+                                <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
+                            </small>
                         </div>
-                    </li>
+                        <p data-bind="text: muro.Texto">
+                
+                        </p>
 
-                </ul>
+                        <div class="footer">
+                            <small class="pull-right text-muted cursorPointer" style="color: blue;">
+                                <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
+                            </small>
+                
+                        </div>
+                    </div>
+                    <!-- comentarios -->
+                    <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;"
+                        data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
+                        <!-- comentario 1 -->
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <div data-bind="if: item.Perfil.Id == 0">
+                                    <i class="fa fa-comment fa-fw text-muted"></i>
+                                </div>
+                            
+                                <div data-bind="if: item.Perfil.Id > 0" style="padding-right: 5px;">
+                                    <img data-bind="attr: { src: item.Perfil.Url }" alt="User Avatar" class="img-circle" width="35px" height="35px">
+                                </div>
+                            </span>
+                            <div class="chat-body clearfix" style="margin-left: 30px;">
+                                <div class="header">
+                                    <strong class="primary-font text-muted">
+                                        <span data-bind="text: item.NombreUsuario"></span> --
+                                        <span data-bind="text: item.NombreRol"></span>
+                                        <small class="pull-right cursorPointer"
+                                            data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"
+                                            style="color: orangered;">
+                                            <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                        </small>
+                                        <small class="pull-right cursorPointer"
+                                            data-bind="click: modificarMensaje, visible: item.VisibleEliminar" style="color: #00b8f5;">
+                                            <i class="fa fa-edit fa-fw fa-2x"></i>
+                                        </small>
+                                    </strong>
+<!--                                     <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                    </small> -->
+                                </div>
+                                <p class="text-muted" data-bind="text: item.Texto">
+                
+                                </p>
+                                <div class="col-xs-12">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                    </small>
+                                </div>
+
+                            </div>
+                        </li>
+                
+                    </ul>
+
+                </div>
+
+                <!-- sin archivos adjuntos -->
+                <div class="col-xs-12" data-bind="if: ArchivosAdjuntos.length == 0" style="padding: 0;">
+                    <!-- elemento avatar -->
+                    <span class="chat-img pull-left">
+                        <img data-bind="attr: { src: muro.UrlImagen }" alt="User Avatar" class="img-circle" width="35px" height="35px">
+                    </span>
+                    <!-- comentario inicial -->
+                    <div class="chat-body clearfix">
+                        <div class="header">
+                            <strong class="primary-font">
+                                <span data-bind="text: muro.NombreUsuario"></span> --
+                                <span data-bind="text: muro.NombreRol"></span>
+                                <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"
+                                    style="color: orangered;">
+                                    <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                </small>
+                                <small class="pull-right cursorPointer" data-bind="click: modificarMuro, visible: muro.VisibleEliminar"
+                                    style="color: #00b8f5;">
+                                    <i class="fa fa-edit fa-fw fa-2x"></i>
+                                </small>
+                            </strong>
+                            <small class="pull-right text-muted">
+                                <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
+                            </small>
+                        </div>
+                        <p data-bind="text: muro.Texto">
+                
+                        </p>
+
+                        <div class="footer">
+                            <small class="pull-right text-muted cursorPointer" style="color: blue;">
+                                <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
+                            </small>
+                
+                        </div>
+                    </div>
+                    <!-- comentarios -->
+                    <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;"
+                        data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
+                        <!-- comentario 1 -->
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <div data-bind="if: item.Perfil.Id == 0">
+                                    <i class="fa fa-comment fa-fw text-muted"></i>
+                                </div>
+                            
+                                <div data-bind="if: item.Perfil.Id > 0" style="padding-right: 5px;">
+                                    <img data-bind="attr: { src: item.Perfil.Url }" alt="User Avatar" class="img-circle" width="35px" height="35px">
+                                </div>
+                            </span>
+                            <div class="chat-body clearfix" style="margin-left: 30px;">
+                                <div class="header">
+                                    <strong class="primary-font text-muted">
+                                        <span data-bind="text: item.NombreUsuario"></span> --
+                                        <span data-bind="text: item.NombreRol"></span>
+                                        <small class="pull-right cursorPointer"
+                                            data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"
+                                            style="color: orangered;">
+                                            <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                        </small>
+                                        <small class="pull-right cursorPointer"
+                                            data-bind="click: modificarMensaje, visible: item.VisibleEliminar" style="color: #00b8f5;">
+                                            <i class="fa fa-edit fa-fw fa-2x"></i>
+                                        </small>
+                                    </strong>
+<!--                                     <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                    </small> -->
+                                </div>
+                                <p class="text-muted" data-bind="text: item.Texto">
+                
+                                </p>
+                                <div class="col-xs-12">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                    </small>
+                                </div>
+
+                            </div>
+                        </li>
+                
+                    </ul>
+
+                </div>
+
             </li>
 
         </ul>
@@ -523,11 +673,6 @@
         </div>
     </div>
 
-    <!-- grafico ingresos egresos
-    <div class="col-xs-12 col-md-3 text-center">
-        <div id="graph"></div>
-    </div>
-    -->
 </div>
 
 </body>

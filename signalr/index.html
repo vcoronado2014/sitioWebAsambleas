@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR-Chat</title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/Site.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="app/app.js"></script>
+    <style type="text/css">
+    .h5, h5 {
+        font-size: 20px;
+    }
+    .navbar-brand {
+        float: left;
+        height: 75px; 
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .badge {
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        background-color: #777;
+        border-radius: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <h5><i class="glyphicon glyphicon-info-sign"></i>&nbsp;Información de Cpas.cl</h5>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="row">
+            <div class="col-xs-4 alert alert-success" role="alert">
+                Usuarios Conectados <span id="totalUsuariosConectados" class="badge">0</span>
+            </div>
+            <div class="col-xs-4 alert alert-info" role="alert">
+                Grupos Creados <span id="totalGruposCreados" class="badge">0</span>
+            </div>
+            <div class="col-xs-4 alert alert-warning" role="alert">
+                Mensajes Procesados <span id="totalMensajesProcesados" class="badge">0</span>
+            </div>
+        </div>
+            <div class="row">
+                <!-- Chat users list -->
+                <div class="col-xs-4 col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="onlineUsersCount">Usuarios en línea: 0</div>
+                        <div class="panel-body panel-fixed-height">
+                            <ul id="userList"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Chat window-->
+                <div class="col-xs-8 col-md-10" id="chatPanel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Mensajes:</div>
+                        <div class="panel-body panel-fixed-height">
+                            <ul id="messagesArea"></ul>
+                        </div>
+                    </div>
+                    <div class="input-group hidden">
+                        <input type="text" class="form-control" id="userMessage" placeholder="Write your message">
+                        <span class="input-group-btn">
+                            <a class="btn btn-default" id="btnSendMessage">Send!</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

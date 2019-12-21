@@ -10,6 +10,59 @@ $(document).ready(function () {
         password: ko.observable(),
         rutRecuperar: ko.observable(),
 
+        autentificarDos: function(){
+            $( "#progressbar" ).progressbar({
+                value: false
+            });
+
+            $('#mensaje').text('');
+
+            $.ajax({
+                url: ObtenerUrl('Login'),
+                type: 'POST',
+                dataType: 'json',
+                data: ko.toJSON({ usuario: this.usuario, password: this.password }),
+                //processData: false,
+                contentType: "application/json",
+                complete: function (data) {
+                    var result = data.responseJSON;
+
+                    var multipleInstituciones = false;
+                    if (result.Instituciones && result.Instituciones.length > 1){
+                        multipleInstituciones = true;
+                    }
+                    if (multipleInstituciones){
+                        sessionStorage.setItem("INSTITUCIONES", JSON.stringify(result));
+                        var url = 'SeleccionInstitucion.html';
+                        window.location.href = url;
+                    }
+                    else {
+                        sessionStorage.setItem("NombreUsuario", result.AutentificacionUsuario.NombreUsuario);
+                        sessionStorage.setItem("CorreoElectronico", result.AutentificacionUsuario.CorreoElectronico);
+                        sessionStorage.setItem("RolId", result.AutentificacionUsuario.RolId);
+                        sessionStorage.setItem("Id", result.AutentificacionUsuario.Id);
+                        sessionStorage.setItem("InstId", result.AutentificacionUsuario.InstId);
+                        sessionStorage.setItem("NombreRol", result.Rol.Nombre);
+                        sessionStorage.setItem("NombreCompleto", result.Persona.Nombres + ' ' + result.Persona.ApellidoPaterno + ' ' + result.Persona.ApellidoMaterno);
+                        sessionStorage.setItem("NombreInstitucion", result.Institucion.Nombre);
+                        //roles permisos
+                        sessionStorage.setItem("RolesPermisos", JSON.stringify(result.PermisoRol));
+                        sessionStorage.setItem("DireccionInstitucion", result.Institucion.Direccion);
+                        sessionStorage.setItem("ComunaUsuario", result.Comuna.Nombre);
+                        sessionStorage.setItem("ComunaInstitucion", result.ComunaInstitucion.Nombre);
+                        sessionStorage.setItem("TelefonoInstitucion", result.Institucion.Telefono);
+                        sessionStorage.setItem("CorreoInstitucion", result.Institucion.CorreoElectronico);
+                        sessionStorage.setItem("ES_CPAS", false);
+
+                        var url = 'inicio.html';
+                        window.location.href = url;
+                    }
+
+
+
+                }
+            });
+        },
 
         autentificar: function () {
 
@@ -30,7 +83,6 @@ $(document).ready(function () {
 
             $.when(obtenerLogin).then(
                 function(result){
-
                     sessionStorage.setItem("NombreUsuario", result.AutentificacionUsuario.NombreUsuario);
                     sessionStorage.setItem("CorreoElectronico", result.AutentificacionUsuario.CorreoElectronico);
                     sessionStorage.setItem("RolId", result.AutentificacionUsuario.RolId);
@@ -47,12 +99,9 @@ $(document).ready(function () {
                     sessionStorage.setItem("TelefonoInstitucion", result.Institucion.Telefono);
                     sessionStorage.setItem("CorreoInstitucion", result.Institucion.CorreoElectronico);
                     sessionStorage.setItem("ES_CPAS", false);
-                    //ahora redireccionamos
+
                     var url = 'inicio.html';
                     window.location.href = url;
-
-
-
                 },
                 function (error){
 

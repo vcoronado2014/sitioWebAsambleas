@@ -166,66 +166,6 @@ $(function () {
         shouldShowMessageP = ko.observable(false);
         Menu();
 
-        guardar = function (){
-            //aca los llamados de negocio para guardar
-            if (validar($("#txtNombreUsuario").val(), $("#txtTelefono").val(), $("#txtCorreo").val(), $("#txtConsulta").val()))
-            {
-                var contacto = {
-                    Para: $("#txtCorreo").val(),
-                    Mensaje: $("#txtConsulta").val(),
-                    Nombre: $("#txtNombreUsuario").val(),
-                    Telefono: $("#txtTelefono").val(),
-                    EsCpas: true
-                };
-
-                var obtenerContacto = jQuery.ajax({
-                    url : ObtenerUrlDos('Contacto'),
-                    type: 'PUT',
-                    dataType : "json",
-                    contentType: "application/json",
-                    data: ko.toJSON(contacto)
-                });
-
-                $.when(obtenerContacto).then(
-                    function(data){
-                        swal({
-                                title: "Enviado",
-                                text: "Su consulta ha sido enviada con éxito.",
-                                type: "success",
-                                showCancelButton: false,
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "Ok",
-                                cancelButtonText: "No, cancel plx!",
-                                closeOnConfirm: false,
-                                customClass: 'sweetalert-xs',
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    //CrearModificarVotacion.html?id=3&ELIMINAR=0
-
-                                        window.location.href = "indexcpas.html";
-
-                                } else {
-                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
-                            });
-
-                    },
-                    function (){
-                        //alguna ha fallado
-                        swal("Error de Servidor");
-                    },
-                    function(){
-                        //acá podemos quitar el elemento cargando
-                        //alert('quitar cargando');
-                    }
-                )
-
-            }
-        }
-
         ko.mapping.fromJS(self.vinculosArr, self.articulosArr, self.institucionesArr, self.configuracionArr, {}, self);
 
     }
@@ -402,59 +342,5 @@ $(function () {
 
 
     }*/
-
-    function getNotify(type, title, message) {
-        if (type == 'error') {
-            new PNotify({
-                title: title,
-                text: message,
-                type: 'error'
-            });
-        }
-        if (type == 'success') {
-            new PNotify({
-                title: title,
-                text: message,
-                icon: 'glyphicon glyphicon-ok'
-            });
-        }
-    }
-
-    function validar(Nombre, Telefono, Correo, Consulta) {
-        var retorno = true;
-        if (Nombre === '' || Nombre === null || Nombre === undefined) {
-            getNotify('error', 'Requerido', 'Nombre Requerido.');
-            retorno = false;
-        }
-        if (Telefono === '' || Telefono === null) {
-            getNotify('error', 'Requerido', 'Teléfono Requerido.');
-            retorno = false;
-        }
-        if (Correo === '' || Correo === null) {
-            getNotify('error', 'Requerido', 'Correo Requerido.');
-            retorno = false;
-        }
-        if (Consulta === '' || Consulta === null) {
-            getNotify('error', 'Requerido', 'Consulta Requerida.');
-            retorno = false;
-        }
-        if (validarEmail(Correo) == false)
-        {
-            retorno = false;
-        }
-
-        return retorno;
-    }
-
-    function validarEmail(email) {
-        var retorno = true;
-        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (!expr.test(email)) {
-            getNotify('error', 'Email', "La dirección de correo " + email + " es incorrecta.")
-            //alert("Error: La dirección de correo " + email + " es incorrecta.");
-            retorno = false;
-        }
-        return retorno;
-    }
 
 });

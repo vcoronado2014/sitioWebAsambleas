@@ -118,9 +118,18 @@
             // ok
 
             //getNotify('success', 'Éxito', 'Recuperado con éxito!');
+            //procesamos antes los elementos ya que vienen mal
+            if (data.proposals.length > 0) {
+                data.proposals.forEach(propo => {
+                    var urlArchivo = ObtenerUrlRaiz() + 'Repositorio/' + propo.NombreCompleto;
+                    propo.Url = urlArchivo;
+                    //"http://docs.google.com/viewer?url=http://localhost:58013/apps/Repositorio/IMG-20190531-WA0001.jpg &embedded=true" OtroDos
+                    propo.OtroDos = 'http://docs.google.com/viewer?url=' + urlArchivo + '&embedded=true';
+
+                });
+            }
             elem = document.getElementById('principal');
             ko.applyBindings(new DocumentoViewModel(data), elem);
-
             if (data.proposals.length > 0)
             {
                 $("#proposals").DataTable({
@@ -169,7 +178,7 @@
 
     $('#txtArchivo').on('change', function () {
         var files = $("#txtArchivo").get(0).files;
-        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
+        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png",".GIF", ".JPG", ".DOC", ".PDF", ".XLS", ".XLSX", ".DOCX", ".PNG", ".JPEG", ".jpeg");
         if (ValidaExtension(files[0], extensiones_permitidas) == true) {
             //ahora esta correcto, avisar al usuario que puede agregar una descripciòn.
             getNotify('success','Descripción', 'Puede escribir una descripción si así lo desea, luego presione el botón Subir Archivo.');
@@ -180,7 +189,7 @@
     $('#btnUploadFile').on('click', function () {
 
         var files = $("#txtArchivo").get(0).files;
-        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png");
+        extensiones_permitidas = new Array(".gif", ".jpg", ".doc", ".pdf", ".xls", ".xlsx", ".docx", ".png",".GIF", ".JPG", ".DOC", ".PDF", ".XLS", ".XLSX", ".DOCX", ".PNG", ".JPEG", ".jpeg");
 
         if (ValidaExtension(files[0], extensiones_permitidas) == true) {
 
@@ -211,26 +220,22 @@
                     $('#loading').hide();
 
                     swal({
-                            title: "Guardado",
-                            text: "El Registro ha sido guardado con éxito.",
-                            type: "success",
-                            showCancelButton: false,
-                            confirmButtonClass: "btn-success",
-                            confirmButtonText: "Ok",
-                            cancelButtonText: "No, cancel plx!",
-                            closeOnConfirm: true,
-                            customClass: 'sweetalert-xs',
-                            closeOnCancel: false
-                        },
-                        function (isConfirm) {
-                            if (isConfirm) {
-                                window.location.href = "ListarDocumento.html";
-
-
-                            } else {
-                                swal("Cancelled", "Your imaginary file is safe :)", "error");
-                            }
-                        });
+                        title: "Guardado",
+                        text: "El Registro ha sido guardado con éxito.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonClass: "btn-success",
+                        confirmButtonText: "Ok",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: true,
+                        customClass: 'sweetalert-xs',
+                        width: '500px',
+                        closeOnCancel: false
+                    }).then((result) => {
+                        if (result.value) {
+                            window.location.href = "ListarDocumento.html";
+                        }
+                    });
 
                 },
                 function (){
@@ -242,12 +247,55 @@
                 },
                 function(){
                     //acá podemos quitar el elemento cargando
-                    alert('quitar cargando');
+                    //alert('quitar cargando');
                 }
             );
         }
 
     });
+
+
+    eliminarDocumento = function (item) {
+
+            var texto = "Está seguro de eliminar el documento " + item.NombreCompleto();
+            var id = item.Id();
+            var EsCpas = sessionStorage.getItem("ES_CPAS");
+            var tipo = 'documentousuario';
+            swal({
+                title: 'Está seguro de eliminar?',
+                text: texto,
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, borrar este archivo!',
+                cancelButtonText: 'Cancelar'
+              }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: ObtenerUrl('FileNuevo') + "?id=" + id + "&EsCpas=" + sessionStorage.getItem("ES_CPAS"),
+                        type: "GET",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+                            getNotify('success', 'Documento', 'Documento eliminado con éxito');
+                              EnviarMensajeSignalR('Se ha subido un Documento.', "ListarDocumento.html", "4", sessionStorage.getItem("RolId"), data);
+                              window.location.href = "ListarDocumento.html";
+
+                        },
+                        error: function (error) {
+                            if (error.status.toString() == "500") {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            else {
+                                getNotify('error', 'Error', 'Error de Servidor!');
+                            }
+                            window.location.href = "ListarDocumento.html";
+                        }
+                    });
+                }
+              })
+    }
 
     function getParameterByName(name, url) {
 

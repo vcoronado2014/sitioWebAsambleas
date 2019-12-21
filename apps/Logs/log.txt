@@ -1287,4 +1287,2231 @@ saludos.
       *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
     <Id>163</Id>
   </error>
+  <error>
+    <Fecha>2018-05-15 12:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Ornamentar Jardines&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>164</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 12:34</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Ornamentar Jardines&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>165</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 12:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Ornamentar Jardines&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>166</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 13:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Ornamentar Jardines&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>167</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 20:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;prueba de proyecto&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>168</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 20:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Tricel &lt;strong&gt;Prueba Tricel, valudacion controles&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Tricel para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>169</Id>
+  </error>
+  <error>
+    <Fecha>2018-05-15 20:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba de evento&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en en mi casa entre 16-05-2018 12:00 AM - 17-05-2018 1:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>170</Id>
+  </error>
+  <error>
+    <Fecha>2018-08-23 16:18</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Eduardo Gonzales C., Teléfono Contacto 959527257, correo electónico contacto@metaenergy.cl:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: Hola..
+Te consulto lo siguiente
+Estoy en la fase de planificacion de las cooperativas de auto generacion electrica cuyo fin es utilizar la ley 20571  de generacion distribuida domiciliaria con un alcance de 4 a5 millones de usuarios  sub divididos en potencias  .
+Es de competencia de ustedes realizar alianza estrategica para el logro de mejores resultados ???&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>171</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-02 16:05</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba apps&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en prueba para app entre 03-09-2018 12:00 AM - 03-09-2018 1:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>172</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-02 16:06</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>173</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-02 16:48</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;Prueba apps&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en prueba para app entre 03-09-2018 12:00 AM - 05-09-2018 1:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>174</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-02 16:48</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>175</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:07</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>176</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:07</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>177</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>178</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:36</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>179</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:45</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>180</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:45</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>181</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:59</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>182</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-04 18:59</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>183</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:09</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CartaJstificación.docx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>184</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:10</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>185</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:44</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Libro56.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>186</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:44</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>187</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Libro56.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>188</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 08:25</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>189</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Libro56.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>190</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:36</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>191</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:05</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Libro56.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>192</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:05</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>193</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:34</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Libro56.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>194</Id>
+  </error>
+  <error>
+    <Fecha>2018-09-11 10:34</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>195</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 11:29</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Cta. Corriente Banco Estado No.- 00002933144 . Titular : Condominio Catedral Bulnes Rut: 56.045.410-4&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>196</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 11:29</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>197</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 11:24</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Vecinos : El pago de Gastos Comunes, sólo puede efectuarse via transferencia electrónica, cheque nominativo y cruzado a nombre de Condominio Catedral Bulnes o por último en efectivo SOLO entregado a nuestro Tesorero Sr. Luis Villalobos. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>198</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 11:24</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>199</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 14:26</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;cuenta corriente. 00002933144 bco. estado. Rut : 56.045.410-4 Titular : Condominio Catedral Bulnes.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>200</Id>
+  </error>
+  <error>
+    <Fecha>2018-10-03 14:26</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>201</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-05 12:35</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;INFORMATIVO Noviembre 2018.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>202</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-05 12:35</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>203</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-05 12:42</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Informativo Noviembre 2018 , será entregado a partir de hoy a todos los vecinos.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>204</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-05 12:43</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>205</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-14 18:54</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>206</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-14 18:54</Fecha>
+    <Detalle>Mailbox unavailable. The server response was: &lt;turck182@gmail.com&gt; No such user here</Detalle>
+    <Id>207</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-18 15:40</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Asamblea ordinaria 2018&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Plazoleta Central entre 22-11-2018 7:45 PM - 22-11-2018 9:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>208</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-18 15:40</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>209</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;DTO-1007_17-AGO-2018.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>210</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:34</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>211</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:54</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;LEY-21020_02-AGO-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>212</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:54</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>213</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:57</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;LEY-21020_02-AGO-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>214</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:57</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>215</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:43</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;DTO-1007_17-AGO-2018.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>216</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:43</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>217</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:32</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;LEY-21020_02-AGO-2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>218</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:32</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>219</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:52</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;LEY-21020 Sobre Tenencia responsable de mascotas.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>220</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:52</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>221</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:30</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Reglamento de la ley 21020 sobre tenencia de mascotas.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>222</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-22 18:30</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>223</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-23 18:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos :  A nombre de la Directiva, doy el mas sincero agradecimiento a todos los vecinos participantes en Asamblea Ordinaria, efectuada el jueves 22 del presente. Saludos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>224</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-23 18:56</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>225</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-26 17:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;LEY-21020_LEY CHOLITO 02 08 2017.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>226</Id>
+  </error>
+  <error>
+    <Fecha>2018-11-26 17:01</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>227</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 12:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Villancicos de Navidad&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Plazoleta Condomino  entre 24-12-2018 9:00 PM - 24-12-2018 11:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>228</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 12:21</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>229</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 12:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;Villancicos de Navidad&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en Plazoleta Condomino  entre 24-12-2018 9:00 PM - 24-12-2018 11:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>230</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 12:25</Fecha>
+    <Detalle>Failure sending mail.</Detalle>
+    <Id>231</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 13:32</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Celebración vísperas de navidad&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Plazoleta condominio entre 24-12-2018 9:00 PM - 24-12-2018 11:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>232</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 13:35</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>233</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-18 14:22</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Sergio Clemente Acevedo cuadra , Teléfono Contacto 998210769, correo electónico sergio.acevedoc@coopeuch.cl:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: Y para el 31 hay alguna actividad?&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>234</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-24 13:06</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados vecinos les recordamos que hoy a las 21:00 horas en el sector de la plazoleta le celebraremos una pequeña fiesta de navidad para las niñas y niños de la comunidad habrá videos, villancicos, dulces y jugos para todos los niños...... traigan su silla para ver una película de navidad. los esperamos, Feliz Navidad para todos!!!! &lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>235</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-24 13:11</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>236</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-29 11:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos : con ocasión de fin de año, invitamos a los vecinos que salgan de Santiago, a facilitar el uso de Estacionamiento de uso exclusivo, entregando su tarjeta en Portería. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>237</Id>
+  </error>
+  <error>
+    <Fecha>2018-12-29 11:51</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>238</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-04 16:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Ruidos molestos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>239</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-04 16:40</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>240</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-04 16:57</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado una novedad &lt;strong&gt;Ruidos molestos, necesito saber horarios y días establecidos durante la semana y quisiera saber si hay multas respectos a estos casos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una novedad en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>241</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-04 16:57</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>242</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-09 07:57</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Hola. Me gustaría plantear algunos temas, pero no sé si esta es la vía adecuada. Saludos. MT Cruz&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>243</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-09 07:02</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>244</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos : Por favor abrir y leer archivo adjunto, que es de interés para todos. Saludos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>245</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:01</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>246</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:20</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>247</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:25</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>248</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:39</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>249</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:39</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>250</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:13</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>251</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:13</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>252</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:46</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>253</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 06:47</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>254</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 08:00</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>255</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 08:05</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>256</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 09:41</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>257</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 09:41</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>258</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 09:30</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;nuevo presupuesto.xlsx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>259</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 09:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;tapa rueda.png&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>260</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 15:05</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>261</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 15:16</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;prueba de subida archivo&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>262</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 15:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>263</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 15:27</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;meme5.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>264</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 16:04</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;personas.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>265</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 16:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;meme1.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>266</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 16:17</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;asno.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>267</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 16:45</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;note 8 2.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>268</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 16:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;gato.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>269</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 18:30</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Informativo Enero 2019.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>270</Id>
+  </error>
+  <error>
+    <Fecha>2019-01-22 18:30</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>271</Id>
+  </error>
+  <error>
+    <Fecha>2019-02-12 09:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados, hace un mes les escribí y aparentemente la comunicación no ha fluido como esperaba. Les copio el mensaje antes enviado: "En los dos últimos informes de resultados mensuales aparece un saldo anterior. Yo trabajo como independiente y por eso a veces me retraso en el pago, pero nunca he dejado de pagarlo. Les pido que revisen y verifiquen los pagos. Saludos.". Luego de eso les propuse enviar los comprobantes a algún correo si es que fuera necesario. Esta vez espero su respuesta. Saludos.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>272</Id>
+  </error>
+  <error>
+    <Fecha>2019-02-12 09:52</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>273</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-15 18:13</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Descarga.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>274</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 07:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.687&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>275</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 07:05</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Captura_episodios_1.PNG&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>276</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 12:08</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 65.001&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>277</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 19:24</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba de titulo&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en mi casa entre 19-04-2019 1:00 PM - 19-04-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>278</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 19:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;titulo desde la app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicación desde la app entre 18-04-2019 4:30 AM - 18-04-2019 5:30 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>279</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-16 20:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;otra prueba app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en mi casa entre 20-04-2019 11:00 AM - 20-04-2019 12:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>280</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-17 07:13</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba app 2&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en sala app entre 18-04-2019 6:54 AM - 18-04-2019 8:54 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>281</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-17 08:20</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;otra titulo app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en sala costado app entre 17-04-2019 1:49 PM - 17-04-2019 2:49 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>282</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-17 11:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;titulo desde la app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicación desde la app entre 18-04-2019 4:30 AM - 18-04-2019 6:30 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>283</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 05:42</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba de evento en la app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala de operaciones app entre 01-05-2019 10:00 AM - 01-05-2019 12:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>284</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 06:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;otra prueba de app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>285</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:16</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 12&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>286</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:48</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 1212&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>287</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:53</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;Prueba de evento en la app 25&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala de operaciones app entre 01-05-2019 10:00 AM - 01-05-2019 12:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>288</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:34</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 121212&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>289</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:27</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;Prueba de evento en la app 2525&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala de operaciones app 25 entre 01-05-2019 10:00 AM - 01-05-2019 12:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>290</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;otra otra otra&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicacion entre 02-05-2019 6:00 PM - 02-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>291</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 07:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra otra otra 34&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicacion entre 02-05-2019 6:00 PM - 02-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>292</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:17</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra otra otra 3434&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicacion entre 02-05-2019 6:00 PM - 02-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>293</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:26</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra otra otra&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicacion entre 02-05-2019 6:00 PM - 02-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>294</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:54</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app &lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>295</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:03</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 1&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>296</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba de listado de info&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 4 entre 03-05-2019 1:00 PM - 03-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>297</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-22 08:42</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;prueba de listado de info&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 5 entre 03-05-2019 1:00 PM - 03-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>298</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 08:12</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 1111111&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>299</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 08:55</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra prueba de app 11&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 2 entre 01-05-2019 2:00 PM - 01-05-2019 3:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>300</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 08:54</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;otro evento&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala 5 entre 03-05-2019 1:00 PM - 03-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>301</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 09:31</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en Sala 5 entre 03-05-2019 1:00 PM - 03-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>302</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 09:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en sala costado app entre 17-04-2019 1:49 PM - 17-04-2019 2:49 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>303</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-23 18:09</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;otra otra otra 11&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en ubicacion entre 02-05-2019 6:00 PM - 02-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>304</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-25 09:26</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;para prueba de app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>305</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-27 20:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>306</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-27 20:56</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>307</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-29 09:06</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;vcoronadodos&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>308</Id>
+  </error>
+  <error>
+    <Fecha>2019-04-29 10:46</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;prueba.asamblea&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Usuario en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>309</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 07:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>310</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 07:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>311</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 07:27</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>312</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 07:04</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>313</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 08:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>314</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 08:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;Prueba de proyecto app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>315</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 08:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;para prueba de app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>316</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-01 08:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;Cambio de canaletas&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>317</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-02 13:52</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;para prueba de app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>318</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-02 14:41</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Victor Garcia, Teléfono Contacto 994359451, correo electónico turck182@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: Hola estoy haciendo pruebas de la mensajería de contacto de asambleas.
+
+saludos.&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>319</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos : La fecha de Asamblea ha sido modificada , por causa de fuerza mayor. Por favor ver nuevo comunicado y/o aviso en portería. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>320</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:53</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>321</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:31</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev.1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>322</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:31</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>323</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:39</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev.1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>324</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:39</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>325</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:35</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev.1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>326</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-11 16:35</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>327</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 10:34</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev.1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>328</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 10:36</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>329</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 10:26</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>330</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 10:26</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>331</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 14:17</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;ejemplo_esp.pdf&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>332</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 14:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;ejemplo_esp (1).pdf&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>333</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 16:53</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>334</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 16:56</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>335</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 16:04</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;CITACION A REUNIÓN EXTRAORDINARIA Rev1.docx&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>336</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 16:04</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>337</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-12 16:28</Fecha>
+    <Detalle>cmorenv@gmail.com -- &lt;html&gt;
+      Estimado Usuario cmoreno:&lt;br /&gt;
+      Su password fué recuperada con exito: 13923774&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>338</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-13 18:00</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$ 124.859&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>339</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 09:45</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.687&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>340</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 09:54</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>341</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 10:44</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>342</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 14:34</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>343</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 18:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 56.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>344</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 18:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>345</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 18:20</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>346</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 18:35</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>347</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:23</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>348</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:58</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 56.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>349</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>350</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:29</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$ 14.500&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>351</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:03</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$ 14.500&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>352</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba de evento para app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en sala entre 16-05-2019 12:00 PM - 16-05-2019 1:03 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>353</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:01</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>354</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;prueba de evento para app&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en sala entre 16-05-2019 12:00 PM - 16-05-2019 1:03 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>355</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:19</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>356</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;proyecto de prueba &lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>357</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:18</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>358</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:07</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;proyecto de prueba &lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>359</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:07</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>360</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:06</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;proyecto de prueba &lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>361</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:09</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>362</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el Proyecto &lt;strong&gt;proyecto de prueba &lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>363</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:13</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 15.243&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>364</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:44</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;prueba&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en sala entre 17-05-2019 11:00 AM - 18-05-2019 11:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>365</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-14 19:44</Fecha>
+    <Detalle>Unable to send to all recipients.</Detalle>
+    <Id>366</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 06:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>367</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 06:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>368</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 06:01</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 56.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>369</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 06:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Manual de Parametrización Servicio Windows Obtener Tipos Atencion Sexo y Edad.docx&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>370</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 11:38</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;REUNIÓN EXTRAORDINARIA ASAMBLEA CO-PROPIETARIOS&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Colegio de Profesores, ubicado en Catedral esq. General Bulnes, frente a nuestro Condominio. entre 15-05-2019 7:45 PM - 15-05-2019 9:30 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>371</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 11:40</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>372</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 11:42</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;PRESENTACIÓN COMITÉ DE ADMINISTRACIÓN 2017-2020-Mayo2019.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>373</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 11:43</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>374</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 13:20</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Prueba &lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en  Casa entre 15-06-2019 2:00 PM - 15-06-2019 4:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>375</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 13:25</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>376</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 13:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido eliminado el evento  &lt;strong&gt;Prueba &lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido eliminado un evento para su institución, este tendría lugar en  Casa entre 15-06-2019 2:00 PM - 15-06-2019 4:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>377</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-15 13:22</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>378</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 11:46</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$ 12.343&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>379</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 11:24</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;prueba&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en sala 2 entre 17-05-2019 11:00 AM - 18-05-2019 11:00 AM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>380</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 17:15</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>381</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 17:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>382</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 17:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>383</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 17:56</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>384</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 18:13</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>385</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 18:21</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 56.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>386</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 18:48</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 56.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>387</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 18:49</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>388</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-16 18:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>389</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-17 13:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;12346&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Wwe entre 20-05-2019 2:00 PM - 20-05-2019 7:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>390</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-19 19:39</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido modificada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$ 123.688&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>391</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-22 10:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Revisión push evento futuro&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en NORKYS entre 23-05-2019 1:00 PM - 23-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>392</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-22 10:11</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado el evento  &lt;strong&gt;Revisión push evento futuro&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en NORKYS entre 24-05-2019 1:00 PM - 24-05-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>393</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-24 06:15</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;IMG-20190523-WA0032.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>394</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-24 07:08</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Titulo de eventos&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Sala Cuatro entre 25-05-2019 5:00 PM - 26-05-2019 6:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>395</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-25 18:13</Fecha>
+    <Detalle>contacto@asambleas.cl -- &lt;html&gt;
+      Ximena salas, Teléfono Contacto +56982562623, correo electónico ximerim24@gmail.com:&lt;br /&gt;&lt;br /&gt;
+      Desea contactarse mediante el formulario de contacto, donde ha ingresado el siguiente motivo: Estimados, buenas noches
+
+Cómo puedo entrar a la página asambleas.cl? Con qué contraseña.
+
+Atenta a sus comentarios
+
+Ximena Salas
+Casa 6&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>396</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-25 18:11</Fecha>
+    <Detalle>ximenarim24@gmail.com -- &lt;html&gt;
+      Estimado Usuario xsalas:&lt;br /&gt;
+      Su password fué recuperada con exito: 14620949-1&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>397</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-25 18:21</Fecha>
+    <Detalle>ximenarim24@gmail.com -- &lt;html&gt;
+      Estimado Usuario xsalas:&lt;br /&gt;
+      Su password fué recuperada con exito: 14620949-1&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>398</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-25 18:01</Fecha>
+    <Detalle>ximenarim24@gmail.com -- &lt;html&gt;
+      Estimado Usuario xsalas:&lt;br /&gt;
+      Su password fué recuperada con exito: 14620949-1&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>399</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-26 18:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Gastos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>400</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-26 18:27</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>401</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-26 18:40</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado una novedad &lt;strong&gt;C&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una novedad en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>402</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-26 18:40</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>403</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-26 19:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;IMG-20190526-WA0001.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>404</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-28 06:54</Fecha>
+    <Detalle>asepulveda.leon@gmail.com -- &lt;html&gt;
+      Estimado Usuario asepulveda.leon:&lt;br /&gt;
+      Su password fué recuperada con exito: 12263433&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>405</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-29 12:24</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>406</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-29 13:05</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>407</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-29 19:19</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;familia.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>408</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-30 06:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Vecinos :Ver Planilla de Gastos Mayo , abriendo pestaña Documentos. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>409</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-30 06:21</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>410</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-30 09:11</Fecha>
+    <Detalle>turck182@gmail.com -- &lt;html&gt;
+      Estimado Usuario vgarcia:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>411</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-30 20:30</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;planilla gastos mayo.pdf&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>412</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-30 20:31</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>413</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 06:41</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$18.000.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>414</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$5.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>415</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:16</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$5.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>416</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$5.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>417</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:59</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$5.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>418</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:37</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$5.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>419</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:24</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;nombre asambleas&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>420</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 07:22</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;AppSimpleAsamblea1024Transp.png&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>421</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 08:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Ingreso: &lt;strong&gt;$34.500&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>422</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 08:55</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;IMG-20190531-WA0001.jpg&lt;/strong&gt;, para la Institución Asambleas:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>423</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 08:16</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido eliminada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$18.000.000&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>424</Id>
+  </error>
+  <error>
+    <Fecha>2019-05-31 08:18</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Estimado Usuario, ha sido agregada una rendición para &lt;strong&gt;Asambleas&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Egreso: &lt;strong&gt;$1.718.995&lt;/strong&gt;.&lt;br /&gt;&lt;br /&gt;
+      Te invitamos a ingresar a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      Saludos.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>425</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-15 14:36</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;prueba de solicitud para vgarcia&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>426</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-15 14:41</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>427</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-18 07:43</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Vecinos : La esposa del fallecido vecino Mario Rojas, está en delicado estado mental. Se habló con la hija y pide colaboración , con dato de persona que pueda acompañarla medio dia todos los dias. Si alguien conoce a alguna persona interesada, contactar a la Administradora. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>428</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-18 07:43</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>429</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-26 17:47</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado el Proyecto &lt;strong&gt;INSTALACION BY-PASS&lt;/strong&gt;, para la Institución Cond. Puertas de Catedral:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creado un Proyecto para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>430</Id>
+  </error>
+  <error>
+    <Fecha>2019-06-26 17:50</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>431</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:40</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos : Adjunto Cartas enviadas a Residentes de Comunidad. Favor abrir documentos. Gracias&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>432</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:45</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>433</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:15</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Carta Sr. Victor Salas.doc&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>434</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:15</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>435</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:51</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Carta Sra. Ivette Rappaport.doc&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>436</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:51</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>437</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:33</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha subido el documento &lt;strong&gt;Carta retiro desechos en antejardín.doc&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido subido un documento para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>438</Id>
+  </error>
+  <error>
+    <Fecha>2019-07-03 19:33</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>439</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 11:25</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados vecinos:
+Se informa que este sábado 31/08 asistirá el técnico de Citófonos para concluir el trabajo en aquellas casas que faltan.
+Estará entre las 10.00 y 14.00 hrs. en el condominio.
+Por favor, se solicita tener disponiblidad en ese horario para realizar las últimas reparaciones.
+Saludos cordiales,
+Directiva.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>440</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 11:25</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>441</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 11:02</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados vecinos:
+Se comunica que el formato de Gasto Común que se entrega mensualmente ha cambiado.
+Es la misma información de antes, pero más ordenada y detallada.
+Por favor, cualquier consulta o inquietud, dirigirse a María Amelia Rodríguez, nuestra Administradora, que está disponible todos los miércoles durante la tarde. También puede enviar mail, o por esta misma vía.
+Saludos cordiales,
+Directiva.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>442</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 11:06</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>443</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 12:32</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Finalización de casas pendientes técnico en citofonia &lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Condominio Catedral Bulnes  entre 31-08-2019 10:00 AM - 31-08-2019 2:00 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>444</Id>
+  </error>
+  <error>
+    <Fecha>2019-08-29 12:37</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>445</Id>
+  </error>
+  <error>
+    <Fecha>2019-09-09 10:58</Fecha>
+    <Detalle>Input string was not in a correct format.</Detalle>
+    <Id>446</Id>
+  </error>
+  <error>
+    <Fecha>2019-09-09 10:52</Fecha>
+    <Detalle>Input string was not in a correct format.</Detalle>
+    <Id>447</Id>
+  </error>
+  <error>
+    <Fecha>2019-09-13 13:20</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados Vecinos : El sábado 28 de Septiembre, se efectuará el último procedimiento de sello en Calle Circulación EStacionamientos Interiores. Solicitamos la mayor colaboración. Saludos&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>448</Id>
+  </error>
+  <error>
+    <Fecha>2019-09-13 13:25</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>449</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 08:50</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha creado una novedad &lt;strong&gt;Estimados vecinos:
+Se cita a asamblea extraordinaria el día de Hoy Lunes 21 de Octubre, a las 19.00 hrs. en la plazoleta central.
+Objetivo de la reunión: Seguridad del condominio en período de contingencia.
+Atentamente,
+La Directiva.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido creada una novedad para su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>450</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 08:54</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>451</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 08:10</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Se ha agregado el evento  &lt;strong&gt;Asamblea Ordinaria&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido agregado un evento para su institución, este tendrá lugar en Plazoleta Central  entre 21-10-2019 7:00 PM - 21-10-2019 7:30 PM, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>452</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 08:15</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>453</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 09:05</Fecha>
+    <Detalle> -- &lt;html&gt;
+      Ha sido modificado una novedad &lt;strong&gt;Estimados vecinos:Se cita a Reunión Ordinaria el dia de Hoy Lunes 21 de Octubre, a las 19.00 hrs. Objetivo de la reunión: Seguridad en condominio en periodo de contingencia. Atentamente, La Directiva.&lt;/strong&gt;, para la Institución Cond. Catedral Bulnes:&lt;br /&gt;&lt;br /&gt;
+      Estimado Usuario, ha sido Modificada una novedad en su institución, ingrese a www.asambleas.cl para poder verlo.&lt;br /&gt;&lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>454</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 09:05</Fecha>
+    <Detalle>Unable to send to a recipient.</Detalle>
+    <Id>455</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 19:05</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>456</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 19:44</Fecha>
+    <Detalle>vcoronado.alarcon@gmail.com -- &lt;html&gt;
+      Estimado Usuario vcoronado:&lt;br /&gt;
+      Su password fué recuperada con exito: 123456&lt;br /&gt;
+      Ingrese a www.asambleas.cl/Ingreso.aspx &lt;br /&gt;
+      *****  No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>457</Id>
+  </error>
+  <error>
+    <Fecha>2019-10-21 19:35</Fecha>
+    <Detalle>Ltronc60@gmail.com -- &lt;html&gt;&lt;h1&gt;Invitación a Asambleas&lt;/h1&gt;&lt;br /&gt;&lt;br /&gt;Usted ha recibido una invitación de Victor  Coronado para unirse a asambleas.cl, con el Rol de Presidente, bajo la institución Nueva app.&lt;br /&gt;Si desea participar descargue la aplicación desde google play y seleccione la opción Valida tu invitación.&lt;br /&gt;&lt;br /&gt;*****No responder este correo!!,  Mensaje enviado desde el sistema automático de envio de correos de asambleas ****** &lt;br /&gt;&lt;/html&gt;</Detalle>
+    <Id>458</Id>
+  </error>
 </root>

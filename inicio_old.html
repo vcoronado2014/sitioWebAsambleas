@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="." />
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development" />
+    <meta name="author" content="Victor Coronado" />
+    <title>Inicio</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- metis menu -->
+    <link href="Content/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- sb admin -->
+    <link href="Content/sb-admin-2.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="Content/jquery.validate.bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"/>
+    <link href="Content/morris.css" rel="stylesheet" />
+    <!--<link href="Content/sweetalert.css" rel="stylesheet" />-->
+    <!-- sweet alert 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.css"/>
+
+    <link href="Content/pnotify.custom.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/knockout-3.4.1.js"></script>
+    <!-- KnockoutJS Mapping http://knockoutjs.com/documentation/plugins-mapping.html -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+
+
+    <script src="Scripts/jquery.validate.min.js"></script>
+
+    <!-- esta es la version antigua, usaremos la nueva -->
+    <!-- <script src="Scripts/sweetalert.js"></script> -->
+
+    <!-- sweet alert 2 -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.2/sweetalert2.min.js"></script>
+    <script src="Scripts/pnotify.custom.min.js"></script>
+
+    <script src="Scripts/moment.js"></script>
+
+    <script src="Scripts/lib/raphael.min.js"></script>
+    <script src="Scripts/morris.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+    <script src="Scripts/sb-admin-2.js"></script>
+    <script src="Scripts/metisMenu.js"></script>
+
+    <script src="js/jquery.signalR-2.2.0.js"></script>
+    <script src="https://www.asambleas.cl/signalr/signalr/hubs"></script>
+    <script src="app_script/signalrApp.js"></script>
+
+    <script src="const.js?v=3.1"></script>
+
+    <script src="app_script/inicio.js?v=3.0"></script>
+
+
+
+</head>
+<body class="bodyFixed" onload="ini()" onkeypress="parar()" onclick="parar()">
+<div class="container" id="loading">
+
+</div>
+
+<div class="container" id="principal">
+    <!-- encabezado -->
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <!--<nav data-bind="css: CssEncabezado">-->
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-right: 70px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand fg-white" style="cursor: pointer;"  data-bind="text: nombreInstitucion" onclick="IrInicio()"></a><span style="font-size: 1em; color: white; font-weight: bold;" data-bind="text: versionCorta"></span>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="Inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li style="cursor: pointer;"><a  id="ancoreSesion"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
+                    <li data-bind="visible: menuMenu" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li data-bind="visible: VerUsuario"><a href="usuarios.html">Usuarios</a></li>
+                            <li data-bind="visible: VerInstitucion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerInstitucion"><a href="ListarInstitucion.html">Intituciones</a></li>
+                            <li data-bind="visible: VerRendicion" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRendicion"><a href="ListarRendicion.html">Rendiciones</a></li>
+                            <li data-bind="visible: VerDocumento" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerDocumento"><a href="ListarDocumento.html">Documentos de Usuario</a></li>
+                            <li data-bind="visible: VerCalendario" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerCalendario"><a href="ListarCalendario.html">Calendario</a></li>
+                            <li data-bind="visible: CreaUsuario" role="separator" class="divider"></li>
+                            <li data-bind="visible: CreaUsuario"><a href="CargaMasiva.html">Carga Masiva</a></li>
+                            <li data-bind="visible: VerReportes" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReportes"><a href="InicioReportes.html">Reportes</a></li>
+                            <li data-bind="visible: VerRol" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerRol"><a href="ListarRoles.html">Roles</a></li>
+                            <li data-bind="visible: VerMuro" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerMuro"><a href="ListarMuro.html">Novedades</a></li>
+                            <li data-bind="visible: VerMailing" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerMailing"><a href="CrearModificarMailing.html">Mailing</a></li>
+                            <li data-bind="visible: VerReporteAsistencia" role="separator" class="divider"></li>
+                            <li data-bind="visible: VerReporteAsistencia"><a href="InicioReporteAsistencia.html">Reporte Asistencia</a></li>
+                            <!-- nuevos -->
+                            <li data-bind="visible: CreaSolicitudes"><a href="AdministracionSolicitudes.html">Administración Solicitudes</a></li>
+                            <li data-bind="visible: VerMroSolicitudes"><a href="ListarMuroSolicitudes.html">Mis Solicitudes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-bind="visible: VerTricel">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tricel <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bind="visible: VerTricel" href="ListarVotacion.html">Listar Triceles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-bind="visible: VerProyecto">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bind="visible: VerProyecto" href="ListarProyecto.html">Listar Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li  data-bind="visible: MuestraCambio"><a href="SeleccionInstitucion.html" id="selec"><i class="fa fa-sign-in"></i> Cambiar Institución</a></li>
+                    <li><a href="Contacto.html" id="contacto"><i class="fa fa-sign-in"></i> Contacto</a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="Logs.html" id="logs"><i class="fa fa-info-circle"></i> Logs</a></li>
+                    <li data-bind="visible: MuestraLogueados"><a href="#" id="infoUsuarios"></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <a href="#"><i class="fa fa-user-circle"></i>&nbsp;<span  data-bind="text: nombreCompleto"></span>&nbsp;<span data-bind="text: nombreRol"></span></a>
+            <a href="#" class="pull-right"><i class="fa fa-calendar"></i>&nbsp;<span data-bind="text: birthDay"></span></a>
+        </div>
+    </nav>
+
+
+    <!-- usuarios -->
+    <div class="col-lg-3 col-md-6" data-bind="visible: VerUsuario, css: claseGeneral" >
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div id="infoUsuariosN" class="huge">0</div>
+                        <div>Usuarios!</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div onclick="AbrirUsuarios()" class="panel-footer">
+                    <span class="pull-left">Ver Detalles</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- instituciones -->
+
+    <div class="col-lg-3 col-md-6" id="cuadroInstitucion" data-bind="visible: VerInstitucion, css: claseGeneral">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-cogs fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div id="infoInstituciones" class="huge">0</div>
+                        <div>Instituciones!</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div onclick="AbrirInstituciones()" class="panel-footer">
+                    <span class="pull-left">Ver Detalles</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- ingresos egresos -->
+    <div data-bind="visible: VerRendicion, css: claseGeneral">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-dollar fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div id="infoIngresos" class="huge">0</div>
+                        <div>Ingresos y Egresos!</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div onclick="AbrirRendiciones()"  class="panel-footer">
+                    <span class="pull-left">Ver Detalles</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Documentos -->
+    <div data-bind="visible: VerDocumento, css: claseGeneral">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-archive fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div id="infoDocumentos" class="huge">0</div>
+                        <div>Documentos!</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div onclick="AbrirDocumentos()" class="panel-footer">
+                    <span class="pull-left">Ver Detalles</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Acá el contenido del muro -->
+    <div class="col-xs-12 page-header">
+        <h3 class="col-xs-9 col-md-10">Novedades <small></small></h3>
+        <a href="#" class="col-xs-3 col-md-2" data-bind="click: guardarMuro, visible: CreaMuro"><i class="fa fa-5x fa-plus-circle pull-right" data-toggle="tooltip" data-placement="left" title="Crear Comentario"></i></a>
+    </div>
+    <div class="col-xs-12 panel">
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/red.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Alta Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/blue.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Media Prioridad
+            </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="chat-img pull-left">
+              <img src="img/green.png" alt="User Avatar" class="img-circle" width="20px" height="20px"> Baja Prioridad
+            </span>
+        </div>
+    </div>
+    
+    <!-- foreach al muro -->
+    <div class="col-xs-12">
+        <!-- solo para pruebas -->
+        <ul class="chat" data-bind="foreach: { data: muro, as: 'muro' }">
+            <li class="left clearfix">
+                <!-- para las imagenes -->
+                <div data-bind="foreach: {data: ArchivosAdjuntos, as: 'archivo'}" style="margin: 2%; text-align: center;">
+                    <a data-bind="attr: { href: archivo.Src }" target="_blank">
+                        <img data-bind="attr: { src: archivo.Src, width: archivo.Width }" alt="User Avatar" class="img-novedades">
+                    </a>
+                </div>
+                <!-- elemento avatar -->
+                <span class="chat-img pull-left">
+                    <!--<img src="img/red.png" alt="User Avatar" class="img-circle">-->
+                    <img data-bind="attr: { src: muro.UrlImagen }"  alt="User Avatar" class="img-circle" width="35px" height="35px">
+                    <!--data-bind="attr:{ src: '/imagefolder/' + PhotoName }"-->
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">
+                            <span data-bind="text: muro.NombreUsuario"></span> --
+                            <span data-bind="text: muro.NombreRol"></span>
+                            <small class="pull-right cursorPointer" data-bind="click: eliminarMuro, visible: muro.VisibleEliminar"  style="color: orangered;">
+                                <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                            </small>
+                            <small class="pull-right cursorPointer" data-bind="click: modificarMuro, visible: muro.VisibleEliminar"  style="color: #00b8f5;">
+                                <i class="fa fa-edit fa-fw fa-2x"></i>
+                            </small>
+                        </strong>
+                        <small class="pull-right text-muted">
+                            <i class="fa fa-clock-o fa-fw"></i><span data-bind="text: muro.FechaString"></span>
+                        </small>
+                    </div>
+                    <p data-bind="text: muro.Texto">
+
+                    </p>
+                    <div class="footer">
+                        <small class="pull-right text-muted cursorPointer"  style="color: blue;">
+                            <i class="fa fa-comment-o fa-fw fa-2x"></i><span data-bind="click: EnviarMensaje"> Comentar</span>
+                        </small>
+
+                    </div>
+                </div>
+                <!-- comentarios -->
+                <ul class="chat" style="margin-left: 10%; margin-top: 10px; font-size: 85%;" data-bind="foreach: { data: RespuestaMuro, as: 'item' }">
+                    <!-- comentario 1 -->
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                                <i class="fa fa-comment fa-fw text-muted"></i>
+                        </span>
+                        <div class="chat-body clearfix" style="margin-left: 30px;">
+                            <div class="header">
+                                <strong class="primary-font text-muted">
+                                    <span data-bind="text: item.NombreUsuario"></span> --
+                                    <span data-bind="text: item.NombreRol"></span>
+                                    <small class="pull-right cursorPointer" data-bind="click: eliminarRespuestaMuro, visible: item.VisibleEliminar"  style="color: orangered;">
+                                        <i class="fa fa-trash-o fa-fw fa-2x"></i>
+                                    </small>
+                                    <small class="pull-right cursorPointer" data-bind="click: modificarMensaje, visible: item.VisibleEliminar"  style="color: #00b8f5;">
+                                        <i class="fa fa-edit fa-fw fa-2x"></i>
+                                    </small>
+                                </strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw text-muted"></i><span data-bind="text: item.FechaString"></span>
+                                </small>
+                            </div>
+                            <p class="text-muted" data-bind="text: item.Texto">
+
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- eventos -->
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaEventos">
+     <div class="chat-panel panel panel-primary">
+        <div class="panel-heading">
+            <i class="fa fa-calendar fa-fw"></i> Eventos
+            <div class="btn-group pull-right">
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+
+        <div class="panel-body">
+            <ul class="chat"  data-bind="foreach: items" id="listaCalendario">
+                <li class="left clearfix">
+                    <span class="chat-img pull-left text-info" style="padding-right: 20px;">
+                        <i class="fa fa-3x fa-check-circle"></i>
+                    </span>
+                    <div class="chat-body clearfix">
+                        <div class="header">
+                            <strong class="primary-font">
+                                <span data-bind="text: fechaInicio"></span>&nbsp; al &nbsp;
+                                <span data-bind="text: fechaTermino"></span>
+
+                            </strong>
+                            <small class="pull-right text-muted">
+                                <i class="fa fa-clock-o fa-fw"></i>
+                                <span data-bind="text: horaInicio"></span>&nbsp; -- &nbsp;
+                                <span data-bind="text: horaTermino"></span>
+                            </small>
+                        </div>
+                        <p data-bind="text: content" class="text-left" >
+
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="panel-footer" style="border-top: 1px solid #337ab7;">
+            <a href="#">
+                <div onclick="AbrirCalendario()" class="panel-footer">
+                    <span class="pull-left">Ver Detalles</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Proyectos -->
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaProyectos">
+        <div class="chat-panel panel panel-secondary">
+            <div class="panel-heading">
+                <i class="fa fa-building fa-fw"></i> Votación en Linea
+                <div class="btn-group pull-right">
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+
+            <div class="panel-body">
+                <ul class="chat"  data-bind="foreach: itemsP" id="listaProyectos">
+                    <li class="left clearfix">
+                    <span class="chat-img pull-left text-info" style="padding-right: 20px;">
+                        <a data-bind="attr: { href: urlVotar }" data-toggle="tooltip" data-placement="left" title="Votar Proyecto">
+                            <i class="fa fa-3x fa-legal" ></i></a>
+                    </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">
+                                    <span data-bind="text: fechaInicio"></span>&nbsp; al &nbsp;
+                                    <span data-bind="text: fechaTermino"></span>
+
+                                </strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i>
+                                    <span data-bind="text: fechaCreacion"></span>
+                                </small>
+                            </div>
+
+                            <p data-bind="text: content" class="text-left" >
+
+                            </p>
+                            <small class="text-muted">
+                                <i class="fa fa-balance-scale fa-fw"></i>
+                                <span>Quórum</span>
+                            </small>
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" data-bind="style:{width: valorBarra + '%'}, text: valorBarra + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel-footer" style="border-top: 1px solid cadetblue;">
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Pinche en el ícono para votar</span>
+                        <span class="pull-right"><i class="fa fa-legal"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Triceles -->
+    <div class="col-xs-12 col-md-4 text-center" data-bind="visible: MuestraListaTriceles">
+        <div class="chat-panel panel panel-primary">
+            <div class="panel-heading">
+                <i class="fa fa-building fa-fw"></i> Tricel
+                <div class="btn-group pull-right">
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+
+            <div class="panel-body">
+                <ul class="chat"  data-bind="foreach: itemsT" id="listaTricel">
+                    <li class="left clearfix">
+                    <span class="chat-img pull-left text-info" style="padding-right: 20px;">
+                        <a data-bind="attr: { href: urlVotar }" data-toggle="tooltip" data-placement="left" title="Votar Tricel">
+                            <i class="fa fa-3x fa-legal" ></i></a>
+                    </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font">
+                                    <span data-bind="text: fechaInicio"></span>&nbsp; al &nbsp;
+                                    <span data-bind="text: fechaTermino"></span>
+
+                                </strong>
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw"></i>
+                                    <span data-bind="text: fechaCreacion"></span>
+                                </small>
+                            </div>
+                            <p data-bind="text: content" class="text-left" >
+
+                            </p>
+                            <small class="text-muted">
+                                <i class="fa fa-balance-scale fa-fw"></i>
+                                <span>Quórum</span>
+                            </small>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-bind="style:{width: valorBarra + '%'}, text: valorBarra + '%'" aria-valuemin="0" aria-valuemax="100">
+
+                                </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel-footer" style="border-top: 1px solid cadetblue;">
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">Pinche en el ícono para votar</span>
+                        <span class="pull-right"><i class="fa fa-legal"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- grafico ingresos egresos
+    <div class="col-xs-12 col-md-3 text-center">
+        <div id="graph"></div>
+    </div>
+    -->
+</div>
+
+</body>
+</html>

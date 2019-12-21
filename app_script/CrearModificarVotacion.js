@@ -223,14 +223,14 @@
                                 closeOnCancel: false
                             },
                             function (isConfirm) {
-                                if (isConfirm) {
-                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                                    //CrearModificarVotacion.html?id=3&ELIMINAR=0
+                                EnviarMensajeSignalR('Se ha creado/modificado un Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), result);
+                                window.location.href = "CrearModificarVotacion.html?id=" + idRecuperado + "&ELIMINAR=0";
+/*                                 if (isConfirm) {
                                     EnviarMensajeSignalR('Se ha creado/modificado un Tricel.', "ListarVotacion.html", "4", sessionStorage.getItem("RolId"), result);
                                     window.location.href = "CrearModificarVotacion.html?id=" + idRecuperado + "&ELIMINAR=0";
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
+                                } */
                             });
                     },
                     error: function (error) {

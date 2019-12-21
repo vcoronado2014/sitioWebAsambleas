@@ -77,6 +77,14 @@
 
    $.when(obtenerRendiciones).then(
         function(data){
+
+           //procesamos antes los elementos ya que vienen mal
+           if (data.proposals.length > 0) {
+               data.proposals.forEach(propo => {
+                   var urlArchivo = ObtenerUrlRaiz() + 'Repositorio/' + propo.UrlDocumento;
+                   propo.Rol = urlArchivo;
+               });
+           }
             elem = document.getElementById('principal');
 
             if (data.proposals != null && data.proposals.length > 0) {

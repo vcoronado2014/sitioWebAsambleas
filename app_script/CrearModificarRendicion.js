@@ -199,9 +199,12 @@
                     self.frmUrlDocumento = data.proposals[0].UrlDocumento;
                     $("#iconoDescargar").addClass('hidden');
                 }
-                else
-                    self.frmUrlDocumento = "http://127.0.0.1:8080/Repositorio/" + data.proposals[0].UrlDocumento;
-                self.details= "Pinche aqui para abrir";
+                else{
+                    //self.frmUrlDocumento = "http://127.0.0.1:8080/Repositorio/" + data.proposals[0].UrlDocumento;
+                    self.frmUrlDocumento = ObtenerUrlRaiz() + "Repositorio/" + data.proposals[0].UrlDocumento;
+                    self.details= "Pinche aqui para abrir";
+                }
+                    
                 //getNotify('success', 'Éxito', 'Recuperado con éxito!');
                 self.onChangeUsuario = function () {
                     var nombreUsuario = $("#txtNombreUsuario").val();

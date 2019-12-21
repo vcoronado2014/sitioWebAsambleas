@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- <meta name = "google-signin-client_id" content="81813533333-5f2h6qhvququc10dgludq06ovkgqsqi8.apps.googleusercontent.com"> -->
 
     <title>Asambleas</title>
 
@@ -42,7 +43,7 @@
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
+        <div class="container" style="width: 90%;">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                     <a class="badge badge-warning visible-xs" href="#portfolioModal7" data-toggle="modal" style="float: right;margin-top: 12px;margin-right: 10px;cursor: pointer;font-size:1.7em;background-color: coral"><i class="fa fa-user"> </i></a>
@@ -84,6 +85,12 @@
                     <li>
                         <a href="#portfolioModal8" class="page-scroll" data-toggle="modal">Recuperar Clave</a>
                     </li>
+                    <li>
+                        <a href="#suscripcion" class="page-scroll">Suscripción</a>
+                    </li>
+                    <li>
+                        <a href="ValidaInvitado.html" class="page-scroll">Valida tu invitación</a>
+                    </li>
                     <!-- lo comentamos por mientras hasta dejar operativo el tema de los roles -->
 
                 </ul>
@@ -108,6 +115,19 @@
             </div>
         </div>
     </header>
+
+    <!-- suscripcion Section -->
+    <section id="suscripcion" style="padding: 50px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Suscribe tu Institución</h2>
+                    <h3 class="section-subheading text-muted">Suscribe tu institución acá.</h3>
+                    <a class="btn btn-xl" href="AsistentePasoUno.html">Iniciar Asistente</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services">
@@ -319,6 +339,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Team Section -->
     <section id="team" class="bg-light-gray">
@@ -739,7 +760,7 @@
                                         <button type="button" class="btn btn-success btn-lg" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                                     </div>
                                     <div class="col-xs-6">
-                                        <button type="button" class="btn btn-primary btn-lg  col-xs-12 col-md-6 pull-right" data-bind="click: autentificar">
+                                        <button type="button" class="btn btn-primary btn-lg  col-xs-12 col-md-6 pull-right" data-bind="click: autentificarDos">
                                             Entrar
                                         </button>
                                     </div>
@@ -757,6 +778,9 @@
                                     <div id="progressbar"></div>
 
                                 </div>
+<!--                                 <div class="row">
+                                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                </div> -->
 
                             </div>
                         </div>
@@ -853,11 +877,14 @@
     <script src="Scripts/pnotify.custom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="Scripts/moment.js"></script>
-    <script src="const.js?v=2.7"></script>
-    <script src="app_script/contact_me.js?v=2.7"></script>
-    <script src="app_script/Acceso.js?v=2.7"></script>
+    <script src="const.js?v=3.1"></script>
+    <script src="app_script/contact_me.js?v=3.0"></script>
+    <script src="app_script/Acceso.js?v=3.0"></script>
     <!-- Theme JavaScript -->
     <script src="Scripts/agency.min.js"></script>
+    <!--google acount -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    
 
 </body>
 

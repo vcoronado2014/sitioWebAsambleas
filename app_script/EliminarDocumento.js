@@ -8,10 +8,18 @@
         text: "¿Está seguro de eliminar?",
         type: "info",
         showCancelButton: true,
+        confirmButtonClass: "btn-success",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
         closeOnConfirm: false,
         customClass: 'sweetalert-xs',
-        showLoaderOnConfirm: true
-    }, function (isConfirm) {
+        closeOnCancel: true,
+        clickConfirm(){
+            console.log('click')
+        }
+    }, 
+    //eliminar(isConfirm)
+    function (isConfirm) {
         if (isConfirm) {
 
             setTimeout(function () {
@@ -169,9 +177,30 @@
             }
 
             }
-    });
+    }
+    );
+    function eliminar(confirm){
+        console.log(confirm);
+    }
 
+/*     swal.clickConfirm() {
+        console.log('click')
+    } */
 
+/*     swal({
+        title: 'Eliminar',
+        text: "¿Está seguro de eliminar?",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.value) {
+            console.log(result);
+        }
+      }); */
    
     function getNotify(type, title, message) {
         if (type == 'error') {
